@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="介绍目前常见前端面试题，浏览器基础题">
@@ -171,6 +171,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -298,12 +303,12 @@
         <p>介绍目前常见前端面试题，浏览器基础题</p>
 <span id="more"></span>
 
-<p><img src="https://s.poetries.work/images/20210415090353.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210415090353.png" alt="img"></p>
 <h3 id="❤浏览器架构"><a href="#❤浏览器架构" class="headerlink" title="❤浏览器架构"></a>❤浏览器架构</h3><p><strong>单进程浏览器时代</strong></p>
 <blockquote>
 <p>单进程浏览器是指浏览器的所有功能模块都是运行在同一个进程里，这些模块包含了网络、插件、JavaScript运行环境、渲染引擎和页面等。其实早在2007年之前，市面上浏览器都是单进程的</p>
 </blockquote>
-<p><img src="https://s.poetries.work/images/20210415092040.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210415092040.png" alt="img"></p>
 <ul>
 <li>缺点<ul>
 <li>不稳定：一个插件的意外崩溃会引起整个浏览器的崩溃</li>
@@ -319,7 +324,7 @@
 <li>JavaScript也是运行在渲染进程中的，所以即使JavaScript阻塞了渲染进程，影响到的也只是当前的渲染页面，而并不会影响浏览器和其他页面，因为其他页面的脚本是运行在它们自己的渲染进程中的</li>
 <li>Chrome把插件进程和渲染进程锁在沙箱里面，这样即使在渲染进程或者插件进程里面执行了恶意程序，恶意程序也无法突破沙箱去获取系统权限。</li>
 </ul>
-<p><img src="https://s.poetries.work/images/20210415092356.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210415092356.png" alt="img"></p>
 <blockquote>
 <p>最新的Chrome浏览器包括：<code>1个浏览器（Browser）主进程</code>、<code>1个 GPU 进程</code>、<code>1个网络（NetWork）进程</code>、<code>多个渲染进程</code>和<code>多个插件进程</code></p>
 </blockquote>
@@ -397,8 +402,8 @@
 <p>第四步和第五步是最耗时的部分，这两步合起来，就是我们通常所说的渲染</p>
 </blockquote>
 <p>具体如下图过程如下图所示</p>
-<p><img src="https://s.poetries.work/gitee/2019/10/19.png" alt="img"></p>
-<p><img src="https://s.poetries.work/gitee/2019/10/20.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2019/10/19.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2019/10/20.png" alt="img"></p>
 <p><strong>渲染</strong></p>
 <ul>
 <li>网页生成的时候，至少会渲染一次</li>
@@ -449,7 +454,7 @@
 <li>非阻塞的资源还是会被浏览器下载，只是优先级较低</li>
 </ul>
 <p><strong>2.3 第三步：把DOM和CSSOM组合成渲染树（render tree）</strong></p>
-<p><img src="https://s.poetries.work/gitee/2019/10/21.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2019/10/21.png" alt="img"></p>
 <p><strong>2.4 第四步：在渲染树的基础上进行布局，计算每个节点的几何结构</strong></p>
 <blockquote>
 <p>布局(<code>layout</code>)：定位坐标和大小，是否换行，各种<code>position</code>, <code>overflow</code>, <code>z-index</code>属性</p>
@@ -603,7 +608,7 @@
 <li><code>CSS</code>选择符从右往左匹配查找，避免 <code>DOM</code>深度过深</li>
 <li>将频繁运行的动画变为图层，图层能够阻止该节点回流影响别的元素。比如对于 <code>video</code>标签，浏览器会自动将该节点变为图层。</li>
 </ul>
-<p><img src="https://s.poetries.work/gitee/2019/10/22.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2019/10/22.png" alt="img"></p>
 <h3 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h3><ul>
 <li><strong>得分点</strong> 服务器端生成HTML直接返回给浏览器、减少网络传输、首屏渲染快、对搜索引擎友好</li>
 <li><strong>标准回答</strong><ul>
@@ -895,7 +900,7 @@ If-None-Match: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</sp
 <td>规定浏览器不能在跨域请求中携带 <code>Cookie</code>，减少 <code>CSRF</code> 攻击</td>
 </tr>
 </tbody></table>
-<p><img src="https://s.poetries.work/images/20210421172522.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210421172522.png" alt="img"></p>
 <ul>
 <li><code>Name</code>，即该 <code>Cookie</code> 的名称。<code>Cookie</code> 一旦创建，名称便不可更改。</li>
 <li><code>Value</code>，即该 <code>Cookie</code> 的值。如果值为 <code>Unicode</code> 字符，需要为字符编码。如果值为二进制数据，则需要使用 <code>BASE64</code> 编码。</li>
@@ -1082,7 +1087,7 @@ document<span class="token punctuation">.</span>head<span class="token punctuati
 </li>
 <li><p><strong>标准回答：</strong><br><strong>跨域：</strong>当前页面中的某个接口请求的地址和当前页面的地址如果协议、域名、端口其中有一项不同，就说该接口跨域了。<br>跨域限制的原因：浏览器为了保证网页的安全，出的同源协议策略。</p>
 <p><strong>跨域报错信息：</strong></p>
-<p><img src="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863343481/0BF44F815EA97361C3608F016702DF18" alt="img"></p>
+<p><img data-src="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863343481/0BF44F815EA97361C3608F016702DF18" alt="img"></p>
 <p><strong>跨域解决方案</strong></p>
 <pre><code>cors：目前最常用的一种解决办法，通过设置后端允许跨域实现。
 res.setHeader('Access-Control-Allow-Origin', '*');
@@ -1098,7 +1103,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 </ul>
 </li>
 </ul>
-<h3 id="❤XSS-和-CSRF"><a href="#❤XSS-和-CSRF" class="headerlink" title="❤XSS 和 CSRF"></a>❤XSS 和 CSRF</h3><p><img src="https://s.poetries.work/images/20210415090547.png" alt="img"></p>
+<h3 id="❤XSS-和-CSRF"><a href="#❤XSS-和-CSRF" class="headerlink" title="❤XSS 和 CSRF"></a>❤XSS 和 CSRF</h3><p><img data-src="https://s.poetries.work/images/20210415090547.png" alt="img"></p>
 <p><strong>1. XSS</strong></p>
 <blockquote>
 <p>涉及面试题：什么是 <code>XSS</code> 攻击？如何防范 <code>XSS</code> 攻击？什么是 <code>CSP</code>？</p>
@@ -1111,7 +1116,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 <blockquote>
 <p>举个例子，对于评论功能来说，就得防范持久型 <code>XSS</code> 攻击，因为我可以在评论中输入以下内容</p>
 </blockquote>
-<p><img src="https://s.poetries.work/gitee/2020/07/4.png" alt="image.png"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/07/4.png" alt="image.png"></p>
 <ul>
 <li>这种情况如果前后端没有做好防御的话，这段评论就会被存储到数据库中，这样每个打开该页面的用户都会被攻击到。</li>
 <li>非持久型相比于前者危害就小的多了，一般通过修改 <code>URL</code> 参数的方式加入攻击代码，诱导用户访问链接从而进行攻击。</li>
@@ -1125,7 +1130,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 <blockquote>
 <p>但是对于这种攻击方式来说，如果用户使用 <code>Chrome</code> 这类浏览器的话，浏览器就能自动帮助用户防御攻击。但是我们不能因此就不防御此类攻击了，因为我不能确保用户都使用了该类浏览器。</p>
 </blockquote>
-<p><img src="https://s.poetries.work/gitee/2020/07/fe/19.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/07/fe/19.png" alt="img"></p>
 <blockquote>
 <p>对于 <code>XSS</code> 攻击来说，通常有两种方式可以用来防御。</p>
 </blockquote>
@@ -1190,7 +1195,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <blockquote>
 <p>对于这种方式来说，只要开发者配置了正确的规则，那么即使网站存在漏洞，攻击者也不能执行它的攻击代码，并且 <code>CSP</code> 的兼容性也不错。</p>
 </blockquote>
-<p><img src="https://s.poetries.work/gitee/2020/07/fe/20.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/07/fe/20.png" alt="img"></p>
 <p><strong>2 CSRF</strong></p>
 <blockquote>
 <p>跨站请求伪造（英语：<code>Cross-site request forgery</code>），也被称为 <code>one-click attack</code>或者 <code>session riding</code>，通常缩写为 <code>CSRF</code> 或者 <code>XSRF</code>， 是一种挟制用户在当前已登录的<code>Web</code>应用程序上执行非本意的操作的攻击方法</p>
@@ -1204,7 +1209,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </blockquote>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;img src="http://www.domain.com/xxx?comment='attack'"/&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
-<p><img src="https://s.poetries.work/images/20210506174602.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210506174602.png" alt="img"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Set-Cookie'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">username=poetry2;sameSite = strict;path=/;httpOnly;expires=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getCookirExpires</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
@@ -1219,7 +1224,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p>会带上A网站的cookie</p>
-<p><img src="https://s.poetries.work/images/20210506174856.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210506174856.png" alt="img"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 在A网站下发cookie的时候，加上sameSite=strict，这样B网站在发送A网站请求，不会自动带上A网站的cookie，保证了安全</span>
 
 
@@ -1233,7 +1238,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Set-Cookie'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">username=poetry;sameSite=strict;path=/;httpOnly;expires=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getCookirExpires</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p><img src="https://s.poetries.work/images/20210506175834.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210506175834.png" alt="img"></p>
 <p><strong>如何防御</strong></p>
 <ul>
 <li><code>Get</code> 请求不对数据进行修改</li>
@@ -1392,11 +1397,11 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <blockquote>
 <p>打开页面，可以在开发者工具中的 <code>Application</code> 看到 <code>Service Worker</code> 已经启动了</p>
 </blockquote>
-<p><img src="https://s.poetries.work/gitee/2020/09/96.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/09/96.png" alt="img"></p>
 <blockquote>
 <p>在 Cache 中也可以发现我们所需的文件已被缓存</p>
 </blockquote>
-<p><img src="https://s.poetries.work/gitee/2020/09/97.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/09/97.png" alt="img"></p>
 <blockquote>
 <p>当我们重新刷新页面可以发现我们缓存的数据是从 <code>Service</code> <code>Worker</code> 中读取的</p>
 </blockquote>
@@ -1457,15 +1462,15 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <li>给 js 脚本添加 <code>async</code>属性，这个属性会使脚本异步加载，不会阻塞页面的解析过程，但是当脚本加载完成后立即执行 js脚本，这个时候如果文档没有解析完成的话同样会阻塞。多个 <code>async</code> 属性的脚本的执行顺序是不可预测的，一般不会按照代码的顺序依次执行</li>
 <li>动态创建 <code>DOM</code> 标签的方式，我们可以对文档的加载事件进行监听，当文档加载完成后再动态的创建 <code>script</code> 标签来引入 js 脚本</li>
 </ul>
-<p><img src="https://s.poetries.work/images/20210420215756.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210420215756.png" alt="img"></p>
 <p><strong>怎么判断页面是否加载完成</strong></p>
 <ul>
 <li><code>Load</code> 事件触发代表页面中的 <code>DOM</code>，<code>CSS</code>，<code>JS</code>，图片已经全部加载完毕。</li>
 <li><code>DOMContentLoaded</code> 事件触发代表初始的 <code>HTML</code> 被完全加载和解析，不需要等待 <code>CSS</code>，<code>JS</code>，图片加载</li>
 </ul>
-<h3 id="❤从输入URL到页面展示过程"><a href="#❤从输入URL到页面展示过程" class="headerlink" title="❤从输入URL到页面展示过程"></a>❤从输入URL到页面展示过程</h3><p><img src="https://s.poetries.work/images/20210504134355.png" alt="img"></p>
+<h3 id="❤从输入URL到页面展示过程"><a href="#❤从输入URL到页面展示过程" class="headerlink" title="❤从输入URL到页面展示过程"></a>❤从输入URL到页面展示过程</h3><p><img data-src="https://s.poetries.work/images/20210504134355.png" alt="img"></p>
 <p><strong>1. DNS域名解析</strong></p>
-<p><img src="https://s.poetries.work/images/20210504134816.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504134816.png" alt="img"></p>
 <ul>
 <li>根 DNS 服务器 ：返回顶级域 DNS 服务器的 IP 地址</li>
 <li>顶级域 DNS 服务器：返回权威 DNS 服务器的 IP 地址</li>
@@ -1474,12 +1479,12 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <blockquote>
 <p>DNS的域名查找，在客户端和浏览器，本地DNS之间的查询方式是递归查询；在本地DNS服务器与根域及其子域之间的查询方式是迭代查询；</p>
 </blockquote>
-<p><img src="https://s.poetries.work/images/20210504134850.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504134850.png" alt="img"></p>
 <p>在客户端输入 URL 后，会有一个递归查找的过程，从<code>浏览器缓存中查找-&gt;本地的hosts文件查找-&gt;找本地DNS解析器缓存查找-&gt;本地DNS服务器查找</code>，这个过程中任何一步找到了都会结束查找流程。</p>
 <p>如果本地DNS服务器无法查询到，则根据本地DNS服务器设置的转发器进行查询。若未用转发模式，则迭代查找过程如下图：</p>
-<p><img src="https://s.poetries.work/images/20210504134913.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504134913.png" alt="img"></p>
 <p>结合起来的过程，可以用一个图表示：</p>
-<p><img src="https://s.poetries.work/images/20210504134925.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504134925.png" alt="img"></p>
 <p><strong>在查找过程中，有以下优化点：</strong></p>
 <ul>
 <li>DNS存在着多级缓存，从离浏览器的距离排序的话，有以下几种: <code>浏览器缓存，系统缓存，路由器缓存，IPS服务器缓存，根域名服务器缓存，顶级域名服务器缓存，主域名服务器缓存</code>。</li>
@@ -1508,13 +1513,13 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <p>TCP连接建立后，浏览器就可以利用 <code>HTTP／HTTPS</code> 协议向服务器发送请求了。服务器接受到请求，就解析请求头，如果头部有缓存相关信息如<code>if-none-match与if-modified-since</code>，则验证缓存是否有效，若有效则返回状态码为<code>304</code>，若无效则重新返回资源，状态码为<code>200</code></p>
 </blockquote>
 <p>这里有发生的一个过程是HTTP缓存，是一个常考的考点，大致过程如图：</p>
-<p><img src="https://s.poetries.work/images/20210504135417.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504135417.png" alt="img"></p>
 <p><strong>3. 关闭TCP连接</strong></p>
 <p><strong>4. 浏览器渲染</strong></p>
 <blockquote>
 <p>按照渲染的时间顺序，流水线可分为如下几个子阶段：构建 DOM 树、样式计算、布局阶段、分层、栅格化和显示。如图：</p>
 </blockquote>
-<p><img src="https://s.poetries.work/images/20210504135549.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504135549.png" alt="img"></p>
 <ul>
 <li>渲染进程将 HTML 内容转换为能够读懂DOM 树结构。</li>
 <li>渲染引擎将 CSS 样式表转化为浏览器可以理解的 <code>styleSheets</code>，计算出 <code>DOM</code> 节点的样式。</li>
@@ -1524,7 +1529,7 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <li>合成线程发送绘制图块命令给浏览器进程。浏览器进程根据指令生成页面，并显示到显示器上。</li>
 </ul>
 <p><strong>构建 DOM 树</strong></p>
-<p><img src="https://s.poetries.work/images/20210504135701.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504135701.png" alt="img"></p>
 <ul>
 <li>转码（Bytes -&gt; Characters）—— 读取接收到的 HTML 二进制数据，按指定编码格式将字节转换为 HTML 字符串</li>
 <li>Tokens 化（Characters -&gt; Tokens）—— 解析 HTML，将 HTML 字符串转换为结构清晰的 Tokens，每个 Token 都有特殊的含义同时有自己的一套规则</li>
@@ -1540,7 +1545,7 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <blockquote>
 <p>布局过程，即<code>排除 script、meta 等功能化、非视觉节点</code>，排除 <code>display: none</code> 的节点，计算元素的位置信息，确定元素的位置，构建一棵只包含可见元素布局树。如图：</p>
 </blockquote>
-<p><img src="https://s.poetries.work/images/20210504135900.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504135900.png" alt="img"></p>
 <blockquote>
 <p>其中，这个过程需要注意的是回流和重绘</p>
 </blockquote>
@@ -1552,7 +1557,7 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <blockquote>
 <p>合成线程会按照视口附近的图块来优先生成位图，实际生成位图的操作是由栅格化来执行的。所谓栅格化，是指将图块转换为位图</p>
 </blockquote>
-<p><img src="https://s.poetries.work/images/20210504140042.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210504140042.png" alt="img"></p>
 <p>通常一个页面可能很大，但是用户只能看到其中的一部分，我们把用户可以看到的这个部分叫做视口（viewport）。在有些情况下，有的图层可以很大，比如有的页面你使用滚动条要滚动好久才能滚动到底部，但是通过视口，用户只能看到页面的很小一部分，所以在这种情况下，要绘制出所有图层内容的话，就会产生太大的开销，而且也没有必要。</p>
 <p><strong>显示</strong></p>
 <p>最后，合成线程发送绘制图块命令给浏览器进程。浏览器进程根据指令生成页面，并显示到显示器上，渲染过程完成。</p>
@@ -1604,8 +1609,6 @@ self<span class="token punctuation">.</span><span class="token function">addEven
   </div>
 
   <aside class="sidebar">
-
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
 
     <div class="sidebar-inner">
 
@@ -1665,6 +1668,8 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 
 
       </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
@@ -1708,7 +1713,7 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 
         
 <div class="busuanzi-count">
-  <script data-pjax="" async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -1741,9 +1746,9 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 
   
   
-  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   
   
 
@@ -1757,18 +1762,16 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 
 
 
+
+
+
+  
   
 
 
 
 
   
-  
-
-
-
-
-  
 
 
 
@@ -1783,7 +1786,6 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 
 
 
-    <div id="pjax">
   
 
   
@@ -1792,7 +1794,6 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 
 
 
-    </div>
 
 
 <script src="/bundle.js"></script><script>
@@ -1815,64 +1816,6 @@ self<span class="token punctuation">.</span><span class="token function">addEven
       localStorage.setItem('comments_active', commentClass);
     });
   }
-;
-
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
 ;
 
     (function(){

@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="介绍目前常见前端面试题，参考链接 https://interview2.poetries.top/">
@@ -52,7 +52,7 @@
 <meta property="og:image" content="https://s.poetries.work/gitee/2020/07/16.png">
 <meta property="og:image" content="https://s.poetries.work/gitee/2020/09/101.png">
 <meta property="article:published_time" content="2022-05-19T17:26:49.000Z">
-<meta property="article:modified_time" content="2022-07-28T03:18:59.576Z">
+<meta property="article:modified_time" content="2022-07-28T13:05:34.243Z">
 <meta property="article:author" content="henfy">
 <meta property="article:tag" content="前端 面试">
 <meta name="twitter:card" content="summary">
@@ -165,6 +165,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -245,8 +250,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-28 11:18:59" itemprop="dateModified" datetime="2022-07-28T11:18:59+08:00">2022-07-28</time>
+                <time title="修改时间：2022-07-28 21:05:34" itemprop="dateModified" datetime="2022-07-28T21:05:34+08:00">2022-07-28</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -286,7 +300,7 @@
 
 
 <h2 id="HTML、HTTP、web综合问题"><a href="#HTML、HTTP、web综合问题" class="headerlink" title="HTML、HTTP、web综合问题"></a>HTML、HTTP、web综合问题</h2><h3 id="❤常用的meta标签有哪些"><a href="#❤常用的meta标签有哪些" class="headerlink" title="❤常用的meta标签有哪些"></a>❤常用的meta标签有哪些</h3><p><code>meta</code> 标签由 <code>name</code> 和 <code>content</code> 属性定义，<strong>用来描述网页文档的属性</strong>，比如网页的作者，网页描述，关键词等，除了HTTP标准固定了一些<code>name</code>作为大家使用的共识，开发者还可以自定义name。</p>
-<p>常用的meta标签： </p>
+<p>常用的meta标签：</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html">（1）`charset`，用来描述HTML文档的编码类型：
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span> <span class="token punctuation">&gt;</span></span>
 
@@ -341,7 +355,7 @@
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”robots”</span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”index,follow”/</span><span class="token punctuation">&gt;</span></span>      <span class="token comment">&lt;!--搜索引擎抓取--&gt;</span>
 &lt;meta name=”viewport” content=”initial-scale=1, maximum-scale=3, minimum-scale=1, user-scalable=no”&gt; <span class="token comment">&lt;!--为移动设备添加 viewport--&gt;</span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”apple-mobile-web-app-title”</span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”标题”</span><span class="token punctuation">&gt;</span></span> <span class="token comment">&lt;!--iOS 设备 begin--&gt;</span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”apple-mobile-web-app-capable”</span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”yes”/</span><span class="token punctuation">&gt;</span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">name</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”apple-mobile-web-app-capable”</span> <span class="token attr-name">content</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span>”yes”/</span><span class="token punctuation">&gt;</span></span>
 <span class="token comment">&lt;!--添加到主屏后的标题（iOS 6 新增）是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏--&gt;</span>
 &lt;meta name=”apple-itunes-app” content=”app-id=myAppStoreID, affiliate-data=myAffiliateData, app-argument=myURL”&gt;
 <span class="token comment">&lt;!--添加智能 App 广告条 Smart App Banner（iOS 6+ Safari）--&gt;</span>
@@ -404,7 +418,7 @@
 <li><code>defer 属性</code>。立即请求文件，但不阻塞渲染引擎，<code>等到解析完 HTML 之后再执行</code>文件内容</li>
 <li>HTML5 标准 type 属性，对应值为“module”。让浏览器按照 ECMA Script 6 标准将文件当作模块进行解析，默认阻塞效果同 defer，也可以配合 async 在请求完成后立即执行。</li>
 </ul>
-<p><img src="https://s.poetries.work/images/20210421163450.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210421163450.png" alt="img"></p>
 <blockquote>
 <p>绿色的线表示执行解析 HTML ，蓝色的线表示请求文件，红色的线表示执行文件</p>
 </blockquote>
@@ -412,13 +426,13 @@
 <p><strong>2. link 标签：通过预处理提升渲染速度</strong></p>
 <p>在我们对大型单页应用进行性能优化时，也许会用到按需懒加载的方式，来加载对应的模块，但如果能合理利用 <code>link</code> 标签的 <code>rel</code> 属性值来进行预加载，就能进一步提升渲染速度。</p>
 <ul>
-<li><code>dns-prefetch</code>。当 <code>link</code> 标签的 <code>rel</code> 属性值为“dns-prefetch”时，<code>浏览器会对某个域名预先进行 DNS 解析并缓存</code>。这样，当浏览器在请求同域名资源的时候，能省去从域名查询 IP 的过程，从而<code>减少时间损耗</code>。下图是淘宝网设置的 DNS 预解析 <img src="https://s.poetries.work/images/20210421163848.png" alt="img"></li>
+<li><code>dns-prefetch</code>。当 <code>link</code> 标签的 <code>rel</code> 属性值为“dns-prefetch”时，<code>浏览器会对某个域名预先进行 DNS 解析并缓存</code>。这样，当浏览器在请求同域名资源的时候，能省去从域名查询 IP 的过程，从而<code>减少时间损耗</code>。下图是淘宝网设置的 DNS 预解析 <img data-src="https://s.poetries.work/images/20210421163848.png" alt="img"></li>
 <li><code>preconnect</code>。让浏览器在一个 HTTP 请求正式发给服务器前预先执行一些操作，这包括<code>DNS 解析、TLS 协商、TCP 握手</code>，通过消除往返延迟来为用户节省时间</li>
 <li><code>prefetch/preload</code>。两个值都是<code>让浏览器预先下载并缓存某个资源</code>，但不同的是，<code>prefetch 可能会在浏览器忙时被忽略</code>，而 <code>preload 则是一定会被预先下载</code>。</li>
 <li><code>prerender</code>。浏览器不仅会加载资源，还会解析执行页面，进行预渲染</li>
 </ul>
 <p>这几个属性值恰好反映了浏览器获取资源文件的过程，在这里我绘制了一个流程简图，方便你记忆。</p>
-<p><img src="https://s.poetries.work/images/20210421164758.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210421164758.png" alt="img"></p>
 <p><strong>3. 搜索优化</strong></p>
 <ul>
 <li>meta 标签：提取关键信息<ul>
@@ -428,19 +442,19 @@
 </li>
 </ul>
 <h3 id="❤defer和async的区别"><a href="#❤defer和async的区别" class="headerlink" title="❤defer和async的区别"></a>❤defer和async的区别</h3><ul>
-<li><strong>得分点</strong> 加载JS文档和渲染文档可以同时进行、JS代码立即执行、JS代码不立即执行、渲染引擎和JS引擎互斥 </li>
-<li><strong>标准回答</strong> 浏览器会立即加载JS文件并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行  <ul>
-<li>加上<strong>async</strong>属性，加载JS文档和渲染文档可以同时进行（异步），当JS加载完成，JS代码立即执行，会阻塞HTML渲染。  </li>
-<li>加上<strong>defer</strong>，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），当HTML渲染完成，才会执行JS代码。 </li>
+<li><strong>得分点</strong> 加载JS文档和渲染文档可以同时进行、JS代码立即执行、JS代码不立即执行、渲染引擎和JS引擎互斥</li>
+<li><strong>标准回答</strong> 浏览器会立即加载JS文件并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行<ul>
+<li>加上<strong>async</strong>属性，加载JS文档和渲染文档可以同时进行（异步），当JS加载完成，JS代码立即执行，会阻塞HTML渲染。</li>
+<li>加上<strong>defer</strong>，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），当HTML渲染完成，才会执行JS代码。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li><strong>渲染阻塞的原因：</strong> 由于 JavaScript 是可操纵 DOM 的,如果在修改这些元素属性同时渲染界面（即 JavaScript 线程和 UI 线程同时运行）,那么渲染线程前后获得的元素数据就可能不一致了。因此为了防止渲染出现不可预期的结果,浏览器设置 GUI 渲染线程与 JavaScript 引擎为互斥的关系。当浏览器在执行 JavaScript 程序的时候,GUI 渲染线程会被保存在一个队列中,直到 JS 程序执行完成,才会接着执行。如果 JS 执行的时间过长,这样就会造成页面的渲染不连贯,导致页面渲染加载阻塞的感觉</li>
 </ul>
 </li>
 </ul>
 <p>下图可以直观的看出三者之间的区别:</p>
-<p> <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0a8a139519f46dfa2d1992c58eb5397~tplv-k3u1fbpfcp-zoom-in-crop-mark:3402:0:0:0.awebp" alt="image.png"> </p>
+<p> <img data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0a8a139519f46dfa2d1992c58eb5397~tplv-k3u1fbpfcp-zoom-in-crop-mark:3402:0:0:0.awebp" alt="image.png"></p>
 <p>其中蓝色代表js脚本网络加载时间，红色代表js脚本执行时间，绿色代表html解析。</p>
 <p><strong>defer 和 async属性都是去异步加载外部的JS脚本文件，它们都不会阻塞页面的解析</strong>，其区别如下：</p>
 <ul>
@@ -676,22 +690,22 @@ console<span class="token punctuation">.</span><span class="token function">time
 </ol>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> DNS解析、TCP握手、HTTP缓存、重定向、服务器状态码、渲染引擎和JS引擎互斥、渲染过程、浏览器进程、网络进程、渲染进程 </li>
-<li><strong>标准回答</strong> <ul>
-<li>输入地址，浏览器查找域名的 IP 地址。 </li>
-<li>浏览器向 该 IP 地址的web 服务器发送一个 HTTP 请求，在发送请求之前浏览器和服务器建立TCP的三次握手，判断是否是HTTP缓存，如果是强制缓存且在有效期内，不再向服务器发请求，如果是HTTP协商缓存向后端发送请求且和后端服务器对比，在有效期内，服务器返回304，直接从浏览器获取数据，如果不在有效期内服务器返回200，返回新数据。 </li>
-<li>请求发送出去服务器返回重定向，浏览器再按照重定向的地址重新发送请求。 如果请求的参数有问题，服务器端返回404，如果服务器端挂了返回500。 </li>
-<li>如果有数据一切正常，当浏览器拿到服务器的数据之后，开始渲染页面同时获取HTML页面中图片、音频、视频、CSS、JS，在这期间获取到JS文件之后，会直接执行JS代码，阻塞浏览器渲染，因为渲染引擎和JS引擎互斥，不能同时工作，所以通常把Script标签放在body标签的底部。 </li>
+<li><strong>得分点</strong> DNS解析、TCP握手、HTTP缓存、重定向、服务器状态码、渲染引擎和JS引擎互斥、渲染过程、浏览器进程、网络进程、渲染进程</li>
+<li><strong>标准回答</strong><ul>
+<li>输入地址，浏览器查找域名的 IP 地址。</li>
+<li>浏览器向 该 IP 地址的web 服务器发送一个 HTTP 请求，在发送请求之前浏览器和服务器建立TCP的三次握手，判断是否是HTTP缓存，如果是强制缓存且在有效期内，不再向服务器发请求，如果是HTTP协商缓存向后端发送请求且和后端服务器对比，在有效期内，服务器返回304，直接从浏览器获取数据，如果不在有效期内服务器返回200，返回新数据。</li>
+<li>请求发送出去服务器返回重定向，浏览器再按照重定向的地址重新发送请求。 如果请求的参数有问题，服务器端返回404，如果服务器端挂了返回500。</li>
+<li>如果有数据一切正常，当浏览器拿到服务器的数据之后，开始渲染页面同时获取HTML页面中图片、音频、视频、CSS、JS，在这期间获取到JS文件之后，会直接执行JS代码，阻塞浏览器渲染，因为渲染引擎和JS引擎互斥，不能同时工作，所以通常把Script标签放在body标签的底部。</li>
 <li>渲染过程就是先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤浏览器渲染过程"><a href="#❤浏览器渲染过程" class="headerlink" title="❤浏览器渲染过程"></a>❤浏览器渲染过程</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> dom树、stylesheet、布局树、分层、光栅化、合成 </li>
-<li><strong>标准回答</strong> 浏览器拿到HTML，先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。 </li>
-<li><strong>加分回答</strong> <ul>
-<li>分层的目的：避免整个页面渲染，把页面分成多个图层，尤其是动画的时候，把动画独立出一个图层，渲染时只渲染该图层就ok，transform，z-index等，浏览器会自动优化生成图层 </li>
+<li><strong>得分点</strong> dom树、stylesheet、布局树、分层、光栅化、合成</li>
+<li><strong>标准回答</strong> 浏览器拿到HTML，先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。</li>
+<li><strong>加分回答</strong><ul>
+<li>分层的目的：避免整个页面渲染，把页面分成多个图层，尤其是动画的时候，把动画独立出一个图层，渲染时只渲染该图层就ok，transform，z-index等，浏览器会自动优化生成图层</li>
 <li>光栅化目的：页面如果很长但是可视区很小，避免渲染非可视区的样式造成资源浪费，所以将每个图层又划分成多个小个子，当前只渲染可视区附近区域</li>
 </ul>
 </li>
@@ -766,80 +780,80 @@ console<span class="token punctuation">.</span><span class="token function">time
 <li>前端自动化（gulp/webpack）</li>
 </ul>
 <h3 id="❤前端性能优化手段"><a href="#❤前端性能优化手段" class="headerlink" title="❤前端性能优化手段"></a>❤前端性能优化手段</h3><ul>
-<li><strong>得分点</strong> 图片压缩和文件压缩、雪碧图/精灵图、节流防抖、HTTP缓存、本地缓存、Vue的keep-alive缓存、ssr服务器端渲染、懒加载、对dom查询进行缓存、将dom操作合并 </li>
-<li><strong>标准回答</strong> 前端性能优化分为两类，一类是文件加载更快，另一类是文件渲染更快。 <ul>
-<li>加载更快的方法： 让传输的数据包更小（压缩文件/图片）：图片压缩和文件压缩 </li>
-<li>减少网络请求的次数：雪碧图/精灵图、节流防抖 </li>
-<li>减少渲染的次数：缓存（HTTP缓存、本地缓存、Vue的keep-alive缓存等） </li>
-<li>渲染更快的方法： 提前渲染：ssr服务器端渲染 </li>
-<li>避免渲染阻塞：CSS放在HTML的head中 JS放在HTML的body底部 </li>
-<li>避免无用渲染：懒加载 </li>
-<li>减少渲染次数：对dom查询进行缓存、将dom操作合并、使用减少重排的标签 </li>
+<li><strong>得分点</strong> 图片压缩和文件压缩、雪碧图/精灵图、节流防抖、HTTP缓存、本地缓存、Vue的keep-alive缓存、ssr服务器端渲染、懒加载、对dom查询进行缓存、将dom操作合并</li>
+<li><strong>标准回答</strong> 前端性能优化分为两类，一类是文件加载更快，另一类是文件渲染更快。<ul>
+<li>加载更快的方法： 让传输的数据包更小（压缩文件/图片）：图片压缩和文件压缩</li>
+<li>减少网络请求的次数：雪碧图/精灵图、节流防抖</li>
+<li>减少渲染的次数：缓存（HTTP缓存、本地缓存、Vue的keep-alive缓存等）</li>
+<li>渲染更快的方法： 提前渲染：ssr服务器端渲染</li>
+<li>避免渲染阻塞：CSS放在HTML的head中 JS放在HTML的body底部</li>
+<li>避免无用渲染：懒加载</li>
+<li>减少渲染次数：对dom查询进行缓存、将dom操作合并、使用减少重排的标签</li>
 </ul>
 </li>
 <li><strong>加分回答</strong> 雪碧图的应用场景一般是项目中不常更换的一些固定图标组合在一起，比如logo、搜索图标、切换图标等。 电商项目中最常用到的懒加载，一般在查看商品展示的时候通常下拉加载更多，因为商品数据太多，一次性请求过来数据太大且渲染的时间太长。</li>
 </ul>
 <h3 id="❤性能优化有哪些性能指标，如何量化"><a href="#❤性能优化有哪些性能指标，如何量化" class="headerlink" title="❤性能优化有哪些性能指标，如何量化"></a>❤性能优化有哪些性能指标，如何量化</h3><ul>
-<li><strong>得分点</strong> 加载速度、第一个请求响应时间、页面加载时间、交互动作的反馈时间、帧率FPS、异步请求完成时间 Lighthouse、Throttling 、Performance、Network、WebPageTest </li>
-<li><strong>标准回答</strong> <ul>
-<li>常用的性能优化指标 <ul>
-<li>Speed Index（lighthouse，速度指数） </li>
-<li>TTFB（Network，第一个请求响应时间） </li>
+<li><strong>得分点</strong> 加载速度、第一个请求响应时间、页面加载时间、交互动作的反馈时间、帧率FPS、异步请求完成时间 Lighthouse、Throttling 、Performance、Network、WebPageTest</li>
+<li><strong>标准回答</strong><ul>
+<li>常用的性能优化指标<ul>
+<li>Speed Index（lighthouse，速度指数）</li>
+<li>TTFB（Network，第一个请求响应时间）</li>
 </ul>
 </li>
-<li>页面加载时间 </li>
-<li>首次渲染 <ul>
-<li>交互动作的反馈时间 <ul>
-<li>帧率FPS（动画 ctrl+shift+p） </li>
+<li>页面加载时间</li>
+<li>首次渲染<ul>
+<li>交互动作的反馈时间<ul>
+<li>帧率FPS（动画 ctrl+shift+p）</li>
 </ul>
 </li>
-<li>异步请求完成时间 </li>
-<li>使用性能测量工具进行量化 <ul>
-<li>Chrome DevTools </li>
+<li>异步请求完成时间</li>
+<li>使用性能测量工具进行量化<ul>
+<li>Chrome DevTools</li>
 </ul>
 </li>
-<li>开发调试、性能评测 <ul>
-<li>Audit(Lighthouse) </li>
-<li>Throttling </li>
+<li>开发调试、性能评测<ul>
+<li>Audit(Lighthouse)</li>
+<li>Throttling</li>
 </ul>
 </li>
-<li>调整网络吞吐 <ul>
-<li>Performance 性能分析 </li>
+<li>调整网络吞吐<ul>
+<li>Performance 性能分析</li>
 </ul>
 </li>
-<li>Network 网络加载分析 <ul>
-<li>Lighthouse </li>
+<li>Network 网络加载分析<ul>
+<li>Lighthouse</li>
 </ul>
 </li>
-<li>网站整体质量评估 </li>
-<li>还可以提出优化建议 <ul>
-<li>WebPageTest - 测试多地点(球各地的用户访问你的网站的性能情况) </li>
+<li>网站整体质量评估</li>
+<li>还可以提出优化建议<ul>
+<li>WebPageTest - 测试多地点(球各地的用户访问你的网站的性能情况)</li>
 </ul>
 </li>
-<li>全面性能报告（first view,repeat view,waterfall chart 等等） <ul>
-<li>WebPageTest 还可以进行本地安装，让你的应用在还没上线的时候就可以测试。 </li>
+<li>全面性能报告（first view,repeat view,waterfall chart 等等）<ul>
+<li>WebPageTest 还可以进行本地安装，让你的应用在还没上线的时候就可以测试。</li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>常用的性能测量API <ul>
-<li>DNS 解析耗时: domnLookupEnd - domnLookupStart TCP </li>
-<li>连接耗时: connectEnd - connectStart SSL </li>
-<li>安全连接耗时: connectEnd - secureConnectionStart </li>
-<li>网络请求耗时 (TTFB): responseStart - requestStart </li>
-<li>数据传输耗时: responseEnd - responseStart DOM </li>
-<li>解析耗时: domInteractive - responseEnd </li>
-<li>资源加载耗时: loadEventStart - domContentLoadedEventEnd </li>
-<li>First Byte时间: responseStart - domnLookupStart </li>
-<li>白屏时间: responseEnd - fetchStart </li>
-<li>首次可交互时间: domInteractive - fetchStart </li>
-<li>DOM Ready 时间: domContentLoadEventEnd - fetchStart </li>
-<li>页面完全加载时间: loadEventStart - fetchStart </li>
-<li>http 头部大小： transferSize - encodedBodySize </li>
-<li>重定向次数：performance.navigation.redirectCount </li>
+<li><strong>加分回答</strong><ul>
+<li>常用的性能测量API<ul>
+<li>DNS 解析耗时: domnLookupEnd - domnLookupStart TCP</li>
+<li>连接耗时: connectEnd - connectStart SSL</li>
+<li>安全连接耗时: connectEnd - secureConnectionStart</li>
+<li>网络请求耗时 (TTFB): responseStart - requestStart</li>
+<li>数据传输耗时: responseEnd - responseStart DOM</li>
+<li>解析耗时: domInteractive - responseEnd</li>
+<li>资源加载耗时: loadEventStart - domContentLoadedEventEnd</li>
+<li>First Byte时间: responseStart - domnLookupStart</li>
+<li>白屏时间: responseEnd - fetchStart</li>
+<li>首次可交互时间: domInteractive - fetchStart</li>
+<li>DOM Ready 时间: domContentLoadEventEnd - fetchStart</li>
+<li>页面完全加载时间: loadEventStart - fetchStart</li>
+<li>http 头部大小： transferSize - encodedBodySize</li>
+<li>重定向次数：performance.navigation.redirectCount</li>
 <li>重定向耗时: redirectEnd - redirectStart</li>
 </ul>
 </li>
@@ -908,17 +922,17 @@ console<span class="token punctuation">.</span><span class="token function">time
 </li>
 </ul>
 <h3 id="❤HTML语义化"><a href="#❤HTML语义化" class="headerlink" title="❤HTML语义化"></a>❤HTML语义化</h3><ul>
-<li><strong>得分点</strong> 语义化标签、利于页面内容结构化、利于无CSS页面可读、利于SEO、利于代码可读 </li>
-<li><strong>标准回答</strong> <ul>
-<li>HTML语义化就是指在使用HTML标签构建页面时，避免大篇幅的使用无语义的标签，比如要求尽可能的使用具有语义的标签，比如<code>&lt;header&gt;</code>、<code>&lt;footer&gt;</code>等。 举例说明： 页面中有一个标题，可以用<code>&lt;/footer&gt;&lt;/header&gt;</code>标签实现标题This is a top level heading也可以使用span+CSS实现标题的样式 Is this a top level heading? 虽然这两种写法都会实现标题的样式，但是建议使用``标签实现。 </li>
-<li><strong>使用HTML语义化标签的作用：</strong> <ul>
+<li><strong>得分点</strong> 语义化标签、利于页面内容结构化、利于无CSS页面可读、利于SEO、利于代码可读</li>
+<li><strong>标准回答</strong><ul>
+<li>HTML语义化就是指在使用HTML标签构建页面时，避免大篇幅的使用无语义的标签，比如要求尽可能的使用具有语义的标签，比如<code>&lt;header&gt;</code>、<code>&lt;footer&gt;</code>等。 举例说明： 页面中有一个标题，可以用<code>&lt;/footer&gt;&lt;/header&gt;</code>标签实现标题This is a top level heading也可以使用span+CSS实现标题的样式 Is this a top level heading? 虽然这两种写法都会实现标题的样式，但是建议使用``标签实现。</li>
+<li><strong>使用HTML语义化标签的作用：</strong><ul>
 <li>对机器友好，带有语义的文字表现力丰富，更适合搜索引擎的爬虫爬取有效信息，有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重。除此之外，语义类还支持读屏软件，根据文章可以自动生成目录；</li>
 <li>对开发者友好，使用语义类标签增强了可读性，结构更加清晰，开发者能清晰的看出网页的结构，便于团队的开发与维护。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>HTML5语义化标签并没有广泛使用，比如京东、淘宝等，还是使用div元素，设置id是header或者footer，这个可能是因为HTML5新增的语义化标签的作用不是特别大，网站没有必要重写</li>
 </ul>
 </li>
@@ -1138,7 +1152,7 @@ FALLBACK<span class="token operator">:</span>
 <li>如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。</li>
 <li>如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。</li>
 </ul>
-<h3 id="常见排序算法的时间复杂度-空间复杂度"><a href="#常见排序算法的时间复杂度-空间复杂度" class="headerlink" title="常见排序算法的时间复杂度,空间复杂度"></a>常见排序算法的时间复杂度,空间复杂度</h3><p><img src="https://s.poetries.work/cos/202204032131039.png" alt="img"></p>
+<h3 id="常见排序算法的时间复杂度-空间复杂度"><a href="#常见排序算法的时间复杂度-空间复杂度" class="headerlink" title="常见排序算法的时间复杂度,空间复杂度"></a>常见排序算法的时间复杂度,空间复杂度</h3><p><img data-src="https://s.poetries.work/cos/202204032131039.png" alt="img"></p>
 <h3 id="web开发中会话跟踪的方法有哪些"><a href="#web开发中会话跟踪的方法有哪些" class="headerlink" title="web开发中会话跟踪的方法有哪些"></a>web开发中会话跟踪的方法有哪些</h3><ul>
 <li><code>cookie</code></li>
 <li><code>session</code></li>
@@ -1188,14 +1202,11 @@ Content-Type: text/html; charset=iso-8859-1
 {"name": "qiu", "age": 25}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="title与h1的区别、b与strong的区别、i与em的区别"><a href="#title与h1的区别、b与strong的区别、i与em的区别" class="headerlink" title="title与h1的区别、b与strong的区别、i与em的区别"></a>title与h1的区别、b与strong的区别、i与em的区别</h3><ul>
-<li><p><code>title</code>属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响</p>
-</li>
-<li><p><code>strong</code>是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<code>&lt;strong&gt;</code>会重读，而<code>&lt;B&gt;</code>是展示强调内容</p>
-</li>
-<li><p>i内容展示为斜体，em表示强调的文本</p>
-</li>
-<li></li>
+<li><code>title</code>属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响</li>
+<li><code>strong</code>是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<code>&lt;strong&gt;</code>会重读，而<code>&lt;B&gt;</code>是展示强调内容</li>
+<li>i内容展示为斜体，em表示强调的文本</li>
 </ul>
+<p>-</p>
 <h3 id="git-fetch-和-git-pull的区别"><a href="#git-fetch-和-git-pull的区别" class="headerlink" title="git fetch 和 git pull的区别"></a>git fetch 和 git pull的区别</h3><ul>
 <li><code>git pull</code>：相当于是从远程获取最新版本并<code>merge</code>到本地</li>
 <li><code>git fetch</code>：相当于是从远程获取最新版本到本地，不会自动<code>merge</code></li>
@@ -1229,12 +1240,12 @@ Content-Type: text/html; charset=iso-8859-1
 <li><code>box-sizing: inherit;</code> 继承父元素 <code>box-sizing</code> 属性的值</li>
 </ul>
 <ul>
-<li><strong>得分点</strong> 标准盒模型、怪异盒模型、<code>box-sizing:border-box</code>、盒模型大小 </li>
+<li><strong>得分点</strong> 标准盒模型、怪异盒模型、<code>box-sizing:border-box</code>、盒模型大小</li>
 <li><strong>标准回答</strong> CSS盒模型定义了盒的每个部分包含 margin, border, padding, content 。<ul>
-<li>根据盒子大小的计算方式不同盒模型分成了两种，标准盒模型和怪异盒模型。 <ul>
-<li><strong>标准模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，实际设置的是 content box。<code>padding</code> 和 <code>border </code>再加上设置的宽高一起决定整个盒子的大小。 </li>
-<li><strong>怪异盒模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，包含了<code>padding</code>和<code>border </code>，设置的 <code>width</code> 和 <code>height</code>就是盒子实际的大小 默认情况下，盒模型都是标准盒模型 <ul>
-<li>设置标准盒模型：<code>box-sizing:content-box</code> </li>
+<li>根据盒子大小的计算方式不同盒模型分成了两种，标准盒模型和怪异盒模型。<ul>
+<li><strong>标准模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，实际设置的是 content box。<code>padding</code> 和 <code>border </code>再加上设置的宽高一起决定整个盒子的大小。</li>
+<li><strong>怪异盒模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，包含了<code>padding</code>和<code>border </code>，设置的 <code>width</code> 和 <code>height</code>就是盒子实际的大小 默认情况下，盒模型都是标准盒模型<ul>
+<li>设置标准盒模型：<code>box-sizing:content-box</code></li>
 <li>设置怪异盒模型：<code>box-sizing:border-box</code></li>
 </ul>
 </li>
@@ -1278,29 +1289,29 @@ Content-Type: text/html; charset=iso-8859-1
 <li>可以阻止元素被浮动元素覆盖</li>
 </ul>
 <ul>
-<li><strong>得分点：</strong> 块级格式化上下文、独立的渲染区域、不会影响边界以外的元素、形成BFC条件、float、position、overflow、display </li>
-<li><strong>标准回答：</strong> BFC(Block Formatting Context)块级格式化上下文，是Web页面一块独立的渲染区域，内部元素的渲染不会影响边界以外的元素。 <ul>
-<li><strong>BFC布局规则</strong> <ul>
-<li>内部盒子会在垂直方向，一个接一个地放置。 </li>
-<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。 </li>
-<li>每个盒子（块盒与行盒）的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。 </li>
-<li>BFC的区域不会与float box重叠。 </li>
-<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。 </li>
-<li>计算BFC的高度时，浮动元素也参与计算。 </li>
+<li><strong>得分点：</strong> 块级格式化上下文、独立的渲染区域、不会影响边界以外的元素、形成BFC条件、float、position、overflow、display</li>
+<li><strong>标准回答：</strong> BFC(Block Formatting Context)块级格式化上下文，是Web页面一块独立的渲染区域，内部元素的渲染不会影响边界以外的元素。<ul>
+<li><strong>BFC布局规则</strong><ul>
+<li>内部盒子会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。</li>
+<li>每个盒子（块盒与行盒）的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算。</li>
 </ul>
 </li>
-<li><strong>BFC形成的条件</strong> <ul>
-<li><code>float </code>设置成 <code>left </code>或 <code>right</code> </li>
-<li><code>position </code>是<code>absolute</code>或者<code>fixed</code> </li>
-<li><code>overflow </code>不是<code>visible</code>，为 <code>auto</code>、<code>scroll</code>、<code>hidden</code> -<code>display</code>是<code>flex</code>或者<code>inline-block</code> 等 </li>
+<li><strong>BFC形成的条件</strong><ul>
+<li><code>float </code>设置成 <code>left </code>或 <code>right</code></li>
+<li><code>position </code>是<code>absolute</code>或者<code>fixed</code></li>
+<li><code>overflow </code>不是<code>visible</code>，为 <code>auto</code>、<code>scroll</code>、<code>hidden</code> -<code>display</code>是<code>flex</code>或者<code>inline-block</code> 等</li>
 </ul>
 </li>
-<li>BFC解决能的问题：清除浮动 </li>
+<li>BFC解决能的问题：清除浮动</li>
 </ul>
 </li>
-<li><strong>加分回答：</strong> BFC的方式都能清除浮动，但是常使用的清除浮动的BFC方式只有<code>overflow:hidden</code>,原因是使用float或者position方式清除浮动，虽然父级盒子内部浮动被清除了，但是父级本身又脱离文档流了，会对父级后面的兄弟盒子的布局造成影响。如果设置父级为<code>display:flex</code>，内部的浮动就会失效。所以通常只是用<code>overflow: hidden</code>清除浮动。 <ul>
-<li>IFC（Inline formatting contexts）：内联格式上下文。IFC的高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)，IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。 </li>
-<li>GFC（GrideLayout formatting contexts）：网格布局格式化上下文。当为一个元素设置display值为grid的时候，此元素将会获得一个独立的渲染区域。 </li>
+<li><strong>加分回答：</strong> BFC的方式都能清除浮动，但是常使用的清除浮动的BFC方式只有<code>overflow:hidden</code>,原因是使用float或者position方式清除浮动，虽然父级盒子内部浮动被清除了，但是父级本身又脱离文档流了，会对父级后面的兄弟盒子的布局造成影响。如果设置父级为<code>display:flex</code>，内部的浮动就会失效。所以通常只是用<code>overflow: hidden</code>清除浮动。<ul>
+<li>IFC（Inline formatting contexts）：内联格式上下文。IFC的高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)，IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。</li>
+<li>GFC（GrideLayout formatting contexts）：网格布局格式化上下文。当为一个元素设置display值为grid的时候，此元素将会获得一个独立的渲染区域。</li>
 <li>FFC（Flex formatting contexts）：自适应格式上下文。display值为flex或者inline-flex的元素将会生成自适应容器。</li>
 </ul>
 </li>
@@ -1345,7 +1356,7 @@ Content-Type: text/html; charset=iso-8859-1
 <li>如果<code>display</code>取值为<code>none</code>，那么<code>position</code>和<code>float</code>都不起作用，这种情况下元素不产生框</li>
 <li>否则，如果<code>position</code>取值为<code>absolute</code>或者<code>fixed</code>，框就是绝对定位的，<code>float</code>的计算值为<code>none</code>，<code>display</code>根据下面的表格进行调整。</li>
 </ul>
-<p><img src="https://s.poetries.work/images/202202231030963.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/202202231030963.png" alt="img"></p>
 <ul>
 <li>否则，如果<code>float</code>不是<code>none</code>，框是浮动的，<code>display</code>根据下表进行调整</li>
 <li>否则，如果元素是根元素，<code>display</code>根据下表进行调整</li>
@@ -1363,27 +1374,27 @@ Content-Type: text/html; charset=iso-8859-1
 </ul>
 <h3 id="❤谈谈浮动和清除浮动"><a href="#❤谈谈浮动和清除浮动" class="headerlink" title="❤谈谈浮动和清除浮动"></a>❤谈谈浮动和清除浮动</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><p><strong>得分点：</strong> 脱离文档流、盒子塌陷、 影响其他元素排版、伪元素 、<code>overflow:hidden</code> 、标签插入法 </p>
+<li><p><strong>得分点：</strong> 脱离文档流、盒子塌陷、 影响其他元素排版、伪元素 、<code>overflow:hidden</code> 、标签插入法</p>
 </li>
-<li><p><strong>标准回答：</strong> 浮动的作用，设置浮动的图片，可以实现文字环绕图片，设置了浮动的块级元素可以排列在同一行，设置了浮动的行内元素可以设置宽高，同时可以按照浮动设置的方向对齐排列盒子。 </p>
+<li><p><strong>标准回答：</strong> 浮动的作用，设置浮动的图片，可以实现文字环绕图片，设置了浮动的块级元素可以排列在同一行，设置了浮动的行内元素可以设置宽高，同时可以按照浮动设置的方向对齐排列盒子。</p>
 <ul>
-<li><p>设置浮动元素的特点： </p>
+<li><p>设置浮动元素的特点：</p>
 <ul>
-<li>设置了浮动，该元素脱标。元素不占位置 </li>
-<li>浮动可以进行模式转换（行内块元素） 浮动造成的影响，使盒子脱离文档流，如果父级盒子没有设置高度，需要被子盒子撑开，那么这时候父级盒子的高度就塌陷了，同时也会造成父级盒子后面的兄弟盒子布局受到影响。如果浮动元素后面还有其他兄弟元素，其他兄弟元素的布局也会受到影响。 </li>
+<li>设置了浮动，该元素脱标。元素不占位置</li>
+<li>浮动可以进行模式转换（行内块元素） 浮动造成的影响，使盒子脱离文档流，如果父级盒子没有设置高度，需要被子盒子撑开，那么这时候父级盒子的高度就塌陷了，同时也会造成父级盒子后面的兄弟盒子布局受到影响。如果浮动元素后面还有其他兄弟元素，其他兄弟元素的布局也会受到影响。</li>
 </ul>
 </li>
-<li><p>清除浮动的方法： </p>
+<li><p>清除浮动的方法：</p>
 <ul>
 <li>伪元素清除浮动：给浮动元素父级增加 <code>.clearfix::after { content: ''; display: table; clear: both; } /*兼容IE低版本 */ .clearfix { *zoom: 1; } overflow：hidden：</code>给浮动元素父级增加<code>overflow：hidden</code>属性 额外标签法：给浮动元素父级增加标签</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>加分回答：</strong> 三种清除浮动的特点和影响 </p>
+<li><p><strong>加分回答：</strong> 三种清除浮动的特点和影响</p>
 <ul>
-<li>伪元素清除浮动：不会新增标签，不会有其他影响，是当下清除浮动最流行的方法 </li>
-<li><code>overflow：hidden</code>：不会新增标签，但是如果父级元素有定位元素超出父级，超出部分会隐藏，在不涉及父级元素有超出内容的情况，overflow：hidden比较常用，毕竟写法方便简洁 </li>
+<li>伪元素清除浮动：不会新增标签，不会有其他影响，是当下清除浮动最流行的方法</li>
+<li><code>overflow：hidden</code>：不会新增标签，但是如果父级元素有定位元素超出父级，超出部分会隐藏，在不涉及父级元素有超出内容的情况，overflow：hidden比较常用，毕竟写法方便简洁</li>
 <li>标签插入法：清除浮动的语法加在新增标签上，由于新增标签会造成不必要的渲染，所以这种方法目前不建议使用</li>
 </ul>
 </li>
@@ -1450,20 +1461,20 @@ Content-Type: text/html; charset=iso-8859-1
 </ul>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点：</strong> <code>!important</code>、行内样式、嵌入样式、外链样式、id选择器、类选择器、标签选择器、复合选择器、通配符、继承样式 </li>
-<li><strong>标准回答：</strong> CSS样式的优先级应该分成四大类 <ul>
-<li>第一类<code>!important</code>，无论引入方式是什么，选择器是什么，它的优先级都是最高的。 </li>
-<li>第二类引入方式，行内样式的优先级要高于嵌入和外链，嵌入和外链如果使用的选择器相同就看他们在页面中插入的顺序，在后面插入的会覆盖前面的。 </li>
-<li>第三类选择器，选择器优先级：id选择器&gt;（类选择器 | 伪类选择器 | 属性选择器 ）&gt; （后代选择器 | 伪元素选择器 ）&gt; （子选择器 | 相邻选择器） &gt; 通配符选择器 。 </li>
-<li>第四类继承样式，是所有样式中优先级比较低的。 </li>
-<li>第五类浏览器默认样式优先级最低。 </li>
+<li><strong>得分点：</strong> <code>!important</code>、行内样式、嵌入样式、外链样式、id选择器、类选择器、标签选择器、复合选择器、通配符、继承样式</li>
+<li><strong>标准回答：</strong> CSS样式的优先级应该分成四大类<ul>
+<li>第一类<code>!important</code>，无论引入方式是什么，选择器是什么，它的优先级都是最高的。</li>
+<li>第二类引入方式，行内样式的优先级要高于嵌入和外链，嵌入和外链如果使用的选择器相同就看他们在页面中插入的顺序，在后面插入的会覆盖前面的。</li>
+<li>第三类选择器，选择器优先级：id选择器&gt;（类选择器 | 伪类选择器 | 属性选择器 ）&gt; （后代选择器 | 伪元素选择器 ）&gt; （子选择器 | 相邻选择器） &gt; 通配符选择器 。</li>
+<li>第四类继承样式，是所有样式中优先级比较低的。</li>
+<li>第五类浏览器默认样式优先级最低。</li>
 </ul>
 </li>
-<li><strong>加分回答：</strong> 使用!important要谨慎 <ul>
-<li> 一定要优先考虑使用样式规则的优先级来解决问题而不是 <code>!important</code> </li>
-<li>只有在需要覆盖全站或外部 CSS 的特定页面中使用 <code>!important</code> </li>
-<li>永远不要在你的插件中使用 <code>!important</code> </li>
-<li>永远不要在全站范围的 CSS 代码中使用 <code>!important</code> 优先级的比较指的是相同的样式属性，不同样式属性优先级比较失效，比如：在设置<code>max-width</code>时注意，已经给元素的<code>max-width</code>设置了<code>!important</code>但是还不生效，很有可能就是被width覆盖了 </li>
+<li><strong>加分回答：</strong> 使用!important要谨慎<ul>
+<li> 一定要优先考虑使用样式规则的优先级来解决问题而不是 <code>!important</code></li>
+<li>只有在需要覆盖全站或外部 CSS 的特定页面中使用 <code>!important</code></li>
+<li>永远不要在你的插件中使用 <code>!important</code></li>
+<li>永远不要在全站范围的 CSS 代码中使用 <code>!important</code> 优先级的比较指的是相同的样式属性，不同样式属性优先级比较失效，比如：在设置<code>max-width</code>时注意，已经给元素的<code>max-width</code>设置了<code>!important</code>但是还不生效，很有可能就是被width覆盖了</li>
 <li>举例：<code>div</code>最终的宽度还是<code>200px</code> div { max-width: 400px !important; height: 200px;background-color: tomato; width: 200px; }</li>
 </ul>
 </li>
@@ -1574,18 +1585,18 @@ Content-Type: text/html; charset=iso-8859-1
 <li>缺点是需要消耗<code>CPU</code>进行编解码</li>
 </ul>
 <h3 id="❤三栏布局的实现方案"><a href="#❤三栏布局的实现方案" class="headerlink" title="❤三栏布局的实现方案"></a>❤三栏布局的实现方案</h3><ul>
-<li><strong>得分点</strong> 圣杯布局、双飞翼布局、三栏高度不定、中间栏内容多先渲染 </li>
-<li><strong>标准回答</strong> 三栏布局，要求左右两边盒子宽度固定，中间盒子宽度自适应，盒子的高度都是随内容撑高的，一般都是中间盒子内容较多，为了保证页面渲染快，在写结构的时候，需要把中间盒子放在左右盒子的前面。 实现三栏布局的方法通常是圣杯布局和双飞翼布局。 </li>
-<li><strong>圣杯布局</strong>的实现方案：三个元素放在同一个父级元素中，代表中间盒子的元素放在最前面，父级盒子设置左右<code>padding</code>，三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度，设置左边盒子左边距-100%同时相对自身定位，右边平移自身宽度，右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开 </li>
-<li><strong>双飞翼布局</strong>的实现方案：三个盒子对应三个元素，其中中间盒子套了两层，中间盒子内部盒子设置<code>margin</code>,三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度,设置左边盒子左边距-100%,右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开 </li>
-<li><strong>加分回答</strong> <ul>
-<li><strong>圣杯布局:</strong> <ul>
-<li><strong>优点：</strong>不需要添加dom节点 </li>
-<li><strong>缺点：</strong>正常情况下是没有问题的，但是特殊情况下就会暴露此方案的弊端，当middle部分的宽小于left部分时就会发生布局混乱。 </li>
+<li><strong>得分点</strong> 圣杯布局、双飞翼布局、三栏高度不定、中间栏内容多先渲染</li>
+<li><strong>标准回答</strong> 三栏布局，要求左右两边盒子宽度固定，中间盒子宽度自适应，盒子的高度都是随内容撑高的，一般都是中间盒子内容较多，为了保证页面渲染快，在写结构的时候，需要把中间盒子放在左右盒子的前面。 实现三栏布局的方法通常是圣杯布局和双飞翼布局。</li>
+<li><strong>圣杯布局</strong>的实现方案：三个元素放在同一个父级元素中，代表中间盒子的元素放在最前面，父级盒子设置左右<code>padding</code>，三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度，设置左边盒子左边距-100%同时相对自身定位，右边平移自身宽度，右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开</li>
+<li><strong>双飞翼布局</strong>的实现方案：三个盒子对应三个元素，其中中间盒子套了两层，中间盒子内部盒子设置<code>margin</code>,三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度,设置左边盒子左边距-100%,右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开</li>
+<li><strong>加分回答</strong><ul>
+<li><strong>圣杯布局:</strong><ul>
+<li><strong>优点：</strong>不需要添加dom节点</li>
+<li><strong>缺点：</strong>正常情况下是没有问题的，但是特殊情况下就会暴露此方案的弊端，当middle部分的宽小于left部分时就会发生布局混乱。</li>
 </ul>
 </li>
-<li><strong>双飞翼布局：</strong> <ul>
-<li><strong>优点：</strong>不会像圣杯布局那样变形，CSS样式代码更简洁 </li>
+<li><strong>双飞翼布局：</strong><ul>
+<li><strong>优点：</strong>不会像圣杯布局那样变形，CSS样式代码更简洁</li>
 <li><strong>缺点：</strong>多加了一层dom节点</li>
 </ul>
 </li>
@@ -1748,7 +1759,7 @@ Content-Type: text/html; charset=iso-8859-1
 <span class="token punctuation">}</span>
 <span class="token atrule"><span class="token rule">@-webkit-keyframes</span> <span class="token string">"loops"</span></span> <span class="token punctuation">{</span>
     <span class="token selector">0%</span> <span class="token punctuation">{</span>
-        <span class="token property">background</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://d.hiphotos.baidu.com/image/w%3D400/sign=c01e6adca964034f0fcdc3069fc27980/e824b899a9014c08e5e38ca4087b02087af4f4d3.jpg<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>             
+        <span class="token property">background</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://d.hiphotos.baidu.com/image/w%3D400/sign=c01e6adca964034f0fcdc3069fc27980/e824b899a9014c08e5e38ca4087b02087af4f4d3.jpg<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token selector">25%</span> <span class="token punctuation">{</span>
         <span class="token property">background</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://b.hiphotos.baidu.com/image/w%3D400/sign=edee1572e9f81a4c2632edc9e72b6029/30adcbef76094b364d72bceba1cc7cd98c109dd0.jpg<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>
@@ -1833,18 +1844,18 @@ Content-Type: text/html; charset=iso-8859-1
 </blockquote>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> px、rem、em、vw、vh </li>
-<li><strong>标准回答</strong> <ul>
-<li><strong>px：</strong>pixel像素的缩写，绝对长度单位，它的大小取决于屏幕的分辨率，是开发网页中常常使用的单位。 </li>
-<li><strong>em：</strong>相对长度单位，在 <code>font-size</code> 中使用是相对于父元素的字体大小，在其他属性中使用是相对于自身的字体大小，如 width。如当前元素的字体尺寸未设置，由于字体大小可继承的原因，可逐级向上查找，最终找不到则相对于浏览器默认字体大小。 </li>
-<li><strong>rem：</strong>相对长度单位，相对于根元素的字体大小，根元素字体大小未设置，使用浏览器默认字体大小。 </li>
-<li><strong>vw：</strong>相对长度单位，相对于视窗宽度的1%。 </li>
-<li><strong>vh：</strong>相对长度单位，相对于视窗高度的1%。 </li>
+<li><strong>得分点</strong> px、rem、em、vw、vh</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>px：</strong>pixel像素的缩写，绝对长度单位，它的大小取决于屏幕的分辨率，是开发网页中常常使用的单位。</li>
+<li><strong>em：</strong>相对长度单位，在 <code>font-size</code> 中使用是相对于父元素的字体大小，在其他属性中使用是相对于自身的字体大小，如 width。如当前元素的字体尺寸未设置，由于字体大小可继承的原因，可逐级向上查找，最终找不到则相对于浏览器默认字体大小。</li>
+<li><strong>rem：</strong>相对长度单位，相对于根元素的字体大小，根元素字体大小未设置，使用浏览器默认字体大小。</li>
+<li><strong>vw：</strong>相对长度单位，相对于视窗宽度的1%。</li>
+<li><strong>vh：</strong>相对长度单位，相对于视窗高度的1%。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li><strong>rem应用：</strong>在移动端网页开发中，页面要做成响应式的，可使用rem配合媒体查询或者flexible.js实现。</li>
-<li>原理是通过媒体查询或者flexible.js，能够在屏幕尺寸发生改变时，重置html根元素的字体大小，页面中的元素都是使用rem为单位设置的尺寸，因此只要改变根元素字体大小，页面中的其他元素的尺寸就自动跟着修改 </li>
+<li>原理是通过媒体查询或者flexible.js，能够在屏幕尺寸发生改变时，重置html根元素的字体大小，页面中的元素都是使用rem为单位设置的尺寸，因此只要改变根元素字体大小，页面中的其他元素的尺寸就自动跟着修改</li>
 <li><strong>vw应用：</strong>由于vw被更多浏览器兼容之后，在做移动端响应式页面时，通常使用vw配合rem。</li>
 <li>原理是使用vw设置根元素html字体的大小，当窗口大小发生改变，vw代表的尺寸随着修改，无需加入媒体查询和flexible.js，页面中的其他元素仍使用rem为单位，就可实现响应式。</li>
 </ul>
@@ -1870,7 +1881,7 @@ Content-Type: text/html; charset=iso-8859-1
     <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
     <span class="token property">height</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
     <span class="token property">visibility</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span> 
+    <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span>
  <span class="token punctuation">}</span>
 <span class="token selector">.clearfix</span> <span class="token punctuation">{</span>
     *<span class="token property">zoom</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>
@@ -1893,7 +1904,7 @@ Content-Type: text/html; charset=iso-8859-1
 </ul>
 </li>
 </ul>
-<p><img src="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863237781/BC704AA0F4330EE2306751C366A460B5" alt="img"></p>
+<p><img data-src="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863237781/BC704AA0F4330EE2306751C366A460B5" alt="img"></p>
 <h3 id="水平居中的方法"><a href="#水平居中的方法" class="headerlink" title="水平居中的方法"></a>水平居中的方法</h3><ul>
 <li>元素为行内元素，设置父元素<code>text-align:center</code></li>
 <li>如果元素宽度固定，可以设置左右<code>margin</code>为<code>auto</code>;</li>
@@ -2003,26 +2014,26 @@ Content-Type: text/html; charset=iso-8859-1
 <li>批量修改元素样式：<code>elem.className</code> 和 <code>elem.style.cssText</code> 代替 <code>elem.style.xxx</code></li>
 </ul>
 <ul>
-<li><strong>得分点</strong> 改变元素尺寸、重新计算布局树、重排必定重绘、重绘避开了重建布局树和分层、GPU加速、脱离文档流、样式集中改变 </li>
-<li><strong>标准回答</strong> <ul>
-<li>重排 ：当DOM的变化影响了元素的几何信息(元素的的位置和尺寸大小)，浏览器需要重新计算元素的几何属性，将其安放在界面中的正确位置，这个过程叫做重排。 </li>
-<li>重绘：当一个元素的外观发生改变，但没有改变布局，重新把元素外观绘制出来的过程，所以重绘跳过了创建布局树和分层的阶段。 重排需要重新计算布局树，重绘不需要，重排必定发生重绘，但是涉及到重绘不一定要重排。涉及到重排对性能的消耗更多一些。 </li>
-<li>触发重排的方法： <ul>
-<li>页面初始渲染，这是开销最大的一次重排 </li>
-<li>添加/删除可见的DOM元素 </li>
-<li>改变元素位置 -改变元素尺寸，比如边距、填充、边框、宽度和高度等 </li>
-<li>改变元素内容，比如文字数量，图片大小等 -改变元素字体大小 -改变浏览器窗口尺寸，比如resize事件发生时 </li>
-<li>激活CSS伪类（例如：<code>:hover</code>） </li>
-<li>设置 style 属性的值，因为通过设置style属性改变结点样式的话，每一次设置都会触发一次reflow </li>
-<li>查询某些属性或调用某些计算方法：offsetWidth、offsetHeight等 避免重排的方式 </li>
-<li>样式集中改变 </li>
-<li>使用 absolute 或 fixed 脱离文档流 </li>
-<li>使用GPU加速:transform </li>
+<li><strong>得分点</strong> 改变元素尺寸、重新计算布局树、重排必定重绘、重绘避开了重建布局树和分层、GPU加速、脱离文档流、样式集中改变</li>
+<li><strong>标准回答</strong><ul>
+<li>重排 ：当DOM的变化影响了元素的几何信息(元素的的位置和尺寸大小)，浏览器需要重新计算元素的几何属性，将其安放在界面中的正确位置，这个过程叫做重排。</li>
+<li>重绘：当一个元素的外观发生改变，但没有改变布局，重新把元素外观绘制出来的过程，所以重绘跳过了创建布局树和分层的阶段。 重排需要重新计算布局树，重绘不需要，重排必定发生重绘，但是涉及到重绘不一定要重排。涉及到重排对性能的消耗更多一些。</li>
+<li>触发重排的方法：<ul>
+<li>页面初始渲染，这是开销最大的一次重排</li>
+<li>添加/删除可见的DOM元素</li>
+<li>改变元素位置 -改变元素尺寸，比如边距、填充、边框、宽度和高度等</li>
+<li>改变元素内容，比如文字数量，图片大小等 -改变元素字体大小 -改变浏览器窗口尺寸，比如resize事件发生时</li>
+<li>激活CSS伪类（例如：<code>:hover</code>）</li>
+<li>设置 style 属性的值，因为通过设置style属性改变结点样式的话，每一次设置都会触发一次reflow</li>
+<li>查询某些属性或调用某些计算方法：offsetWidth、offsetHeight等 避免重排的方式</li>
+<li>样式集中改变</li>
+<li>使用 absolute 或 fixed 脱离文档流</li>
+<li>使用GPU加速:transform</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>GPU的过程是以下这几步 : 1. 获取DOM并将其分割成多个层(renderLayer) 2. 将每个层栅格化，并独立的绘制进位图中 3. 将这些位图作为纹理上传至GPU 4. 复合多个层来生成最终的屏幕图像(最后的layer) 开启了GPU加速的元素被独立出来，不会再影响其他dom的布局，因为它改变之后，只是相当于被贴上了页面。</li>
 </ul>
 </li>
@@ -2082,7 +2093,7 @@ Content-Type: text/html; charset=iso-8859-1
     <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
     <span class="token property">left</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
-    <span class="token property">top</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>          
+    <span class="token property">top</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
     <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -2544,45 +2555,45 @@ Content-Type: text/html; charset=iso-8859-1
 </ul>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 全局执行上下文、函数执行上下文、this严格模式下undefined、非严格模式window、构造函数新对象本身、普通函数不继承this、箭头函数无this，可继承 </li>
-<li><strong>标准回答</strong> <ul>
-<li><strong>this关键字</strong>由来：在对象内部的方法中使用对象内部的属性是一个非常普遍的需求。但是 JavaScript 的作用域机制并不支持这一点，基于这个需求，JavaScript 又搞出来另外一套 this 机制。 </li>
+<li><strong>得分点</strong> 全局执行上下文、函数执行上下文、this严格模式下undefined、非严格模式window、构造函数新对象本身、普通函数不继承this、箭头函数无this，可继承</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>this关键字</strong>由来：在对象内部的方法中使用对象内部的属性是一个非常普遍的需求。但是 JavaScript 的作用域机制并不支持这一点，基于这个需求，JavaScript 又搞出来另外一套 this 机制。</li>
 <li><strong>this存在的场景</strong>有三种 <strong>全局执行上下文</strong> 和 <strong>函数执行上下文</strong> 和 <strong>eval执行上下文</strong>，eval这种不讨论。<ul>
 <li>在全局执行环境中无论是否在严格模式下，（在任何函数体外部）<code>this</code> 都指向全局对象。</li>
-<li>在函数执行上下文中访问this，函数的调用方式决定了 <code>this</code> 的值。在全局环境中调用一个函数，函数内部的 this 指向的是全局变量 window，通过一个对象来调用其内部的一个方法，该方法的执行上下文中的 this 指向对象本身。 </li>
+<li>在函数执行上下文中访问this，函数的调用方式决定了 <code>this</code> 的值。在全局环境中调用一个函数，函数内部的 this 指向的是全局变量 window，通过一个对象来调用其内部的一个方法，该方法的执行上下文中的 this 指向对象本身。</li>
 <li>普通函数this指向：当函数被正常调用时，在严格模式下，this 值是 undefined，非严格模式下 this 指向的是全局对象 window；通过一个对象来调用其内部的一个方法，该方法的执行上下文中的 this 指向对象本身。</li>
 <li>new 关键字构建好了一个新对象，并且构造函数中的 this 其实就是新对象本身。嵌套函数中的 this 不会继承外层函数的 this 值。</li>
-<li> 箭头函数this指向：箭头函数并不会创建其自身的执行上下文，所以箭头函数中的 this 取决于它的外部函数。 </li>
+<li> 箭头函数this指向：箭头函数并不会创建其自身的执行上下文，所以箭头函数中的 this 取决于它的外部函数。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>箭头函数因为没有this，所以也不能作为构造函数，但是需要继承函数外部this的时候，使用箭头函数比较方便 </li>
+<li><strong>加分回答</strong><ul>
+<li>箭头函数因为没有this，所以也不能作为构造函数，但是需要继承函数外部this的时候，使用箭头函数比较方便</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span> 
-    name <span class="token operator">:</span> <span class="token string">"闷倒驴"</span><span class="token punctuation">,</span> 
-    <span class="token function-variable function">showThis</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> 
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-        <span class="token comment">// myObj </span>
-        <span class="token keyword">var</span> <span class="token function-variable function">bar</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span> 
-            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"王美丽"</span><span class="token punctuation">;</span> 
-            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span> 
-            <span class="token comment">// myObj </span>
-    	<span class="token punctuation">}</span> 
-    	<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-	<span class="token punctuation">}</span> 
-<span class="token punctuation">}</span><span class="token punctuation">;</span> 
-myObj<span class="token punctuation">.</span><span class="token function">showThis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myObj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "王美丽" </span>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> myObj <span class="token operator">=</span> <span class="token punctuation">{</span>
+    name <span class="token operator">:</span> <span class="token string">"闷倒驴"</span><span class="token punctuation">,</span>
+    <span class="token function-variable function">showThis</span><span class="token operator">:</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// myObj</span>
+        <span class="token keyword">var</span> <span class="token function-variable function">bar</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">=&gt;</span><span class="token punctuation">{</span>
+            <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">"王美丽"</span><span class="token punctuation">;</span>
+            console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">)</span>
+            <span class="token comment">// myObj</span>
+    	<span class="token punctuation">}</span>
+    	<span class="token function">bar</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+myObj<span class="token punctuation">.</span><span class="token function">showThis</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>myObj<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// "王美丽"</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>window<span class="token punctuation">.</span>name<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// ''</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
 
 <h3 id="❤This"><a href="#❤This" class="headerlink" title="❤This"></a>❤This</h3><p><code>new</code> 的方式优先级最高，接下来是 <code>bind</code> 这些函数，然后是 <code>obj.foo()</code> 这种调用方式，最后是 <code>foo</code> 这种调用方式，同时，箭头函数的 <code>this</code> 一旦被绑定，就不会再被任何方式所改变。</p>
-<p><img src="https://s.poetries.work/gitee/2020/07/2.png" alt="image.png"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/07/2.png" alt="image.png"></p>
 <p>由于 JS 的设计原理: 在函数中，可以引用运行环境中的变量。因此就需要一个机制来让我们可以在函数体内部获取当前的运行环境，这便是<code>this</code></p>
 <p>但这种机制并不完全能满足我们的业务需求，因此提供了三种方式可以手动修改 <code>this</code> 的指向:</p>
 <ul>
@@ -2592,23 +2603,23 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <h3 id="❤call-apply-bind的作用和区别？"><a href="#❤call-apply-bind的作用和区别？" class="headerlink" title="❤call apply bind的作用和区别？"></a>❤call apply bind的作用和区别？</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> bind改变this指向不直接调用、call和apply改变this指向直接调用、apply接收第二个参数为数组 、call用于对象的继承 、伪数组转换成真数组、apply用于找出数组中的最大值和最小值以及数组合并、bind用于vue或者react框架中改变函数的this指向 </li>
-<li><strong>标准回答</strong> <ul>
-<li>call、apply、bind的作用都是改变函数运行时的this指向。 bind和call、apply在使用上有所不同，bind在改变this指向的时候，返回一个改变执行上下文的函数，不会立即执行函数，而是需要调用该函数的时候再调用即可，但是call和apply在改变this指向的同时执行了该函数。 </li>
-<li>bind只接收一个参数，就是this指向的执行上文。 call、apply接收多个参数，第一个参数都是this指向的执行上文，后面的参数都是作为改变this指向的函数的参数。但是call和apply参数的格式不同，call是一个参数对应一个原函数的参数，但是apply第二个参数是数组，数组中每个元素代表函数接收的参数，数组有几个元素函数就接收几个元素。 </li>
+<li><strong>得分点</strong> bind改变this指向不直接调用、call和apply改变this指向直接调用、apply接收第二个参数为数组 、call用于对象的继承 、伪数组转换成真数组、apply用于找出数组中的最大值和最小值以及数组合并、bind用于vue或者react框架中改变函数的this指向</li>
+<li><strong>标准回答</strong><ul>
+<li>call、apply、bind的作用都是改变函数运行时的this指向。 bind和call、apply在使用上有所不同，bind在改变this指向的时候，返回一个改变执行上下文的函数，不会立即执行函数，而是需要调用该函数的时候再调用即可，但是call和apply在改变this指向的同时执行了该函数。</li>
+<li>bind只接收一个参数，就是this指向的执行上文。 call、apply接收多个参数，第一个参数都是this指向的执行上文，后面的参数都是作为改变this指向的函数的参数。但是call和apply参数的格式不同，call是一个参数对应一个原函数的参数，但是apply第二个参数是数组，数组中每个元素代表函数接收的参数，数组有几个元素函数就接收几个元素。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li><strong>call的应用场景：</strong> 对象的继承，在子构造函数这种调用父构造函数，但是改变this指向，就可以继承父的属性 </li>
+<li><strong>加分回答</strong><ul>
+<li><strong>call的应用场景：</strong> 对象的继承，在子构造函数这种调用父构造函数，但是改变this指向，就可以继承父的属性</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arrayLike <span class="token operator">=</span> <span class="token punctuation">{</span> 
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">var</span> arrayLike <span class="token operator">=</span> <span class="token punctuation">{</span>
   <span class="token number">0</span><span class="token operator">:</span> <span class="token string">'java'</span><span class="token punctuation">,</span>
   <span class="token number">1</span><span class="token operator">:</span> <span class="token string">'script'</span><span class="token punctuation">,</span>
   length<span class="token operator">:</span> <span class="token number">2</span>
-<span class="token punctuation">}</span> 
-<span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token string">'jack'</span><span class="token punctuation">,</span> <span class="token string">'lily'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token punctuation">}</span>
+<span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">,</span> <span class="token string">'jack'</span><span class="token punctuation">,</span> <span class="token string">'lily'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">typeof</span> arrayLike<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 'object'</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arrayLike<span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// {0: "java", 1: "script", 2: "jack", 3: "lily", length: 4}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -2616,21 +2627,21 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li><strong>apply的应用场景：</strong></li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取数组中最大、最小的一项 </span>
-<span class="token keyword">let</span> max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token keyword">let</span> min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 获取数组中最大、最小的一项</span>
+<span class="token keyword">let</span> max <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">max</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> min <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">min</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span><span class="token keyword">null</span><span class="token punctuation">,</span> array<span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token comment">// 实现两个数组合并</span>
-<span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
-<span class="token keyword">let</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
-<span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-<span class="token comment">// [1, 2, 3, 4, 5, 6] </span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token keyword">let</span> arr1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token class-name">Array</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">.</span><span class="token function">apply</span><span class="token punctuation">(</span>arr1<span class="token punctuation">,</span> arr2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>arr1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// [1, 2, 3, 4, 5, 6]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
 <li><strong>bind的应用场景</strong> 在vue或者react框架中，使用bind将定义的方法中的this指向当前类</li>
 </ul>
-<p><img src="https://s.poetries.work/images/20210414155100.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/20210414155100.png" alt="img"></p>
 <blockquote>
 <p><code>call、apply</code> 和 <code>bind</code> 是挂在 <code>Function</code> 对象上的三个方法，调用这三个方法的必须是一个函数。</p>
 </blockquote>
@@ -2662,7 +2673,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>这是因为函数和变量提升的原因。通常提升的解释是说将声明的代码移动到了顶部，这其实没有什么错误，便于大家理解。但是更准确的解释应该是：在生成执行环境时，会有两个阶段。第一个阶段是创建的阶段，JS 解释器会找出需要提升的变量和函数，并且给他们提前在内存中开辟好空间，函数的话会将整个函数存入内存中，变量只声明并且赋值为 <code>undefined</code>，所以在第二个阶段，也就是代码执行阶段，我们可以直接提前使用</p>
 </blockquote>
 <ul>
-<li>在提升的过程中，相同的函数会覆盖上一个函数，并且函数优先于变量提升 </li>
+<li>在提升的过程中，相同的函数会覆盖上一个函数，并且函数优先于变量提升</li>
 </ul>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">b</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// call b second</span>
 
@@ -2679,14 +2690,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </blockquote>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> Var声明的变量声明提升、函数声明提升、let和const变量不提升 </li>
-<li><strong>标准回答</strong> <ul>
-<li><strong>变量提升</strong>是指JS的变量和函数声明会在代码编译期，提升到代码的最前面。 </li>
-<li>变量提升成立的前提是使用<strong>Var关键字</strong>进行声明的变量，并且变量提升的时候只有声明被提升，赋值并不会被提升，同时函数的声明提升会比变量的提升优先。 </li>
-<li>变量提升的结果，可以在变量初始化之前访问该变量，返回的是<strong>undefined</strong>。在函数声明前可以调用该函数。 </li>
+<li><strong>得分点</strong> Var声明的变量声明提升、函数声明提升、let和const变量不提升</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>变量提升</strong>是指JS的变量和函数声明会在代码编译期，提升到代码的最前面。</li>
+<li>变量提升成立的前提是使用<strong>Var关键字</strong>进行声明的变量，并且变量提升的时候只有声明被提升，赋值并不会被提升，同时函数的声明提升会比变量的提升优先。</li>
+<li>变量提升的结果，可以在变量初始化之前访问该变量，返回的是<strong>undefined</strong>。在函数声明前可以调用该函数。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>使用let和const声明的变量是创建提升，形成暂时性死区，在初始化之前访问let和const创建的变量会报错。</li>
 </ul>
 </li>
@@ -2757,10 +2768,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <ul>
 <li><strong>得分点：</strong>变量背包、作用域链、局部变量不销毁、函数体外访问函数的内部变量、内存泄漏、内存溢出、形成块级作用域、柯里化、构造函数中定义特权方法、Vue中数据响应式Observer</li>
 <li><strong>标准回答：</strong>闭包 一个函数和词法环境的引用捆绑在一起，这样的组合就是闭包（closure）。<ul>
-<li>一般就是一个函数A，return其内部的函数B，被return出去的B函数能够在外部访问A函数内部的变量，这时候就形成了一个B函数的变量背包，A函数执行结束后这个变量背包也不会被销毁，并且这个变量背包在A函数外部只能通过B函数访问。 </li>
-<li><strong>形成的原理</strong>：作用域链，当前作用域可以访问上级作用域中的变量 </li>
+<li>一般就是一个函数A，return其内部的函数B，被return出去的B函数能够在外部访问A函数内部的变量，这时候就形成了一个B函数的变量背包，A函数执行结束后这个变量背包也不会被销毁，并且这个变量背包在A函数外部只能通过B函数访问。</li>
+<li><strong>形成的原理</strong>：作用域链，当前作用域可以访问上级作用域中的变量</li>
 <li><strong>解决的问题</strong>：能够让函数作用域中的变量在函数执行结束之后不被销毁，同时也能在函数外部可以访问函数内部的局部变量。</li>
-<li><strong>带来的问题</strong>：由于垃圾回收器不会将闭包中变量销毁，于是就造成了内存泄露，内存泄露积累多了就容易导致内存溢出。 </li>
+<li><strong>带来的问题</strong>：由于垃圾回收器不会将闭包中变量销毁，于是就造成了内存泄露，内存泄露积累多了就容易导致内存溢出。</li>
 </ul>
 </li>
 <li><strong>加分回答：</strong><ul>
@@ -2769,9 +2780,9 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </li>
 </ul>
 <h3 id="❤New的原理"><a href="#❤New的原理" class="headerlink" title="❤New的原理"></a>❤New的原理</h3><ul>
-<li><p><strong>得分点</strong> 创建空对象、为对象添加属性、把新对象当作this的上下文、箭头函数不能作为构造函数 </p>
+<li><p><strong>得分点</strong> 创建空对象、为对象添加属性、把新对象当作this的上下文、箭头函数不能作为构造函数</p>
 </li>
-<li><p><strong>标准回答</strong> </p>
+<li><p><strong>标准回答</strong></p>
 </li>
 <li><p><code>new</code> 操作符可以帮助我们构建出一个实例，并且绑定上 this，内部执行步骤可大概分为以下几步：</p>
 <ol>
@@ -2795,10 +2806,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>从上面的代码中可以看到，我们没有使用 <code>new</code> 这个关键词，返回的结果就是 <code>undefined</code>。其中由于 <code>JavaScript</code> 代码在默认情况下 <code>this</code> 的指向是 <code>window</code>，那么 <code>name</code> 的输出结果就为 <code>Jack</code>，这是一种不存在 <code>new</code> 关键词的情况。</p>
 <p>那么当构造函数中有 <code>return</code> 一个对象的操作，结果又会是什么样子呢？我们再来看一段在上面的基础上改造过的代码。</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-   <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Jack'</span><span class="token punctuation">;</span> 
+   <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Jack'</span><span class="token punctuation">;</span>
    <span class="token keyword">return</span> <span class="token punctuation">{</span>age<span class="token operator">:</span> <span class="token number">18</span><span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>  <span class="token comment">// {age: 18}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// undefined</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>age<span class="token punctuation">)</span> <span class="token comment">// 18</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
@@ -2808,10 +2819,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </blockquote>
 <p>但是这里要求构造函数必须是返回一个对象，<code>如果返回的不是对象，那么还是会按照 new 的实现步骤，返回新生成的对象</code>。接下来还是在上面这段代码的基础之上稍微改动一下</p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-   <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Jack'</span><span class="token punctuation">;</span> 
+   <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'Jack'</span><span class="token punctuation">;</span>
    <span class="token keyword">return</span> <span class="token string">'tom'</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token keyword">var</span> p <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">)</span>  <span class="token comment">// {name: 'Jack'}</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p<span class="token punctuation">.</span>name<span class="token punctuation">)</span> <span class="token comment">// Jack</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -2820,7 +2831,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <p>因此我们总结一下：<code>new 关键词执行之后总是会返回一个对象，要么是实例对象，要么是 return 语句指定的对象</code></p>
 </blockquote>
 </li>
-<li><p><strong>加分回答</strong> </p>
+<li><p><strong>加分回答</strong></p>
 <ul>
 <li><code>new</code>关键字后面的构造函数不能是箭头函数。</li>
 </ul>
@@ -2847,15 +2858,15 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li><code>原型.constructor === 构造函数</code></li>
 <li><code>构造函数.prototype === 原型</code></li>
 </ul>
-<p><img src="https://s.poetries.work/gitee/2020/09/112.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/09/112.png" alt="img"></p>
 <p><strong>总结：</strong></p>
-<p><img src="https://s.poetries.work/gitee/2020/09/105.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/09/105.png" alt="img"></p>
 <ul>
 <li>每个函数都有 <code>prototype</code> 属性，除了 <code>Function.prototype.bind()</code>，该属性指向原型。</li>
 <li>每个对象都有 <code>__proto__</code> 属性，指向了创建该对象的构造函数的原型。其实这个属性指向了 <code>[[prototype]]</code>，但是 <code>[[prototype]]</code>是内部属性，我们并不能访问到，所以使用 <code>_proto_</code>来访问。</li>
 <li>对象可以通过 <code>__proto__</code> 来寻找不属于该对象的属性，<code>__proto__</code> 将对象连接起来组成了原型链。</li>
 </ul>
-<h3 id="❤继承"><a href="#❤继承" class="headerlink" title="❤继承"></a>❤继承</h3><p><img src="https://s.poetries.work/images/20210414142754.png" alt="img"></p>
+<h3 id="❤继承"><a href="#❤继承" class="headerlink" title="❤继承"></a>❤继承</h3><p><img data-src="https://s.poetries.work/images/20210414142754.png" alt="img"></p>
 <blockquote>
 <p>涉及面试题：原型如何实现继承？<code>Class</code> 如何实现继承？<code>Class</code> 本质是什么？</p>
 </blockquote>
@@ -2884,21 +2895,16 @@ child<span class="token punctuation">.</span><span class="token function">getVal
 child <span class="token keyword">instanceof</span> <span class="token class-name">Parent</span> <span class="token comment">// true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li><p>以上继承的方式核心是在子类的构造函数中通过 <code>Parent.call(this)</code> 继承父类的属性，然后改变子类的原型为 <code>new Parent()</code> 来继承父类的函数。</p>
-</li>
-<li><p>这种继承方式<strong>优点</strong>在于构造函数可以传参，不会与父类引用属性共享，可以复用父类的函数，但是也存在一个<strong>缺点</strong>就是在继承父类函数的时候调用了父类构造函数，导致子类的原型上多了不需要的父类属性，存在内存上的浪费</p>
-</li>
-<li></li>
-<li><p>构造继承</p>
-</li>
-<li><p>原型继承</p>
-</li>
-<li><p>实例继承</p>
-</li>
-<li><p>拷贝继承</p>
-</li>
-<li><p>原型<code>prototype</code>机制或<code>apply</code>和<code>call</code>方法去实现较简单，建议使用构造函数与原型混合方式</p>
-</li>
+<li>以上继承的方式核心是在子类的构造函数中通过 <code>Parent.call(this)</code> 继承父类的属性，然后改变子类的原型为 <code>new Parent()</code> 来继承父类的函数。</li>
+<li>这种继承方式<strong>优点</strong>在于构造函数可以传参，不会与父类引用属性共享，可以复用父类的函数，但是也存在一个<strong>缺点</strong>就是在继承父类函数的时候调用了父类构造函数，导致子类的原型上多了不需要的父类属性，存在内存上的浪费</li>
+</ul>
+<p>-</p>
+<ul>
+<li>构造继承</li>
+<li>原型继承</li>
+<li>实例继承</li>
+<li>拷贝继承</li>
+<li>原型<code>prototype</code>机制或<code>apply</code>和<code>call</code>方法去实现较简单，建议使用构造函数与原型混合方式</li>
 </ul>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">function</span> <span class="token function">Parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 	<span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'wang'</span><span class="token punctuation">;</span>
@@ -2907,7 +2913,7 @@ child <span class="token keyword">instanceof</span> <span class="token class-nam
 <span class="token keyword">function</span> <span class="token function">Child</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> <span class="token number">28</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-    
+
 <span class="token class-name">Child</span><span class="token punctuation">.</span>prototype <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Parent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment">//继承了Parent，通过原型</span>
 
 <span class="token keyword">var</span> demo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Child</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
@@ -2933,16 +2939,16 @@ child <span class="token keyword">instanceof</span> <span class="token class-nam
 <p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm93Y29kZXIuY29tL2V4YW0vaW50ZXJ2aWV3L2RldGFpbD9xdWVzdGlvbkNsYXNzaWZ5SWQ9MCZxdWVzdGlvbklkPTI0MTIzMzgmcXVlc3Rpb25Kb2JJZD0xNTYmdHlwZT0x">加分回答<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="❤JavaScript有几种方法判断变量的类型？"><a href="#❤JavaScript有几种方法判断变量的类型？" class="headerlink" title="❤JavaScript有几种方法判断变量的类型？"></a>❤JavaScript有几种方法判断变量的类型？</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点：</strong> typeof、instanceof、Object.prototype.toString.call()（对象原型链判断方法）、 constructor (用于引用数据类型) </li>
-<li><strong>标准回答：</strong> JavaScript有4种方法判断变量的类型，分别是typeof、instanceof、Object.prototype.toString.call()（对象原型链判断方法）、 constructor (用于引用数据类型) <ul>
-<li><strong>typeof：</strong>常用于判断基本数据类型，对于引用数据类型除了<code>function</code>返回<code>’function‘</code>，其余全部返回<code>’object'</code>。 </li>
-<li><strong>instanceof：</strong>主要用于区分引用数据类型，检测方法是检测的类型在当前实例的原型链上，用其检测出来的结果都是true，不太适合用于简单数据类型的检测，检测过程繁琐且对于简单数据类型中的undefined, null, symbol检测不出来。 </li>
-<li><strong>constructor：</strong>用于检测引用数据类型，检测方法是获取实例的构造函数判断和某个类是否相同，如果相同就说明该数据是符合那个数据类型的，这种方法不会把原型链上的其他类也加入进来，避免了原型链的干扰。 </li>
-<li><strong>Object.prototype.toString.call()：</strong>适用于所有类型的判断检测，检测方法是Object.prototype.toString.call(数据) 返回的是该数据类型的字符串。 这四种判断数据类型的方法中，各种数据类型都能检测且检测精准的就是Object.prototype.toString.call()这种方法。 </li>
+<li><strong>得分点：</strong> typeof、instanceof、Object.prototype.toString.call()（对象原型链判断方法）、 constructor (用于引用数据类型)</li>
+<li><strong>标准回答：</strong> JavaScript有4种方法判断变量的类型，分别是typeof、instanceof、Object.prototype.toString.call()（对象原型链判断方法）、 constructor (用于引用数据类型)<ul>
+<li><strong>typeof：</strong>常用于判断基本数据类型，对于引用数据类型除了<code>function</code>返回<code>’function‘</code>，其余全部返回<code>’object'</code>。</li>
+<li><strong>instanceof：</strong>主要用于区分引用数据类型，检测方法是检测的类型在当前实例的原型链上，用其检测出来的结果都是true，不太适合用于简单数据类型的检测，检测过程繁琐且对于简单数据类型中的undefined, null, symbol检测不出来。</li>
+<li><strong>constructor：</strong>用于检测引用数据类型，检测方法是获取实例的构造函数判断和某个类是否相同，如果相同就说明该数据是符合那个数据类型的，这种方法不会把原型链上的其他类也加入进来，避免了原型链的干扰。</li>
+<li><strong>Object.prototype.toString.call()：</strong>适用于所有类型的判断检测，检测方法是Object.prototype.toString.call(数据) 返回的是该数据类型的字符串。 这四种判断数据类型的方法中，各种数据类型都能检测且检测精准的就是Object.prototype.toString.call()这种方法。</li>
 </ul>
 </li>
-<li><strong>加分回答：</strong> <ul>
-<li>instanceof的实现原理：验证当前类的原型prototype是否会出现在实例的原型链__proto__上，只要在它的原型链上，则结果都为true。因此，<code>instanceof</code> 在查找的过程中会遍历左边变量的原型链，直到找到右边变量的 <code>prototype</code>，找到返回true，未找到返回false。 </li>
+<li><strong>加分回答：</strong><ul>
+<li>instanceof的实现原理：验证当前类的原型prototype是否会出现在实例的原型链__proto__上，只要在它的原型链上，则结果都为true。因此，<code>instanceof</code> 在查找的过程中会遍历左边变量的原型链，直到找到右边变量的 <code>prototype</code>，找到返回true，未找到返回false。</li>
 <li>Object.prototype.toString.call()原理：Object.prototype.toString 表示一个返回对象类型的字符串，call()方法可以改变this的指向，那么把Object.prototype.toString()方法指向不同的数据类型上面，返回不同的结果</li>
 </ul>
 </li>
@@ -2964,18 +2970,18 @@ child <span class="token keyword">instanceof</span> <span class="token class-nam
 </ul>
 <h3 id="❤伪数组和数组的区别"><a href="#❤伪数组和数组的区别" class="headerlink" title="❤伪数组和数组的区别"></a>❤伪数组和数组的区别</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 类型是object、不能使用数组方法、可以获取长度、可以使用for in遍历 </li>
-<li><strong>标准回答</strong> 伪数组它的类型不是Array，而是Object，而数组类型是Array。可以使用的length属性查看长度，也可以使用[index]获取某个元素，但是不能使用数组的其他方法，也不能改变长度，遍历使用<code>for in</code>方法。 <ul>
-<li>伪数组的常见场景： <ul>
+<li><strong>得分点</strong> 类型是object、不能使用数组方法、可以获取长度、可以使用for in遍历</li>
+<li><strong>标准回答</strong> 伪数组它的类型不是Array，而是Object，而数组类型是Array。可以使用的length属性查看长度，也可以使用[index]获取某个元素，但是不能使用数组的其他方法，也不能改变长度，遍历使用<code>for in</code>方法。<ul>
+<li>伪数组的常见场景：<ul>
 <li>函数的参数<code>arguments </code></li>
-<li>原生js获取DOM：<code>document.querySelector('div') </code>等 </li>
-<li>jquery获取DOM：<code>$(“div”)</code>等 </li>
+<li>原生js获取DOM：<code>document.querySelector('div') </code>等</li>
+<li>jquery获取DOM：<code>$(“div”)</code>等</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>伪数组转换成真数组方法 </li>
+<li><strong>加分回答</strong><ul>
+<li>伪数组转换成真数组方法</li>
 <li><code>Array.prototype.slice.call(伪数组) </code></li>
 <li><code>[].slice.call(伪数组) </code></li>
 <li><code>Array.from(伪数组) </code>转换后的数组长度由 <code>length</code> 属性决定。索引不连续时转换结果是连续的，会自动补位。</li>
@@ -3003,7 +3009,7 @@ xhr<span class="token punctuation">.</span><span class="token function-variable 
         <span class="token comment">// 4：请求完全处理完成</span>
 		<span class="token keyword">if</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 			<span class="token function">success</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
-		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span> 
+		<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
 			<span class="token comment">/** false **/</span>
 			fail <span class="token operator">&amp;&amp;</span> <span class="token function">fail</span><span class="token punctuation">(</span>xhr<span class="token punctuation">.</span>status<span class="token punctuation">)</span><span class="token punctuation">;</span>
 		<span class="token punctuation">}</span>
@@ -3028,33 +3034,33 @@ xhr<span class="token punctuation">.</span><span class="token function-variable 
 </ul>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> new XMLHttpRequest()、设置请求参数open()、发送请求request.send()、响应request.onreadystatechange </li>
-<li><strong>标准回答</strong> 创建ajax过程： <ol>
-<li>创建XHR对象：new XMLHttpRequest() </li>
-<li>设置请求参数：request.open(Method, 服务器接口地址); </li>
-<li>发送请求: request.send()，如果是get请求不需要参数，post请求需要参数request.send(data) </li>
-<li>监听请求成功后的状态变化：根据状态码进行相应的处理。 </li>
+<li><strong>得分点</strong> new XMLHttpRequest()、设置请求参数open()、发送请求request.send()、响应request.onreadystatechange</li>
+<li><strong>标准回答</strong> 创建ajax过程：<ol>
+<li>创建XHR对象：new XMLHttpRequest()</li>
+<li>设置请求参数：request.open(Method, 服务器接口地址);</li>
+<li>发送请求: request.send()，如果是get请求不需要参数，post请求需要参数request.send(data)</li>
+<li>监听请求成功后的状态变化：根据状态码进行相应的处理。</li>
 </ol>
 </li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">XHR</span><span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">XHR</span><span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">XHR</span><span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">XHR</span><span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-        <span class="token comment">// 主动释放,JS本身也会回收的 </span>
-        <span class="token constant">XHR</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span> 
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span><span class="token punctuation">;</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token constant">XHR</span><span class="token punctuation">.</span><span class="token function-variable function">onreadystatechange</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">XHR</span><span class="token punctuation">.</span>readyState <span class="token operator">==</span> <span class="token number">4</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">XHR</span><span class="token punctuation">.</span>status <span class="token operator">==</span> <span class="token number">200</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token constant">XHR</span><span class="token punctuation">.</span>responseText<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment">// 主动释放,JS本身也会回收的</span>
+        <span class="token constant">XHR</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <ul>
-<li><strong>加分回答</strong> <ul>
-<li>POST请求需要设置请求头 readyState值说明 <ul>
-<li>0：初始化,XHR对象已经创建,还未执行open </li>
-<li>1：载入,已经调用open方法,但是还没发送请求 </li>
-<li>2：载入完成,请求已经发送完成 </li>
-<li>3：交互,可以接收到部分数据 </li>
-<li>4：数据全部返回 status值说明 <ul>
-<li>200：成功 </li>
-<li>404：没有发现文件、查询或URl </li>
+<li><strong>加分回答</strong><ul>
+<li>POST请求需要设置请求头 readyState值说明<ul>
+<li>0：初始化,XHR对象已经创建,还未执行open</li>
+<li>1：载入,已经调用open方法,但是还没发送请求</li>
+<li>2：载入完成,请求已经发送完成</li>
+<li>3：交互,可以接收到部分数据</li>
+<li>4：数据全部返回 status值说明<ul>
+<li>200：成功</li>
+<li>404：没有发现文件、查询或URl</li>
 <li>500：服务器产生内部错误</li>
 </ul>
 </li>
@@ -3383,10 +3389,10 @@ camry<span class="token punctuation">.</span><span class="token function">sell</
 </ul>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点：</strong>操作的变量没有被赋值、全局对象的一个属性、函数没有return返回值、值 <code>null</code> 特指对象的值未设置 undefined == null、undefined !== null </li>
-<li><strong>标准回答：</strong> <ul>
-<li><strong>undefind</strong> 是全局对象的一个属性，当一个变量没有被赋值或者一个函数没有返回值或者某个对象不存在某个属性却去访问或者函数定义了形参但没有传递实参，这时候都是undefined。undefined通过typeof判断类型是’undefined’。undefined == undefined undefined === undefined 。 </li>
-<li><strong>null</strong>代表对象的值未设置，相当于一个对象没有设置指针地址就是null。null通过typeof判断类型是’object’。null === null null == null null == undefined null !== undefined undefined 表示一个变量初始状态值，而 null 则表示一个变量被人为的设置为空对象，而不是原始状态。在实际使用过程中，不需要对一个变量显式的赋值 undefined，当需要释放一个对象时，直接赋值为 null 即可。 让一个变量为null，直接给该变量赋值为null即可。 </li>
+<li><strong>得分点：</strong>操作的变量没有被赋值、全局对象的一个属性、函数没有return返回值、值 <code>null</code> 特指对象的值未设置 undefined == null、undefined !== null</li>
+<li><strong>标准回答：</strong><ul>
+<li><strong>undefind</strong> 是全局对象的一个属性，当一个变量没有被赋值或者一个函数没有返回值或者某个对象不存在某个属性却去访问或者函数定义了形参但没有传递实参，这时候都是undefined。undefined通过typeof判断类型是’undefined’。undefined == undefined undefined === undefined 。</li>
+<li><strong>null</strong>代表对象的值未设置，相当于一个对象没有设置指针地址就是null。null通过typeof判断类型是’object’。null === null null == null null == undefined null !== undefined undefined 表示一个变量初始状态值，而 null 则表示一个变量被人为的设置为空对象，而不是原始状态。在实际使用过程中，不需要对一个变量显式的赋值 undefined，当需要释放一个对象时，直接赋值为 null 即可。 让一个变量为null，直接给该变量赋值为null即可。</li>
 </ul>
 </li>
 <li><strong>加分回答：</strong> null 其实属于自己的类型 Null，而不属于Object类型，typeof 之所以会判定为 Object 类型，是因为JavaScript 数据类型在底层都是以二进制的形式表示的，二进制的前三位为 0 会被 typeof 判断为对象类型，而 null 的二进制位恰好都是 0 ，因此，null 被误判断为 Object 类型。 对象被赋值了null 以后，对象对应的堆内存中的值就是游离状态了，GC 会择机回收该值并释放内存。因此，需要释放某个对象，就将变量设置为 null，即表示该对象已经被清空，目前无效状态。</li>
@@ -3424,12 +3430,10 @@ var last=JSON.stringify(obj);<span aria-hidden="true" class="line-numbers-rows">
 <li>异步：浏览器访问服务器请求，用户正常操作，浏览器后端进行请求。等请求完，页面不刷新，新内容也会出现，用户看到新内容</li>
 </ul>
 <h3 id="渐进增强和优雅降级"><a href="#渐进增强和优雅降级" class="headerlink" title="渐进增强和优雅降级"></a>渐进增强和优雅降级</h3><ul>
-<li><p>渐进增强 ：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</p>
-</li>
-<li><p>优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容</p>
-</li>
-<li></li>
+<li>渐进增强 ：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</li>
+<li>优雅降级 ：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容</li>
 </ul>
+<p>-</p>
 <h3 id="说说严格模式的限制"><a href="#说说严格模式的限制" class="headerlink" title="说说严格模式的限制"></a>说说严格模式的限制</h3><ul>
 <li>变量必须声明后再使用</li>
 <li>函数的参数不能有同名属性，否则报错</li>
@@ -3550,18 +3554,18 @@ arr<span class="token punctuation">.</span>__proto__ <span class="token operator
 </ul>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> map创建新数组、map返回处理后的值、forEach()不修改原数组、forEach()方法返回undefined </li>
-<li><strong>标准回答</strong> <ul>
+<li><strong>得分点</strong> map创建新数组、map返回处理后的值、forEach()不修改原数组、forEach()方法返回undefined</li>
+<li><strong>标准回答</strong><ul>
 <li>map 和 forEach 的<strong>区别</strong>：<ul>
-<li>map有返回值，可以开辟新空间，return出来一个length和原数组一致的数组，即便数组元素是undefined或者是null。forEach默认无返回值，返回结果为undefined，可以通过在函数体内部使用索引修改数组元素。 </li>
+<li>map有返回值，可以开辟新空间，return出来一个length和原数组一致的数组，即便数组元素是undefined或者是null。forEach默认无返回值，返回结果为undefined，可以通过在函数体内部使用索引修改数组元素。</li>
 </ul>
 </li>
 </ul>
 </li>
 <li><strong>加分回答</strong> map的处理速度比forEach快，而且返回一个新的数组，方便链式调用其他数组新方法，比如filter、reduce</li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span> 
-<span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">value</span> <span class="token operator">=&gt;</span> value <span class="token operator">*</span> value<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">value</span> <span class="token operator">=&gt;</span> value <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">let</span> arr <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token keyword">let</span> arr2 <span class="token operator">=</span> arr<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token parameter">value</span> <span class="token operator">=&gt;</span> value <span class="token operator">*</span> value<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token parameter">value</span> <span class="token operator">=&gt;</span> value <span class="token operator">&gt;</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token comment">// arr2 = [16, 25]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 
@@ -3579,20 +3583,20 @@ arr<span class="token punctuation">.</span>__proto__ <span class="token operator
 </ul>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 没有this、this是从外部获取、不能使用new、没有arguments、没有原型和super </li>
+<li><strong>得分点</strong> 没有this、this是从外部获取、不能使用new、没有arguments、没有原型和super</li>
 <li><strong>标准回答</strong> 箭头函数相当于匿名函数，简化了函数定义。<ul>
-<li>箭头函数有两种写法，当函数体是单条语句的时候可以省略{}和return。另一种是包含多条语句，不可以省略{}和return。 </li>
-<li>箭头函数最大的特点就是没有this，所以this是从外部获取，就是继承外部的执行上下文中的this，由于没有this关键字所以箭头函数也不能作为构造函数， 同时通过 <code>call()</code> 或 <code>apply()</code> 方法调用一个函数时，只能传递参数（不能绑定this），第一个参数会被忽略。箭头函数也没有原型和super。不能使用yield关键字，因此箭头函数不能用作 Generator 函数。不能返回直接对象字面量。 </li>
+<li>箭头函数有两种写法，当函数体是单条语句的时候可以省略{}和return。另一种是包含多条语句，不可以省略{}和return。</li>
+<li>箭头函数最大的特点就是没有this，所以this是从外部获取，就是继承外部的执行上下文中的this，由于没有this关键字所以箭头函数也不能作为构造函数， 同时通过 <code>call()</code> 或 <code>apply()</code> 方法调用一个函数时，只能传递参数（不能绑定this），第一个参数会被忽略。箭头函数也没有原型和super。不能使用yield关键字，因此箭头函数不能用作 Generator 函数。不能返回直接对象字面量。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>箭头函数的<strong>不适用</strong>场景： <ul>
-<li>定义对象上的方法 当调用<code> dog.jumps</code> 时，<code>lives</code> 并没有递减。因为 <code>this</code> 没有绑定值，而继承父级作用域。 var dog = { lives: 20, jumps: () =&gt; { this.lives–; } } </li>
-<li>不适合做事件处理程序 此时触发点击事件，this不是button，无法进行class切换 var button = document.querySelector(‘button’); button.addEventListener(‘click’, () =&gt; { this.classList.toggle(‘on’); }); </li>
+<li><strong>加分回答</strong><ul>
+<li>箭头函数的<strong>不适用</strong>场景：<ul>
+<li>定义对象上的方法 当调用<code> dog.jumps</code> 时，<code>lives</code> 并没有递减。因为 <code>this</code> 没有绑定值，而继承父级作用域。 var dog = { lives: 20, jumps: () =&gt; { this.lives–; } }</li>
+<li>不适合做事件处理程序 此时触发点击事件，this不是button，无法进行class切换 var button = document.querySelector(‘button’); button.addEventListener(‘click’, () =&gt; { this.classList.toggle(‘on’); });</li>
 </ul>
 </li>
-<li>箭头函数函数<strong>适用</strong>场景： <ul>
-<li>简单的函数表达式，内部没有this引用，没有递归、事件绑定、解绑定，适用于map、filter等方法中，写法简洁 var arr = [1,2,3]; var newArr = arr.map((num)=&gt;num*num) </li>
+<li>箭头函数函数<strong>适用</strong>场景：<ul>
+<li>简单的函数表达式，内部没有this引用，没有递归、事件绑定、解绑定，适用于map、filter等方法中，写法简洁 var arr = [1,2,3]; var newArr = arr.map((num)=&gt;num*num)</li>
 <li>内层函数表达式，需要调用this，且this应与外层函数一致时 let group = { title: “Our Group”, students: [“John”, “Pete”, “Alice”], showList() { this.students.forEach( student =&gt; alert(this.title + ‘: ‘ + student) ); } }; group.showList();</li>
 </ul>
 </li>
@@ -3632,17 +3636,17 @@ arr<span class="token punctuation">.</span>__proto__ <span class="token operator
 </ul>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点：</strong> 回调函数、事件监听、setTimeout、Promise、生成器Generators/yield、async/awt </li>
-<li><strong>标准回答：</strong> 所有异步任务都是在同步任务执行结束之后，从任务队列中依次取出执行。 <ul>
+<li><strong>得分点：</strong> 回调函数、事件监听、setTimeout、Promise、生成器Generators/yield、async/awt</li>
+<li><strong>标准回答：</strong> 所有异步任务都是在同步任务执行结束之后，从任务队列中依次取出执行。<ul>
 <li><strong>回调函数</strong>是异步操作最基本的方法，比如AJAX回调，回调函数的<strong>优点</strong>是简单、容易理解和实现，<strong>缺点</strong>是不利于代码的阅读和维护，各个部分之间高度耦合，使得程序结构混乱、流程难以追踪（尤其是多个回调函数嵌套的情况），而且每个任务只能指定一个回调函数。此外它不能使用 try catch 捕获错误，不能直接 return Promise包装了一个异步调用并生成一个Promise实例，当异步调用返回的时候根据调用的结果分别调用实例化时传入的resolve 和 reject方法，then接收到对应的数据，做出相应的处理。</li>
-<li><strong>Promise对象</strong>不仅能够捕获错误，而且也很好地解决了回调地狱的问题，<strong>缺点</strong>是无法取消 Promise，错误需要通过回调函数捕获。 </li>
-<li><strong>Generator 函数</strong>是 ES6 提供的一种异步编程解决方案，Generator 函数是一个状态机，封装了多个内部状态，可暂停函数, yield可暂停，next方法可启动，每次返回的是yield后的表达式结果。<strong>优点</strong>是异步语义清晰，<strong>缺点</strong>是手动迭代<code>Generator</code> 函数很麻烦，实现逻辑有点绕 </li>
-<li><strong>async/awt</strong>是基于Promise实现的，async/awt使得异步代码看起来像同步代码，所以<strong>优点</strong>是，使用方法清晰明了，<strong>缺点</strong>是awt 将异步代码改造成了同步代码，如果多个异步代码没有依赖性却使用了 awt 会导致性能上的降低，代码没有依赖性的话，完全可以使用 Promise.all 的方式。 </li>
+<li><strong>Promise对象</strong>不仅能够捕获错误，而且也很好地解决了回调地狱的问题，<strong>缺点</strong>是无法取消 Promise，错误需要通过回调函数捕获。</li>
+<li><strong>Generator 函数</strong>是 ES6 提供的一种异步编程解决方案，Generator 函数是一个状态机，封装了多个内部状态，可暂停函数, yield可暂停，next方法可启动，每次返回的是yield后的表达式结果。<strong>优点</strong>是异步语义清晰，<strong>缺点</strong>是手动迭代<code>Generator</code> 函数很麻烦，实现逻辑有点绕</li>
+<li><strong>async/awt</strong>是基于Promise实现的，async/awt使得异步代码看起来像同步代码，所以<strong>优点</strong>是，使用方法清晰明了，<strong>缺点</strong>是awt 将异步代码改造成了同步代码，如果多个异步代码没有依赖性却使用了 awt 会导致性能上的降低，代码没有依赖性的话，完全可以使用 Promise.all 的方式。</li>
 </ul>
 </li>
-<li><strong>加分回答：</strong> JS 异步编程进化史：callback -&gt; promise -&gt; generator/yield -&gt; async/awt。 async/awt函数对 Generator 函数的改进，体现在以下三点： <ul>
-<li> <strong>内置执行器。</strong> Generator 函数的执行必须靠执行器，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行。 </li>
-<li><strong>更广的适用性。</strong> yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 awt 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。 </li>
+<li><strong>加分回答：</strong> JS 异步编程进化史：callback -&gt; promise -&gt; generator/yield -&gt; async/awt。 async/awt函数对 Generator 函数的改进，体现在以下三点：<ul>
+<li> <strong>内置执行器。</strong> Generator 函数的执行必须靠执行器，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行。</li>
+<li><strong>更广的适用性。</strong> yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 awt 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。</li>
 <li><strong>更好的语义。</strong> async 和 awt，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，awt 表示紧跟在后面的表达式需要等待结果。 目前使用很广泛的就是promise和async/awt</li>
 </ul>
 </li>
@@ -3882,7 +3886,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <span class="token comment">//[1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {}, {}]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>方法二、利用for嵌套for，然后splice去重（ES5中最常用）</strong></p>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">unique</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">{</span>            
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">unique</span><span class="token punctuation">(</span><span class="token parameter">arr</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
         <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
             <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">var</span> j<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>arr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
                 <span class="token keyword">if</span><span class="token punctuation">(</span>arr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>arr<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">{</span>         <span class="token comment">//第一个等同于第二个，splice方法删除第二个</span>
@@ -4070,14 +4074,14 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点：</strong> 对象属性、new Set() 、indexOf、hasOwnProperty、reduce+includes、filter </li>
-<li><strong>标准回答：</strong> <ul>
-<li><strong>第一种方法：</strong>利用对象属性key排除重复项：遍历数组，每次判断对象中是否存在该属性，不存在就存储在新数组中，并且把数组元素作为key，设置一个值，存储在对象中，最后返回新数组。这个方法的<strong>优点</strong>是效率较高，<strong>缺点</strong>是占用了较多空间，使用的额外空间有一个查询对象和一个新的数组 </li>
-<li><strong>第二种方法：</strong>利用Set类型数据无重复项：new 一个 Set，参数为需要去重的数组，Set 会自动删除重复的元素，再将 Set 转为数组返回。这个方法的<strong>优点</strong>是效率更高，代码简单，思路清晰，<strong>缺点</strong>是可能会有兼容性问题 </li>
-<li><strong>第三种方法：</strong>filter+indexof 去重：这个方法和第一种方法类似，利用 Array 自带的 filter 方法，返回 arr.indexOf(num) 等于 index 的num。原理就是 indexOf 会返回最先找到的数字的索引，假设数组是 [1, 1]，在对第二个1使用 indexOf 方法时，返回的是第一个1的索引0。这个方法的<strong>优点</strong>是可以在去重的时候插入对元素的操作，可拓展性强。 </li>
-<li><strong>第四种方法：</strong>这个方法比较巧妙，从头遍历数组，如果元素在前面出现过，则将当前元素挪到最后面，继续遍历，直到遍历完所有元素，之后将那些被挪到后面的元素抛弃。这个方法因为是直接操作数组，占用内存较少。 </li>
-<li><strong>第五种方法：</strong>reduce +includes去重：这个方法就是利用reduce遍历和传入一个空数组作为去重后的新数组，然后内部判断新数组中是否存在当前遍历的元素，不存在就插入到新数组中。这种方法时间消耗多，内存空间也有额外占用。 </li>
-<li>方法还有很多，常用的、了解的这些就可以 </li>
+<li><strong>得分点：</strong> 对象属性、new Set() 、indexOf、hasOwnProperty、reduce+includes、filter</li>
+<li><strong>标准回答：</strong><ul>
+<li><strong>第一种方法：</strong>利用对象属性key排除重复项：遍历数组，每次判断对象中是否存在该属性，不存在就存储在新数组中，并且把数组元素作为key，设置一个值，存储在对象中，最后返回新数组。这个方法的<strong>优点</strong>是效率较高，<strong>缺点</strong>是占用了较多空间，使用的额外空间有一个查询对象和一个新的数组</li>
+<li><strong>第二种方法：</strong>利用Set类型数据无重复项：new 一个 Set，参数为需要去重的数组，Set 会自动删除重复的元素，再将 Set 转为数组返回。这个方法的<strong>优点</strong>是效率更高，代码简单，思路清晰，<strong>缺点</strong>是可能会有兼容性问题</li>
+<li><strong>第三种方法：</strong>filter+indexof 去重：这个方法和第一种方法类似，利用 Array 自带的 filter 方法，返回 arr.indexOf(num) 等于 index 的num。原理就是 indexOf 会返回最先找到的数字的索引，假设数组是 [1, 1]，在对第二个1使用 indexOf 方法时，返回的是第一个1的索引0。这个方法的<strong>优点</strong>是可以在去重的时候插入对元素的操作，可拓展性强。</li>
+<li><strong>第四种方法：</strong>这个方法比较巧妙，从头遍历数组，如果元素在前面出现过，则将当前元素挪到最后面，继续遍历，直到遍历完所有元素，之后将那些被挪到后面的元素抛弃。这个方法因为是直接操作数组，占用内存较少。</li>
+<li><strong>第五种方法：</strong>reduce +includes去重：这个方法就是利用reduce遍历和传入一个空数组作为去重后的新数组，然后内部判断新数组中是否存在当前遍历的元素，不存在就插入到新数组中。这种方法时间消耗多，内存空间也有额外占用。</li>
+<li>方法还有很多，常用的、了解的这些就可以</li>
 </ul>
 </li>
 <li><strong>加分回答：</strong> 以上五个方法中，在数据低于10000条的时候没有明显的差别，高于10000条，第一种和第二种的时间消耗最少，后面三种时间消耗依次增加，由于第一种内存空间消耗比较多，且现在很多项目不再考虑低版本浏览器的兼容性问题，所以建议使用第二种去重方法，简洁方便。</li>
@@ -4349,7 +4353,7 @@ _<span class="token punctuation">.</span><span class="token function-variable fu
  * @param  {object}     options   如果想忽略开始函数的的调用，传入{leading: false}。
  *                                如果想忽略结尾函数的调用，传入{trailing: false}
  *                                两者不能共存，否则函数不能执行
- * @return {function}             返回客户调用函数   
+ * @return {function}             返回客户调用函数
  */</span>
 _<span class="token punctuation">.</span><span class="token function-variable function">throttle</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">func<span class="token punctuation">,</span> wait<span class="token punctuation">,</span> options</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">var</span> context<span class="token punctuation">,</span> args<span class="token punctuation">,</span> result<span class="token punctuation">;</span>
@@ -4421,7 +4425,7 @@ _<span class="token punctuation">.</span><span class="token function-variable fu
 </li>
 <li>解决方案 - 异步</li>
 </ul>
-<h3 id="是否用过-jQuery-的-Deferred"><a href="#是否用过-jQuery-的-Deferred" class="headerlink" title="是否用过 jQuery 的 Deferred"></a>是否用过 jQuery 的 Deferred</h3><p><img src="https://s.poetries.work/gitee/2020/07/7.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/8.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/9.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/10.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/11.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/12.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/13.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/14.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/15.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/16.png" alt="img"></p>
+<h3 id="是否用过-jQuery-的-Deferred"><a href="#是否用过-jQuery-的-Deferred" class="headerlink" title="是否用过 jQuery 的 Deferred"></a>是否用过 jQuery 的 Deferred</h3><p><img data-src="https://s.poetries.work/gitee/2020/07/7.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/8.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/9.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/10.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/11.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/12.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/13.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/14.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/15.png" alt="img"> <img data-src="https://s.poetries.work/gitee/2020/07/16.png" alt="img"></p>
 <h3 id="前端面试之hybrid"><a href="#前端面试之hybrid" class="headerlink" title="前端面试之hybrid"></a>前端面试之hybrid</h3><blockquote>
 <p><span class="exturl" data-url="aHR0cDovL2Jsb2cucG9ldHJpZXMudG9wLzIwMTgvMTAvMjAvZmUtaW50ZXJ2aWV3LWh5YnJpZC8=">http://blog.poetries.top/2018/10/20/fe-interview-hybrid/(opens new window)<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
@@ -4474,7 +4478,7 @@ doc<span class="token punctuation">.</span><span class="token function-variable 
 <ul>
 <li><code>JS</code> 在执行的过程中会产生执行环境，这些执行环境会被顺序的加入到执行栈中。如果遇到异步的代码，会被挂起并加入到 <code>Task</code>（有多种 <code>task</code>） 队列中。一旦执行栈为空，<code>Event</code> <code>Loop</code> 就会从 <code>Task</code> 队列中拿出需要执行的代码并放入执行栈中执行，所以本质上来说 <code>JS</code> 中的异步还是同步行为</li>
 </ul>
-<p><img src="https://s.poetries.work/gitee/2020/09/101.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/09/101.png" alt="img"></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'script start'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
 <span class="token function">setTimeout</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -4539,17 +4543,17 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </blockquote>
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 任务挂起、同步任务执行结束执行队列中的异步任务、执行script标签内部代码、setTimeout/setInterval、ajax请、postMessageMessageChannel、setImmediate、I/O（Node.js）Promise、MutonObserver、Object.observe、process.nextTick（Node.js）每个宏任务中都包含了一个微任务队列 </li>
-<li><strong>标准回答</strong> 浏览器的事件循环：执行js代码的时候，遇见同步任务，直接推入调用栈中执行，遇到异步任务，将该任务挂起，等到异步任务有返回之后推入到任务队列中，当调用栈中的所有同步任务全部执行完成，将任务队列中的任务按顺序一个一个的推入并执行，重复执行这一系列的行为。 <ul>
-<li>异步任务又分为宏任务和微任务。 </li>
-<li>宏任务：任务队列中的任务称为宏任务，每个宏任务中都包含了一个微任务队列。 </li>
-<li>微任务：等宏任务中的主要功能都完成后，渲染引擎不急着去执行下一个宏任务，而是执行当前宏任务中的微任务 </li>
-<li>宏任务包含：执行script标签内部代码、setTimeout/setInterval、ajax请、postMessageMessageChannel、setImmediate，I/O（Node.js） </li>
-<li>微任务包含：Promise、MutonObserver、Object.observe、process.nextTick（Node.js） </li>
+<li><strong>得分点</strong> 任务挂起、同步任务执行结束执行队列中的异步任务、执行script标签内部代码、setTimeout/setInterval、ajax请、postMessageMessageChannel、setImmediate、I/O（Node.js）Promise、MutonObserver、Object.observe、process.nextTick（Node.js）每个宏任务中都包含了一个微任务队列</li>
+<li><strong>标准回答</strong> 浏览器的事件循环：执行js代码的时候，遇见同步任务，直接推入调用栈中执行，遇到异步任务，将该任务挂起，等到异步任务有返回之后推入到任务队列中，当调用栈中的所有同步任务全部执行完成，将任务队列中的任务按顺序一个一个的推入并执行，重复执行这一系列的行为。<ul>
+<li>异步任务又分为宏任务和微任务。</li>
+<li>宏任务：任务队列中的任务称为宏任务，每个宏任务中都包含了一个微任务队列。</li>
+<li>微任务：等宏任务中的主要功能都完成后，渲染引擎不急着去执行下一个宏任务，而是执行当前宏任务中的微任务</li>
+<li>宏任务包含：执行script标签内部代码、setTimeout/setInterval、ajax请、postMessageMessageChannel、setImmediate，I/O（Node.js）</li>
+<li>微任务包含：Promise、MutonObserver、Object.observe、process.nextTick（Node.js）</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> 浏览器和Node 环境下，microtask 任务队列的执行时机不同 <ul>
-<li>Node端，microtask 在事件循环的各个阶段之间执行 </li>
+<li><strong>加分回答</strong> 浏览器和Node 环境下，microtask 任务队列的执行时机不同<ul>
+<li>Node端，microtask 在事件循环的各个阶段之间执行</li>
 <li>浏览器端，microtask 在事件循环的 macrotask 执行完之后执行</li>
 </ul>
 </li>
@@ -4699,29 +4703,29 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </ul>
 <h3 id="❤axios的拦截器原理及应用"><a href="#❤axios的拦截器原理及应用" class="headerlink" title="❤axios的拦截器原理及应用"></a>❤axios的拦截器原理及应用</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 请求（request）拦截器、响应（response）拦截器、Promise控制执行顺序、每个请求带上相应的参数、返回的状态进行判断（token是否过期） </li>
-<li><strong>标准回答</strong> <ul>
-<li>axios的拦截器的<strong>应用场景</strong>： 请求拦截器用于在接口请求之前做的处理，比如为每个请求带上相应的参数（token，时间戳等）。 返回拦截器用于在接口返回之后做的处理，比如对返回的状态进行判断（token是否过期）。 axios为开发者提供了这样一个API：拦截器。拦截器分为 请求（request）拦截器和 响应（response）拦截器。 </li>
-<li>拦截器<strong>原理</strong>：创建一个chn数组，数组中保存了拦截器相应方法以及<code>dispatchRequest</code>（dispatchRequest这个函数调用才会真正的开始下发请求），把请求拦截器的方法放到chn数组中<code>dispatchRequest</code>的前面，把响应拦截器的方法放到chn数组中<code>dispatchRequest</code>的后面，把请求拦截器和相应拦截器<code>forEach</code>将它们分<code>unshift</code>,<code>push</code>到chn数组中，为了保证它们的执行顺序，需要使用<code>promise</code>，以出队列的方式对chn数组中的方法挨个执行。 </li>
+<li><strong>得分点</strong> 请求（request）拦截器、响应（response）拦截器、Promise控制执行顺序、每个请求带上相应的参数、返回的状态进行判断（token是否过期）</li>
+<li><strong>标准回答</strong><ul>
+<li>axios的拦截器的<strong>应用场景</strong>： 请求拦截器用于在接口请求之前做的处理，比如为每个请求带上相应的参数（token，时间戳等）。 返回拦截器用于在接口返回之后做的处理，比如对返回的状态进行判断（token是否过期）。 axios为开发者提供了这样一个API：拦截器。拦截器分为 请求（request）拦截器和 响应（response）拦截器。</li>
+<li>拦截器<strong>原理</strong>：创建一个chn数组，数组中保存了拦截器相应方法以及<code>dispatchRequest</code>（dispatchRequest这个函数调用才会真正的开始下发请求），把请求拦截器的方法放到chn数组中<code>dispatchRequest</code>的前面，把响应拦截器的方法放到chn数组中<code>dispatchRequest</code>的后面，把请求拦截器和相应拦截器<code>forEach</code>将它们分<code>unshift</code>,<code>push</code>到chn数组中，为了保证它们的执行顺序，需要使用<code>promise</code>，以出队列的方式对chn数组中的方法挨个执行。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。从浏览器中创建 <code>XMLHttpRequests</code>,从 node.js 创建 http 请求,支持 Promise API,可拦截请求和响应，可转换请求数据和响应数据，可取消请求，可自动转换 JSON 数据，客户端支持防御 XSRF</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤fetch-请求方式"><a href="#❤fetch-请求方式" class="headerlink" title="❤fetch 请求方式"></a>❤fetch 请求方式</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> Fetch函数就是原生js、没有使用<code>XMLHttpRequest</code>对象、头部信息、请求信息、响应信息等均分布到不同的对象 </li>
-<li><strong>标准回答</strong> <ul>
-<li>fetch是一种HTTP数据请求的方式，是<code>XMLHttpRequest</code>的一种替代方案。<code>Fetch</code>函数就是原生js，没有使用<code>XMLHttpRequest</code>对象。<code>fetch()</code>方法返回一个<code>Promise</code>解析<code>Response</code>来自<code>Request</code>显示状态（成功与否）的方法。 </li>
+<li><strong>得分点</strong> Fetch函数就是原生js、没有使用<code>XMLHttpRequest</code>对象、头部信息、请求信息、响应信息等均分布到不同的对象</li>
+<li><strong>标准回答</strong><ul>
+<li>fetch是一种HTTP数据请求的方式，是<code>XMLHttpRequest</code>的一种替代方案。<code>Fetch</code>函数就是原生js，没有使用<code>XMLHttpRequest</code>对象。<code>fetch()</code>方法返回一个<code>Promise</code>解析<code>Response</code>来自<code>Request</code>显示状态（成功与否）的方法。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>XMLHttpRequest的问题 <ul>
-<li>所有的功能全部集中在一个对象上, 容易书写出混乱而且不容易维护的代码 -采用传统的事件驱动模式, 无法适配新的 Promise API Fetch API的特点 </li>
-<li>精细的功能分割: 头部信息, 请求信息, 响应信息等均分布到不同的对象, 更利于处理各种复杂的数据交互场景 </li>
-<li>使用Promise API, 更利于异步代码的书写 </li>
+<li><strong>加分回答</strong><ul>
+<li>XMLHttpRequest的问题<ul>
+<li>所有的功能全部集中在一个对象上, 容易书写出混乱而且不容易维护的代码 -采用传统的事件驱动模式, 无法适配新的 Promise API Fetch API的特点</li>
+<li>精细的功能分割: 头部信息, 请求信息, 响应信息等均分布到不同的对象, 更利于处理各种复杂的数据交互场景</li>
+<li>使用Promise API, 更利于异步代码的书写</li>
 <li>同源请求也可以自定义不带 cookie，某些服务不需要 cookie 场景下能少些流量</li>
 </ul>
 </li>
@@ -4951,50 +4955,50 @@ cat<span class="token punctuation">.</span><span class="token function">makeSoun
 
 <p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 原型链继承、借用构造函数继承、组合继承、原型式继承、寄生式继承、寄生组合式继承、ES6 Class </li>
-<li><strong>标准回答</strong> <ul>
-<li><strong>原型链继承：</strong>让一个构造函数的原型是另一个类型的实例，那么这个构造函数new出来的实例就具有该实例的属性，原型链继承的。优点：写法方便简洁，容易理解。缺点：在父类型构造函数中定义的引用类型值的实例属性，会在子类型原型上变成原型属性被所有子类型实例所共享。同时在创建子类型的实例时，不能向超类型的构造函数中传递参数。 </li>
-<li><strong>借用构造函数继承：</strong>在子类型构造函数的内部调用父类型构造函数；使用 apply() 或 call() 方法将父对象的构造函数绑定在子对象上。优点：解决了原型链实现继承的不能传参的问题和父类的原型共享的问题。缺点：借用构造函数的缺点是方法都在构造函数中定义，因此无法实现函数复用。在父类型的原型中定义的方法，对子类型而言也是不可见的，结果所有类型都只能使用构造函数模式。 </li>
-<li><strong>组合继承：</strong>将原型链和借用构造函数的组合到一块。使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。这样，既通过在原型上定义方法实现了函数复用，又能够保证每个实例都有自己的属性。优点就是解决了原型链继承和借用构造函数继承造成的影响。缺点是无论在什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部 </li>
-<li><strong>原型式继承：</strong>在一个函数A内部创建一个临时性的构造函数，然后将传入的对象作为这个构造函数的原型，最后返回这个临时类型的一个新实例。本质上，函数A是对传入的对象执行了一次浅复制。ECMAScript 5通过增加Object.create()方法将原型式继承的概念规范化了。这个方法接收两个参数：作为新对象原型的对象，以及给新对象定义额外属性的对象（第二个可选）。在只有一个参数时，Object.create()与这里的函数A方法效果相同。优点是：不需要单独创建构造函数。缺点是：属性中包含的引用值始终会在相关对象间共享 </li>
+<li><strong>得分点</strong> 原型链继承、借用构造函数继承、组合继承、原型式继承、寄生式继承、寄生组合式继承、ES6 Class</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>原型链继承：</strong>让一个构造函数的原型是另一个类型的实例，那么这个构造函数new出来的实例就具有该实例的属性，原型链继承的。优点：写法方便简洁，容易理解。缺点：在父类型构造函数中定义的引用类型值的实例属性，会在子类型原型上变成原型属性被所有子类型实例所共享。同时在创建子类型的实例时，不能向超类型的构造函数中传递参数。</li>
+<li><strong>借用构造函数继承：</strong>在子类型构造函数的内部调用父类型构造函数；使用 apply() 或 call() 方法将父对象的构造函数绑定在子对象上。优点：解决了原型链实现继承的不能传参的问题和父类的原型共享的问题。缺点：借用构造函数的缺点是方法都在构造函数中定义，因此无法实现函数复用。在父类型的原型中定义的方法，对子类型而言也是不可见的，结果所有类型都只能使用构造函数模式。</li>
+<li><strong>组合继承：</strong>将原型链和借用构造函数的组合到一块。使用原型链实现对原型属性和方法的继承，而通过借用构造函数来实现对实例属性的继承。这样，既通过在原型上定义方法实现了函数复用，又能够保证每个实例都有自己的属性。优点就是解决了原型链继承和借用构造函数继承造成的影响。缺点是无论在什么情况下，都会调用两次超类型构造函数：一次是在创建子类型原型的时候，另一次是在子类型构造函数内部</li>
+<li><strong>原型式继承：</strong>在一个函数A内部创建一个临时性的构造函数，然后将传入的对象作为这个构造函数的原型，最后返回这个临时类型的一个新实例。本质上，函数A是对传入的对象执行了一次浅复制。ECMAScript 5通过增加Object.create()方法将原型式继承的概念规范化了。这个方法接收两个参数：作为新对象原型的对象，以及给新对象定义额外属性的对象（第二个可选）。在只有一个参数时，Object.create()与这里的函数A方法效果相同。优点是：不需要单独创建构造函数。缺点是：属性中包含的引用值始终会在相关对象间共享</li>
 <li><strong>寄生式继承：</strong>寄生式继承背后的思路类似于寄生构造函数和工厂模式：创建一个实现继承的函数，以某种方式增强对象，然后返回这个对象。优点：写法简单，不需要单独创建构造函数。缺点：通过寄生式继承给对象添加函数会导致函数难以重用。</li>
-<li><strong>寄生组合式继承：</strong>通过借用构造函数来继承属性，通过原型链的混成形式来继承方法。本质上，就是使用寄生式继承来继承超类型的原型，然后再将结果指定给子类型的原型。优点是：高效率只调用一次父构造函数，并且因此避免了在子原型上面创建不必要，多余的属性。与此同时，原型链还能保持不变；缺点是：代码复杂 </li>
+<li><strong>寄生组合式继承：</strong>通过借用构造函数来继承属性，通过原型链的混成形式来继承方法。本质上，就是使用寄生式继承来继承超类型的原型，然后再将结果指定给子类型的原型。优点是：高效率只调用一次父构造函数，并且因此避免了在子原型上面创建不必要，多余的属性。与此同时，原型链还能保持不变；缺点是：代码复杂</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>ES6 Class实现继承。</li>
-<li>原理：原理ES5 的继承，实质是先创造子类的实例对象this，然后再将父类的方法添加到this上面（Parent.apply(this)）。 ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到this上面（所以必须先调用super方法），然后再用子类的构造函数修改this。需要注意的是，class关键字只是原型的语法糖，JavaScript继承仍然是基于原型实现的。 优点：语法简单易懂,操作更方便。缺点：并不是所有的浏览器都支持class关键字 </li>
+<li>原理：原理ES5 的继承，实质是先创造子类的实例对象this，然后再将父类的方法添加到this上面（Parent.apply(this)）。 ES6 的继承机制完全不同，实质是先将父类实例对象的属性和方法，加到this上面（所以必须先调用super方法），然后再用子类的构造函数修改this。需要注意的是，class关键字只是原型的语法糖，JavaScript继承仍然是基于原型实现的。 优点：语法简单易懂,操作更方便。缺点：并不是所有的浏览器都支持class关键字</li>
 </ul>
 </li>
 </ul>
-<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span> 
-    <span class="token comment">//调用类的构造方法 </span>
-    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name 
-        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age 
-    <span class="token punctuation">}</span> <span class="token comment">//定义一般的方法 </span>
-    <span class="token function">showName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"调用父类的方法"</span><span class="token punctuation">)</span> 
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span> 
-<span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'kobe'</span><span class="token punctuation">,</span> <span class="token number">39</span><span class="token punctuation">)</span> 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span> 
-<span class="token comment">//定义一个子类 </span>
-<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span> 
-    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> salary</span><span class="token punctuation">)</span> <span class="token punctuation">{</span> 
-        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
-        <span class="token comment">//通过super调用父类的构造方法 </span>
-        <span class="token keyword">this</span><span class="token punctuation">.</span>salary <span class="token operator">=</span> salary 
-    <span class="token punctuation">}</span> 
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">class</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token comment">//调用类的构造方法</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>name <span class="token operator">=</span> name
+        <span class="token keyword">this</span><span class="token punctuation">.</span>age <span class="token operator">=</span> age
+    <span class="token punctuation">}</span> <span class="token comment">//定义一般的方法</span>
     <span class="token function">showName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment">//在子类自身定义方法 </span>
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"调用子类的方法"</span><span class="token punctuation">)</span> 
-        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span> 
-    <span class="token punctuation">}</span> 
-<span class="token punctuation">}</span> 
-<span class="token keyword">let</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">'wade'</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">1000000000</span><span class="token punctuation">)</span> 
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span> 
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"调用父类的方法"</span><span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> p1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Person</span><span class="token punctuation">(</span><span class="token string">'kobe'</span><span class="token punctuation">,</span> <span class="token number">39</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>p1<span class="token punctuation">)</span>
+<span class="token comment">//定义一个子类</span>
+<span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span> <span class="token punctuation">{</span>
+    <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token parameter">name<span class="token punctuation">,</span> age<span class="token punctuation">,</span> salary</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">super</span><span class="token punctuation">(</span>name<span class="token punctuation">,</span> age<span class="token punctuation">)</span>
+        <span class="token comment">//通过super调用父类的构造方法</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>salary <span class="token operator">=</span> salary
+    <span class="token punctuation">}</span>
+    <span class="token function">showName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment">//在子类自身定义方法</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"调用子类的方法"</span><span class="token punctuation">)</span>
+        console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>name<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>age<span class="token punctuation">,</span> <span class="token keyword">this</span><span class="token punctuation">.</span>salary<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">let</span> s1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token string">'wade'</span><span class="token punctuation">,</span> <span class="token number">38</span><span class="token punctuation">,</span> <span class="token number">1000000000</span><span class="token punctuation">)</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>s1<span class="token punctuation">)</span>
 s1<span class="token punctuation">.</span><span class="token function">showName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 
@@ -5162,32 +5166,32 @@ window<span class="token punctuation">.</span><span class="token function-variab
 </ul>
 <h3 id="❤浏览器垃圾回收机制？"><a href="#❤浏览器垃圾回收机制？" class="headerlink" title="❤浏览器垃圾回收机制？"></a>❤浏览器垃圾回收机制？</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 栈垃圾回收、堆垃圾回收、新生区老生区、Scavenge算法、标记-清除算法、标记-整理算法、全停顿、增量标记 </li>
-<li><strong>标准回答</strong> 浏览器垃圾回收机制根据数据的存储方式分为栈垃圾回收和堆垃圾回收。 <ul>
-<li><strong>栈垃圾回收</strong>的方式非常简便，当一个函数执行结束之后，JavaScript 引擎会通过向下移动 ESP 来销毁该函数保存在栈中的执行上下文，遵循先进后出的原则。 </li>
+<li><strong>得分点</strong> 栈垃圾回收、堆垃圾回收、新生区老生区、Scavenge算法、标记-清除算法、标记-整理算法、全停顿、增量标记</li>
+<li><strong>标准回答</strong> 浏览器垃圾回收机制根据数据的存储方式分为栈垃圾回收和堆垃圾回收。<ul>
+<li><strong>栈垃圾回收</strong>的方式非常简便，当一个函数执行结束之后，JavaScript 引擎会通过向下移动 ESP 来销毁该函数保存在栈中的执行上下文，遵循先进后出的原则。</li>
 <li><strong>堆垃圾回收</strong>，当函数直接结束，栈空间处理完成了，但是堆空间的数据虽然没有被引用，但是还是存储在堆空间中，需要垃圾回收器将堆空间中的垃圾数据回收。</li>
 </ul>
 </li>
 <li>为了使垃圾回收达到更好的效果，根据对象的生命周期不一样，使用不同的垃圾回收的算法。在 V8 中会把堆分为新生代和老生代两个区域，新生代中存放的是生存时间短的对象，老生代中存放的生存时间久的对象。<ul>
-<li>新生区中使用Scavenge算法，老生区中使用标记-清除算法和标记-整理算法。 </li>
+<li>新生区中使用Scavenge算法，老生区中使用标记-清除算法和标记-整理算法。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> </li>
-<li><strong>Scavenge算法：</strong> <ol>
-<li>标记：对对象区域中的垃圾进行标记 </li>
-<li>清除垃圾数据和整理碎片化内存：副垃圾回收器会把这些存活的对象复制到空闲区域中，并且有序的排列起来，复制后空闲区域就没有内存碎片了 </li>
-<li>角色翻转：完成复制后，对象区域与空闲区域进行角色翻转，也就是原来的对象区域变成空闲区域，原来的空闲区域变成了对象区域，这样就完成了垃圾对象的回收操作，同时这种角色翻转的操作还能让新生代中的这两块区域无限重复使用下去 </li>
+<li><strong>加分回答</strong></li>
+<li><strong>Scavenge算法：</strong><ol>
+<li>标记：对对象区域中的垃圾进行标记</li>
+<li>清除垃圾数据和整理碎片化内存：副垃圾回收器会把这些存活的对象复制到空闲区域中，并且有序的排列起来，复制后空闲区域就没有内存碎片了</li>
+<li>角色翻转：完成复制后，对象区域与空闲区域进行角色翻转，也就是原来的对象区域变成空闲区域，原来的空闲区域变成了对象区域，这样就完成了垃圾对象的回收操作，同时这种角色翻转的操作还能让新生代中的这两块区域无限重复使用下去</li>
 </ol>
 </li>
-<li><strong>标记-清除算法：</strong> <ol>
-<li>标记：标记阶段就是从一组根元素开始，递归遍历这组根元素，在这个遍历过程中，能到达的元素称为活动对象，没有到达的元素就可以判断为垃圾数据。 </li>
-<li>清除：将垃圾数据进行清除。 </li>
+<li><strong>标记-清除算法：</strong><ol>
+<li>标记：标记阶段就是从一组根元素开始，递归遍历这组根元素，在这个遍历过程中，能到达的元素称为活动对象，没有到达的元素就可以判断为垃圾数据。</li>
+<li>清除：将垃圾数据进行清除。</li>
 <li>产生内存碎片：对一块内存多次执行标记 - 清除算法后，会产生大量不连续的内存碎片。而碎片过多会导致大对象无法分配到足够的连续内存。</li>
 </ol>
 </li>
-<li><strong>标记-整理算法</strong> <ol>
-<li>标记：和标记 - 清除的标记过程一样，从一组根元素开始，递归遍历这组根元素，在这个遍历过程中，能到达的元素标记为活动对象。 </li>
-<li>整理：让所有存活的对象都向内存的一端移动 </li>
+<li><strong>标记-整理算法</strong><ol>
+<li>标记：和标记 - 清除的标记过程一样，从一组根元素开始，递归遍历这组根元素，在这个遍历过程中，能到达的元素标记为活动对象。</li>
+<li>整理：让所有存活的对象都向内存的一端移动</li>
 <li>清除：清理掉端边界以外的内存 V8 是使用副垃圾回收器和主垃圾回收器处理垃圾回收的，不过由于 JavaScript 是运行在主线程之上的，一旦执行垃圾回收算法，都需要将正在执行的 JavaScript 脚本暂停下来，待垃圾回收完毕后再恢复脚本执行。我们把这种行为叫做<strong>全停顿</strong>。 为了降低老生代的垃圾回收而造成的卡顿，V8 将标记过程分为一个个的子标记过程，同时让垃圾回收标记和 JavaScript 应用逻辑交替进行，直到标记阶段完成，我们把这个算法称为增量标记（Incremental Marking）算法</li>
 </ol>
 </li>
@@ -5426,7 +5430,7 @@ Dep<span class="token punctuation">.</span>target <span class="token operator">=
 <span class="token comment">// 模拟解析到 `{{name}}` 触发的操作</span>
 <span class="token keyword">new</span> <span class="token class-name">Watcher</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'name'</span><span class="token punctuation">,</span> update<span class="token punctuation">)</span>
 <span class="token comment">// update Dom innerText</span>
-data<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'yyy'</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+data<span class="token punctuation">.</span>name <span class="token operator">=</span> <span class="token string">'yyy'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>接下来,对 defineReactive 函数进行改造</p>
@@ -5843,14 +5847,14 @@ target<span class="token punctuation">.</span><span class="token function">dispa
 </blockquote>
 <h2 id="Vue"><a href="#Vue" class="headerlink" title="Vue"></a>Vue</h2><h3 id="❤说一说Vuex是什么，每个属性是干嘛的，如何使用-？"><a href="#❤说一说Vuex是什么，每个属性是干嘛的，如何使用-？" class="headerlink" title="❤说一说Vuex是什么，每个属性是干嘛的，如何使用 ？"></a>❤说一说Vuex是什么，每个属性是干嘛的，如何使用 ？</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点：</strong>state、mutations、getters、actions、module、store.commit、store.dispatch </li>
+<li><strong>得分点：</strong>state、mutations、getters、actions、module、store.commit、store.dispatch</li>
 <li><strong>标准回答：</strong> Vuex是集中管理项目公共数据的。<ul>
-<li>Vuex 有state、mutations 、getters、actions、module属性。 </li>
-<li>state 属性用来存储公共管理的数据。 </li>
-<li>mutations 属性定义改变state中数据的方法， 注意：不要在mutation中的方法中写异步方法ajax，那样数据就不可跟踪了 。 </li>
-<li>getters 属性可以认为是定义 store 的计算属性。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。 </li>
-<li>action属性类似于 mutation，不同在于：Action 提交的是 mutation，而不是直接变更状态。Action 可以包含任意异步操作。 </li>
-<li>moudle属性是将store分割成模块。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块，从上至下进行同样方式的分割 <ul>
+<li>Vuex 有state、mutations 、getters、actions、module属性。</li>
+<li>state 属性用来存储公共管理的数据。</li>
+<li>mutations 属性定义改变state中数据的方法， 注意：不要在mutation中的方法中写异步方法ajax，那样数据就不可跟踪了 。</li>
+<li>getters 属性可以认为是定义 store 的计算属性。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。</li>
+<li>action属性类似于 mutation，不同在于：Action 提交的是 mutation，而不是直接变更状态。Action 可以包含任意异步操作。</li>
+<li>moudle属性是将store分割成模块。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块，从上至下进行同样方式的分割<ul>
 <li>使用方法： state ：直接以对象方式添加属性 mutations ：通过<code>store.commit</code>调用 action：通过 <code>store.dispatch</code> 方法触发 getters：直接通过store.getters.调用</li>
 </ul>
 </li>
@@ -5861,31 +5865,31 @@ target<span class="token punctuation">.</span><span class="token function">dispa
 <h3 id="❤Vue2-0-双向绑定的原理与缺陷？"><a href="#❤Vue2-0-双向绑定的原理与缺陷？" class="headerlink" title="❤Vue2.0 双向绑定的原理与缺陷？"></a>❤Vue2.0 双向绑定的原理与缺陷？</h3><p><strong>牛客网解释：</strong></p>
 <ul>
 <li><strong>得分点：</strong> <code>Object.defineProperty</code>、<code>getter</code>、<code>setter</code></li>
-<li><strong>标准回答：</strong> Vue响应式指的是：组件的data发生变化，立刻触发试图的更新 <ul>
-<li><strong>原理：</strong> Vue 采用数据劫持结合发布者-订阅者模式的方式来实现数据的响应式，通过<code>Object.defineProperty()</code>来劫持数据的<code>setter</code>，<code>getter</code>，在数据变动时发布消息给订阅者，订阅者收到消息后进行相应的处理。 通过原生js提供的监听数据的API，当数据发生变化的时候，在回调函数中修改dom </li>
-<li>核心API：<code>Object.defineProperty()</code> API的使用 </li>
-<li><strong>作用：</strong>用来定义对象属性 </li>
-<li><strong>特点：</strong> 默认情况下定义的数据的属性不能修改 描述属性和存取属性不能同时使用，使用会报错 </li>
-<li><strong>响应式原理：</strong> 获取属性值会触发<code>getter</code>方法 设置属性值会触发<code>setter</code>方法 在<code>setter</code>方法中调用修改dom的方法 </li>
+<li><strong>标准回答：</strong> Vue响应式指的是：组件的data发生变化，立刻触发试图的更新<ul>
+<li><strong>原理：</strong> Vue 采用数据劫持结合发布者-订阅者模式的方式来实现数据的响应式，通过<code>Object.defineProperty()</code>来劫持数据的<code>setter</code>，<code>getter</code>，在数据变动时发布消息给订阅者，订阅者收到消息后进行相应的处理。 通过原生js提供的监听数据的API，当数据发生变化的时候，在回调函数中修改dom</li>
+<li>核心API：<code>Object.defineProperty()</code> API的使用</li>
+<li><strong>作用：</strong>用来定义对象属性</li>
+<li><strong>特点：</strong> 默认情况下定义的数据的属性不能修改 描述属性和存取属性不能同时使用，使用会报错</li>
+<li><strong>响应式原理：</strong> 获取属性值会触发<code>getter</code>方法 设置属性值会触发<code>setter</code>方法 在<code>setter</code>方法中调用修改dom的方法</li>
 </ul>
 </li>
-<li><strong>加分回答：</strong> <code>Object.defineProperty</code>的<strong>缺点</strong> <ul>
-<li>一次性递归到底开销很大，如果数据很大，大量的递归导致调用栈溢出 </li>
-<li>不能监听对象的新增属性和删除属性 </li>
+<li><strong>加分回答：</strong> <code>Object.defineProperty</code>的<strong>缺点</strong><ul>
+<li>一次性递归到底开销很大，如果数据很大，大量的递归导致调用栈溢出</li>
+<li>不能监听对象的新增属性和删除属性</li>
 <li>无法正确的监听数组的方法，当监听的下标对应的数据发生改变时</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤Vue3-0-实现数据双向绑定的方法"><a href="#❤Vue3-0-实现数据双向绑定的方法" class="headerlink" title="❤Vue3.0 实现数据双向绑定的方法"></a>❤Vue3.0 实现数据双向绑定的方法</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> Proxy、数据拦截、劫持整个对象、返回一个新对象、有13种劫持 </li>
-<li><strong>标准回答</strong> Vue3.0 是通过Proxy实现的数据双向绑定，Proxy是ES6中新增的一个特性，实现的过程是在目标对象之前设置了一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。 <ul>
-<li>用法： ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。 var proxy = new Proxy(target, handler) target: 是用Proxy包装的被代理对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。 </li>
-<li>handler: 是一个对象，其声明了代理target 的一些操作，其属性是当执行一个操作时定义代理的行为的函数。 </li>
+<li><strong>得分点</strong> Proxy、数据拦截、劫持整个对象、返回一个新对象、有13种劫持</li>
+<li><strong>标准回答</strong> Vue3.0 是通过Proxy实现的数据双向绑定，Proxy是ES6中新增的一个特性，实现的过程是在目标对象之前设置了一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。<ul>
+<li>用法： ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。 var proxy = new Proxy(target, handler) target: 是用Proxy包装的被代理对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。</li>
+<li>handler: 是一个对象，其声明了代理target 的一些操作，其属性是当执行一个操作时定义代理的行为的函数。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li><code>Object.defineProperty</code> 的问题：在Vue中，<code>Object.defineProperty</code>无法监控到数组下标的变化，导致直接通过数组的下标给数组设置值，不能实时响应。目前只针对以上方法做了hack处理，所以数组属性是检测不到的，有局限性Object.defineProperty只能劫持对象的属性,因此我们需要对每个对象的每个属性进行遍历。Vue里，是通过递归以及遍历data对象来实现对数据的监控的，如果属性值也是对象那么需要深度遍历,显然如果能劫持一个完整的对象，不管是对操作性还是性能都会有一个很大的提升。 </li>
+<li><strong>加分回答</strong><ul>
+<li><code>Object.defineProperty</code> 的问题：在Vue中，<code>Object.defineProperty</code>无法监控到数组下标的变化，导致直接通过数组的下标给数组设置值，不能实时响应。目前只针对以上方法做了hack处理，所以数组属性是检测不到的，有局限性Object.defineProperty只能劫持对象的属性,因此我们需要对每个对象的每个属性进行遍历。Vue里，是通过递归以及遍历data对象来实现对数据的监控的，如果属性值也是对象那么需要深度遍历,显然如果能劫持一个完整的对象，不管是对操作性还是性能都会有一个很大的提升。</li>
 <li>Proxy的两个优点：可以劫持整个对象，并返回一个新对象，有13种劫持</li>
 </ul>
 </li>
@@ -5907,18 +5911,18 @@ input.onChange = function(e) {
 
 <h3 id="❤HashRouter-和-HistoryRouter的区别和原理？"><a href="#❤HashRouter-和-HistoryRouter的区别和原理？" class="headerlink" title="❤HashRouter 和 HistoryRouter的区别和原理？"></a>❤HashRouter 和 HistoryRouter的区别和原理？</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><p><strong>得分点</strong> <code>#</code> <code>window.onhashchange</code> <code>history.pushState </code> <code>window.onpopstate</code> </p>
+<li><p><strong>得分点</strong> <code>#</code> <code>window.onhashchange</code> <code>history.pushState </code> <code>window.onpopstate</code></p>
 </li>
-<li><p><strong>标准回答</strong> </p>
+<li><p><strong>标准回答</strong></p>
 <ul>
-<li>HashRouter和 HistoryRouter的<strong>区别</strong>： <ol>
-<li>history和hash都是利用浏览器的两种特性实现前端路由，history是利用浏览历史记录栈的API实现，hash是监听location对象hash值变化事件来实现 </li>
-<li>history的url没有’#’号，hash反之 </li>
-<li>相同的url，history会触发添加到浏览器历史记录栈中，hash不会触发，history需要后端配合，如果后端不配合刷新新页面会出现404，hash不需要。 </li>
+<li>HashRouter和 HistoryRouter的<strong>区别</strong>：<ol>
+<li>history和hash都是利用浏览器的两种特性实现前端路由，history是利用浏览历史记录栈的API实现，hash是监听location对象hash值变化事件来实现</li>
+<li>history的url没有’#’号，hash反之</li>
+<li>相同的url，history会触发添加到浏览器历史记录栈中，hash不会触发，history需要后端配合，如果后端不配合刷新新页面会出现404，hash不需要。</li>
 </ol>
 </li>
-<li><strong>HashRouter的原理：</strong>通过<code>window.onhashchange</code>方法获取新URL中hash值，再做进一步处理 </li>
-<li><strong>HistoryRouter的原理：</strong>通过<code>history.pushState </code>使用它做页面跳转不会触发页面刷新，使用<code>window.onpopstate</code> 监听浏览器的前进和后退，再做其他处理 </li>
+<li><strong>HashRouter的原理：</strong>通过<code>window.onhashchange</code>方法获取新URL中hash值，再做进一步处理</li>
+<li><strong>HistoryRouter的原理：</strong>通过<code>history.pushState </code>使用它做页面跳转不会触发页面刷新，使用<code>window.onpopstate</code> 监听浏览器的前进和后退，再做其他处理</li>
 </ul>
 </li>
 <li><p><strong>加分回答</strong> hash模式下url会带有#，需要url更优雅时，可以使用history模式。 需要兼容低版本的浏览器时，建议使用hash模式。 需要添加任意类型数据到记录时，可以使用history模式。</p>
@@ -5926,19 +5930,19 @@ input.onChange = function(e) {
 </ul>
 <h3 id="❤Diff算法"><a href="#❤Diff算法" class="headerlink" title="❤Diff算法"></a>❤Diff算法</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> patch、patchVnode、updateChildren、vue优化时间复杂度为O(n) </li>
-<li><strong>标准回答</strong> <ul>
-<li><strong>Diff算法比较过程</strong> </li>
-<li>第一步：patch函数中对新老节点进行比较 如果新节点不存在就销毁老节点 如果老节点不存在，直接创建新的节点 当两个节点是相同节点的时候，进入 patctVnode 的过程，比较两个节点的内部 </li>
-<li>第二步：patchVnode函数比较两个虚拟节点内部 如果两个虚拟节点完全相同，返回 当前vnode 的children 不是textNode，再分成三种情况 - 有新children，没有旧children，创建新的 - 没有新children，有旧children，删除旧的 - 新children、旧children都有，执行<code>updateChildren</code>比较children的差异，这里就是diff算法的核心 当前vnode 的children 是textNode，直接更新text </li>
-<li>第三步：updateChildren函数子节点进行比较 <ul>
-<li>第一步 头头比较。若相似，旧头新头指针后移（即 <code>oldStartIdx++</code> &amp;&amp; <code>newStartIdx++</code>），真实dom不变，进入下一次循环；不相似，进入第二步。 </li>
-<li>第二步 尾尾比较。若相似，旧尾新尾指针前移（即 <code>oldEndIdx--</code> &amp;&amp; <code>newEndIdx--</code>），真实dom不变，进入下一次循环；不相似，进入第三步。 </li>
-<li> 第三步 头尾比较。若相似，旧头指针后移，新尾指针前移（即 <code>oldStartIdx++</code> &amp;&amp; <code>newEndIdx--</code>），未确认dom序列中的头移到尾，进入下一次循环；不相似，进入第四步。 </li>
-<li>第四步 尾头比较。若相似，旧尾指针前移，新头指针后移（即 <code>oldEndIdx--</code> &amp;&amp; <code>newStartIdx++</code>），未确认dom序列中的尾移到头，进入下一次循环；不相似，进入第五步。 </li>
-<li>第五步 若节点有key且在旧子节点数组中找到sameVnode（tag和key都一致），则将其dom移动到当前真实dom序列的头部，新头指针后移（即 <code>newStartIdx++</code>）；否则，vnode对应的dom（<code>vnode[newStartIdx].elm</code>）插入当前真实dom序列的头部，新头指针后移（即 <code>newStartIdx++</code>）。 </li>
-<li>但结束循环后，有两种情况需要考虑： <ul>
-<li>新的字节点数组（newCh）被遍历完（<code>newStartIdx &gt; newEndIdx</code>）。那就需要把多余的旧dom（<code>oldStartIdx -&gt; oldEndIdx</code>）都删除，上述例子中就是<code>c,d</code>； </li>
+<li><strong>得分点</strong> patch、patchVnode、updateChildren、vue优化时间复杂度为O(n)</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>Diff算法比较过程</strong></li>
+<li>第一步：patch函数中对新老节点进行比较 如果新节点不存在就销毁老节点 如果老节点不存在，直接创建新的节点 当两个节点是相同节点的时候，进入 patctVnode 的过程，比较两个节点的内部</li>
+<li>第二步：patchVnode函数比较两个虚拟节点内部 如果两个虚拟节点完全相同，返回 当前vnode 的children 不是textNode，再分成三种情况 - 有新children，没有旧children，创建新的 - 没有新children，有旧children，删除旧的 - 新children、旧children都有，执行<code>updateChildren</code>比较children的差异，这里就是diff算法的核心 当前vnode 的children 是textNode，直接更新text</li>
+<li>第三步：updateChildren函数子节点进行比较<ul>
+<li>第一步 头头比较。若相似，旧头新头指针后移（即 <code>oldStartIdx++</code> &amp;&amp; <code>newStartIdx++</code>），真实dom不变，进入下一次循环；不相似，进入第二步。</li>
+<li>第二步 尾尾比较。若相似，旧尾新尾指针前移（即 <code>oldEndIdx--</code> &amp;&amp; <code>newEndIdx--</code>），真实dom不变，进入下一次循环；不相似，进入第三步。</li>
+<li> 第三步 头尾比较。若相似，旧头指针后移，新尾指针前移（即 <code>oldStartIdx++</code> &amp;&amp; <code>newEndIdx--</code>），未确认dom序列中的头移到尾，进入下一次循环；不相似，进入第四步。</li>
+<li>第四步 尾头比较。若相似，旧尾指针前移，新头指针后移（即 <code>oldEndIdx--</code> &amp;&amp; <code>newStartIdx++</code>），未确认dom序列中的尾移到头，进入下一次循环；不相似，进入第五步。</li>
+<li>第五步 若节点有key且在旧子节点数组中找到sameVnode（tag和key都一致），则将其dom移动到当前真实dom序列的头部，新头指针后移（即 <code>newStartIdx++</code>）；否则，vnode对应的dom（<code>vnode[newStartIdx].elm</code>）插入当前真实dom序列的头部，新头指针后移（即 <code>newStartIdx++</code>）。</li>
+<li>但结束循环后，有两种情况需要考虑：<ul>
+<li>新的字节点数组（newCh）被遍历完（<code>newStartIdx &gt; newEndIdx</code>）。那就需要把多余的旧dom（<code>oldStartIdx -&gt; oldEndIdx</code>）都删除，上述例子中就是<code>c,d</code>；</li>
 <li>新的字节点数组（oldCh）被遍历完（<code>oldStartIdx &gt; oldEndIdx</code>）。那就需要把多余的新dom（<code>newStartIdx -&gt; newEndIdx</code>）都添加。</li>
 </ul>
 </li>
@@ -5949,44 +5953,44 @@ input.onChange = function(e) {
 </ul>
 <h3 id="❤vue的-keep-alive"><a href="#❤vue的-keep-alive" class="headerlink" title="❤vue的 keep-alive"></a>❤vue的 keep-alive</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 缓存组件、条件缓存、路由配合条件缓存、不重新加载、activated、deactivated </li>
-<li><strong>标准回答</strong> <ul>
-<li><code>&lt;keep-alive&gt;</code>作用：缓存组件，提升性能，避免重复加载一些不需要经常变动且内容较多的组件。 </li>
+<li><strong>得分点</strong> 缓存组件、条件缓存、路由配合条件缓存、不重新加载、activated、deactivated</li>
+<li><strong>标准回答</strong><ul>
+<li><code>&lt;keep-alive&gt;</code>作用：缓存组件，提升性能，避免重复加载一些不需要经常变动且内容较多的组件。</li>
 <li><code>&lt;keep-alive&gt;</code>的使用方法：使用<code>&lt;keep-alive&gt;</code>标签对需要缓存的组件进行包裹，默认情况下被<code>&lt;keep-alive&gt;</code>标签包裹的组件都会进行缓存，区分被包裹的组件是否缓存有两种方法，<ul>
 <li>第一种是给keepalive 添加属性，组件名称指的是具体组件添加的name，不是路由里面的name。include 包含的组件(可以为字符串，数组，以及正则表达式,只有匹配的组件会被缓存)。exclude 排除的组件(以为字符串，数组，以及正则表达式,任何匹配的组件都不会被缓存)。</li>
-<li>第二种也是最常用的一种是，和路由配合使用：在路由中添加meta属性。 使用keepalive导致组件不重新加载，也就不会重新执行生命周期的函数，如果要解决这个问题，就需要两个属性进入时触发：activated 退出时触发：deactivated </li>
+<li>第二种也是最常用的一种是，和路由配合使用：在路由中添加meta属性。 使用keepalive导致组件不重新加载，也就不会重新执行生命周期的函数，如果要解决这个问题，就需要两个属性进入时触发：activated 退出时触发：deactivated</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li><code>&lt;keep-alive&gt;</code>适用的场景：首页展示固定数据的组件，比如banner九宫格</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤computed和watch的区别"><a href="#❤computed和watch的区别" class="headerlink" title="❤computed和watch的区别"></a>❤computed和watch的区别</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> computed值有缓存、触发条件是依赖值发生更改、 watch无缓存支持异步、监听数据变化 </li>
-<li><strong>标准回答</strong> <ul>
+<li><strong>得分点</strong> computed值有缓存、触发条件是依赖值发生更改、 watch无缓存支持异步、监听数据变化</li>
+<li><strong>标准回答</strong><ul>
 <li>computed： 是计算属性，依赖其它属性值，并且 computed 的值有缓存，只有它依赖的属性值发生改变，下一次获取 computed 的值时才会重新计算 computed 的值；</li>
-<li>watch： 更多的是观察的作用，支持异步，类似于某些数据的监听回调 ，每当监听的数据变化时都会执行回调进行后续操作； </li>
+<li>watch： 更多的是观察的作用，支持异步，类似于某些数据的监听回调 ，每当监听的数据变化时都会执行回调进行后续操作；</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>computed应用场景：需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算； </li>
+<li><strong>加分回答</strong><ul>
+<li>computed应用场景：需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；</li>
 <li>watch应用场景：需要在数据变化时执行异步或开销较大的操作时，应该使用 watch，使用 watch 选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤Vue-中-nextTick-作用与原理"><a href="#❤Vue-中-nextTick-作用与原理" class="headerlink" title="❤Vue 中 $nextTick 作用与原理"></a>❤Vue 中 $nextTick 作用与原理</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 异步渲染、获取DOM、Promise </li>
-<li><strong>标准回答</strong> Vue 在更新 DOM 时是异步执行的，在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。所以修改完数据，立即在方法中获取DOM，获取的仍然是未修改的DOM。 <ul>
-<li><code>$nextTick</code>的作用是：该方法中的代码会在当前渲染完成后执行，就解决了异步渲染获取不到更新后DOM的问题了。 </li>
-<li><code>$nextTick</code>的原理：<code>$nextTick</code> 本质是返回一个Promise </li>
+<li><strong>得分点</strong> 异步渲染、获取DOM、Promise</li>
+<li><strong>标准回答</strong> Vue 在更新 DOM 时是异步执行的，在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。所以修改完数据，立即在方法中获取DOM，获取的仍然是未修改的DOM。<ul>
+<li><code>$nextTick</code>的作用是：该方法中的代码会在当前渲染完成后执行，就解决了异步渲染获取不到更新后DOM的问题了。</li>
+<li><code>$nextTick</code>的原理：<code>$nextTick</code> 本质是返回一个Promise</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>应用场景：在钩子函数created()里面想要获取操作Dom，把操作DOM的方法放在 <code>$nextTick</code>中</li>
 </ul>
 </li>
@@ -5994,25 +5998,25 @@ input.onChange = function(e) {
 <h3 id="❤组件通信的方式"><a href="#❤组件通信的方式" class="headerlink" title="❤组件通信的方式"></a>❤组件通信的方式</h3><p><strong>牛客网解释：</strong></p>
 <ul>
 <li><strong>得分点</strong> 父子通信、自定义属性、<code>props</code>、<code>$emit、EventBus</code>、<code>$on</code>、<code>VueX </code></li>
-<li><strong>标准回答</strong> </li>
-<li>Vue组件的通信方式分为两大类，一类是父子组件通信，另一类是任何关系类型组件通信（父子、兄弟、非兄弟） 父子组件的通信方式： 父给子传递数据，通过给子组件添加自定义属性，比如：，list是父组件给子组件传递的数据。子获取父的数据，在子组件中使用props属性获取 子给父传递数据，通过给子组件传递父组件的方法，子组件调用父组件的方法传递数据，比如：<code>deleteHandler</code>就是父组件的函数，在子组件中通过<code>this.$emit('方法名',参数)</code>，调用父组件的方法，并把数据传递到父组件。 props是只读，不可以被修改，所有被修改都会失效和被警告 任何关系类型组件通信（父子、兄弟、非兄弟）方式： EventBus： 使用方法是创建一个新的Vue实例，需要通信的组件都引入该Vue实例，传递数据的组件使用 <code>event.$emit('名称',参数)</code>发送数据，接收数据的组件使用 <code>event.$on('名称',方法)</code>接收数据。 <ul>
-<li>VueX： 集中管理项目公共数据，Vuex 的状态存储是响应式的，当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。 </li>
+<li><strong>标准回答</strong></li>
+<li>Vue组件的通信方式分为两大类，一类是父子组件通信，另一类是任何关系类型组件通信（父子、兄弟、非兄弟） 父子组件的通信方式： 父给子传递数据，通过给子组件添加自定义属性，比如：，list是父组件给子组件传递的数据。子获取父的数据，在子组件中使用props属性获取 子给父传递数据，通过给子组件传递父组件的方法，子组件调用父组件的方法传递数据，比如：<code>deleteHandler</code>就是父组件的函数，在子组件中通过<code>this.$emit('方法名',参数)</code>，调用父组件的方法，并把数据传递到父组件。 props是只读，不可以被修改，所有被修改都会失效和被警告 任何关系类型组件通信（父子、兄弟、非兄弟）方式： EventBus： 使用方法是创建一个新的Vue实例，需要通信的组件都引入该Vue实例，传递数据的组件使用 <code>event.$emit('名称',参数)</code>发送数据，接收数据的组件使用 <code>event.$on('名称',方法)</code>接收数据。<ul>
+<li>VueX： 集中管理项目公共数据，Vuex 的状态存储是响应式的，当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> </li>
+<li><strong>加分回答</strong></li>
 <li>EventBus的优缺点，缺点vue是单页应用，如果你在某一个页面刷新了之后，与之相关的EventBus会被移除，这样就导致业务走不下去。同时如果页面中有反复操作的业务，EventBus在监听的时候就会触发很多次，需要好好处理EventBus在项目中的关系。在vue页面销毁时，同时移除EventBus事件监听。优点，解决了多层组件之间繁琐的事件传播，使用原理十分简单，代码量少。适合业简单，组件传递数据较少的项目，大型项目业务复杂的还是尽量使用VueX</li>
 </ul>
 <h3 id="❤v-if-和-v-show区别"><a href="#❤v-if-和-v-show区别" class="headerlink" title="❤v-if 和 v-show区别"></a>❤v-if 和 v-show区别</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> v-show true/false都渲染 、 v-if true渲染 false不渲染 </li>
-<li><strong>标准回答</strong> <ul>
-<li>作用: 都是控制元素隐藏和显示的指令 </li>
-<li>区别： v-show: 控制的元素无论是true还是false，都被渲染出来了，通过display：none控制元素隐藏 v-if: 控制的元素是true，进行渲染，如果是false不渲染，根本在dom树结构中不显示 </li>
+<li><strong>得分点</strong> v-show true/false都渲染 、 v-if true渲染 false不渲染</li>
+<li><strong>标准回答</strong><ul>
+<li>作用: 都是控制元素隐藏和显示的指令</li>
+<li>区别： v-show: 控制的元素无论是true还是false，都被渲染出来了，通过display：none控制元素隐藏 v-if: 控制的元素是true，进行渲染，如果是false不渲染，根本在dom树结构中不显示</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>应用： <ul>
-<li>v-show: 适合使用在切换频繁显示/隐藏的元素上 </li>
+<li><strong>加分回答</strong><ul>
+<li>应用：<ul>
+<li>v-show: 适合使用在切换频繁显示/隐藏的元素上</li>
 <li>v-if: 适合使用在切换不频繁，且元素内容很多，渲染一次性能消耗很大的元素上</li>
 </ul>
 </li>
@@ -6021,21 +6025,21 @@ input.onChange = function(e) {
 </ul>
 <h3 id="❤Vue-列表为什么加-key"><a href="#❤Vue-列表为什么加-key" class="headerlink" title="❤Vue 列表为什么加 key"></a>❤Vue 列表为什么加 key</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 性能优化、diff算法节点比对、key不能是index </li>
-<li><strong>标准回答</strong> 为了性能优化 因为vue是虚拟DOM，更新DOM时用diff算法对节点进行一一比对，比如有很多li元素，要在某个位置插入一个li元素，但没有给li上加key，那么在进行运算的时候，就会将所有li元素重新渲染一遍，但是如果有key，那么它就会按照key一一比对li元素，只需要创建新的li元素，插入即可，不需要对其他元素进行修改和重新渲染。 </li>
+<li><strong>得分点</strong> 性能优化、diff算法节点比对、key不能是index</li>
+<li><strong>标准回答</strong> 为了性能优化 因为vue是虚拟DOM，更新DOM时用diff算法对节点进行一一比对，比如有很多li元素，要在某个位置插入一个li元素，但没有给li上加key，那么在进行运算的时候，就会将所有li元素重新渲染一遍，但是如果有key，那么它就会按照key一一比对li元素，只需要创建新的li元素，插入即可，不需要对其他元素进行修改和重新渲染。</li>
 <li><strong>加分回答</strong> key也不能是li元素的index，因为假设我们给数组前插入一个新元素，它的下标是0，那么和原来的第一个元素重复了，整个数组的key都发生了改变，这样就跟没有key的情况一样了</li>
 </ul>
 <h3 id="❤vue-router-实现懒加载的方法"><a href="#❤vue-router-实现懒加载的方法" class="headerlink" title="❤vue-router 实现懒加载的方法"></a>❤vue-router 实现懒加载的方法</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><p><strong>得分点</strong> import、require </p>
+<li><p><strong>得分点</strong> import、require</p>
 </li>
-<li><p><strong>标准回答</strong> </p>
+<li><p><strong>标准回答</strong></p>
 <ul>
-<li><p>vue-router 实现懒加载的方法有两种： </p>
+<li><p>vue-router 实现懒加载的方法有两种：</p>
 <ul>
-<li><p><strong>ES6的impot方式:</strong> </p>
+<li><p><strong>ES6的impot方式:</strong></p>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function-variable function">component</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token keyword">import</span><span class="token punctuation">(</span>
-    <span class="token comment">/* webpackChunkName: "about" */</span> 
+    <span class="token comment">/* webpackChunkName: "about" */</span>
     <span class="token string">'../views/About.vue'</span>
 <span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre></li>
 <li><p>VUE中的异步组件进行懒加载方式:</p>
@@ -6046,21 +6050,21 @@ input.onChange = function(e) {
 </li>
 </ul>
 </li>
-<li><p><strong>加分回答</strong> </p>
+<li><p><strong>加分回答</strong></p>
 <ul>
 <li>vue-router 实现懒加载的作用：性能优化，不用到该路由，不加载该组件。</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤vue钩子函数"><a href="#❤vue钩子函数" class="headerlink" title="❤vue钩子函数"></a>❤vue钩子函数</h3><ul>
-<li><strong>得分点</strong> beforeCreate、created、beforeMounted、mounted beforeUpdate、updated 、 beforeDestroy、destroyed </li>
-<li><strong>标准回答</strong> 钩子函数用来描述一个组件从引入到退出的全过程中的某个过程，整个过程称为生命周期。 钩子函数按照组件生命周期的过程分为，挂载阶段=&gt;更新阶段=&gt;销毁阶段。 每个阶段对应的钩子函数 挂载阶段：beforeCreate、created、beforeMounted、mounted 更新阶段：beforeUpdate、updated 销毁阶段：beforeDestroy、destroyed 每个阶段特点与适合做什么 created：实例创建完成，可访问data、computed、watch、methods上的方法和数据，未挂载到DOM，不能访问到el属性，el属性，ref属性内容为空数组常用于简单的ajax请求，页面的初始化 beforeMount：在挂载开始之前被调用，beforeMount之前，会找到对应的template，并编译成render函数 mounted：实例挂载到DOM上，此时可以通过DOM API获取到DOM节点，$ref属性可以访问常用于获取VNode信息和操作，ajax请求 beforeupdate：响应式数据更新时调用，发生在虚拟DOM打补丁之前，适合在更新之前访问现有的DOM，比如手动移除已添加的事件监听器 updated：虚拟 DOM 重新渲染和打补丁之后调用，组件DOM已经更新，可执行依赖于DOM的操作避免在这个钩子函数中操作数据，可能陷入死循环 beforeDestroy：实例销毁之前调用。这一步，实例仍然完全可用，this仍能获取到实例，常用于销毁定时器、解绑全局事件、销毁插件对象等操作 </li>
+<li><strong>得分点</strong> beforeCreate、created、beforeMounted、mounted beforeUpdate、updated 、 beforeDestroy、destroyed</li>
+<li><strong>标准回答</strong> 钩子函数用来描述一个组件从引入到退出的全过程中的某个过程，整个过程称为生命周期。 钩子函数按照组件生命周期的过程分为，挂载阶段=&gt;更新阶段=&gt;销毁阶段。 每个阶段对应的钩子函数 挂载阶段：beforeCreate、created、beforeMounted、mounted 更新阶段：beforeUpdate、updated 销毁阶段：beforeDestroy、destroyed 每个阶段特点与适合做什么 created：实例创建完成，可访问data、computed、watch、methods上的方法和数据，未挂载到DOM，不能访问到el属性，el属性，ref属性内容为空数组常用于简单的ajax请求，页面的初始化 beforeMount：在挂载开始之前被调用，beforeMount之前，会找到对应的template，并编译成render函数 mounted：实例挂载到DOM上，此时可以通过DOM API获取到DOM节点，$ref属性可以访问常用于获取VNode信息和操作，ajax请求 beforeupdate：响应式数据更新时调用，发生在虚拟DOM打补丁之前，适合在更新之前访问现有的DOM，比如手动移除已添加的事件监听器 updated：虚拟 DOM 重新渲染和打补丁之后调用，组件DOM已经更新，可执行依赖于DOM的操作避免在这个钩子函数中操作数据，可能陷入死循环 beforeDestroy：实例销毁之前调用。这一步，实例仍然完全可用，this仍能获取到实例，常用于销毁定时器、解绑全局事件、销毁插件对象等操作</li>
 <li><strong>加分回答</strong> 父子组件钩子函数在三个阶段的代码执行顺序 挂载：父亲created&gt; 子created &gt; 子mounted&gt; 父亲mounted&gt; 更新：父亲beforeUpdate &gt; 子beforeUpdated &gt; 子updated &gt; 父亲updated 销毁：父亲beforeDestroy&gt; 子beforeDestroy &gt; 子destroyed&gt; 父destroyed</li>
 </ul>
 <h2 id="React"><a href="#React" class="headerlink" title="React"></a>React</h2><h3 id="❤React生命周期的各个阶段"><a href="#❤React生命周期的各个阶段" class="headerlink" title="❤React生命周期的各个阶段"></a>❤React生命周期的各个阶段</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点：</strong> constructor、componentDidMount、componentDidUpdate、componentWillUnmount、getDerivedStateFromProps、shouldComponentUpdate、getSnapshotBeforeUpdate、componentWillUpdate。 </li>
-<li><strong>标准回答</strong> <ul>
+<li><strong>得分点：</strong> constructor、componentDidMount、componentDidUpdate、componentWillUnmount、getDerivedStateFromProps、shouldComponentUpdate、getSnapshotBeforeUpdate、componentWillUpdate。</li>
+<li><strong>标准回答</strong><ul>
 <li>React的生命周期中常用的有：<ul>
 <li>constructor，负责数据初始化。</li>
 <li>render，将jsx转换成真实的dom节点。</li>
@@ -6072,21 +6076,21 @@ input.onChange = function(e) {
 <li>不常用的有：<ul>
 <li>getDerivedStateFromProps，更新state和处理回调。</li>
 <li>shouldComponentUpdate，用于性能优化。</li>
-<li>getSnapshotBeforeUpdate，替代了componentWillUpdate。 </li>
+<li>getSnapshotBeforeUpdate，替代了componentWillUpdate。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>React的生命周期中有常用的和不常用的。 </li>
-<li>常用的有： <ul>
-<li>constructor()： 完成了数据的初始化。注意：只要使用了constructor()就必须写super()，否则this指向会出错。 - </li>
-<li>render()： render()函数会将jsx生成的dom插入到目标节点中。在每次组件更新时，react通过diff算法比较更新前和更新之后的dom节点，找到最小的有差异的dom位置并更新，花费最小的开销。 </li>
-<li>componentDidMount()： 组件第一次渲染完成，此时dom节点已经生成，在这里调用接口请求，返回数据后使用setState()更新数据后重新渲染。 </li>
-<li>componentDidUpdate(prevProps,prevState)： 组件更新完成。每次react重新渲染之后都会进入这个生命周期，可以拿到更新之前的props和state。 </li>
-<li>componentWillUnmount()： 在这个生命周期完成组件的数据销毁和卸载，移除所有的定时器和监听。 不常用的有： </li>
-<li>getDerivedStateFromProps(nextProps,prevState)： 代替老版的componentWillReceiveProps()。官方将更新state与触发回调重新分配到了componentWillReceiveProps()中，让组件整体的更新逻辑更加清晰，并且在当前生命周期中，禁止使用this.props，强制让开发者们通过比较nextProps和PrevState去保证数据的正确行为。 </li>
-<li>shouldComponentUpdate()： return true可以渲染，return false不重新渲染。为什么会出现这个SCU生命周期？主要用于性能优化。也是唯一可以控制组件渲染的生命周期，在setState之后state发生改变组件会重新渲染，在当前生命周期内return false会阻止组件的更新。因为react中父组件重新渲染导致子组件也重新渲染，这时在子组件的当前生命周期内做判断是否真的需要重新渲染。 </li>
+<li><strong>加分回答</strong><ul>
+<li>React的生命周期中有常用的和不常用的。</li>
+<li>常用的有：<ul>
+<li>constructor()： 完成了数据的初始化。注意：只要使用了constructor()就必须写super()，否则this指向会出错。 -</li>
+<li>render()： render()函数会将jsx生成的dom插入到目标节点中。在每次组件更新时，react通过diff算法比较更新前和更新之后的dom节点，找到最小的有差异的dom位置并更新，花费最小的开销。</li>
+<li>componentDidMount()： 组件第一次渲染完成，此时dom节点已经生成，在这里调用接口请求，返回数据后使用setState()更新数据后重新渲染。</li>
+<li>componentDidUpdate(prevProps,prevState)： 组件更新完成。每次react重新渲染之后都会进入这个生命周期，可以拿到更新之前的props和state。</li>
+<li>componentWillUnmount()： 在这个生命周期完成组件的数据销毁和卸载，移除所有的定时器和监听。 不常用的有：</li>
+<li>getDerivedStateFromProps(nextProps,prevState)： 代替老版的componentWillReceiveProps()。官方将更新state与触发回调重新分配到了componentWillReceiveProps()中，让组件整体的更新逻辑更加清晰，并且在当前生命周期中，禁止使用this.props，强制让开发者们通过比较nextProps和PrevState去保证数据的正确行为。</li>
+<li>shouldComponentUpdate()： return true可以渲染，return false不重新渲染。为什么会出现这个SCU生命周期？主要用于性能优化。也是唯一可以控制组件渲染的生命周期，在setState之后state发生改变组件会重新渲染，在当前生命周期内return false会阻止组件的更新。因为react中父组件重新渲染导致子组件也重新渲染，这时在子组件的当前生命周期内做判断是否真的需要重新渲染。</li>
 <li>getSnapshotBeforeUpdate(prevProps,prevState)： 代替componentWillUpdate()，核心区别在于getSnapshotBeforeUpdate()中读取到的dom元素状态是可以保证和componentDidUpdate()中的一致。</li>
 </ul>
 </li>
@@ -6095,45 +6099,45 @@ input.onChange = function(e) {
 </ul>
 <h3 id="❤React组件间传值的方法"><a href="#❤React组件间传值的方法" class="headerlink" title="❤React组件间传值的方法"></a>❤React组件间传值的方法</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> props、context、发布/订阅。 </li>
-<li><strong>标准回答</strong> React中组件之间的传值方法有很多，按照不同的组件间关系可以把组件传值的方法分为父子组件传值，跨级组件传值和非嵌套关系组件传值。父子组件常用的传值方法是当父组件给子组件传值时通过props，子组件向父组件传值通过回调函数来传值。跨级组件常用的传值方法是props一层一层的传，或者使用context对象，将父组件设置为生产者而子组件都设置对应的contextType即可。非嵌套关系组件传值的方法是使用共同的父级组件进行props传值，或者通过context传值，推荐使用发布/订阅的自定义事件传值。 </li>
-<li><strong>加分回答</strong> React中组件间传值方法有很多，按照不同的组件间关系可以把组件间传值的方法分为： <ul>
-<li>父子组件传值：父子组件传值是最常见的应用场景也是非常简单的一种通信方式，父组件通过向子组件传递props，子组件得到props之后做处理就行。而子组件向父组件传值需要通过回调函数触发，具体操作是父组件将一个函数作为props的属性传递给子组件，子组件通过this.props.xxx()调用父组件的函数，参数根据需要自己进行搭配即可。 </li>
-<li>跨级组件传值：跨级的组件之间传值无非就是重复多个父子组件传值的过程。一般跨级的传值方式有两种，分别是： <ul>
-<li>一层一层的传递props：写法很复杂，耦合程度也很高，如果两个组件之间隔了很多层，那么也会影响中间组件的性能，开销大。不过这种方法也是可以的，如果组件之间的层级不是非常多，可以考虑使用这个方法。 </li>
+<li><strong>得分点</strong> props、context、发布/订阅。</li>
+<li><strong>标准回答</strong> React中组件之间的传值方法有很多，按照不同的组件间关系可以把组件传值的方法分为父子组件传值，跨级组件传值和非嵌套关系组件传值。父子组件常用的传值方法是当父组件给子组件传值时通过props，子组件向父组件传值通过回调函数来传值。跨级组件常用的传值方法是props一层一层的传，或者使用context对象，将父组件设置为生产者而子组件都设置对应的contextType即可。非嵌套关系组件传值的方法是使用共同的父级组件进行props传值，或者通过context传值，推荐使用发布/订阅的自定义事件传值。</li>
+<li><strong>加分回答</strong> React中组件间传值方法有很多，按照不同的组件间关系可以把组件间传值的方法分为：<ul>
+<li>父子组件传值：父子组件传值是最常见的应用场景也是非常简单的一种通信方式，父组件通过向子组件传递props，子组件得到props之后做处理就行。而子组件向父组件传值需要通过回调函数触发，具体操作是父组件将一个函数作为props的属性传递给子组件，子组件通过this.props.xxx()调用父组件的函数，参数根据需要自己进行搭配即可。</li>
+<li>跨级组件传值：跨级的组件之间传值无非就是重复多个父子组件传值的过程。一般跨级的传值方式有两种，分别是：<ul>
+<li>一层一层的传递props：写法很复杂，耦合程度也很高，如果两个组件之间隔了很多层，那么也会影响中间组件的性能，开销大。不过这种方法也是可以的，如果组件之间的层级不是非常多，可以考虑使用这个方法。</li>
 </ul>
 </li>
-<li>context对象：context相当于一个全局的变量，是一个大的容器，可以把需要传递的数据放在这个容器中，不论嵌套多深都可以轻易的使用。具体操作是创建一个context对象，需要输入默认值。在父组件中使用生产者标签将需要传值的所有子组件包裹起来。子组件通过指定contextType获取到这个context对象，直接调用this.context即可获得值。 </li>
-<li>非嵌套关系组件传值：就是没有任何包含关系的组件之间的传值，包括了兄弟组件。对于肺嵌套关系组件传值一般用两种方法： - 通过相同的父组件传值：子组件通过回调函数的形式将数据传给父组件，父组件直接通过属性将数据传递给子组件。 </li>
-<li>context：利用共同的父组件context对象进行传值 </li>
+<li>context对象：context相当于一个全局的变量，是一个大的容器，可以把需要传递的数据放在这个容器中，不论嵌套多深都可以轻易的使用。具体操作是创建一个context对象，需要输入默认值。在父组件中使用生产者标签将需要传值的所有子组件包裹起来。子组件通过指定contextType获取到这个context对象，直接调用this.context即可获得值。</li>
+<li>非嵌套关系组件传值：就是没有任何包含关系的组件之间的传值，包括了兄弟组件。对于肺嵌套关系组件传值一般用两种方法： - 通过相同的父组件传值：子组件通过回调函数的形式将数据传给父组件，父组件直接通过属性将数据传递给子组件。</li>
+<li>context：利用共同的父组件context对象进行传值</li>
 <li>通过发布/订阅进行传递：也可以说是自定义事件。重点是在子组件的componentDidMount生命周期通过声明一个自定义事件，然后在componentWillUnmount生命周期组件销毁时移除自定义事件。</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤React事件绑定原理"><a href="#❤React事件绑定原理" class="headerlink" title="❤React事件绑定原理"></a>❤React事件绑定原理</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 非原生事件、SyntheticBaseEvent </li>
-<li><strong>标准回答</strong> <ul>
-<li>React中event事件不是原生事件，而是对原生event进行了封装的新类SyntheticBaseEvent，模拟出DOM事件的所有功能，通过event.nativeEvent可以获取到原生事件。 </li>
-<li>React17版本开始所有事件都绑定在root根组件上，之前都是绑定在document上。 </li>
-<li>React中event和DOM事件不一样，和Vue也不一样。 </li>
+<li><strong>得分点</strong> 非原生事件、SyntheticBaseEvent</li>
+<li><strong>标准回答</strong><ul>
+<li>React中event事件不是原生事件，而是对原生event进行了封装的新类SyntheticBaseEvent，模拟出DOM事件的所有功能，通过event.nativeEvent可以获取到原生事件。</li>
+<li>React17版本开始所有事件都绑定在root根组件上，之前都是绑定在document上。</li>
+<li>React中event和DOM事件不一样，和Vue也不一样。</li>
 </ul>
 </li>
 <li><strong>加分回答</strong> React并不是将click事件绑在该div的真实DOM上，而是在root处监听所有支持的事件，当事件发生并冒泡至root处时，React将事件内容封装并交由真正的处理函数运行。这样的方式不仅减少了内存消耗，还能在组件挂载销毁时统一订阅和移除事件。另外冒泡到 root上的事件也不是原生浏览器事件，而是 React 自己实现的合成事件（SyntheticBaseEvent）。因此我们如果不想要事件冒泡的话，调用 <code>event.stopPropagation</code> 是无效的，而应该调用<code>event.preventDefault</code>。</li>
 </ul>
 <h3 id="❤ReactRouter基本用法"><a href="#❤ReactRouter基本用法" class="headerlink" title="❤ReactRouter基本用法"></a>❤ReactRouter基本用法</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 路由的模式有两种、hash模式、history模式、路由的动态传参、重定向、高阶路由组件。 </li>
-<li><strong>标准回答</strong> react的路由保证了界面和URL的同步，拥有简单的API和强大的功能。react中的路由模式有两种，分别是：hash路由和history路由。 <ul>
-<li>首先用析构的方法引入需要用到的路由方式，需要注意的是路由所有的配置都必须被包裹在hash路由或者history路由里面。 </li>
-<li>然后在路由标签内先再配置Route标签，它的参数有：path，路由匹配的路径。component，路由匹配成功之后渲染的组件。 </li>
-<li>react中路由的跳转使用Link标签，它的参数to指路由匹配的路径，也需要引入。NavLink标签和Link的区别就是渲染成a标签之后会自带一个class属性，对应的是NavLink标签的active属性。 </li>
-<li>react路由中有高阶路由组件withRouter，它和普通路由一样需要引入，主要作用是增加了路由跳转的方式，可以调用history方法进行函数中路由的跳转。 </li>
-<li>react中路由的动态传值是一个重点，{/:属性名}和{/属性名/值}搭配的方式进行传值，在需要接收参数的组件通过this.props.match.params来进行接收。react中路由的query传值是通过问号的方法将参数拼接在url之后，在需要接收参数的组件通过url.parse(this.props.location.search).query获取参数。 </li>
-<li>路由的重定向需要用组件Redirect来完成，参数to是目标组件。 - 路由的懒加载需要从react中引入Suspense和lazy，引入组件时通过lazy(() =&gt; import())来引入，使用Suspense标签将Route包裹起来即可。 </li>
+<li><strong>得分点</strong> 路由的模式有两种、hash模式、history模式、路由的动态传参、重定向、高阶路由组件。</li>
+<li><strong>标准回答</strong> react的路由保证了界面和URL的同步，拥有简单的API和强大的功能。react中的路由模式有两种，分别是：hash路由和history路由。<ul>
+<li>首先用析构的方法引入需要用到的路由方式，需要注意的是路由所有的配置都必须被包裹在hash路由或者history路由里面。</li>
+<li>然后在路由标签内先再配置Route标签，它的参数有：path，路由匹配的路径。component，路由匹配成功之后渲染的组件。</li>
+<li>react中路由的跳转使用Link标签，它的参数to指路由匹配的路径，也需要引入。NavLink标签和Link的区别就是渲染成a标签之后会自带一个class属性，对应的是NavLink标签的active属性。</li>
+<li>react路由中有高阶路由组件withRouter，它和普通路由一样需要引入，主要作用是增加了路由跳转的方式，可以调用history方法进行函数中路由的跳转。</li>
+<li>react中路由的动态传值是一个重点，{/:属性名}和{/属性名/值}搭配的方式进行传值，在需要接收参数的组件通过this.props.match.params来进行接收。react中路由的query传值是通过问号的方法将参数拼接在url之后，在需要接收参数的组件通过url.parse(this.props.location.search).query获取参数。</li>
+<li>路由的重定向需要用组件Redirect来完成，参数to是目标组件。 - 路由的懒加载需要从react中引入Suspense和lazy，引入组件时通过lazy(() =&gt; import())来引入，使用Suspense标签将Route包裹起来即可。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>react中路由模式分为hash路由和history路由。<ul>
 <li>hash路由的原理是window.onhashchange监听，url前面会有一个#号，这个就是锚点，每个路由前面都会有#锚点，特点是#之后的数据改变不会发起请求，因此改变hash不会重新加载页面。</li>
 <li>history路由的原理是window.history API，在HTML5中新增了pushState和replaceState方法，这两个方法是在浏览器的历史记录栈上做文章，提供了对历史记录做修改的功能，虽然更改了url但是不会向服务器发起请求。history模式虽然去掉了hash模式的#锚点，但是它怕刷新，因为刷新时是真实的请求。而hash模式下，修改的是#锚点之后的信息，浏览器不会将#锚点之后的数据发送到服务器，所以没有问题。</li>
@@ -6144,26 +6148,26 @@ input.onChange = function(e) {
 </ul>
 <h3 id="❤setState是同步还是异步的"><a href="#❤setState是同步还是异步的" class="headerlink" title="❤setState是同步还是异步的"></a>❤setState是同步还是异步的</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 是同步也是异步、合成事件、生命周期函数、原生事件、定时器 </li>
-<li><strong>标准回答</strong> setState在合成事件和生命周期函数中是异步的，在原生事件和定时器中都是同步的。 </li>
-<li><strong>加分回答</strong> <ul>
-<li>setState本身不分同步或者异步，而是取决于是否处于batch update中。组件中的所有函数在执行时临时设置一个变量isBatchingUpdates = true，当遇到setState时，如果isBatchingUpdates是true，那么setState就是异步的，如果是false，那么setState就是同步的。那么什么时候isBatchingUpdates会被设置成false呢？ </li>
-<li>当函数运行结束时isBatchingUpdates = false - 当函数遇到setTimeout、setInterval时isBatchingUpdates = false </li>
+<li><strong>得分点</strong> 是同步也是异步、合成事件、生命周期函数、原生事件、定时器</li>
+<li><strong>标准回答</strong> setState在合成事件和生命周期函数中是异步的，在原生事件和定时器中都是同步的。</li>
+<li><strong>加分回答</strong><ul>
+<li>setState本身不分同步或者异步，而是取决于是否处于batch update中。组件中的所有函数在执行时临时设置一个变量isBatchingUpdates = true，当遇到setState时，如果isBatchingUpdates是true，那么setState就是异步的，如果是false，那么setState就是同步的。那么什么时候isBatchingUpdates会被设置成false呢？</li>
+<li>当函数运行结束时isBatchingUpdates = false - 当函数遇到setTimeout、setInterval时isBatchingUpdates = false</li>
 <li>当dom添加自定义事件时isBatchingUpdates = false</li>
 </ul>
 </li>
 </ul>
 <h3 id="❤React中hooks的优缺点"><a href="#❤React中hooks的优缺点" class="headerlink" title="❤React中hooks的优缺点"></a>❤React中hooks的优缺点</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 可读性强、组件层级变得更浅、不再需要考虑class组件中this指向、部分生命周期不支持 </li>
-<li><strong>标准回答</strong> <ul>
-<li><strong>优点：</strong> <ul>
-<li>代码的可读性强，在使用hooks之前比如发布/订阅自定义事件被挂载在componentDidMount生命周期中，然后需要在componentWillUnmount生命周期中将它清楚，这样就不便于开发者维护和迭代。在使用hooks之后，通过useEffect可以将componentDidMount生命周期、componentDidUpdate生命周期和componentWillUnmount生命周期聚合起来，方便代码的维护。 </li>
-<li>组件层级变得更浅了，在使用hooks之前通常使用高阶组件HOC的方法来复用多个组件公共的状态，增强组建的功能，这样肯定是加大了组件渲染的开销，损失了性能。但是在hooks中可以通过自定义组件useXxx()的方法将多个组件之间的共享逻辑放在自定义hook中，就可以轻松的进行数据互通。 </li>
-<li>不再需要考虑class组件中this指向的问题，hook在函数组件中不需要通过this.state或者this.fn来获取数据或者方法。 </li>
+<li><strong>得分点</strong> 可读性强、组件层级变得更浅、不再需要考虑class组件中this指向、部分生命周期不支持</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>优点：</strong><ul>
+<li>代码的可读性强，在使用hooks之前比如发布/订阅自定义事件被挂载在componentDidMount生命周期中，然后需要在componentWillUnmount生命周期中将它清楚，这样就不便于开发者维护和迭代。在使用hooks之后，通过useEffect可以将componentDidMount生命周期、componentDidUpdate生命周期和componentWillUnmount生命周期聚合起来，方便代码的维护。</li>
+<li>组件层级变得更浅了，在使用hooks之前通常使用高阶组件HOC的方法来复用多个组件公共的状态，增强组建的功能，这样肯定是加大了组件渲染的开销，损失了性能。但是在hooks中可以通过自定义组件useXxx()的方法将多个组件之间的共享逻辑放在自定义hook中，就可以轻松的进行数据互通。</li>
+<li>不再需要考虑class组件中this指向的问题，hook在函数组件中不需要通过this.state或者this.fn来获取数据或者方法。</li>
 </ul>
 </li>
-<li><strong>缺点：</strong>hooks的useEffect只包括了<code>componentDidMount</code>、<code>componentDidUpdate</code>还有<code>componentWillUnmount</code>这三个生命周期，对于<code>getSnapshotBeforeUpdate</code>和<code>componentDidCatch</code>等其他的生命周期没有支持。 </li>
+<li><strong>缺点：</strong>hooks的useEffect只包括了<code>componentDidMount</code>、<code>componentDidUpdate</code>还有<code>componentWillUnmount</code>这三个生命周期，对于<code>getSnapshotBeforeUpdate</code>和<code>componentDidCatch</code>等其他的生命周期没有支持。</li>
 </ul>
 </li>
 <li><strong>加分回答</strong> 使用useEffect时候里面不能写太多依赖项，将各个不同的功能划分为多个useEffect模块，将各项功能拆开写，这是遵循了软件设计的“单一职责模式”。如果遇到状态不同步的情况，使用手动传递参数的形式。如果业务复杂，就使用Component代替hooks，hooks的出现并不是取代了class组件，而是在函数组件的基础上可以实现一部分的类似class组件功能。</li>
@@ -6401,24 +6405,24 @@ console<span class="token punctuation">.</span><span class="token function">log<
       * @param Obj
       * @returns
       */</span>
-     <span class="token keyword">function</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token parameter">Obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   
-         <span class="token keyword">var</span> buf<span class="token punctuation">;</span>   
-         <span class="token keyword">if</span> <span class="token punctuation">(</span>Obj <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   
+     <span class="token keyword">function</span> <span class="token function">clone</span><span class="token punctuation">(</span><span class="token parameter">Obj</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+         <span class="token keyword">var</span> buf<span class="token punctuation">;</span>
+         <span class="token keyword">if</span> <span class="token punctuation">(</span>Obj <span class="token keyword">instanceof</span> <span class="token class-name">Array</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
              buf <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>                    <span class="token comment">//创建一个空的数组</span>
-             <span class="token keyword">var</span> i <span class="token operator">=</span> Obj<span class="token punctuation">.</span>length<span class="token punctuation">;</span>   
-             <span class="token keyword">while</span> <span class="token punctuation">(</span>i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>   
-                 buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">clone</span><span class="token punctuation">(</span>Obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
-             <span class="token punctuation">}</span>   
-             <span class="token keyword">return</span> buf<span class="token punctuation">;</span>    
-         <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">{</span>   
+             <span class="token keyword">var</span> i <span class="token operator">=</span> Obj<span class="token punctuation">.</span>length<span class="token punctuation">;</span>
+             <span class="token keyword">while</span> <span class="token punctuation">(</span>i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                 buf<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">clone</span><span class="token punctuation">(</span>Obj<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token punctuation">}</span>
+             <span class="token keyword">return</span> buf<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span><span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token punctuation">(</span>Obj <span class="token keyword">instanceof</span> <span class="token class-name">Object</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
              buf <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>                   <span class="token comment">//创建一个空对象</span>
              <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">var</span> k <span class="token keyword">in</span> Obj<span class="token punctuation">)</span> <span class="token punctuation">{</span>           <span class="token comment">//为这个对象添加新的属性</span>
-                 buf<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">clone</span><span class="token punctuation">(</span>Obj<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>   
-             <span class="token punctuation">}</span>   
-             <span class="token keyword">return</span> buf<span class="token punctuation">;</span>   
+                 buf<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">clone</span><span class="token punctuation">(</span>Obj<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+             <span class="token punctuation">}</span>
+             <span class="token keyword">return</span> buf<span class="token punctuation">;</span>
          <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>                         <span class="token comment">//普通变量直接赋值</span>
-             <span class="token keyword">return</span> Obj<span class="token punctuation">;</span>   
-         <span class="token punctuation">}</span>   
+             <span class="token keyword">return</span> Obj<span class="token punctuation">;</span>
+         <span class="token punctuation">}</span>
      <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="下面这个ul，如何点击每一列的时候alert其index"><a href="#下面这个ul，如何点击每一列的时候alert其index" class="headerlink" title="下面这个ul，如何点击每一列的时候alert其index"></a>下面这个ul，如何点击每一列的时候alert其index</h3><blockquote>
@@ -6620,21 +6624,21 @@ window<span class="token punctuation">.</span><span class="token function-variab
 </ul>
 <h3 id="❤有什么方法可以保持前后端实时通信"><a href="#❤有什么方法可以保持前后端实时通信" class="headerlink" title="❤有什么方法可以保持前后端实时通信"></a>❤有什么方法可以保持前后端实时通信</h3><p><strong>牛客网解释：</strong></p>
 <ul>
-<li><strong>得分点</strong> 轮询、长轮询、 iframe流、WebSocket、SSE </li>
-<li><strong>标准回答</strong> </li>
-<li>保持前后端实时通信的方法有以下几种： <ul>
-<li><strong>轮询</strong>是客户端和服务器之间会一直进行连接，每隔一段时间就询问一次。其<strong>缺点</strong>也很明显：连接数会很多，一个接受，一个发送。而且每次发送请求都会有Http的Header，会很耗流量，也会消耗CPU的利用率。<strong>优点</strong>就是实现简单，无需做过多的更改。缺点是轮询的间隔过长，会导致用户不能及时接收到更新的数据；轮询的间隔过短，会导致查询请求过多，增加服务器端的负担 </li>
-<li><strong>长轮询</strong>是对轮询的改进版，客户端发送HTTP给服务器之后，如果没有新消息，就一直等待。有新消息，才会返回给客户端。在某种程度上减小了网络带宽和CPU利用率等问题。由于http数据包的头部数据量往往很大（通常有400多个字节），但是真正被服务器需要的数据却很少（有时只有10个字节左右），这样的数据包在网络上周期性的传输，难免对网络带宽是一种浪费。<strong>优点</strong>是做了优化，有较好的时效性。<strong>缺点</strong>是保持连接会消耗资源; 服务器没有返回有效数据，程序超时。 </li>
-<li><strong>iframe流</strong>方式是在页面中插入一个隐藏的iframe，利用其src属性在服务器和客户端之间创建一条长连接，服务器向iframe传输数据（通常是HTML，内有负责插入信息的javascript），来实时更新页面。<strong>优点</strong>是消息能够实时到达；浏览器兼容好。<strong>缺点</strong>是服务器维护一个长连接会增加开销；IE、chrome、Firefox会显示加载没有完成，图标会不停旋转。 </li>
-<li><strong>WebSocket</strong>是类似Socket的TCP长连接的通讯模式，一旦WebSocket连接建立后，后续数据都以帧序列的形式传输。在客户端断开WebSocket连接或Server端断掉连接前，不需要客户端和服务端重新发起连接请求。在海量并发和客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。缺点是浏览器支持程度不一致，不支持断开重连。 </li>
-<li><strong>SSE</strong>(Server-Sent Event)是建立在浏览器与服务器之间的通信渠道，然后服务器向浏览器推送信息。SSE 是单向通道，只能服务器向浏览器发送，因为 streaming 本质上就是下载。 <strong>优点</strong>是SSE 使用 HTTP 协议，现有的服务器软件都支持。SSE 属于轻量级，使用简单；SSE 默认支持断线重连； </li>
+<li><strong>得分点</strong> 轮询、长轮询、 iframe流、WebSocket、SSE</li>
+<li><strong>标准回答</strong></li>
+<li>保持前后端实时通信的方法有以下几种：<ul>
+<li><strong>轮询</strong>是客户端和服务器之间会一直进行连接，每隔一段时间就询问一次。其<strong>缺点</strong>也很明显：连接数会很多，一个接受，一个发送。而且每次发送请求都会有Http的Header，会很耗流量，也会消耗CPU的利用率。<strong>优点</strong>就是实现简单，无需做过多的更改。缺点是轮询的间隔过长，会导致用户不能及时接收到更新的数据；轮询的间隔过短，会导致查询请求过多，增加服务器端的负担</li>
+<li><strong>长轮询</strong>是对轮询的改进版，客户端发送HTTP给服务器之后，如果没有新消息，就一直等待。有新消息，才会返回给客户端。在某种程度上减小了网络带宽和CPU利用率等问题。由于http数据包的头部数据量往往很大（通常有400多个字节），但是真正被服务器需要的数据却很少（有时只有10个字节左右），这样的数据包在网络上周期性的传输，难免对网络带宽是一种浪费。<strong>优点</strong>是做了优化，有较好的时效性。<strong>缺点</strong>是保持连接会消耗资源; 服务器没有返回有效数据，程序超时。</li>
+<li><strong>iframe流</strong>方式是在页面中插入一个隐藏的iframe，利用其src属性在服务器和客户端之间创建一条长连接，服务器向iframe传输数据（通常是HTML，内有负责插入信息的javascript），来实时更新页面。<strong>优点</strong>是消息能够实时到达；浏览器兼容好。<strong>缺点</strong>是服务器维护一个长连接会增加开销；IE、chrome、Firefox会显示加载没有完成，图标会不停旋转。</li>
+<li><strong>WebSocket</strong>是类似Socket的TCP长连接的通讯模式，一旦WebSocket连接建立后，后续数据都以帧序列的形式传输。在客户端断开WebSocket连接或Server端断掉连接前，不需要客户端和服务端重新发起连接请求。在海量并发和客户端与服务器交互负载流量大的情况下，极大的节省了网络带宽资源的消耗，有明显的性能优势，且客户端发送和接受消息是在同一个持久连接上发起，实时性优势明显。缺点是浏览器支持程度不一致，不支持断开重连。</li>
+<li><strong>SSE</strong>(Server-Sent Event)是建立在浏览器与服务器之间的通信渠道，然后服务器向浏览器推送信息。SSE 是单向通道，只能服务器向浏览器发送，因为 streaming 本质上就是下载。 <strong>优点</strong>是SSE 使用 HTTP 协议，现有的服务器软件都支持。SSE 属于轻量级，使用简单；SSE 默认支持断线重连；</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>轮询适用于：小型应用，实时性不高 </li>
-<li>长轮询适用于：一些早期的对及时性有一些要求的应用：web IM 聊天 </li>
-<li>iframe适用于：客服通信等 </li>
-<li>WebSocket适用于：微信、网络互动游戏等 </li>
+<li><strong>加分回答</strong><ul>
+<li>轮询适用于：小型应用，实时性不高</li>
+<li>长轮询适用于：一些早期的对及时性有一些要求的应用：web IM 聊天</li>
+<li>iframe适用于：客服通信等</li>
+<li>WebSocket适用于：微信、网络互动游戏等</li>
 <li>SSE适用于：金融股票数据、看板等</li>
 </ul>
 </li>
@@ -6866,8 +6870,6 @@ window<span class="token punctuation">.</span><span class="token function-variab
 
   <aside class="sidebar">
 
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
-
     <div class="sidebar-inner">
 
       <ul class="sidebar-nav motion-element">
@@ -6926,6 +6928,8 @@ window<span class="token punctuation">.</span><span class="token function-variab
 
 
       </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
@@ -6969,7 +6973,7 @@ window<span class="token punctuation">.</span><span class="token function-variab
 
         
 <div class="busuanzi-count">
-  <script data-pjax="" async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -7002,9 +7006,9 @@ window<span class="token punctuation">.</span><span class="token function-variab
 
   
   
-  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   
   
 
@@ -7018,18 +7022,16 @@ window<span class="token punctuation">.</span><span class="token function-variab
 
 
 
+
+
+
+  
   
 
 
 
 
   
-  
-
-
-
-
-  
 
 
 
@@ -7044,7 +7046,6 @@ window<span class="token punctuation">.</span><span class="token function-variab
 
 
 
-    <div id="pjax">
   
 
   
@@ -7053,7 +7054,6 @@ window<span class="token punctuation">.</span><span class="token function-variab
 
 
 
-    </div>
 
 
 <script src="/bundle.js"></script><script>
@@ -7076,64 +7076,6 @@ window<span class="token punctuation">.</span><span class="token function-variab
       localStorage.setItem('comments_active', commentClass);
     });
   }
-;
-
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
 ;
 
     (function(){

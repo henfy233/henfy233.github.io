@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":null,"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="介绍目前常见前端面试题，参考链接 https://interview2.poetries.top/">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863237781/BC704AA0F4330EE2306751C366A460B5">
 <meta property="og:image" content="https://s.poetries.work/images/202202231030963.png">
 <meta property="article:published_time" content="2022-06-19T17:26:49.000Z">
-<meta property="article:modified_time" content="2022-07-27T14:31:23.964Z">
+<meta property="article:modified_time" content="2022-07-28T13:06:02.434Z">
 <meta property="article:author" content="henfy">
 <meta property="article:tag" content="前端 面试">
 <meta name="twitter:card" content="summary">
@@ -145,6 +145,11 @@
     <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">6</span></a>
 
   </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>站点地图</a>
+
+  </li>
       <li class="menu-item menu-item-search">
         <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
         </a>
@@ -225,8 +230,17 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-07-27 22:31:23" itemprop="dateModified" datetime="2022-07-27T22:31:23+08:00">2022-07-27</time>
+                <time title="修改时间：2022-07-28 21:06:02" itemprop="dateModified" datetime="2022-07-28T21:06:02+08:00">2022-07-28</time>
               </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
 
           
             <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
@@ -294,12 +308,12 @@
 <li><code>box-sizing: inherit;</code> 继承父元素 <code>box-sizing</code> 属性的值</li>
 </ul>
 <ul>
-<li><strong>得分点</strong> 标准盒模型、怪异盒模型、<code>box-sizing:border-box</code>、盒模型大小 </li>
+<li><strong>得分点</strong> 标准盒模型、怪异盒模型、<code>box-sizing:border-box</code>、盒模型大小</li>
 <li><strong>标准回答</strong> CSS盒模型定义了盒的每个部分包含 margin, border, padding, content 。<ul>
-<li>根据盒子大小的计算方式不同盒模型分成了两种，标准盒模型和怪异盒模型。 <ul>
-<li><strong>标准模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，实际设置的是 content box。<code>padding</code> 和 <code>border </code>再加上设置的宽高一起决定整个盒子的大小。 </li>
-<li><strong>怪异盒模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，包含了<code>padding</code>和<code>border </code>，设置的 <code>width</code> 和 <code>height</code>就是盒子实际的大小 默认情况下，盒模型都是标准盒模型 <ul>
-<li>设置标准盒模型：<code>box-sizing:content-box</code> </li>
+<li>根据盒子大小的计算方式不同盒模型分成了两种，标准盒模型和怪异盒模型。<ul>
+<li><strong>标准模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，实际设置的是 content box。<code>padding</code> 和 <code>border </code>再加上设置的宽高一起决定整个盒子的大小。</li>
+<li><strong>怪异盒模型</strong>，给盒设置 <code>width</code> 和 <code>height</code>，包含了<code>padding</code>和<code>border </code>，设置的 <code>width</code> 和 <code>height</code>就是盒子实际的大小 默认情况下，盒模型都是标准盒模型<ul>
+<li>设置标准盒模型：<code>box-sizing:content-box</code></li>
 <li>设置怪异盒模型：<code>box-sizing:border-box</code></li>
 </ul>
 </li>
@@ -343,29 +357,29 @@
 <li>可以阻止元素被浮动元素覆盖</li>
 </ul>
 <ul>
-<li><strong>得分点：</strong> 块级格式化上下文、独立的渲染区域、不会影响边界以外的元素、形成BFC条件、float、position、overflow、display </li>
-<li><strong>标准回答：</strong> BFC(Block Formatting Context)块级格式化上下文，是Web页面一块独立的渲染区域，内部元素的渲染不会影响边界以外的元素。 <ul>
-<li><strong>BFC布局规则</strong> <ul>
-<li>内部盒子会在垂直方向，一个接一个地放置。 </li>
-<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。 </li>
-<li>每个盒子（块盒与行盒）的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。 </li>
-<li>BFC的区域不会与float box重叠。 </li>
-<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。 </li>
-<li>计算BFC的高度时，浮动元素也参与计算。 </li>
+<li><strong>得分点：</strong> 块级格式化上下文、独立的渲染区域、不会影响边界以外的元素、形成BFC条件、float、position、overflow、display</li>
+<li><strong>标准回答：</strong> BFC(Block Formatting Context)块级格式化上下文，是Web页面一块独立的渲染区域，内部元素的渲染不会影响边界以外的元素。<ul>
+<li><strong>BFC布局规则</strong><ul>
+<li>内部盒子会在垂直方向，一个接一个地放置。</li>
+<li>Box垂直方向的距离由margin决定。属于同一个BFC的两个相邻Box的margin会发生重叠。</li>
+<li>每个盒子（块盒与行盒）的margin box的左边，与包含块border box的左边相接触(对于从左往右的格式化，否则相反)。即使存在浮动也是如此。</li>
+<li>BFC的区域不会与float box重叠。</li>
+<li>BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面的元素。反之也如此。</li>
+<li>计算BFC的高度时，浮动元素也参与计算。</li>
 </ul>
 </li>
-<li><strong>BFC形成的条件</strong> <ul>
-<li><code>float </code>设置成 <code>left </code>或 <code>right</code> </li>
-<li><code>position </code>是<code>absolute</code>或者<code>fixed</code> </li>
-<li><code>overflow </code>不是<code>visible</code>，为 <code>auto</code>、<code>scroll</code>、<code>hidden</code> -<code>display</code>是<code>flex</code>或者<code>inline-block</code> 等 </li>
+<li><strong>BFC形成的条件</strong><ul>
+<li><code>float </code>设置成 <code>left </code>或 <code>right</code></li>
+<li><code>position </code>是<code>absolute</code>或者<code>fixed</code></li>
+<li><code>overflow </code>不是<code>visible</code>，为 <code>auto</code>、<code>scroll</code>、<code>hidden</code> -<code>display</code>是<code>flex</code>或者<code>inline-block</code> 等</li>
 </ul>
 </li>
-<li>BFC解决能的问题：清除浮动 </li>
+<li>BFC解决能的问题：清除浮动</li>
 </ul>
 </li>
-<li><strong>加分回答：</strong> BFC的方式都能清除浮动，但是常使用的清除浮动的BFC方式只有<code>overflow:hidden</code>,原因是使用float或者position方式清除浮动，虽然父级盒子内部浮动被清除了，但是父级本身又脱离文档流了，会对父级后面的兄弟盒子的布局造成影响。如果设置父级为<code>display:flex</code>，内部的浮动就会失效。所以通常只是用<code>overflow: hidden</code>清除浮动。 <ul>
-<li>IFC（Inline formatting contexts）：内联格式上下文。IFC的高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)，IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。 </li>
-<li>GFC（GrideLayout formatting contexts）：网格布局格式化上下文。当为一个元素设置display值为grid的时候，此元素将会获得一个独立的渲染区域。 </li>
+<li><strong>加分回答：</strong> BFC的方式都能清除浮动，但是常使用的清除浮动的BFC方式只有<code>overflow:hidden</code>,原因是使用float或者position方式清除浮动，虽然父级盒子内部浮动被清除了，但是父级本身又脱离文档流了，会对父级后面的兄弟盒子的布局造成影响。如果设置父级为<code>display:flex</code>，内部的浮动就会失效。所以通常只是用<code>overflow: hidden</code>清除浮动。<ul>
+<li>IFC（Inline formatting contexts）：内联格式上下文。IFC的高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)，IFC中的line box一般左右都贴紧整个IFC，但是会因为float元素而扰乱。</li>
+<li>GFC（GrideLayout formatting contexts）：网格布局格式化上下文。当为一个元素设置display值为grid的时候，此元素将会获得一个独立的渲染区域。</li>
 <li>FFC（Flex formatting contexts）：自适应格式上下文。display值为flex或者inline-flex的元素将会生成自适应容器。</li>
 </ul>
 </li>
@@ -392,7 +406,7 @@
 <li>在同一层叠上下文中，层叠等级才有意义</li>
 <li><code>z-index</code>的优先级最高</li>
 </ul>
-<p><img src="https://s.poetries.work/gitee/2020/09/111.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/gitee/2020/09/111.png" alt="img"></p>
 <h3 id="❤左右居中方案"><a href="#❤左右居中方案" class="headerlink" title="❤左右居中方案"></a>❤左右居中方案</h3><ul>
 <li>行内元素: <code>text-align: center</code></li>
 <li>定宽块状元素: 左右 <code>margin</code> 值为 <code>auto</code></li>
@@ -433,7 +447,7 @@
 <pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 定高方案1 */</span>
 <span class="token selector">.center</span> <span class="token punctuation">{</span>
   <span class="token property">height</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span> 50px 0<span class="token punctuation">;</span>   
+  <span class="token property">margin</span><span class="token punctuation">:</span> 50px 0<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment">/* 定高方案2 */</span>
 <span class="token selector">.center</span> <span class="token punctuation">{</span>
@@ -468,7 +482,7 @@
   <span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token selector">.center</span> <span class="token punctuation">{</span>
-  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>  
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
   <span class="token property">vertical-align</span><span class="token punctuation">:</span> middle<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -488,7 +502,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863237781/BC704AA0F4330EE2306751C366A460B5" alt="img"></p>
+<p><img data-src="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863237781/BC704AA0F4330EE2306751C366A460B5" alt="img"></p>
 <p><strong>如何垂直居中一个<code>&lt;img&gt;</code>?（用更简便的方法。）</strong></p>
 <pre class="line-numbers language-css" data-language="css"><code class="language-css">#container     <span class="token comment">/**&lt;img&gt;的容器设置如下**/</span>
 <span class="token punctuation">{</span>
@@ -597,20 +611,20 @@
 <p>css选择器的解析原则：选择器定位DOM元素是从右往左的方向，这样可以尽早的过滤掉一些不必要的样式规则和元素</p>
 </blockquote>
 <ul>
-<li><strong>得分点：</strong> <code>!important</code>、行内样式、嵌入样式、外链样式、id选择器、类选择器、标签选择器、复合选择器、通配符、继承样式 </li>
-<li><strong>标准回答：</strong> CSS样式的优先级应该分成四大类 <ul>
-<li>第一类<code>!important</code>，无论引入方式是什么，选择器是什么，它的优先级都是最高的。 </li>
-<li>第二类引入方式，行内样式的优先级要高于嵌入和外链，嵌入和外链如果使用的选择器相同就看他们在页面中插入的顺序，在后面插入的会覆盖前面的。 </li>
-<li>第三类选择器，选择器优先级：id选择器 &gt;（类选择器 | 伪类选择器 | 属性选择器 ）&gt; （后代选择器 | 伪元素选择器 ）&gt; （子选择器 | 相邻选择器） &gt; 通配符选择器 。 </li>
-<li>第四类继承样式，是所有样式中优先级比较低的。 </li>
-<li>第五类浏览器默认样式优先级最低。 </li>
+<li><strong>得分点：</strong> <code>!important</code>、行内样式、嵌入样式、外链样式、id选择器、类选择器、标签选择器、复合选择器、通配符、继承样式</li>
+<li><strong>标准回答：</strong> CSS样式的优先级应该分成四大类<ul>
+<li>第一类<code>!important</code>，无论引入方式是什么，选择器是什么，它的优先级都是最高的。</li>
+<li>第二类引入方式，行内样式的优先级要高于嵌入和外链，嵌入和外链如果使用的选择器相同就看他们在页面中插入的顺序，在后面插入的会覆盖前面的。</li>
+<li>第三类选择器，选择器优先级：id选择器 &gt;（类选择器 | 伪类选择器 | 属性选择器 ）&gt; （后代选择器 | 伪元素选择器 ）&gt; （子选择器 | 相邻选择器） &gt; 通配符选择器 。</li>
+<li>第四类继承样式，是所有样式中优先级比较低的。</li>
+<li>第五类浏览器默认样式优先级最低。</li>
 </ul>
 </li>
-<li><strong>加分回答：</strong> 使用!important要谨慎 <ul>
-<li> 一定要优先考虑使用样式规则的优先级来解决问题而不是 <code>!important</code> </li>
-<li> 只有在需要覆盖全站或外部 CSS 的特定页面中使用 <code>!important</code> </li>
-<li> 永远不要在你的插件中使用 <code>!important</code> </li>
-<li> 永远不要在全站范围的 CSS 代码中使用 <code>!important</code> 优先级的比较指的是相同的样式属性，不同样式属性优先级比较失效，比如：在设置<code>max-width</code>时注意，已经给元素的<code>max-width</code>设置了<code>!important</code>但是还不生效，很有可能就是被width覆盖了 </li>
+<li><strong>加分回答：</strong> 使用!important要谨慎<ul>
+<li> 一定要优先考虑使用样式规则的优先级来解决问题而不是 <code>!important</code></li>
+<li> 只有在需要覆盖全站或外部 CSS 的特定页面中使用 <code>!important</code></li>
+<li> 永远不要在你的插件中使用 <code>!important</code></li>
+<li> 永远不要在全站范围的 CSS 代码中使用 <code>!important</code> 优先级的比较指的是相同的样式属性，不同样式属性优先级比较失效，比如：在设置<code>max-width</code>时注意，已经给元素的<code>max-width</code>设置了<code>!important</code>但是还不生效，很有可能就是被width覆盖了</li>
 <li> 举例：<code>div</code>最终的宽度还是<code>200px</code> div { max-width: 400px !important; height: 200px;background-color: tomato; width: 200px; }</li>
 </ul>
 </li>
@@ -662,27 +676,27 @@
 <p>推荐使用第三种方法，不会在页面新增div，文档结构更加清晰</p>
 </blockquote>
 <ul>
-<li><p><strong>得分点：</strong> 脱离文档流、盒子塌陷、 影响其他元素排版、伪元素 、<code>overflow:hidden</code> 、标签插入法 </p>
+<li><p><strong>得分点：</strong> 脱离文档流、盒子塌陷、 影响其他元素排版、伪元素 、<code>overflow:hidden</code> 、标签插入法</p>
 </li>
-<li><p><strong>标准回答：</strong> 浮动的作用，设置浮动的图片，可以实现文字环绕图片，设置了浮动的块级元素可以排列在同一行，设置了浮动的行内元素可以设置宽高，同时可以按照浮动设置的方向对齐排列盒子。 </p>
+<li><p><strong>标准回答：</strong> 浮动的作用，设置浮动的图片，可以实现文字环绕图片，设置了浮动的块级元素可以排列在同一行，设置了浮动的行内元素可以设置宽高，同时可以按照浮动设置的方向对齐排列盒子。</p>
 <ul>
-<li><p>设置浮动元素的<strong>特点</strong>： </p>
+<li><p>设置浮动元素的<strong>特点</strong>：</p>
 <ul>
-<li>设置了浮动，该元素脱标。元素不占位置 </li>
-<li>浮动可以进行模式转换（行内块元素） 浮动造成的影响，使盒子脱离文档流，如果父级盒子没有设置高度，需要被子盒子撑开，那么这时候父级盒子的高度就塌陷了，同时也会造成父级盒子后面的兄弟盒子布局受到影响。如果浮动元素后面还有其他兄弟元素，其他兄弟元素的布局也会受到影响。 </li>
+<li>设置了浮动，该元素脱标。元素不占位置</li>
+<li>浮动可以进行模式转换（行内块元素） 浮动造成的影响，使盒子脱离文档流，如果父级盒子没有设置高度，需要被子盒子撑开，那么这时候父级盒子的高度就塌陷了，同时也会造成父级盒子后面的兄弟盒子布局受到影响。如果浮动元素后面还有其他兄弟元素，其他兄弟元素的布局也会受到影响。</li>
 </ul>
 </li>
-<li><p>清除浮动的<strong>方法</strong>： </p>
+<li><p>清除浮动的<strong>方法</strong>：</p>
 <ul>
 <li>伪元素清除浮动：上面三种</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p><strong>加分回答：</strong> 三种清除浮动的特点和影响 </p>
+<li><p><strong>加分回答：</strong> 三种清除浮动的特点和影响</p>
 <ul>
-<li><strong>伪元素清除浮动</strong>：不会新增标签，不会有其他影响，是当下清除浮动最流行的方法 </li>
-<li><code>overflow：hidden</code>：不会新增标签，但是如果父级元素有定位元素超出父级，超出部分会隐藏，在不涉及父级元素有超出内容的情况，overflow：hidden比较常用，毕竟写法方便简洁 </li>
+<li><strong>伪元素清除浮动</strong>：不会新增标签，不会有其他影响，是当下清除浮动最流行的方法</li>
+<li><code>overflow：hidden</code>：不会新增标签，但是如果父级元素有定位元素超出父级，超出部分会隐藏，在不涉及父级元素有超出内容的情况，overflow：hidden比较常用，毕竟写法方便简洁</li>
 <li><strong>标签插入法</strong>：清除浮动的语法加在新增标签上，由于新增标签会造成不必要的渲染，所以这种方法目前不建议使用</li>
 </ul>
 </li>
@@ -691,7 +705,7 @@
 <p>流体布局</p>
 <p>float + margin，float + calc</p>
 </blockquote>
-<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 方案1 */</span> 
+<pre class="line-numbers language-css" data-language="css"><code class="language-css"><span class="token comment">/* 方案1 */</span>
 <span class="token selector">.left</span> <span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
   <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
@@ -699,7 +713,7 @@
 <span class="token selector">.right</span> <span class="token punctuation">{</span>
   <span class="token property">margin-left</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
-<span class="token comment">/* 方案2 */</span> 
+<span class="token comment">/* 方案2 */</span>
 <span class="token selector">.left</span> <span class="token punctuation">{</span>
   <span class="token property">width</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
   <span class="token property">float</span><span class="token punctuation">:</span> left<span class="token punctuation">;</span>
@@ -731,7 +745,7 @@
   <span class="token property">width</span><span class="token punctuation">:</span> 120px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token selector">.center</span> <span class="token punctuation">{</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span> 0 120px<span class="token punctuation">;</span> 
+  <span class="token property">margin</span><span class="token punctuation">:</span> 0 120px<span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span class="token comment">/* 方案2 */</span>
 <span class="token selector">.left</span> <span class="token punctuation">{</span>
@@ -811,7 +825,7 @@
     <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
     <span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
     <span class="token property">left</span><span class="token punctuation">:</span> 200px<span class="token punctuation">;</span>
-    <span class="token property">top</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>          
+    <span class="token property">top</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
     <span class="token property">right</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -901,18 +915,18 @@
 
 
 <h3 id="❤三栏布局的实现方案"><a href="#❤三栏布局的实现方案" class="headerlink" title="❤三栏布局的实现方案"></a>❤三栏布局的实现方案</h3><ul>
-<li><strong>得分点</strong> 圣杯布局、双飞翼布局、三栏高度不定、中间栏内容多先渲染 </li>
-<li><strong>标准回答</strong> 三栏布局，要求左右两边盒子宽度固定，中间盒子宽度自适应，盒子的高度都是随内容撑高的，一般都是中间盒子内容较多，为了保证页面渲染快，在写结构的时候，需要把中间盒子放在左右盒子的前面。 实现三栏布局的方法通常是圣杯布局和双飞翼布局。 </li>
-<li><strong>圣杯布局</strong>的实现方案：三个元素放在同一个父级元素中，代表中间盒子的元素放在最前面，父级盒子设置左右<code>padding</code>，三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度，设置左边盒子左边距-100%同时相对自身定位，右边平移自身宽度，右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开 </li>
-<li><strong>双飞翼布局</strong>的实现方案：三个盒子对应三个元素，其中中间盒子套了两层，中间盒子内部盒子设置<code>margin</code>,三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度,设置左边盒子左边距-100%,右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开 </li>
-<li><strong>加分回答</strong> <ul>
-<li><strong>圣杯布局:</strong> <ul>
-<li><strong>优点：</strong>不需要添加dom节点 </li>
-<li><strong>缺点：</strong>正常情况下是没有问题的，但是特殊情况下就会暴露此方案的弊端，当middle部分的宽小于left部分时就会发生布局混乱。 </li>
+<li><strong>得分点</strong> 圣杯布局、双飞翼布局、三栏高度不定、中间栏内容多先渲染</li>
+<li><strong>标准回答</strong> 三栏布局，要求左右两边盒子宽度固定，中间盒子宽度自适应，盒子的高度都是随内容撑高的，一般都是中间盒子内容较多，为了保证页面渲染快，在写结构的时候，需要把中间盒子放在左右盒子的前面。 实现三栏布局的方法通常是圣杯布局和双飞翼布局。</li>
+<li><strong>圣杯布局</strong>的实现方案：三个元素放在同一个父级元素中，代表中间盒子的元素放在最前面，父级盒子设置左右<code>padding</code>，三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度，设置左边盒子左边距-100%同时相对自身定位，右边平移自身宽度，右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开</li>
+<li><strong>双飞翼布局</strong>的实现方案：三个盒子对应三个元素，其中中间盒子套了两层，中间盒子内部盒子设置<code>margin</code>,三个盒子全部浮动，设置中间盒子宽度100%，左右盒子设置固定宽度,设置左边盒子左边距-100%,右边盒子设置右边距-自身宽度，最后设置父级盒子清除浮动，否则父级盒子的高度无法被撑开</li>
+<li><strong>加分回答</strong><ul>
+<li><strong>圣杯布局:</strong><ul>
+<li><strong>优点：</strong>不需要添加dom节点</li>
+<li><strong>缺点：</strong>正常情况下是没有问题的，但是特殊情况下就会暴露此方案的弊端，当middle部分的宽小于left部分时就会发生布局混乱。</li>
 </ul>
 </li>
-<li><strong>双飞翼布局：</strong> <ul>
-<li><strong>优点：</strong>不会像圣杯布局那样变形，CSS样式代码更简洁 </li>
+<li><strong>双飞翼布局：</strong><ul>
+<li><strong>优点：</strong>不会像圣杯布局那样变形，CSS样式代码更简洁</li>
 <li><strong>缺点：</strong>多加了一层dom节点</li>
 </ul>
 </li>
@@ -1063,7 +1077,7 @@
       <span class="token selector">from</span> <span class="token punctuation">{</span><span class="token property">top</span><span class="token punctuation">:</span>0px<span class="token punctuation">;</span><span class="token punctuation">}</span>
       <span class="token selector">to</span> <span class="token punctuation">{</span><span class="token property">top</span><span class="token punctuation">:</span>200px<span class="token punctuation">;</span><span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
- 
+
 <span class="token comment">/* 等同于： */</span>
 <span class="token atrule"><span class="token rule">@keyframes</span> mymove</span>
 <span class="token punctuation">{</span>
@@ -1204,26 +1218,26 @@
 <li>批量修改元素样式：<code>elem.className</code> 和 <code>elem.style.cssText</code> 代替 <code>elem.style.xxx</code></li>
 </ul>
 <ul>
-<li><strong>得分点</strong> 改变元素尺寸、重新计算布局树、重排必定重绘、重绘避开了重建布局树和分层、GPU加速、脱离文档流、样式集中改变 </li>
-<li><strong>标准回答</strong> <ul>
-<li>重排 ：当DOM的变化影响了元素的几何信息(元素的的位置和尺寸大小)，浏览器需要重新计算元素的几何属性，将其安放在界面中的正确位置，这个过程叫做重排。 </li>
-<li>重绘：当一个元素的外观发生改变，但没有改变布局，重新把元素外观绘制出来的过程，所以重绘跳过了创建布局树和分层的阶段。 重排需要重新计算布局树，重绘不需要，重排必定发生重绘，但是涉及到重绘不一定要重排。涉及到重排对性能的消耗更多一些。 </li>
-<li>触发重排的方法： <ul>
-<li>页面初始渲染，这是开销最大的一次重排 </li>
-<li>添加/删除可见的DOM元素 </li>
-<li>改变元素位置 -改变元素尺寸，比如边距、填充、边框、宽度和高度等 </li>
-<li>改变元素内容，比如文字数量，图片大小等 -改变元素字体大小 -改变浏览器窗口尺寸，比如resize事件发生时 </li>
-<li>激活CSS伪类（例如：<code>:hover</code>） </li>
-<li>设置 style 属性的值，因为通过设置style属性改变结点样式的话，每一次设置都会触发一次reflow </li>
-<li>查询某些属性或调用某些计算方法：offsetWidth、offsetHeight等 避免重排的方式 </li>
-<li>样式集中改变 </li>
-<li>使用 absolute 或 fixed 脱离文档流 </li>
-<li>使用GPU加速:transform </li>
+<li><strong>得分点</strong> 改变元素尺寸、重新计算布局树、重排必定重绘、重绘避开了重建布局树和分层、GPU加速、脱离文档流、样式集中改变</li>
+<li><strong>标准回答</strong><ul>
+<li>重排 ：当DOM的变化影响了元素的几何信息(元素的的位置和尺寸大小)，浏览器需要重新计算元素的几何属性，将其安放在界面中的正确位置，这个过程叫做重排。</li>
+<li>重绘：当一个元素的外观发生改变，但没有改变布局，重新把元素外观绘制出来的过程，所以重绘跳过了创建布局树和分层的阶段。 重排需要重新计算布局树，重绘不需要，重排必定发生重绘，但是涉及到重绘不一定要重排。涉及到重排对性能的消耗更多一些。</li>
+<li>触发重排的方法：<ul>
+<li>页面初始渲染，这是开销最大的一次重排</li>
+<li>添加/删除可见的DOM元素</li>
+<li>改变元素位置 -改变元素尺寸，比如边距、填充、边框、宽度和高度等</li>
+<li>改变元素内容，比如文字数量，图片大小等 -改变元素字体大小 -改变浏览器窗口尺寸，比如resize事件发生时</li>
+<li>激活CSS伪类（例如：<code>:hover</code>）</li>
+<li>设置 style 属性的值，因为通过设置style属性改变结点样式的话，每一次设置都会触发一次reflow</li>
+<li>查询某些属性或调用某些计算方法：offsetWidth、offsetHeight等 避免重排的方式</li>
+<li>样式集中改变</li>
+<li>使用 absolute 或 fixed 脱离文档流</li>
+<li>使用GPU加速:transform</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>GPU的过程是以下这几步 : 1. 获取DOM并将其分割成多个层(renderLayer) 2. 将每个层栅格化，并独立的绘制进位图中 3. 将这些位图作为纹理上传至GPU 4. 复合多个层来生成最终的屏幕图像(最后的layer) 开启了GPU加速的元素被独立出来，不会再影响其他dom的布局，因为它改变之后，只是相当于被贴上了页面。</li>
 </ul>
 </li>
@@ -1268,7 +1282,7 @@
 <li>如果<code>display</code>取值为<code>none</code>，那么<code>position</code>和<code>float</code>都不起作用，这种情况下元素不产生框</li>
 <li>否则，如果<code>position</code>取值为<code>absolute</code>或者<code>fixed</code>，框就是绝对定位的，<code>float</code>的计算值为<code>none</code>，<code>display</code>根据下面的表格进行调整。</li>
 </ul>
-<p><img src="https://s.poetries.work/images/202202231030963.png" alt="img"></p>
+<p><img data-src="https://s.poetries.work/images/202202231030963.png" alt="img"></p>
 <ul>
 <li>否则，如果<code>float</code>不是<code>none</code>，框是浮动的，<code>display</code>根据下表进行调整</li>
 <li>否则，如果元素是根元素，<code>display</code>根据下表进行调整</li>
@@ -1396,7 +1410,7 @@
 <span class="token punctuation">}</span>
 <span class="token atrule"><span class="token rule">@-webkit-keyframes</span> <span class="token string">"loops"</span></span> <span class="token punctuation">{</span>
     <span class="token selector">0%</span> <span class="token punctuation">{</span>
-        <span class="token property">background</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://d.hiphotos.baidu.com/image/w%3D400/sign=c01e6adca964034f0fcdc3069fc27980/e824b899a9014c08e5e38ca4087b02087af4f4d3.jpg<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>             
+        <span class="token property">background</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://d.hiphotos.baidu.com/image/w%3D400/sign=c01e6adca964034f0fcdc3069fc27980/e824b899a9014c08e5e38ca4087b02087af4f4d3.jpg<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
     <span class="token selector">25%</span> <span class="token punctuation">{</span>
         <span class="token property">background</span><span class="token punctuation">:</span><span class="token url"><span class="token function">url</span><span class="token punctuation">(</span>http://b.hiphotos.baidu.com/image/w%3D400/sign=edee1572e9f81a4c2632edc9e72b6029/30adcbef76094b364d72bceba1cc7cd98c109dd0.jpg<span class="token punctuation">)</span></span> no-repeat<span class="token punctuation">;</span>
@@ -1443,18 +1457,18 @@
 </ul>
 </blockquote>
 <ul>
-<li><strong>得分点</strong> px、rem、em、vw、vh </li>
-<li><strong>标准回答</strong> <ul>
-<li><strong>px：</strong>pixel像素的缩写，绝对长度单位，它的大小取决于屏幕的分辨率，是开发网页中常常使用的单位。 </li>
-<li><strong>em：</strong>相对长度单位，在 <code>font-size</code> 中使用是相对于父元素的字体大小，在其他属性中使用是相对于自身的字体大小，如 width。如当前元素的字体尺寸未设置，由于字体大小可继承的原因，可逐级向上查找，最终找不到则相对于浏览器默认字体大小。 </li>
-<li><strong>rem：</strong>相对长度单位，相对于根元素的字体大小，根元素字体大小未设置，使用浏览器默认字体大小。 </li>
-<li><strong>vw：</strong>相对长度单位，相对于视窗宽度的1%。 </li>
-<li><strong>vh：</strong>相对长度单位，相对于视窗高度的1%。 </li>
+<li><strong>得分点</strong> px、rem、em、vw、vh</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>px：</strong>pixel像素的缩写，绝对长度单位，它的大小取决于屏幕的分辨率，是开发网页中常常使用的单位。</li>
+<li><strong>em：</strong>相对长度单位，在 <code>font-size</code> 中使用是相对于父元素的字体大小，在其他属性中使用是相对于自身的字体大小，如 width。如当前元素的字体尺寸未设置，由于字体大小可继承的原因，可逐级向上查找，最终找不到则相对于浏览器默认字体大小。</li>
+<li><strong>rem：</strong>相对长度单位，相对于根元素的字体大小，根元素字体大小未设置，使用浏览器默认字体大小。</li>
+<li><strong>vw：</strong>相对长度单位，相对于视窗宽度的1%。</li>
+<li><strong>vh：</strong>相对长度单位，相对于视窗高度的1%。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li><strong>rem应用：</strong>在移动端网页开发中，页面要做成响应式的，可使用rem配合媒体查询或者flexible.js实现。</li>
-<li>原理是通过媒体查询或者flexible.js，能够在屏幕尺寸发生改变时，重置html根元素的字体大小，页面中的元素都是使用rem为单位设置的尺寸，因此只要改变根元素字体大小，页面中的其他元素的尺寸就自动跟着修改 </li>
+<li>原理是通过媒体查询或者flexible.js，能够在屏幕尺寸发生改变时，重置html根元素的字体大小，页面中的元素都是使用rem为单位设置的尺寸，因此只要改变根元素字体大小，页面中的其他元素的尺寸就自动跟着修改</li>
 <li><strong>vw应用：</strong>由于vw被更多浏览器兼容之后，在做移动端响应式页面时，通常使用vw配合rem。</li>
 <li>原理是使用vw设置根元素html字体的大小，当窗口大小发生改变，vw代表的尺寸随着修改，无需加入媒体查询和flexible.js，页面中的其他元素仍使用rem为单位，就可实现响应式。</li>
 </ul>
@@ -1480,7 +1494,7 @@
     <span class="token property">display</span><span class="token punctuation">:</span>block<span class="token punctuation">;</span>
     <span class="token property">height</span><span class="token punctuation">:</span>0<span class="token punctuation">;</span>
     <span class="token property">visibility</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span>
-    <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span> 
+    <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span>
  <span class="token punctuation">}</span>
 <span class="token selector">.clearfix</span> <span class="token punctuation">{</span>
     *<span class="token property">zoom</span><span class="token punctuation">:</span>1<span class="token punctuation">;</span>
@@ -1838,8 +1852,6 @@
 
   <aside class="sidebar">
 
-    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
-
     <div class="sidebar-inner">
 
       <ul class="sidebar-nav motion-element">
@@ -1898,6 +1910,8 @@
 
 
       </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
         <div class="back-to-top motion-element">
           <i class="fa fa-arrow-up"></i>
           <span>0%</span>
@@ -1941,7 +1955,7 @@
 
         
 <div class="busuanzi-count">
-  <script data-pjax="" async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  <script async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
       <span class="post-meta-item-icon">
         <i class="fa fa-user"></i>
@@ -1974,9 +1988,9 @@
 
   
   
-  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
   
   
 
@@ -1990,18 +2004,16 @@
 
 
 
+
+
+
+  
   
 
 
 
 
   
-  
-
-
-
-
-  
 
 
 
@@ -2016,7 +2028,6 @@
 
 
 
-    <div id="pjax">
   
 
   
@@ -2025,7 +2036,6 @@
 
 
 
-    </div>
 
 
 <script src="/bundle.js"></script><script>
@@ -2048,64 +2058,6 @@
       localStorage.setItem('comments_active', commentClass);
     });
   }
-;
-
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
 ;
 
     (function(){
