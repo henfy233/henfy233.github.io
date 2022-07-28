@@ -474,18 +474,18 @@ plot_confusion_matrix<span class="token punctuation">(</span>confusion_mtx<span 
     <content><![CDATA[<p>这是搭建Hexo和使用Next主题所参考的链接，有必要可参考</p>
 <span id="more"></span>
 
-<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p><a href="https://hexo.io/zh-cn/docs/">Hexo 简介</a></p>
-<h3 id="Next主题"><a href="#Next主题" class="headerlink" title="Next主题"></a>Next主题</h3><p><a href="http://theme-next.iissnan.com/getting-started.html">Next 使用文档</a></p>
-<p><a href="https://github.com/next-theme/hexo-theme-next">Next 进阶操作</a></p>
-<p><a href="https://theme-next.js.org/docs/third-party-services/">Next 进阶操作(推荐)</a></p>
-<h3 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h3><p><a href="https://console.leancloud.cn/apps">LeanCloud 官网</a></p>
-<p><a href="https://github.com/theme-next/hexo-theme-next/blob/master/docs/zh-CN/LEANCLOUD-COUNTER-SECURITY.md">修复 LeanCloud 统计插件安全漏洞</a></p>
-<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p><a href="https://www.zhihu.com/question/267598518">Hexo（NexT 主题）评论系统哪个好？</a></p>
-<p><a href="https://valine.js.org/#/">Valine 推荐</a></p>
+<h3 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h3><p><span class="exturl" data-url="aHR0cHM6Ly9oZXhvLmlvL3poLWNuL2RvY3Mv">Hexo 简介<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="Next主题"><a href="#Next主题" class="headerlink" title="Next主题"></a>Next主题</h3><p><span class="exturl" data-url="aHR0cDovL3RoZW1lLW5leHQuaWlzc25hbi5jb20vZ2V0dGluZy1zdGFydGVkLmh0bWw=">Next 使用文档<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL25leHQtdGhlbWUvaGV4by10aGVtZS1uZXh0">Next 进阶操作<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RoaXJkLXBhcnR5LXNlcnZpY2VzLw==">Next 进阶操作(推荐)<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="LeanCloud"><a href="#LeanCloud" class="headerlink" title="LeanCloud"></a>LeanCloud</h3><p><span class="exturl" data-url="aHR0cHM6Ly9jb25zb2xlLmxlYW5jbG91ZC5jbi9hcHBz">LeanCloud 官网<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3RoZW1lLW5leHQvaGV4by10aGVtZS1uZXh0L2Jsb2IvbWFzdGVyL2RvY3MvemgtQ04vTEVBTkNMT1VELUNPVU5URVItU0VDVVJJVFkubWQ=">修复 LeanCloud 统计插件安全漏洞<i class="fa fa-external-link-alt"></i></span></p>
+<h3 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h3><p><span class="exturl" data-url="aHR0cHM6Ly93d3cuemhpaHUuY29tL3F1ZXN0aW9uLzI2NzU5ODUxOA==">Hexo（NexT 主题）评论系统哪个好？<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly92YWxpbmUuanMub3JnLyMv">Valine 推荐<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="Mermaid"><a href="#Mermaid" class="headerlink" title="Mermaid"></a>Mermaid</h3><p>Mermaid是一个基于Javascript的图表绘制工具，它使用Markdown启发的文本定义以及渲染器来创建和修改复杂的图表。Mermaid的主要目的是帮助文档赶上开发。</p>
-<p><a href="https://github.com/mermaid-js/mermaid">Mermaid github</a></p>
-<p><a href="https://theme-next.js.org/docs/tag-plugins/mermaid.html">Mermaid 使用文档</a></p>
-<p><a href="https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICBBW0hhcmRdIC0tPnxUZXh0fCBCKFJvdW5kKVxuICAgIEIgLS0-IEN7RGVjaXNpb259XG4gICAgQyAtLT58T25lfCBEW1Jlc3VsdCAxXVxuICAgIEMgLS0-fFR3b3wgRVtSZXN1bHQgMl0iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ">Mermaid 在线编辑</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21lcm1haWQtanMvbWVybWFpZA==">Mermaid github<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL21lcm1haWQuaHRtbA==">Mermaid 使用文档<i class="fa fa-external-link-alt"></i></span></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9tZXJtYWlkLWpzLmdpdGh1Yi5pby9tZXJtYWlkLWxpdmUtZWRpdG9yLyMvZWRpdC9leUpqYjJSbElqb2laM0poY0dnZ1ZFUmNiaUFnSUNCQlcwaGhjbVJkSUMwdFBueFVaWGgwZkNCQ0tGSnZkVzVrS1Z4dUlDQWdJRUlnTFMwLUlFTjdSR1ZqYVhOcGIyNTlYRzRnSUNBZ1F5QXRMVDU4VDI1bGZDQkVXMUpsYzNWc2RDQXhYVnh1SUNBZ0lFTWdMUzAtZkZSM2Izd2dSVnRTWlhOMWJIUWdNbDBpTENKdFpYSnRZV2xrSWpwN0luUm9aVzFsSWpvaVpHVm1ZWFZzZENKOUxDSjFjR1JoZEdWRlpHbDBiM0lpT21aaGJITmxmUQ==">Mermaid 在线编辑<i class="fa fa-external-link-alt"></i></span></p>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -497,7 +497,7 @@ plot_confusion_matrix<span class="token punctuation">(</span>confusion_mtx<span 
   <entry>
     <title>CSS基础</title>
     <url>/2022/06/20/CSS/</url>
-    <content><![CDATA[<p>介绍目前常见前端面试题，参考链接 <a href="https://interview2.poetries.top/">https://interview2.poetries.top/</a></p>
+    <content><![CDATA[<p>介绍目前常见前端面试题，参考链接 <span class="exturl" data-url="aHR0cHM6Ly9pbnRlcnZpZXcyLnBvZXRyaWVzLnRvcC8=">https://interview2.poetries.top/<i class="fa fa-external-link-alt"></i></span></p>
 <span id="more"></span>
 
 
@@ -2341,18 +2341,18 @@ plot_confusion_matrix<span class="token punctuation">(</span>confusion_mtx<span 
 </ul>
 <p><img src="https://s.poetries.work/gitee/2019/10/22.png" alt="img"></p>
 <h3 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h3><ul>
-<li><strong>得分点</strong> 服务器端生成HTML直接返回给浏览器、减少网络传输、首屏渲染快、对搜索引擎友好 </li>
-<li><strong>标准回答</strong> <ul>
+<li><strong>得分点</strong> 服务器端生成HTML直接返回给浏览器、减少网络传输、首屏渲染快、对搜索引擎友好</li>
+<li><strong>标准回答</strong><ul>
 <li><strong>SSR</strong>是Server Side Render简称；页面上的内容是通过服务端渲染生成的，浏览器直接显示服务端返回的html就可以了。</li>
-<li><strong>CSR</strong>是Client Side Render简称；客户端在请求时，服务端不做任何处理，直接将前端资源打包后生成的html返回给客户端，此时的html中无任何网页内容，需要客户端去加载执行js代码才能渲染生成页面内容，同时完成事件绑定，然后客户端再去通过ajax请求后端api获取数据更新视图。 </li>
-<li>服务端渲染的优势：减少网络传输，响应快，用户体验好，首屏渲染快，对搜索引擎友好，搜索引擎爬虫可以看到完整的程序源码，有利于SEO。 </li>
-<li>在Vue项目中实现服务端渲染方法：Vue在客户端渲染中也是采用一定方法将虚拟DOM渲染为真实DOM的，那么服务端的渲染流程也是通过虚拟DOM的编译来完成的，编译虚拟DOM的方法是renderToString。在Vue中，vue-server-renderer 提供一个名为 createBundleRenderer 的 API，这个API用于创建一个 render，并且自带renderToString方法。 </li>
+<li><strong>CSR</strong>是Client Side Render简称；客户端在请求时，服务端不做任何处理，直接将前端资源打包后生成的html返回给客户端，此时的html中无任何网页内容，需要客户端去加载执行js代码才能渲染生成页面内容，同时完成事件绑定，然后客户端再去通过ajax请求后端api获取数据更新视图。</li>
+<li>服务端渲染的优势：减少网络传输，响应快，用户体验好，首屏渲染快，对搜索引擎友好，搜索引擎爬虫可以看到完整的程序源码，有利于SEO。</li>
+<li>在Vue项目中实现服务端渲染方法：Vue在客户端渲染中也是采用一定方法将虚拟DOM渲染为真实DOM的，那么服务端的渲染流程也是通过虚拟DOM的编译来完成的，编译虚拟DOM的方法是renderToString。在Vue中，vue-server-renderer 提供一个名为 createBundleRenderer 的 API，这个API用于创建一个 render，并且自带renderToString方法。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>使用服务器端渲染 (SSR) 时还需要有一些权衡之处： <ul>
-<li>开发条件所限。浏览器特定的代码，只能在某些生命周期钩子函数 (lifecycle hook) 中使用；一些外部扩展库 (external library) 可能需要特殊处理，才能在服务器渲染应用程序中运行。 </li>
-<li>涉及构建设置和部署的更多要求。与可以部署在任何静态文件服务器上的完全静态单页面应用程序 (SPA) 不同，服务器渲染应用程序，需要处于 Node.js server 运行环境。 </li>
+<li><strong>加分回答</strong><ul>
+<li>使用服务器端渲染 (SSR) 时还需要有一些权衡之处：<ul>
+<li>开发条件所限。浏览器特定的代码，只能在某些生命周期钩子函数 (lifecycle hook) 中使用；一些外部扩展库 (external library) 可能需要特殊处理，才能在服务器渲染应用程序中运行。</li>
+<li>涉及构建设置和部署的更多要求。与可以部署在任何静态文件服务器上的完全静态单页面应用程序 (SPA) 不同，服务器渲染应用程序，需要处于 Node.js server 运行环境。</li>
 <li>更多的服务器端负载。在 Node.js 中渲染完整的应用程序，显然会比仅仅提供静态文件的 server 更加大量占用 CPU 资源 (CPU-intensive - CPU 密集)，因此如果你预料在高流量环境 (high traffic) 下使用，请准备相应的服务器负载，并明智地采用缓存策略。</li>
 </ul>
 </li>
@@ -2360,13 +2360,13 @@ plot_confusion_matrix<span class="token punctuation">(</span>confusion_mtx<span 
 </li>
 </ul>
 <h3 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h3><ul>
-<li><strong>得分点</strong> dom树、stylesheet、布局树、分层、光栅化、合成 </li>
-<li><strong>标准回答</strong> <ul>
-<li>浏览器拿到HTML，先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。 </li>
+<li><strong>得分点</strong> dom树、stylesheet、布局树、分层、光栅化、合成</li>
+<li><strong>标准回答</strong><ul>
+<li>浏览器拿到HTML，先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li>分层的目的：避免整个页面渲染，把页面分成多个图层，尤其是动画的时候，把动画独立出一个图层，渲染时只渲染该图层就ok，transform，z-index等，浏览器会自动优化生成图层 </li>
+<li><strong>加分回答</strong><ul>
+<li>分层的目的：避免整个页面渲染，把页面分成多个图层，尤其是动画的时候，把动画独立出一个图层，渲染时只渲染该图层就ok，transform，z-index等，浏览器会自动优化生成图层</li>
 <li>光栅化目的：页面如果很长但是可视区很小，避免渲染非可视区的样式造成资源浪费，所以将每个图层又划分成多个小个子，当前只渲染可视区附近区域</li>
 </ul>
 </li>
@@ -2408,20 +2408,13 @@ plot_confusion_matrix<span class="token punctuation">(</span>confusion_mtx<span 
 <li><code>must-revalidate</code>，当缓存过期时，需要去服务端校验缓存的有效性。</li>
 </ul>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 例如：</span>
-
-Cache-Control: public, max-age<span class="token operator">=</span><span class="token number">1000</span> 
-<span class="token comment"># 表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。</span>
- 
-        @程序员poetry: 代码已经复制到剪贴板
-    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Cache-Control: public, max-age<span class="token operator">=</span><span class="token number">1000</span>
+<span class="token comment"># 表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>注意，虽然你可能在其他资料中看到可以使用 meta 标签来设置缓存，比如像下面的形式：</p>
 </blockquote>
-<pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;meta http-equiv&#x3D;&quot;expires&quot; content&#x3D;&quot;Wed, 20 Jun 2021 22:33:00 GMT&quot;
- 
-        @程序员poetry: 代码已经复制到剪贴板
-    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;meta http-equiv&#x3D;&quot;expires&quot; content&#x3D;&quot;Wed, 20 Jun 2021 22:33:00 GMT&quot;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <p>但在 HTML5 规范中，并不支持这种方式，所以<code>尽量不要使用 meta 标签来设置缓存</code>。</p>
 <p><strong>3.2 Expires</strong></p>
@@ -2429,10 +2422,7 @@ Cache-Control: public, max-age<span class="token operator">=</span><span class="
 <p><code>Expires</code>是<code>HTTP/1.0</code>出现的头信息，同样是用于决定本地缓存策略的头，它是一个绝对时间，时间格式是如<code>Mon, 10 Jun 2015 21:31:12 GMT</code>，只要发送请求时间是在<code>Expires</code>之前，那么本地缓存始终有效，否则就会去服务器发送请求获取新的资源。如果同时出现<code>Cache-Control：max-age</code>和<code>Expires</code>，那么<code>max-age</code>优先级更高。他们可以这样组合使用</p>
 </blockquote>
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">Cache-Control: public
-Expires: Wed, Jan 10 2018 00:27:04 GMT
- 
-        @程序员poetry: 代码已经复制到剪贴板
-    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+Expires: Wed, Jan 10 2018 00:27:04 GMT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p><strong>3.3 所谓的缓存协商</strong></p>
 <blockquote>
@@ -2467,14 +2457,9 @@ Expires: Wed, Jan 10 2018 00:27:04 GMT
 Cache-Control:max-age<span class="token operator">=</span><span class="token number">3600</span>
 Expires: Fri, Jan <span class="token number">12</span> <span class="token number">2018</span> 00:27:04 GMT
 Last-Modified: Wed, Jan <span class="token number">10</span> <span class="token number">2018</span> 00:27:04 GMT
- 
-        @程序员poetry: 代码已经复制到剪贴板
-    
+
 <span class="token comment"># 第二次请求的请求头信息</span>
-If-Modified-Since: Wed, Jan <span class="token number">10</span> <span class="token number">2018</span> 00:27:04 GMT
- 
-        @程序员poetry: 代码已经复制到剪贴板
-    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+If-Modified-Since: Wed, Jan <span class="token number">10</span> <span class="token number">2018</span> 00:27:04 GMT<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <blockquote>
 <p>这组头信息是基于资源的修改时间来判断资源有没有更新，另一种方式就是根据资源的内容来判断，就是接下来要讨论的 <code>ETag</code> 与 <code>If-None-Match</code></p>
@@ -2502,18 +2487,11 @@ If-Modified-Since: Wed, Jan <span class="token number">10</span> <span class="to
 <p>需要注意的是，<code>强制缓存的优先级高于协商缓存</code>，在协商缓存中，<code>Etag 优先级比 Last-Modified</code> 高</p>
 </blockquote>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 第一次请求返回的响应头：</span>
-
 Cache-Control: public, max-age<span class="token operator">=</span><span class="token number">31536000</span>
 ETag: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</span>
- 
-        @程序员poetry: 代码已经复制到剪贴板
-    
-<span class="token comment"># 第二次请求的请求头信息：</span>
 
-If-None-Match: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</span>
- 
-        @程序员poetry: 代码已经复制到剪贴板
-    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<span class="token comment"># 第二次请求的请求头信息：</span>
+If-None-Match: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <p><strong>缓存位置</strong></p>
 <p>浏览器缓存的位置的话，可以分为四种,优先级从高到低排列分别👇</p>
@@ -2676,14 +2654,14 @@ If-None-Match: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</sp
 </li>
 </ul>
 <h3 id="实现可过期的localstorage数据"><a href="#实现可过期的localstorage数据" class="headerlink" title="实现可过期的localstorage数据"></a>实现可过期的<code>localstorage</code>数据</h3><ul>
-<li><strong>得分点</strong> 惰性删除、定时删除 </li>
-<li><strong>标准回答</strong> <code>localStorage</code>只能用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。所以要实现可过期的<code>localStorage</code>缓存的中重点就是：如何清理过期的缓存。 <ul>
-<li>目前有两种方法，一种是惰性删除，另一种是定时删除。 </li>
-<li><strong>惰性删除</strong>是指某个键值过期后，该键值不会被马上删除，而是等到下次被使用的时候，才会被检查到过期，此时才能得到删除。实现方法是，存储的数据类型是个对象，该对象有两个key，一个是要存储的value值，另一个是当前时间。获取数据的时候，拿到存储的时间和当前时间做对比，如果超过过期时间就清除Cookie。 </li>
-<li><strong>定时删除</strong>是指，每隔一段时间执行一次删除操作，并通过限制删除操作执行的次数和频率，来减少删除操作对CPU的长期占用。另一方面定时删除也有效的减少了因惰性删除带来的对<code>localStorage</code>空间的浪费。实现过程，获取所有设置过期时间的key判断是否过期，过期就存储到数组中，遍历数组，每隔1S（固定时间）删除5个（固定个数），直到把数组中的key从<code>localstorage</code>中全部删除。 </li>
+<li><strong>得分点</strong> 惰性删除、定时删除</li>
+<li><strong>标准回答</strong> <code>localStorage</code>只能用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。所以要实现可过期的<code>localStorage</code>缓存的中重点就是：如何清理过期的缓存。<ul>
+<li>目前有两种方法，一种是惰性删除，另一种是定时删除。</li>
+<li><strong>惰性删除</strong>是指某个键值过期后，该键值不会被马上删除，而是等到下次被使用的时候，才会被检查到过期，此时才能得到删除。实现方法是，存储的数据类型是个对象，该对象有两个key，一个是要存储的value值，另一个是当前时间。获取数据的时候，拿到存储的时间和当前时间做对比，如果超过过期时间就清除Cookie。</li>
+<li><strong>定时删除</strong>是指，每隔一段时间执行一次删除操作，并通过限制删除操作执行的次数和频率，来减少删除操作对CPU的长期占用。另一方面定时删除也有效的减少了因惰性删除带来的对<code>localStorage</code>空间的浪费。实现过程，获取所有设置过期时间的key判断是否过期，过期就存储到数组中，遍历数组，每隔1S（固定时间）删除5个（固定个数），直到把数组中的key从<code>localstorage</code>中全部删除。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li><code>LocalStorage</code>清空应用场景：<ul>
 <li>token存储在<code>LocalStorage</code>中，<strong>要清空</strong></li>
 </ul>
@@ -2692,19 +2670,19 @@ If-None-Match: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</sp
 </li>
 </ul>
 <h3 id="token-能放在cookie中吗"><a href="#token-能放在cookie中吗" class="headerlink" title="token 能放在cookie中吗"></a><code>token</code> 能放在<code>cookie</code>中吗</h3><ul>
-<li><strong>得分点</strong> 能、不设置cookie有效期、重新登录重写cookie覆盖原来的cookie </li>
-<li><strong>标准回答</strong> <ul>
+<li><strong>得分点</strong> 能、不设置cookie有效期、重新登录重写cookie覆盖原来的cookie</li>
+<li><strong>标准回答</strong><ul>
 <li>能。 token一般是用来判断用户是否登录的，它内部包含的信息有：<code>uid</code>(用户唯一的身份标识)、<code>time</code>(当前时间的时间戳)、<code>sign</code>（签名，token 的前几位以哈希算法压缩成的一定长度的十六进制字符串）</li>
-<li> <code>token</code>可以存放在<code>Cookie</code>中，<code>token</code> 是否过期，应该由后端来判断，不该前端来判断，所以<code>token</code>存储在<code>cookie</code>中只要不设置<code>cookie</code>的过期时间就ok了，如果 <code>token</code> 失效，就让后端在接口中返回固定的状态表示<code>token</code> 失效，需要重新登录，再重新登录的时候，重新设置 <code>cookie</code> 中的 <code>token</code> 就行。 </li>
+<li> <code>token</code>可以存放在<code>Cookie</code>中，<code>token</code> 是否过期，应该由后端来判断，不该前端来判断，所以<code>token</code>存储在<code>cookie</code>中只要不设置<code>cookie</code>的过期时间就ok了，如果 <code>token</code> 失效，就让后端在接口中返回固定的状态表示<code>token</code> 失效，需要重新登录，再重新登录的时候，重新设置 <code>cookie</code> 中的 <code>token</code> 就行。</li>
 </ul>
 </li>
-<li><strong>加分回答</strong> </li>
-<li><code>token</code>认证流程 <ol>
-<li>客户端使用用户名跟密码请求登录 </li>
-<li>服务端收到请求，去验证用户名与密码 </li>
-<li>验证成功后，服务端签发一个 <code>token</code> ，并把它发送给客户端 </li>
-<li>客户端接收 <code>token</code> 以后会把它存储起来，比如放在 <code>cookie</code> 里或者 <code>localStorage</code> 里 </li>
-<li>客户端每次发送请求时都需要带着服务端签发的 token（把 token 放到 HTTP 的 Header 里） </li>
+<li><strong>加分回答</strong></li>
+<li><code>token</code>认证流程<ol>
+<li>客户端使用用户名跟密码请求登录</li>
+<li>服务端收到请求，去验证用户名与密码</li>
+<li>验证成功后，服务端签发一个 <code>token</code> ，并把它发送给客户端</li>
+<li>客户端接收 <code>token</code> 以后会把它存储起来，比如放在 <code>cookie</code> 里或者 <code>localStorage</code> 里</li>
+<li>客户端每次发送请求时都需要带着服务端签发的 token（把 token 放到 HTTP 的 Header 里）</li>
 <li>服务端收到请求后，需要验证请求里带有的 token ，如验证成功则返回对应的数据</li>
 </ol>
 </li>
@@ -2776,14 +2754,14 @@ app<span class="token punctuation">.</span><span class="token function">listen</
 </blockquote>
 <pre class="line-numbers language-js" data-language="js"><code class="language-js">location <span class="token operator">/</span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span>$request_method <span class="token operator">=</span> <span class="token string">'OPTIONS'</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
-    add_header <span class="token string">'Access-Control-Allow-Origin'</span> <span class="token string">'*'</span><span class="token punctuation">;</span>  
-    add_header <span class="token string">'Access-Control-Allow-Methods'</span> <span class="token string">'GET, POST, OPTIONS'</span><span class="token punctuation">;</span> 
+    add_header <span class="token string">'Access-Control-Allow-Origin'</span> <span class="token string">'*'</span><span class="token punctuation">;</span>
+    add_header <span class="token string">'Access-Control-Allow-Methods'</span> <span class="token string">'GET, POST, OPTIONS'</span><span class="token punctuation">;</span>
     add_header <span class="token string">'Access-Control-Allow-Credentials'</span> <span class="token string">'true'</span><span class="token punctuation">;</span>
-    add_header <span class="token string">'Access-Control-Allow-Headers'</span> <span class="token string">'DNT, X-Mx-ReqToken, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type'</span><span class="token punctuation">;</span>  
-    add_header <span class="token string">'Access-Control-Max-Age'</span> <span class="token number">86400</span><span class="token punctuation">;</span>  
-    add_header <span class="token string">'Content-Type'</span> <span class="token string">'text/plain charset=UTF-8'</span><span class="token punctuation">;</span>  
-    add_header <span class="token string">'Content-Length'</span> <span class="token number">0</span><span class="token punctuation">;</span>  
-    <span class="token keyword">return</span> <span class="token number">200</span><span class="token punctuation">;</span>  
+    add_header <span class="token string">'Access-Control-Allow-Headers'</span> <span class="token string">'DNT, X-Mx-ReqToken, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type'</span><span class="token punctuation">;</span>
+    add_header <span class="token string">'Access-Control-Max-Age'</span> <span class="token number">86400</span><span class="token punctuation">;</span>
+    add_header <span class="token string">'Content-Type'</span> <span class="token string">'text/plain charset=UTF-8'</span><span class="token punctuation">;</span>
+    add_header <span class="token string">'Content-Length'</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">return</span> <span class="token number">200</span><span class="token punctuation">;</span>
   <span class="token punctuation">&#125;</span>
 <span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
@@ -2818,14 +2796,14 @@ document<span class="token punctuation">.</span>head<span class="token punctuati
 <blockquote>
 <p>此方案仅限主域相同，子域不同的跨域应用场景</p>
 </blockquote>
-<p>1.）父窗口：(<a href="http://www.domain.com/a.html">http://www.domain.com/a.html</a>)</p>
+<p>1.）父窗口：(<span class="exturl" data-url="aHR0cDovL3d3dy5kb21haW4uY29tL2EuaHRtbA==">http://www.domain.com/a.html<i class="fa fa-external-link-alt"></i></span>)</p>
 <pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>iframe<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://child.domain.com/b.html<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">></span></span>
 <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
     document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span>
     <span class="token keyword">var</span> user <span class="token operator">=</span> <span class="token string">'admin'</span><span class="token punctuation">;</span>
 </span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>2.）子窗口：(<a href="http://child.domain.com/b.html">http://child.domain.com/b.html</a>)</p>
+<p>2.）子窗口：(<span class="exturl" data-url="aHR0cDovL2NoaWxkLmRvbWFpbi5jb20vYi5odG1s">http://child.domain.com/b.html<i class="fa fa-external-link-alt"></i></span>)</p>
 <pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span>
 <span class="token comment">// 获取父窗口中变量</span>
 <span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'get js data from parent ---> '</span> <span class="token operator">+</span> window<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
@@ -2943,7 +2921,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <pre class="line-numbers language-text" data-language="text"><code class="language-text">Content-Security-Policy: child-src &#39;none&#39;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 
 <blockquote>
-<p>当然可以设置的属性远不止这些，你可以通过查阅 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">文档 (opens new window)</a>的方式来学习，这里就不过多赘述其他的属性了。</p>
+<p>当然可以设置的属性远不止这些，你可以通过查阅 <span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvZW4tVVMvZG9jcy9XZWIvSFRUUC9IZWFkZXJzL0NvbnRlbnQtU2VjdXJpdHktUG9saWN5">文档 (opens new window)<i class="fa fa-external-link-alt"></i></span>的方式来学习，这里就不过多赘述其他的属性了。</p>
 </blockquote>
 <blockquote>
 <p>对于这种方式来说，只要开发者配置了正确的规则，那么即使网站存在漏洞，攻击者也不能执行它的攻击代码，并且 <code>CSP</code> 的兼容性也不错。</p>
@@ -3040,35 +3018,35 @@ res<span class="token punctuation">.</span><span class="token function">setHeade
 <p>防范：用户操作验证（验证码），额外验证机制（<code>token</code>使用）等</p>
 </blockquote>
 <h3 id="XSS攻击"><a href="#XSS攻击" class="headerlink" title="XSS攻击"></a>XSS攻击</h3><ul>
-<li><strong>得分点</strong> XSS是跨站脚本攻击、向目标网站插入恶意代码、大量用户访问网站时运行恶意脚本获取信息 </li>
-<li><strong>标准回答</strong> <ul>
+<li><strong>得分点</strong> XSS是跨站脚本攻击、向目标网站插入恶意代码、大量用户访问网站时运行恶意脚本获取信息</li>
+<li><strong>标准回答</strong><ul>
 <li>XSS是跨站脚本攻击(Cross Site Scripting)，不写为CSS是为了避免和层叠样式表（Cascading Style Sheets）的缩写混淆，所以将跨站脚本攻击写为XSS。攻击者可以通过向Web页面里面插入script代码，当用户浏览这个页面时，就会运行被插入的script代码，达到攻击者的目的。XSS的危害一般是泄露用户的登录信息cookie，攻击者可以通过cookie绕过登录步骤直接进入站点。</li>
 <li>XSS的分类分为<strong>反射型</strong>和<strong>存储型</strong>。<ul>
 <li>反射型就是临时通过url访问网站，网站服务端将恶意代码从url中取出，拼接在HTML中返回给浏览器，用户就会执行恶意代码。</li>
-<li>存储型就是将恶意代码以留言的形式保存在服务器数据库，任何访问网站的人都会受到攻击。预防XSS攻击的方案基本是对数据进行严格的输出编码，比如HTML元素的编码，JavaScript编码，css编码，url编码等等。 </li>
+<li>存储型就是将恶意代码以留言的形式保存在服务器数据库，任何访问网站的人都会受到攻击。预防XSS攻击的方案基本是对数据进行严格的输出编码，比如HTML元素的编码，JavaScript编码，css编码，url编码等等。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
-<li><strong>XSS的危害：</strong> <ul>
-<li>获取cookie：网站中的登录一般都是用cookie作为某个用户的身份证明，这是服务器端返回的一串字符。如果cookie被攻击者拿到，那么就可以绕过密码登录。当空间、论坛如果可以被插入script代码，那么进入空间或者论坛的人的账号就可以轻易被攻击者获取。 </li>
-<li>恶意跳转：直接在页面中插入window.location.href进行跳转。 XSS的分类： <ul>
-<li>反射型XSS（非持久型XSS）：通过URL参数直接注入 </li>
+<li><strong>加分回答</strong><ul>
+<li><strong>XSS的危害：</strong><ul>
+<li>获取cookie：网站中的登录一般都是用cookie作为某个用户的身份证明，这是服务器端返回的一串字符。如果cookie被攻击者拿到，那么就可以绕过密码登录。当空间、论坛如果可以被插入script代码，那么进入空间或者论坛的人的账号就可以轻易被攻击者获取。</li>
+<li>恶意跳转：直接在页面中插入window.location.href进行跳转。 XSS的分类：<ul>
+<li>反射型XSS（非持久型XSS）：通过URL参数直接注入</li>
 <li>存储型XSS（持久型XSS）：存储到数据库后读取时注入</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>XSS的预防：</strong> <ul>
-<li>浏览器的防御和“X-XSS-Protection”有关，默认值为1，即默认打开XSS防御，可以防御反射型的XSS，不过作用有限，只能防御注入到HTML的节点内容或属性的XSS，例如URL参数中包含script标签。不建议只依赖此防御手段。 </li>
-<li>防御HTML节点内容，通过转义&lt;为&lt;以及&gt;为&gt;来实现防御HTML节点内容。 </li>
-<li>预防HTML属性，通过转义”-&gt;&amp;quto来实现防御，一般不转义空格，但是这要求属性必须带引号。 </li>
-<li>预防JavaScript代码，通过将数据进行JSON序列化。 </li>
-<li>防御富文本是比较复杂的工程，因为富文本可以包含HTML和script，这些难以预测与防御，建议是通过白名单的方式来过滤允许的HTML标签和标签的属性来进行防御，大概的<strong>实现方式</strong>是： <ul>
-<li>将HTML代码段转成树级结构的数据 </li>
-<li>遍历树的每一个节点，过滤节点的类型和属性，或进行特殊处理 </li>
-<li>处理完成后，将树级结构转化成HTML代码 </li>
+<li><strong>XSS的预防：</strong><ul>
+<li>浏览器的防御和“X-XSS-Protection”有关，默认值为1，即默认打开XSS防御，可以防御反射型的XSS，不过作用有限，只能防御注入到HTML的节点内容或属性的XSS，例如URL参数中包含script标签。不建议只依赖此防御手段。</li>
+<li>防御HTML节点内容，通过转义&lt;为&lt;以及&gt;为&gt;来实现防御HTML节点内容。</li>
+<li>预防HTML属性，通过转义”-&gt;&amp;quto来实现防御，一般不转义空格，但是这要求属性必须带引号。</li>
+<li>预防JavaScript代码，通过将数据进行JSON序列化。</li>
+<li>防御富文本是比较复杂的工程，因为富文本可以包含HTML和script，这些难以预测与防御，建议是通过白名单的方式来过滤允许的HTML标签和标签的属性来进行防御，大概的<strong>实现方式</strong>是：<ul>
+<li>将HTML代码段转成树级结构的数据</li>
+<li>遍历树的每一个节点，过滤节点的类型和属性，或进行特殊处理</li>
+<li>处理完成后，将树级结构转化成HTML代码</li>
 <li>开启浏览器XSS防御：Http Only cookie，禁止 JavaScript 读取某些敏感 Cookie，攻击者完成XSS注入后也无法窃取此 Cookie。</li>
 </ul>
 </li>
@@ -3078,26 +3056,26 @@ res<span class="token punctuation">.</span><span class="token function">setHeade
 </li>
 </ul>
 <h3 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h3><ul>
-<li><strong>得分点</strong> CSRF时跨站请求伪造、盗用用户身份发起请求 </li>
-<li><strong>标准回答</strong> <ul>
+<li><strong>得分点</strong> CSRF时跨站请求伪造、盗用用户身份发起请求</li>
+<li><strong>标准回答</strong><ul>
 <li>CSRF跨站点请求伪造（Cross Site Request Forgery）和XSS攻击一样，有巨大的危害性，就是攻击者盗用了用户的身份，以用户的身份发送恶意请求，但是对服务器来说这个请求是合理的，这样就完成了攻击者的目标。</li>
-<li><strong>CSRF攻击的过程原理是：</strong> <ul>
-<li>用户打开浏览器，访问目标网站A，输入用户名和密码请求登录 </li>
-<li>用户信息在通过认证后，网站A产生一个cookie信息返回给浏览器，这个时候用户以可正常发送请求到网站A </li>
-<li>用户在没有退出网站A之前在同一个浏览器打开了另一个新网站B。 </li>
-<li>新网站B收到用户请求之后返回一些攻击代码，并发出一个请求要求访问返回cookie的网站A </li>
-<li>浏览器收到这些攻击性代码之后根据新网站B的请求在用户不知道的情况下以用户的权限操作了cookie并向网站A服务器发起了合法的请求。 </li>
+<li><strong>CSRF攻击的过程原理是：</strong><ul>
+<li>用户打开浏览器，访问目标网站A，输入用户名和密码请求登录</li>
+<li>用户信息在通过认证后，网站A产生一个cookie信息返回给浏览器，这个时候用户以可正常发送请求到网站A</li>
+<li>用户在没有退出网站A之前在同一个浏览器打开了另一个新网站B。</li>
+<li>新网站B收到用户请求之后返回一些攻击代码，并发出一个请求要求访问返回cookie的网站A</li>
+<li>浏览器收到这些攻击性代码之后根据新网站B的请求在用户不知道的情况下以用户的权限操作了cookie并向网站A服务器发起了合法的请求。</li>
 </ul>
 </li>
-<li><strong>预防CSRF攻击主要有以下策略：</strong> <ul>
-<li>使用验证码，在表单中添加一个随机的数字或者字母验证码，强制要求用户和应用进行直接的交互。 </li>
-<li>HTTP中Referer字段，检查是不是从正确的域名访问过来，它记录了HTTP请求的来源地址。 </li>
-<li>使用token验证，在HTTP请求头中添加token字段，并且在服务器端建立一个拦截器验证这个token，如果token不对，就拒绝这个请求。 </li>
+<li><strong>预防CSRF攻击主要有以下策略：</strong><ul>
+<li>使用验证码，在表单中添加一个随机的数字或者字母验证码，强制要求用户和应用进行直接的交互。</li>
+<li>HTTP中Referer字段，检查是不是从正确的域名访问过来，它记录了HTTP请求的来源地址。</li>
+<li>使用token验证，在HTTP请求头中添加token字段，并且在服务器端建立一个拦截器验证这个token，如果token不对，就拒绝这个请求。</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><strong>加分回答</strong> <ul>
+<li><strong>加分回答</strong><ul>
 <li>验证HTTP Referer字段的好处就是实施起来特别简单，普通的网站开发不需要特别担心CSRF漏洞，只需要在最后面设置一个拦截器来验证referer的值就可以了，不需要改变已有的代码逻辑，非常便捷。但是这个方法也不是万无一失的，虽然referer是浏览器提供的，但是不同的浏览器可能在referer的实现上或多或少有自身的漏洞，所以使用referer的安全保证是通过浏览器实现的。</li>
 <li>使用token验证的方法要比referer更安全一些，需要把token放在一个HTTP自定义的请求头部中，解决了使用get或者post传参的不便性。</li>
 </ul>
@@ -3315,6 +3293,9 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 <p><strong>显示</strong></p>
 <p>最后，合成线程发送绘制图块命令给浏览器进程。浏览器进程根据指令生成页面，并显示到显示器上，渲染过程完成。</p>
 ]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
       <tags>
         <tag>前端 面试</tag>
       </tags>
@@ -3322,7 +3303,7 @@ self<span class="token punctuation">.</span><span class="token function">addEven
   <entry>
     <title>前端面试指南</title>
     <url>/2022/05/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>介绍目前常见前端面试题，参考链接 <a href="https://interview2.poetries.top/">https://interview2.poetries.top/</a></p>
+    <content><![CDATA[<p>介绍目前常见前端面试题，参考链接 <span class="exturl" data-url="aHR0cHM6Ly9pbnRlcnZpZXcyLnBvZXRyaWVzLnRvcC8=">https://interview2.poetries.top/<i class="fa fa-external-link-alt"></i></span></p>
 <span id="more"></span>
 
 
@@ -3532,7 +3513,7 @@ console<span class="token punctuation">.</span><span class="token function">time
 </li>
 </ul>
 <blockquote>
-<p>了解更多关于重绘和重排的样式属性，可以参看这个网址：<a href="https://csstriggers.com/">https://csstriggers.com/ (opens new window)</a>。</p>
+<p>了解更多关于重绘和重排的样式属性，可以参看这个网址：<span class="exturl" data-url="aHR0cHM6Ly9jc3N0cmlnZ2Vycy5jb20v">https://csstriggers.com/ (opens new window)<i class="fa fa-external-link-alt"></i></span>。</p>
 </blockquote>
 <p><strong>2. 如何高效操作 DOM</strong></p>
 <blockquote>
@@ -3686,7 +3667,7 @@ console<span class="token punctuation">.</span><span class="token function">time
 <li><strong>CSSOM</strong>：节点创建CSSOM树</li>
 </ol>
 </li>
-<li><a href="https://developers.google.com/web/fundamentals/performance/critical-rendering-path/render-tree-construction">根据DOM树和CSSOM树构建渲染树 (opens new window)</a>:<ol>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vd2ViL2Z1bmRhbWVudGFscy9wZXJmb3JtYW5jZS9jcml0aWNhbC1yZW5kZXJpbmctcGF0aC9yZW5kZXItdHJlZS1jb25zdHJ1Y3Rpb24=">根据DOM树和CSSOM树构建渲染树 (opens new window)<i class="fa fa-external-link-alt"></i></span>:<ol>
 <li>从DOM树的根节点遍历所有<strong>可见节点</strong>，不可见节点包括：1）<code>script</code>,<code>meta</code>这样本身不可见的标签。2)被css隐藏的节点，如<code>display: none</code></li>
 <li>对每一个可见节点，找到恰当的CSSOM规则并应用</li>
 <li>发布可视节点的内容和计算样式</li>
@@ -5972,7 +5953,7 @@ child <span class="token keyword">instanceof</span> <span class="token class-nam
 </ul>
 </li>
 </ul>
-<p><a href="https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&questionId=2412338&questionJobId=156&type=1">加分回答</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cubm93Y29kZXIuY29tL2V4YW0vaW50ZXJ2aWV3L2RldGFpbD9xdWVzdGlvbkNsYXNzaWZ5SWQ9MCZxdWVzdGlvbklkPTI0MTIzMzgmcXVlc3Rpb25Kb2JJZD0xNTYmdHlwZT0x">加分回答<i class="fa fa-external-link-alt"></i></span></p>
 <h3 id="❤JavaScript有几种方法判断变量的类型？"><a href="#❤JavaScript有几种方法判断变量的类型？" class="headerlink" title="❤JavaScript有几种方法判断变量的类型？"></a>❤JavaScript有几种方法判断变量的类型？</h3><p><strong>牛客网解释：</strong></p>
 <ul>
 <li><strong>得分点：</strong> typeof、instanceof、Object.prototype.toString.call()（对象原型链判断方法）、 constructor (用于引用数据类型) </li>
@@ -7465,13 +7446,13 @@ _<span class="token punctuation">.</span><span class="token function-variable fu
 </ul>
 <h3 id="是否用过-jQuery-的-Deferred"><a href="#是否用过-jQuery-的-Deferred" class="headerlink" title="是否用过 jQuery 的 Deferred"></a>是否用过 jQuery 的 Deferred</h3><p><img src="https://s.poetries.work/gitee/2020/07/7.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/8.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/9.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/10.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/11.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/12.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/13.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/14.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/15.png" alt="img"> <img src="https://s.poetries.work/gitee/2020/07/16.png" alt="img"></p>
 <h3 id="前端面试之hybrid"><a href="#前端面试之hybrid" class="headerlink" title="前端面试之hybrid"></a>前端面试之hybrid</h3><blockquote>
-<p><a href="http://blog.poetries.top/2018/10/20/fe-interview-hybrid/">http://blog.poetries.top/2018/10/20/fe-interview-hybrid/(opens new window)</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2Jsb2cucG9ldHJpZXMudG9wLzIwMTgvMTAvMjAvZmUtaW50ZXJ2aWV3LWh5YnJpZC8=">http://blog.poetries.top/2018/10/20/fe-interview-hybrid/(opens new window)<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
 <h3 id="前端面试之组件化"><a href="#前端面试之组件化" class="headerlink" title="前端面试之组件化"></a>前端面试之组件化</h3><blockquote>
-<p><a href="http://blog.poetries.top/2018/10/20/fe-interview-component/">http://blog.poetries.top/2018/10/20/fe-interview-component/(opens new window)</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2Jsb2cucG9ldHJpZXMudG9wLzIwMTgvMTAvMjAvZmUtaW50ZXJ2aWV3LWNvbXBvbmVudC8=">http://blog.poetries.top/2018/10/20/fe-interview-component/(opens new window)<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
 <h3 id="前端面试之MVVM浅析"><a href="#前端面试之MVVM浅析" class="headerlink" title="前端面试之MVVM浅析"></a>前端面试之MVVM浅析</h3><blockquote>
-<p><a href="http://blog.poetries.top/2018/10/20/fe-interview-mvvm/">http://blog.poetries.top/2018/10/20/fe-interview-mvvm/(opens new window)</a></p>
+<p><span class="exturl" data-url="aHR0cDovL2Jsb2cucG9ldHJpZXMudG9wLzIwMTgvMTAvMjAvZmUtaW50ZXJ2aWV3LW12dm0v">http://blog.poetries.top/2018/10/20/fe-interview-mvvm/(opens new window)<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
 <h3 id="实现效果，点击容器内的图标，图标边框变成border-1px-solid-red，点击空白处重置"><a href="#实现效果，点击容器内的图标，图标边框变成border-1px-solid-red，点击空白处重置" class="headerlink" title="实现效果，点击容器内的图标，图标边框变成border 1px solid red，点击空白处重置"></a>实现效果，点击容器内的图标，图标边框变成border 1px solid red，点击空白处重置</h3><pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> box <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'box'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token keyword">function</span> <span class="token function">isIcon</span><span class="token punctuation">(</span><span class="token parameter">target</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
@@ -7610,10 +7591,10 @@ console<span class="token punctuation">.</span><span class="token function">log<
 <li>如果被引用数量为 <code>0</code>，或惟一引用是循环的，那么该对象的内存即可回收</li>
 </ul>
 <h3 id="我现在有一个canvas，上面随机布着一些黑块，请实现方法，计算canvas上有多少个黑块"><a href="#我现在有一个canvas，上面随机布着一些黑块，请实现方法，计算canvas上有多少个黑块" class="headerlink" title="我现在有一个canvas，上面随机布着一些黑块，请实现方法，计算canvas上有多少个黑块"></a>我现在有一个<code>canvas</code>，上面随机布着一些黑块，请实现方法，计算canvas上有多少个黑块</h3><blockquote>
-<p><a href="https://www.jianshu.com/p/f54d265f7aa4">https://www.jianshu.com/p/f54d265f7aa4</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC9mNTRkMjY1ZjdhYTQ=">https://www.jianshu.com/p/f54d265f7aa4<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
 <h3 id="请手写实现一个promise"><a href="#请手写实现一个promise" class="headerlink" title="请手写实现一个promise"></a>请手写实现一个<code>promise</code></h3><blockquote>
-<p><a href="https://segmentfault.com/a/1190000013396601">https://segmentfault.com/a/1190000013396601</a></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAxMzM5NjYwMQ==">https://segmentfault.com/a/1190000013396601<i class="fa fa-external-link-alt"></i></span></p>
 </blockquote>
 <h3 id="说说从输入URL到看到页面发生的全过程，越详细越好"><a href="#说说从输入URL到看到页面发生的全过程，越详细越好" class="headerlink" title="说说从输入URL到看到页面发生的全过程，越详细越好"></a>说说从输入URL到看到页面发生的全过程，越详细越好</h3><ul>
 <li>首先浏览器主进程接管，开了一个下载线程。</li>
