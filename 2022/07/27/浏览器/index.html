@@ -1,0 +1,1720 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+
+
+
+
+
+  
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+  </script>
+<meta name="description" content="介绍目前常见前端面试题，浏览器基础题">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器">
+<meta property="og:url" content="http://example.com/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/index.html">
+<meta property="og:site_name" content="Henfy-Blog">
+<meta property="og:description" content="介绍目前常见前端面试题，浏览器基础题">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s.poetries.work/images/20210415090353.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210415092040.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210415092356.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2019/10/19.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2019/10/20.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2019/10/21.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2019/10/22.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210421172522.png">
+<meta property="og:image" content="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863343481/0BF44F815EA97361C3608F016702DF18">
+<meta property="og:image" content="https://s.poetries.work/images/20210415090547.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2020/07/4.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2020/07/fe/19.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2020/07/fe/20.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210506174602.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210506174856.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210506175834.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2020/09/96.png">
+<meta property="og:image" content="https://s.poetries.work/gitee/2020/09/97.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210420215756.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504134355.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504134816.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504134850.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504134913.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504134925.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504135417.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504135549.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504135701.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504135900.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210504140042.png">
+<meta property="article:published_time" content="2022-07-27T14:32:22.000Z">
+<meta property="article:modified_time" content="2022-07-28T03:31:31.284Z">
+<meta property="article:author" content="henfy">
+<meta property="article:tag" content="前端 面试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s.poetries.work/images/20210415090353.png">
+
+
+<link rel="canonical" href="http://example.com/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script><link rel="dns-prefetch" href="https://waline.vercel.app">
+<title>浏览器 | Henfy-Blog</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css');loadCss('https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css"></noscript></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Henfy-Blog</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Henfy-Blog</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">❤浏览器架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4JavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">❤JavaScript单线程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Chrome-%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E5%A4%9A%E5%B0%91%E8%BF%9B%E7%A8%8B%EF%BC%9F%E5%88%86%E5%88%AB%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">❤渲染机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93"><span class="nav-number">5.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">浏览器渲染过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">❤缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8"><span class="nav-number">8.</span> <span class="nav-text">❤浏览器存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies%EF%BC%8CSessionStorage-%E5%92%8C-LocalStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">Cookies，SessionStorage 和 LocalStorage 的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%AF%E8%BF%87%E6%9C%9F%E7%9A%84localstorage%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">实现可过期的localstorage数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#token-%E8%83%BD%E6%94%BE%E5%9C%A8cookie%E4%B8%AD%E5%90%97"><span class="nav-number">11.</span> <span class="nav-text">token 能放在cookie中吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E4%BD%A0%E8%B0%88%E8%B0%88Cookie%E7%9A%84%E5%BC%8A%E7%AB%AF"><span class="nav-number">12.</span> <span class="nav-text">请你谈谈Cookie的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%A1%88"><span class="nav-number">13.</span> <span class="nav-text">❤跨域方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E5%90%8C%E6%BA%90%E9%99%90%E5%88%B6%EF%BC%9F"><span class="nav-number">14.</span> <span class="nav-text">为什么要有同源限制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">如何解决跨域问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4XSS-%E5%92%8C-CSRF"><span class="nav-number">16.</span> <span class="nav-text">❤XSS 和 CSRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS%E6%94%BB%E5%87%BB"><span class="nav-number">17.</span> <span class="nav-text">XSS攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF%E6%94%BB%E5%87%BB"><span class="nav-number">18.</span> <span class="nav-text">CSRF攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Service-Worker"><span class="nav-number">19.</span> <span class="nav-text">❤Service Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4DOM-%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">20.</span> <span class="nav-text">❤DOM 节点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%8E%8C%E6%8F%A1%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">21.</span> <span class="nav-text">❤掌握页面的加载过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">22.</span> <span class="nav-text">❤从输入URL到页面展示过程</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">henfy</p>
+  <div class="site-description" itemprop="description">技术分享的博客</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="henfy">
+      <meta itemprop="description" content="技术分享的博客">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henfy-Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浏览器
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-07-27 22:32:22" itemprop="dateCreated datePublished" datetime="2022-07-27T22:32:22+08:00">2022-07-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2022-07-28 11:31:31" itemprop="dateModified" datetime="2022-07-28T11:31:31+08:00">2022-07-28</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+    <span class="post-meta-item-icon">
+      <i class="far fa-comment"></i>
+    </span>
+    <span class="post-meta-item-text">Waline：</span>
+  
+    <a title="waline" href="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/#waline-comments" itemprop="discussionUrl">
+      <span class="post-comments-count waline-comment-count" id="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/" data-xid="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+      </div>
+      <div class="post-meta">
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>30k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 ≈</span>
+      <span>28 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>介绍目前常见前端面试题，浏览器基础题</p>
+<span id="more"></span>
+
+<p><img src="https://s.poetries.work/images/20210415090353.png" alt="img"></p>
+<h3 id="❤浏览器架构"><a href="#❤浏览器架构" class="headerlink" title="❤浏览器架构"></a>❤浏览器架构</h3><p><strong>单进程浏览器时代</strong></p>
+<blockquote>
+<p>单进程浏览器是指浏览器的所有功能模块都是运行在同一个进程里，这些模块包含了网络、插件、JavaScript运行环境、渲染引擎和页面等。其实早在2007年之前，市面上浏览器都是单进程的</p>
+</blockquote>
+<p><img src="https://s.poetries.work/images/20210415092040.png" alt="img"></p>
+<ul>
+<li>缺点<ul>
+<li>不稳定：一个插件的意外崩溃会引起整个浏览器的崩溃</li>
+<li>不流畅：所有页面的渲染模块、JavaScript执行环境以及插件都是运行在同一个线程中的，这就意味着同一时刻只能有一个模块可以执行</li>
+<li>不安全：可以通过浏览器的漏洞来获取系统权限，这些脚本获取系统权限之后也可以对你的电脑做一些恶意的事情，同样也会引发安全问题</li>
+</ul>
+</li>
+<li>以上这些就是当时浏览器的特点，<code>不稳定，不流畅，而且不安全</code></li>
+</ul>
+<p><strong>多进程浏览器时代</strong></p>
+<ul>
+<li>由于<code>进程是相互隔离的</code>，所以当一个页面或者插件崩溃时，影响到的仅仅是当前的页面进程或者插件进程，并不会影响到浏览器和其他页面，这就完美地解决了页面或者插件的崩溃会导致整个浏览器崩溃，也就是不稳定的问题</li>
+<li>JavaScript也是运行在渲染进程中的，所以即使JavaScript阻塞了渲染进程，影响到的也只是当前的渲染页面，而并不会影响浏览器和其他页面，因为其他页面的脚本是运行在它们自己的渲染进程中的</li>
+<li>Chrome把插件进程和渲染进程锁在沙箱里面，这样即使在渲染进程或者插件进程里面执行了恶意程序，恶意程序也无法突破沙箱去获取系统权限。</li>
+</ul>
+<p><img src="https://s.poetries.work/images/20210415092356.png" alt="img"></p>
+<blockquote>
+<p>最新的Chrome浏览器包括：<code>1个浏览器（Browser）主进程</code>、<code>1个 GPU 进程</code>、<code>1个网络（NetWork）进程</code>、<code>多个渲染进程</code>和<code>多个插件进程</code></p>
+</blockquote>
+<ul>
+<li><strong>浏览器进程</strong>。主要负责界面显示、用户交互、子进程管理，同时提供存储等功能。</li>
+<li><strong>渲染进程</strong>。核心任务是将 <code>HTML、CSS</code> 和 JavaScript 转换为用户可以与之交互的网页，排版引擎Blink和JavaScript引擎V8都是运行在该进程中，默认情况下，Chrome会为每个Tab标签创建一个渲染进程。出于安全考虑，渲染进程都是运行在沙箱模式下。</li>
+<li><strong>GPU进程</strong>。其实，Chrome刚开始发布的时候是没有GPU进程的。而GPU的使用初衷是为了实现3D CSS的效果，只是随后网页、Chrome的UI界面都选择采用GPU来绘制，这使得GPU成为浏览器普遍的需求。最后，Chrome在其多进程架构上也引入了GPU进程。</li>
+<li><strong>网络进程</strong>。主要负责页面的网络资源加载，之前是作为一个模块运行在浏览器进程里面的，直至最近才独立出来，成为一个单独的进程。</li>
+<li><strong>插件进程</strong>。主要是负责插件的运行，因插件易崩溃，所以需要通过插件进程来隔离，以保证插件进程崩溃不会对浏览器和页面造成影响</li>
+</ul>
+<h3 id="❤JavaScript单线程模型"><a href="#❤JavaScript单线程模型" class="headerlink" title="❤JavaScript单线程模型"></a>❤JavaScript单线程模型</h3><blockquote>
+<p>JavaScript语言的一大特点就是单线程，也就是说，同一时间只能做一件事，前面的任务没做完，后面的任务只能等着。</p>
+</blockquote>
+<p><strong>1. 为什么JavaScript是单线程的呢?</strong></p>
+<ul>
+<li>这主要与JavaScript用途有关。它的主要用途是与用户互动，以及操作DOM。如果JavaScript是多线程的，会带来很多复杂的问题，假如 JavaScript有A和B两个线程，A线程在DOM节点上添加了内容，B线程删除了这个节点，应该是哪个为准呢? 所以，为了避免复杂性，所以设计成了单线程。</li>
+<li>虽然 HTML5 提出了Web Worker标准。Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。但是子线程完全受主线程控制，且不得操作DOM。所以这个并没有改变JavaScript单线程的本质。一般使用 Web Worker 的场景是代码中有很多计算密集型或高延迟的任务，可以考虑分配给 Worker 线程。</li>
+<li>但是使用的时候一定要注意，worker 线程是为了让你的程序跑的更快，但是如果 worker 线程和主线程之间通信的时间大于了你不使用worker线程的时间，结果就得不偿失了。</li>
+</ul>
+<p><strong>2. 浏览器内核中线程之间的关系</strong></p>
+<ul>
+<li>GUI渲染线程和JS引擎线程互斥<ul>
+<li>js是可以操作DOM的，如果在修改这些元素的同时渲染页面（js线程和ui线程同时运行），那么渲染线程前后获得的元素数据可能就不一致了。</li>
+</ul>
+</li>
+<li>JS阻塞页面加载<ul>
+<li>js如果执行时间过长就会阻塞页面</li>
+</ul>
+</li>
+</ul>
+<p><strong>3. 浏览器是多进程的优点</strong></p>
+<ul>
+<li>默认新开 一个 tab 页面 新建 一个进程,所以单个 tab 页面崩溃不会影响到整个浏览器。</li>
+<li>第三方插件崩溃也不会影响到整个浏览器。</li>
+<li>多进程可以充分利用现代 CPU 多核的优势。</li>
+<li>方便使用沙盒模型隔离插件等进程,提高浏览器的稳定性。</li>
+</ul>
+<p><strong>4. 进程和线程又是什么呢</strong></p>
+<p>进程（process）和线程（thread）是操作系统的基本概念。</p>
+<ul>
+<li>进程是 CPU 资源分配的最小单位（是能拥有资源和独立运行的最小单位）。</li>
+<li>线程是 CPU 调度的最小单位（是建立在进程基础上的一次程序运行单位）。</li>
+</ul>
+<blockquote>
+<p>由于每个进程至少要做一件事,所以一个进程至少有一个线程。系统会给每个进程分配独立的内存,因此进程有它独立的资源。同一进程内的各个线程之间共享该进程的内存空间（包括代码段,数据集,堆等）。</p>
+</blockquote>
+<p>进程可以理解为一个工厂不不同车间，相互独立。线程是车间里的工人，可以自己做自己的事情,也可以相互配合做同一件事情。</p>
+<p><strong>5. 任务队列</strong></p>
+<ul>
+<li>单线程就意味着，所有任务都要排队执行，前一个任务结束，才会执行后一个任务。</li>
+<li>如果一个任务需要执行，但此时JavaScript引擎正在执行其他任务，那么这个任务就需要放到一个队列中进行等待。等到线程空闲时，就可以从这个队列中取出最早加入的任务进行执行（类似于我们去银行排队办理业务，单线程相当于说这家银行只有一个服务窗口，一次只能为一个人服务，后面到的就需要排队，而任务队列就是排队区，先到的就优先服务）</li>
+</ul>
+<p><strong>注意：</strong> 如果当前线程空闲，并且队列为空，那每次加入队列的函数将立即执行。</p>
+<blockquote>
+<p>为什么会有任务队列？ 由于 JS 是单线程的，同步执行任务会造成浏览器的阻塞，所以我们将 JS 分成一个又一个的任务，通过不停的循环来执行事件队列中的任务。</p>
+</blockquote>
+<h3 id="❤Chrome-打开一个页面需要启动多少进程？分别有哪些进程？"><a href="#❤Chrome-打开一个页面需要启动多少进程？分别有哪些进程？" class="headerlink" title="❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？"></a>❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</h3><p>打开 1 个页面至少需要 1 个网络进程、1 个浏览器进程、1 个 GPU 进程以及 1 个渲染进程，共 4 个；最新的 Chrome 浏览器包括：1 个浏览器（Browser）主进程、1 个 GPU 进程、1 个网络（NetWork）进程、多个渲染进程和多个插件进程。</p>
+<ul>
+<li><code>浏览器进程</code>：主要负责界面显示、用户交互、子进程管理，同时提供存储等功能。</li>
+<li><code>渲染进程</code>：核心任务是将 HTML、CSS 和 JavaScript 转换为用户可以与之交互的网页，排版引擎 Blink 和 JavaScript 引擎 V8 都是运行在该进程中，默认情况下，Chrome 会为每个 Tab 标签创建一个渲染进程。出于安全考虑，渲染进程都是运行在沙箱模式下。</li>
+<li><code>GPU 进程</code>：其实，Chrome 刚开始发布的时候是没有 GPU 进程的。而 GPU 的使用初衷是为了实现 3D CSS 的效果，只是随后网页、Chrome 的 UI 界面都选择采用 GPU 来绘制，这使得 GPU 成为浏览器普遍的需求。最后，Chrome 在其多进程架构上也引入了 GPU 进程。</li>
+<li><code>网络进程</code>：主要负责页面的网络资源加载，之前是作为一个模块运行在浏览器进程里面的，直至最近才独立出来，成为一个单独的进程。</li>
+<li><code>插件进程</code>：主要是负责插件的运行，因插件易崩溃，所以需要通过插件进程来隔离，以保证插件进程崩溃不会对浏览器和页面造成影响。</li>
+</ul>
+<h3 id="❤渲染机制"><a href="#❤渲染机制" class="headerlink" title="❤渲染机制"></a>❤渲染机制</h3><p><strong>1. 浏览器如何渲染网页</strong></p>
+<p><strong>概述：浏览器渲染一共有五步</strong></p>
+<ol>
+<li>处理 <code>HTML</code> 并构建 <code>DOM</code> 树。</li>
+<li>处理 <code>CSS</code>构建 <code>CSSOM</code> 树。</li>
+<li>将 <code>DOM</code> 与 <code>CSSOM</code> 合并成一个渲染树。</li>
+<li>根据渲染树来布局，计算每个节点的位置。</li>
+<li>调用 <code>GPU</code> 绘制，合成图层，显示在屏幕上</li>
+</ol>
+<blockquote>
+<p>第四步和第五步是最耗时的部分，这两步合起来，就是我们通常所说的渲染</p>
+</blockquote>
+<p>具体如下图过程如下图所示</p>
+<p><img src="https://s.poetries.work/gitee/2019/10/19.png" alt="img"></p>
+<p><img src="https://s.poetries.work/gitee/2019/10/20.png" alt="img"></p>
+<p><strong>渲染</strong></p>
+<ul>
+<li>网页生成的时候，至少会渲染一次</li>
+<li>在用户访问的过程中，还会不断重新渲染</li>
+</ul>
+<blockquote>
+<p>重新渲染需要重复之前的第四步(重新生成布局)+第五步(重新绘制)或者只有第五个步(重新绘制)</p>
+</blockquote>
+<ul>
+<li>在构建 <code>CSSOM</code> 树时，会阻塞渲染，直至 <code>CSSOM</code>树构建完成。并且构建 <code>CSSOM</code> 树是一个十分消耗性能的过程，所以应该尽量保证层级扁平，减少过度层叠，越是具体的 <code>CSS</code> 选择器，执行速度越慢</li>
+<li>当 <code>HTML</code> 解析到 <code>script</code> 标签时，会暂停构建 <code>DOM</code>，完成后才会从暂停的地方重新开始。也就是说，如果你想首屏渲染的越快，就越不应该在首屏就加载 <code>JS</code> 文件。并且<code>CSS</code>也会影响 <code>JS</code> 的执行，只有当解析完样式表才会执行 <code>JS</code>，所以也可以认为这种情况下，<code>CSS</code> 也会暂停构建 <code>DOM</code></li>
+</ul>
+<p><strong>2. 浏览器渲染五个阶段</strong></p>
+<p><strong>2.1 第一步：解析HTML标签，构建DOM树</strong></p>
+<blockquote>
+<p>在这个阶段，引擎开始解析<code>html</code>，解析出来的结果会成为一棵<code>dom</code>树 <code>dom</code>的目的至少有<code>2</code>个</p>
+</blockquote>
+<ul>
+<li>作为下个阶段渲染树状图的输入</li>
+<li>成为网页和脚本的交互界面。(最常用的就是<code>getElementById</code>等等)</li>
+</ul>
+<p><strong>当解析器到达script标签的时候，发生下面四件事情</strong></p>
+<ol>
+<li><code>html</code>解析器停止解析,</li>
+<li>如果是外部脚本，就从外部网络获取脚本代码</li>
+<li>将控制权交给<code>js</code>引擎，执行<code>js</code>代码</li>
+<li>恢复<code>html</code>解析器的控制权</li>
+</ol>
+<blockquote>
+<p>由此可以得到第一个结论1</p>
+</blockquote>
+<ul>
+<li>由于<code>&lt;script&gt;</code>标签是阻塞解析的，将脚本放在网页尾部会加速代码渲染。</li>
+<li><code>defer</code>和<code>async</code>属性也能有助于加载外部脚本。</li>
+<li><code>defer</code>使得脚本会在<code>dom</code>完整构建之后执行；</li>
+<li><code>async</code>标签使得脚本只有在完全<code>available</code>才执行，并且是以非阻塞的方式进行的</li>
+</ul>
+<p><strong>2.2 第二步：解析CSS标签，构建CSSOM树</strong></p>
+<ul>
+<li>我们已经看到<code>html</code>解析器碰到脚本后会做的事情，接下来我们看下<code>html</code>解析器碰到样式表会发生的情况</li>
+<li><code>js</code>会阻塞解析，因为它会修改文档(<code>document</code>)。<code>css</code>不会修改文档的结构，如果这样的话，似乎看起来<code>css</code>样式不会阻塞浏览器<code>html</code>解析。但是事实上 <code>css</code>样式表是阻塞的。阻塞是指当<code>cssom</code>树建立好之后才会进行下一步的解析渲染</li>
+</ul>
+<p><strong>通过以下手段可以减轻cssom带来的影响</strong></p>
+<ul>
+<li>将<code>script</code>脚本放在页面底部</li>
+<li>尽可能快的加载<code>css</code>样式表</li>
+<li>将样式表按照<code>media type</code>和<code>media query</code>区分，这样有助于我们将<code>css</code>资源标记成非阻塞渲染的资源。</li>
+<li>非阻塞的资源还是会被浏览器下载，只是优先级较低</li>
+</ul>
+<p><strong>2.3 第三步：把DOM和CSSOM组合成渲染树（render tree）</strong></p>
+<p><img src="https://s.poetries.work/gitee/2019/10/21.png" alt="img"></p>
+<p><strong>2.4 第四步：在渲染树的基础上进行布局，计算每个节点的几何结构</strong></p>
+<blockquote>
+<p>布局(<code>layout</code>)：定位坐标和大小，是否换行，各种<code>position</code>, <code>overflow</code>, <code>z-index</code>属性</p>
+</blockquote>
+<p><strong>2.5 调用 GPU 绘制，合成图层，显示在屏幕上</strong></p>
+<blockquote>
+<p>将渲染树的各个节点绘制到屏幕上，这一步被称为绘制<code>painting</code></p>
+</blockquote>
+<p><strong>3. 渲染优化相关</strong></p>
+<p><strong>3.1 Load 和 DOMContentLoaded 区别</strong></p>
+<ul>
+<li><code>Load</code> 事件触发代表页面中的 <code>DOM</code>，<code>CSS</code>，<code>JS</code>，图片已经全部加载完毕。</li>
+<li><code>DOMContentLoaded</code> 事件触发代表初始的 <code>HTML</code> 被完全加载和解析，不需要等待 <code>CSS</code>，<code>JS</code>，图片加载</li>
+</ul>
+<p><strong>3.2 图层</strong></p>
+<blockquote>
+<p>一般来说，可以把普通文档流看成一个图层。特定的属性可以生成一个新的图层。不同的图层渲染互不影响，所以对于某些频繁需要渲染的建议单独生成一个新图层，提高性能。但也不能生成过多的图层，会引起反作用。</p>
+</blockquote>
+<p><strong>通过以下几个常用属性可以生成新图层</strong></p>
+<ul>
+<li><code>3D</code> 变换：<code>translate3d</code>、<code>translateZ</code></li>
+<li><code>will-change</code></li>
+<li><code>video</code>、<code>iframe</code> 标签</li>
+<li>通过动画实现的 <code>opacity</code> 动画转换</li>
+<li><code>position: fixed</code></li>
+</ul>
+<p><strong>3.3 重绘（Repaint）和回流（Reflow）</strong></p>
+<blockquote>
+<p>重绘和回流是渲染步骤中的一小节，但是这两个步骤对于性能影响很大</p>
+</blockquote>
+<ul>
+<li>重绘是当节点需要更改外观而不会影响布局的，比如改变 <code>color</code> 就叫称为重绘</li>
+<li>回流是布局或者几何属性需要改变就称为回流。</li>
+</ul>
+<blockquote>
+<p>回流必定会发生重绘，重绘不一定会引发回流。回流所需的成本比重绘高的多，改变深层次的节点很可能导致父节点的一系列回流</p>
+</blockquote>
+<p><strong>以下几个动作可能会导致性能问题</strong></p>
+<ul>
+<li>改变 <code>window</code> 大小</li>
+<li>改变字体</li>
+<li>添加或删除样式</li>
+<li>文字改变</li>
+<li>定位或者浮动</li>
+<li>盒模型</li>
+</ul>
+<p><strong>很多人不知道的是，重绘和回流其实和 Event loop 有关</strong></p>
+<ul>
+<li>当 <code>Event loop</code> 执行完<code>Microtasks</code> 后，会判断 <code>document</code> 是否需要更新。因为浏览器是 <code>60Hz</code> 的刷新率，每 <code>16ms</code> 才会更新一次。</li>
+<li>然后判断是否有 <code>resize</code> 或者 <code>scroll</code> ，有的话会去触发事件，所以 <code>resize</code> 和 <code>scroll</code> 事件也是至少 <code>16ms</code>才会触发一次，并且自带节流功能。</li>
+<li>判断是否触发了 <code>media query</code></li>
+<li>更新动画并且发送事件</li>
+<li>判断是否有全屏操作事件</li>
+<li>执行 <code>requestAnimationFrame</code> 回调</li>
+<li>执行 <code>IntersectionObserver</code> 回调，该方法用于判断元素是否可见，可以用于懒加载上，但是兼容性不好</li>
+<li>更新界面</li>
+<li>以上就是一帧中可能会做的事情。如果在一帧中有空闲时间，就会去执行 <code>requestIdleCallback</code> 回调</li>
+</ul>
+<p><strong>常见的引起重绘的属性</strong></p>
+<ul>
+<li><code>color</code></li>
+<li><code>border-style</code></li>
+<li><code>visibility</code></li>
+<li><code>background</code></li>
+<li><code>text-decoration</code></li>
+<li><code>background-image</code></li>
+<li><code>background-position</code></li>
+<li><code>background-repeat</code></li>
+<li><code>outline-color</code></li>
+<li><code>outline</code></li>
+<li><code>outline-style</code></li>
+<li><code>border-radius</code></li>
+<li><code>outline-width</code></li>
+<li><code>box-shadow</code></li>
+<li><code>background-size</code></li>
+</ul>
+<p><strong>3.4 常见引起回流属性和方法</strong></p>
+<blockquote>
+<p>任何会改变元素几何信息(元素的位置和尺寸大小)的操作，都会触发重排，下面列一些栗子</p>
+</blockquote>
+<ul>
+<li>添加或者删除可见的<code>DOM</code>元素；</li>
+<li>元素尺寸改变——边距、填充、边框、宽度和高度</li>
+<li>内容变化，比如用户在<code>input</code>框中输入文字</li>
+<li>浏览器窗口尺寸改变——<code>resize</code>事件发生时</li>
+<li>计算 <code>offsetWidth</code> 和 <code>offsetHeight</code> 属性</li>
+<li>设置 <code>style</code> 属性的值</li>
+</ul>
+<p><strong>回流影响的范围</strong></p>
+<blockquote>
+<p>由于浏览器渲染界面是基于流失布局模型的，所以触发重排时会对周围DOM重新排列，影响的范围有两种</p>
+</blockquote>
+<ul>
+<li>全局范围：从根节点<code>html</code>开始对整个渲染树进行重新布局。</li>
+<li>局部范围：对渲染树的某部分或某一个渲染对象进行重新布局</li>
+</ul>
+<p><strong>全局范围回流</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;body&gt;
+  &lt;div class="hello"&gt;
+    &lt;h4&gt;hello&lt;/h4&gt;
+    &lt;p&gt;&lt;strong&gt;Name:&lt;/strong&gt;BDing&lt;/p&gt;
+    &lt;h5&gt;male&lt;/h5&gt;
+    &lt;ol&gt;
+      &lt;li&gt;coding&lt;/li&gt;
+      &lt;li&gt;loving&lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/div&gt;
+&lt;/body&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>当<code>p</code>节点上发生<code>reflow</code>时，<code>hello</code>和<code>body</code>也会重新渲染，甚至<code>h5</code>和<code>ol</code>都会收到影响</p>
+</blockquote>
+<p><strong>局部范围回流</strong></p>
+<blockquote>
+<p>用局部布局来解释这种现象：把一个<code>dom</code>的宽高之类的几何信息定死，然后在<code>dom</code>内部触发重排，就只会重新渲染该<code>dom</code>内部的元素，而不会影响到外界</p>
+</blockquote>
+<p><strong>3.5 减少重绘和回流</strong></p>
+<blockquote>
+<p>使用 <code>translate</code> 替代 <code>top</code></p>
+</blockquote>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;div class="test"&gt;&lt;/div&gt;
+&lt;style&gt;
+    .test {
+        position: absolute;
+        top: 10px;
+        width: 100px;
+        height: 100px;
+        background: red;
+    }
+&lt;/style&gt;
+&lt;script&gt;
+    setTimeout(() =&gt; {
+        // 引起回流
+        document.querySelector('.test').style.top = '100px'
+    }, 1000)
+&lt;/script&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>使用 <code>visibility</code> 替换 <code>display: none</code> ，因为前者只会引起重绘，后者会引发回流（改变了布局）</li>
+<li>把 <code>DOM</code> 离线后修改，比如：先把 <code>DOM</code> 给 <code>display:none</code> (有一次 <code>Reflow)</code>，然后你修改<code>100</code>次，然后再把它显示出来</li>
+<li>不要把 <code>DOM</code> 结点的属性值放在一个循环里当成循环里的变量</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">1000</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 获取 offsetTop 会导致回流，因为需要去获取正确的值</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token string">'.test'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>offsetTop<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li>不要使用 <code>table</code> 布局，可能很小的一个小改动会造成整个 <code>table</code> 的重新布局</li>
+<li>动画实现的速度的选择，动画速度越快，回流次数越多，也可以选择使用 <code>requestAnimationFrame</code></li>
+<li><code>CSS</code>选择符从右往左匹配查找，避免 <code>DOM</code>深度过深</li>
+<li>将频繁运行的动画变为图层，图层能够阻止该节点回流影响别的元素。比如对于 <code>video</code>标签，浏览器会自动将该节点变为图层。</li>
+</ul>
+<p><img src="https://s.poetries.work/gitee/2019/10/22.png" alt="img"></p>
+<h3 id="服务端渲染"><a href="#服务端渲染" class="headerlink" title="服务端渲染"></a>服务端渲染</h3><ul>
+<li><strong>得分点</strong> 服务器端生成HTML直接返回给浏览器、减少网络传输、首屏渲染快、对搜索引擎友好 </li>
+<li><strong>标准回答</strong> <ul>
+<li><strong>SSR</strong>是Server Side Render简称；页面上的内容是通过服务端渲染生成的，浏览器直接显示服务端返回的html就可以了。</li>
+<li><strong>CSR</strong>是Client Side Render简称；客户端在请求时，服务端不做任何处理，直接将前端资源打包后生成的html返回给客户端，此时的html中无任何网页内容，需要客户端去加载执行js代码才能渲染生成页面内容，同时完成事件绑定，然后客户端再去通过ajax请求后端api获取数据更新视图。 </li>
+<li>服务端渲染的优势：减少网络传输，响应快，用户体验好，首屏渲染快，对搜索引擎友好，搜索引擎爬虫可以看到完整的程序源码，有利于SEO。 </li>
+<li>在Vue项目中实现服务端渲染方法：Vue在客户端渲染中也是采用一定方法将虚拟DOM渲染为真实DOM的，那么服务端的渲染流程也是通过虚拟DOM的编译来完成的，编译虚拟DOM的方法是renderToString。在Vue中，vue-server-renderer 提供一个名为 createBundleRenderer 的 API，这个API用于创建一个 render，并且自带renderToString方法。 </li>
+</ul>
+</li>
+<li><strong>加分回答</strong> <ul>
+<li>使用服务器端渲染 (SSR) 时还需要有一些权衡之处： <ul>
+<li>开发条件所限。浏览器特定的代码，只能在某些生命周期钩子函数 (lifecycle hook) 中使用；一些外部扩展库 (external library) 可能需要特殊处理，才能在服务器渲染应用程序中运行。 </li>
+<li>涉及构建设置和部署的更多要求。与可以部署在任何静态文件服务器上的完全静态单页面应用程序 (SPA) 不同，服务器渲染应用程序，需要处于 Node.js server 运行环境。 </li>
+<li>更多的服务器端负载。在 Node.js 中渲染完整的应用程序，显然会比仅仅提供静态文件的 server 更加大量占用 CPU 资源 (CPU-intensive - CPU 密集)，因此如果你预料在高流量环境 (high traffic) 下使用，请准备相应的服务器负载，并明智地采用缓存策略。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="浏览器渲染过程"><a href="#浏览器渲染过程" class="headerlink" title="浏览器渲染过程"></a>浏览器渲染过程</h3><ul>
+<li><strong>得分点</strong> dom树、stylesheet、布局树、分层、光栅化、合成 </li>
+<li><strong>标准回答</strong> <ul>
+<li>浏览器拿到HTML，先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。 </li>
+</ul>
+</li>
+<li><strong>加分回答</strong> <ul>
+<li>分层的目的：避免整个页面渲染，把页面分成多个图层，尤其是动画的时候，把动画独立出一个图层，渲染时只渲染该图层就ok，transform，z-index等，浏览器会自动优化生成图层 </li>
+<li>光栅化目的：页面如果很长但是可视区很小，避免渲染非可视区的样式造成资源浪费，所以将每个图层又划分成多个小个子，当前只渲染可视区附近区域</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤缓存机制"><a href="#❤缓存机制" class="headerlink" title="❤缓存机制"></a>❤缓存机制</h3><p><strong>1. 首先得明确 http 缓存的好处</strong></p>
+<ul>
+<li>减少了冗余的数据传输，减少网费</li>
+<li>减少服务器端的压力</li>
+<li><code>Web</code> 缓存能够减少延迟与网络阻塞，进而减少显示某个资源所用的时间</li>
+<li>加快客户端加载网页的速度</li>
+</ul>
+<p><strong>2. 常见 http 缓存的类型</strong></p>
+<ul>
+<li>私有缓存（一般为本地浏览器缓存）</li>
+<li>代理缓存</li>
+</ul>
+<p><strong>3. 然后谈谈本地缓存</strong></p>
+<blockquote>
+<p>本地缓存是指浏览器请求资源时命中了浏览器本地的缓存资源，浏览器并不会发送真正的请求给服务器了。它的执行过程是</p>
+</blockquote>
+<ul>
+<li>第一次浏览器发送请求给服务器时，此时浏览器还没有本地缓存副本，服务器返回资源给浏览器，响应码是<code>200 OK</code>，浏览器收到资源后，把资源和对应的响应头一起缓存下来</li>
+<li>第二次浏览器准备发送请求给服务器时候，浏览器会先检查上一次服务端返回的响应头信息中的<code>Cache-Control</code>，它的值是一个相对值，单位为秒，表示资源在客户端缓存的最大有效期，过期时间为第一次请求的时间减去<code>Cache-Control</code>的值，过期时间跟当前的请求时间比较，如果本地缓存资源没过期，那么命中缓存，不再请求服务器</li>
+<li>如果没有命中，浏览器就会把请求发送给服务器，进入缓存协商阶段。</li>
+</ul>
+<blockquote>
+<p>与本地缓存相关的头有：<code>Cache-Control</code>、<code>Expires</code>，<code>Cache-Control</code>有多个可选值代表不同的意义，而<code>Expires</code>就是一个日期格式的绝对值。</p>
+</blockquote>
+<p><strong>3.1 Cache-Control</strong></p>
+<blockquote>
+<p><code>Cache-Control</code>是<code>HTPP</code>缓存策略中最重要的头，它是<code>HTTP/1.1</code>中出现的，它由如下几个值</p>
+</blockquote>
+<ul>
+<li><code>no-cache</code>：不使用本地缓存。需要使用缓存协商，先与服务器确认返回的响应是否被更改，如果之前的响应中存在<code>ETag</code>，那么请求的时候会与服务端验证，如果资源未被更改，则可以避免重新下载</li>
+<li><code>no-store</code>：直接禁止游览器缓存数据，每次用户请求该资源，都会向服务器发送一个请求，每次都会下载完整的资源</li>
+<li><code>public</code>：可以被所有的用户缓存，包括终端用户和<code>CDN</code>等中间代理服务器。</li>
+<li><code>private</code>：只能被终端用户的浏览器缓存，不允许<code>CDN</code>等中继缓存服务器对其缓存。</li>
+<li><code>max-age</code>：从当前请求开始，允许获取的响应被重用的最长时间（秒）。</li>
+<li><code>must-revalidate</code>，当缓存过期时，需要去服务端校验缓存的有效性。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 例如：</span>
+
+Cache-Control: public, max-age<span class="token operator">=</span><span class="token number">1000</span> 
+<span class="token comment"># 表示资源可以被所有用户以及代理服务器缓存，最长时间为1000秒。</span>
+ 
+        @程序员poetry: 代码已经复制到剪贴板
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>注意，虽然你可能在其他资料中看到可以使用 meta 标签来设置缓存，比如像下面的形式：</p>
+</blockquote>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;meta http-equiv="expires" content="Wed, 20 Jun 2021 22:33:00 GMT"
+ 
+        @程序员poetry: 代码已经复制到剪贴板
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>但在 HTML5 规范中，并不支持这种方式，所以<code>尽量不要使用 meta 标签来设置缓存</code>。</p>
+<p><strong>3.2 Expires</strong></p>
+<blockquote>
+<p><code>Expires</code>是<code>HTTP/1.0</code>出现的头信息，同样是用于决定本地缓存策略的头，它是一个绝对时间，时间格式是如<code>Mon, 10 Jun 2015 21:31:12 GMT</code>，只要发送请求时间是在<code>Expires</code>之前，那么本地缓存始终有效，否则就会去服务器发送请求获取新的资源。如果同时出现<code>Cache-Control：max-age</code>和<code>Expires</code>，那么<code>max-age</code>优先级更高。他们可以这样组合使用</p>
+</blockquote>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Cache-Control: public
+Expires: Wed, Jan 10 2018 00:27:04 GMT
+ 
+        @程序员poetry: 代码已经复制到剪贴板
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>3.3 所谓的缓存协商</strong></p>
+<blockquote>
+<p>当第一次请求时服务器返回的响应头中存在以下情况时</p>
+</blockquote>
+<ul>
+<li>没有 <code>Cache-Control</code> 和 <code>Expires</code></li>
+<li><code>Cache-Control</code> 和 <code>Expires</code> 过期了</li>
+<li><code>Cache-Control</code> 的属性设置为 <code>no-cache</code> 时</li>
+</ul>
+<blockquote>
+<p>那么浏览器第二次请求时就会与服务器进行协商，询问浏览器中的缓存资源是不是旧版本，需不需要更新，此时，服务器就会做出判断，如果缓存和服务端资源的最新版本是一致的，那么就无需再次下载该资源，服务端直接返回<code>304 Not Modified</code> 状态码，如果服务器发现浏览器中的缓存已经是旧版本了，那么服务器就会把最新资源的完整内容返回给浏览器，状态码就是<code>200 Ok</code>，那么服务端是根据什么来判断浏览器的缓存是不是最新的呢？其实是根据<code>HTTP</code>的另外两组头信息，分别是：<code>Last-Modified/If-Modified-Since</code> 与 <code>ETag/If-None-Match</code>。</p>
+</blockquote>
+<p><strong>Last-Modified 与 If-Modified-Since</strong></p>
+<blockquote>
+<p>具体工作流程如下：</p>
+</blockquote>
+<ul>
+<li>浏览器第一次请求资源时，服务器会把资源的最新修改时间<code>Last-Modified:Thu, 29 Dec 2011 18:23:55 GMT</code>放在响应头中返回给浏览器</li>
+<li>第二次请求时，浏览器就会把上一次服务器返回的修改时间放在请求头<code>If-Modified-Since:Thu, 29 Dec 2011 18:23:55</code>发送给服务器，服务器就会拿这个时间跟服务器上的资源的最新修改时间进行对比</li>
+<li>服务端再次收到请求，根据请求头 <code>If-Modified-Since</code> 的值，判断相关资源是否有变化，如果没有，则返回 <code>304 Not Modified</code>，并且不返回资源内容，浏览器使用资源缓存值；否则正常返回资源内容，且更新<code>Last-Modified</code> 响应头内容。</li>
+</ul>
+<blockquote>
+<p>如果两者相等或者大于服务器上的最新修改时间，那么表示浏览器的缓存是有效的，此时缓存会命中，服务器就不再返回内容给浏览器了，同时<code>Last-Modified</code>头也不会返回，因为资源没被修改，返回了也没什么意义。如果没命中缓存则最新修改的资源连同<code>Last-Modified</code>头一起返回</p>
+</blockquote>
+<p><strong>这种方式虽然能判断缓存是否失效，但也存在两个问题：</strong></p>
+<ul>
+<li><strong>精度问题</strong>，<code>Last-Modified</code> 的时间精度为秒，如果在 <code>1</code> 秒内发生修改，那么缓存判断可能会失效；</li>
+<li><strong>准度问题</strong>，考虑这样一种情况，如果一个文件被修改，然后又被还原，内容并没有发生变化，在这种情况下，浏览器的缓存还可以继续使用，但因为修改时间发生变化，也会重新返回重复的内容。</li>
+</ul>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 第一次请求返回的响应头</span>
+Cache-Control:max-age<span class="token operator">=</span><span class="token number">3600</span>
+Expires: Fri, Jan <span class="token number">12</span> <span class="token number">2018</span> 00:27:04 GMT
+Last-Modified: Wed, Jan <span class="token number">10</span> <span class="token number">2018</span> 00:27:04 GMT
+ 
+        @程序员poetry: 代码已经复制到剪贴板
+    
+<span class="token comment"># 第二次请求的请求头信息</span>
+If-Modified-Since: Wed, Jan <span class="token number">10</span> <span class="token number">2018</span> 00:27:04 GMT
+ 
+        @程序员poetry: 代码已经复制到剪贴板
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>这组头信息是基于资源的修改时间来判断资源有没有更新，另一种方式就是根据资源的内容来判断，就是接下来要讨论的 <code>ETag</code> 与 <code>If-None-Match</code></p>
+</blockquote>
+<p><strong>ETag与If-None-Match</strong></p>
+<p>为了<code>解决精度问题和准度问题</code>，HTTP 提供了另一种不依赖于修改时间，而依赖于文件哈希值的精确判断缓存的方式，那就是响应头部字段 ETag 和请求头部字段 If-None-Match。</p>
+<blockquote>
+<p><code>ETag/If-None-Match</code>与<code>Last-Modified/If-Modified-Since</code>的流程其实是类似的，唯一的区别是它基于资源的内容的摘要信息（比如<code>MD5 hash</code>）来判断</p>
+</blockquote>
+<blockquote>
+<p>浏览器发送第二次请求时，会把第一次的响应头信息<code>ETag</code>的值放在<code>If-None-Match</code>的请求头中发送到服务器，与最新的资源的摘要信息对比，如果相等，取浏览器缓存，否则内容有更新，最新的资源连同最新的摘要信息返回。用<code>ETag</code>的好处是如果因为某种原因到时资源的修改时间没改变，那么用<code>ETag</code>就能区分资源是不是有被更新。</p>
+</blockquote>
+<p><strong>具体工作流程如下：</strong></p>
+<ul>
+<li>浏览器第一次请求资源，服务端在返响应头中加入 <code>Etag</code> 字段，<code>Etag</code> 字段值为该资源的哈希值</li>
+<li>当浏览器再次跟服务端请求这个资源时，在请求头上加上 <code>If-None-Match</code>，值为之前响应头部字段 <code>ETag</code> 的值；</li>
+<li>服务端再次收到请求，将请求头 <code>If-None-Match</code> 字段的值和响应资源的哈希值进行比对，如果两个值相同，则说明资源没有变化，返回 <code>304 Not Modified</code>；否则就正常返回资源内容，无论是否发生变化，都会将计算出的哈希值放入响应头部的 <code>ETag</code> 字段中</li>
+</ul>
+<p>这种缓存比较的方式也会存在一些问题，具体表现在以下两个方面。</p>
+<ul>
+<li><strong>计算成本</strong>。生成哈希值相对于读取文件修改时间而言是一个开销比较大的操作，尤其是对于大文件而言。如果要精确计算则需读取完整的文件内容，如果从性能方面考虑，只读取文件部分内容，又容易判断出错。</li>
+<li><strong>计算误差</strong>。HTTP 并没有规定哈希值的计算方法，所以不同服务端可能会采用不同的哈希值计算方式。这样带来的问题是，同一个资源，在两台服务端产生的 Etag 可能是不相同的，所以对于使用服务器集群来处理请求的网站来说，使用 Etag 的缓存命中率会有所降低。</li>
+</ul>
+<blockquote>
+<p>需要注意的是，<code>强制缓存的优先级高于协商缓存</code>，在协商缓存中，<code>Etag 优先级比 Last-Modified</code> 高</p>
+</blockquote>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token comment"># 第一次请求返回的响应头：</span>
+
+Cache-Control: public, max-age<span class="token operator">=</span><span class="token number">31536000</span>
+ETag: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</span>
+ 
+        @程序员poetry: 代码已经复制到剪贴板
+    
+<span class="token comment"># 第二次请求的请求头信息：</span>
+
+If-None-Match: <span class="token string">"15f0fff99ed5aae4edffdd6496d7131f"</span>
+ 
+        @程序员poetry: 代码已经复制到剪贴板
+    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>缓存位置</strong></p>
+<p>浏览器缓存的位置的话，可以分为四种,优先级从高到低排列分别👇</p>
+<ul>
+<li><code>Service Worker</code></li>
+<li><code>Memory Cache</code></li>
+<li><code>Disk Cache</code></li>
+<li><code>Push Cache</code></li>
+</ul>
+<p><strong>Service Worker</strong></p>
+<blockquote>
+<p>这个应用场景比如PWA，它借鉴了Web Worker思路，由于它脱离了浏览器的窗体，因此无法直接访问DOM。它能完成的功能比如：<code>离线缓存</code>、<code>消息推送</code>和<code>网络代理</code>，其中<code>离线缓存</code>就是<strong>Service Worker Cache</strong>。</p>
+</blockquote>
+<p><strong>Memory Cache</strong></p>
+<blockquote>
+<p>指的是内存缓存，从效率上讲它是最快的，从存活时间来讲又是最短的，当渲染进程结束后，内存缓存也就不存在了。</p>
+</blockquote>
+<p><strong>Disk Cache</strong></p>
+<blockquote>
+<p>存储在磁盘中的缓存，从存取效率上讲是比内存缓存慢的，优势在于存储容量和存储时长。</p>
+</blockquote>
+<p><strong>Disk Cache VS Memory Cache</strong></p>
+<p>两者对比，主要的策略👇</p>
+<ul>
+<li>内容使用率高的话，文件优先进入磁盘</li>
+<li>比较大的JS，CSS文件会直接放入磁盘，反之放入内存。</li>
+</ul>
+<p><strong>Push Cache</strong></p>
+<blockquote>
+<p>推送缓存，这算是浏览器中最后一道防线吧，它是<code>HTTP/2</code>的内容</p>
+</blockquote>
+<p><strong>浏览器缓存总结</strong></p>
+<blockquote>
+<p>浏览器缓存分为强缓存和协商缓存。当客户端请求某个资源时，获取缓存的流程如下</p>
+</blockquote>
+<ul>
+<li>先根据这个资源的一些 http header 判断它是否命中强缓存，先检查<code>Cache-Control</code>，如果命中，则直接从本地获取缓存资源，不会发请求到服务器；</li>
+<li>当强缓存没有命中时，客户端会发送请求到服务器，服务器通过另一些request header验证这个资源是否命中协商缓存，称为http再验证，如果命中，服务器将请求返回，但不返回资源，而是返回304告诉客户端直接从缓存中获取，客户端收到返回后就会从缓存中获取资源；（服务器通过请求头中的<code>If-Modified-Since</code>或者<code>If-None-Match</code>字段检查资源是否更新）</li>
+<li>强缓存和协商缓存共同之处在于，如果命中缓存，服务器都不会返回资源； 区别是，强缓存不对发送请求到服务器，但协商缓存会。</li>
+<li>当协商缓存也没命中时，服务器就会将资源发送回客户端。</li>
+<li>当 ctrl+f5 强制刷新网页时，直接从服务器加载，跳过强缓存和协商缓存；</li>
+<li>当 f5刷新网页时，跳过强缓存，但是会检查协商缓存；</li>
+</ul>
+<p><strong>强缓存</strong></p>
+<ul>
+<li>Expires（该字段是 http1.0 时的规范，值为一个绝对时间的 GMT 格式的时间字符串，代表缓存资源的过期时间）</li>
+<li>Cache-Control:max-age（该字段是 http1.1的规范，强缓存利用其 max-age 值来判断缓存资源的最大生命周期，它的值单位为秒）</li>
+</ul>
+<p><strong>协商缓</strong></p>
+<ul>
+<li>Last-Modified（值为资源最后更新时间，随服务器response返回，即使文件改回去，日期也会变化）</li>
+<li>If-Modified-Since（通过比较两个时间来判断资源在两次请求期间是否有过修改，如果没有修改，则命中协商缓存）</li>
+<li>ETag（表示资源内容的唯一标识，随服务器response返回，仅根据文件内容是否变化判断）</li>
+<li>If-None-Match（服务器通过比较请求头部的If-None-Match与当前资源的ETag是否一致来判断资源是否在两次请求之间有过修改，如果没有修改，则命中协商缓存）</li>
+</ul>
+<h3 id="❤浏览器存储"><a href="#❤浏览器存储" class="headerlink" title="❤浏览器存储"></a>❤浏览器存储</h3><blockquote>
+<p>我们经常需要对业务中的一些数据进行存储，通常可以分为 短暂性存储 和 持久性储存。</p>
+</blockquote>
+<ul>
+<li>短暂性的时候，我们只需要将数据存在内存中，只在运行时可用</li>
+<li>持久性存储，可以分为 浏览器端 与 服务器端<ul>
+<li>浏览器:<ul>
+<li><code>cookie</code>: 通常用于存储用户身份，登录状态等<ul>
+<li><code>http</code> 中自动携带， 体积上限为 <code>4K</code>， 可自行设置过期时间</li>
+</ul>
+</li>
+<li><code>localStorage / sessionStorage</code>: 长久储存/窗口关闭删除， 体积限制为 <code>4~5M</code></li>
+<li><code>indexDB</code></li>
+</ul>
+</li>
+<li>服务器:<ul>
+<li>分布式缓存 <code>redis</code></li>
+<li>数据库</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>cookie 和 localSrorage、session、indexDB 的区别</strong></p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>cookie</th>
+<th>localStorage</th>
+<th>sessionStorage</th>
+<th>indexDB</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>数据生命周期</td>
+<td>一般由服务器生成，可以设置过期时间</td>
+<td>除非被清理，否则一直存在</td>
+<td>页面关闭就清理</td>
+<td>除非被清理，否则一直存在</td>
+</tr>
+<tr>
+<td>数据存储大小</td>
+<td><code>4K</code></td>
+<td><code>5M</code></td>
+<td><code>5M</code></td>
+<td>无限</td>
+</tr>
+<tr>
+<td>与服务端通信</td>
+<td>每次都会携带在 header 中，对于请求性能影响</td>
+<td>不参与</td>
+<td>不参与</td>
+<td>不参与</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>从上表可以看到，<code>cookie</code> 已经不建议用于存储。如果没有大量数据存储需求的话，可以使用 <code>localStorage</code>和 <code>sessionStorage</code> 。对于不怎么改变的数据尽量使用 <code>localStorage</code> 存储，否则可以用 <code>sessionStorage</code> 存储。</p>
+</blockquote>
+<p><strong>对于 <code>cookie</code>，我们还需要注意安全性</strong></p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>value</code></td>
+<td>如果用于保存用户登录态，应该将该值加密，不能使用明文的用户标识</td>
+</tr>
+<tr>
+<td><code>http-only</code></td>
+<td>不能通过 <code>JS</code>访问 <code>Cookie</code>，减少 <code>XSS</code>攻击</td>
+</tr>
+<tr>
+<td><code>secure</code></td>
+<td>只能在协议为 <code>HTTPS</code> 的请求中携带</td>
+</tr>
+<tr>
+<td><code>same-site</code></td>
+<td>规定浏览器不能在跨域请求中携带 <code>Cookie</code>，减少 <code>CSRF</code> 攻击</td>
+</tr>
+</tbody></table>
+<p><img src="https://s.poetries.work/images/20210421172522.png" alt="img"></p>
+<ul>
+<li><code>Name</code>，即该 <code>Cookie</code> 的名称。<code>Cookie</code> 一旦创建，名称便不可更改。</li>
+<li><code>Value</code>，即该 <code>Cookie</code> 的值。如果值为 <code>Unicode</code> 字符，需要为字符编码。如果值为二进制数据，则需要使用 <code>BASE64</code> 编码。</li>
+<li><code>Max Age</code>，即该 <code>Cookie</code> 失效的时间，单位秒，也常和 <code>Expires</code> 一起使用，通过它可以计算出其有效时间。<code>Max Age</code>如果为正数，则该 <code>Cookie</code> 在 <code>Max Age</code> 秒之后失效。如果为负数，则关闭浏览器时 <code>Cookie</code> 即失效，浏览器也不会以任何形式保存该 <code>Cookie</code>。</li>
+<li><code>Path</code>，即该 <code>Cookie</code> 的使用路径。如果设置为 <code>/path/</code>，则只有路径为 <code>/path/</code> 的页面可以访问该 <code>Cookie</code>。如果设置为 <code>/</code>，则本域名下的所有页面都可以访问该 <code>Cookie</code>。</li>
+<li><code>Domain</code>，即可以访问该 <code>Cookie</code> 的域名。例如如果设置为 <code>.zhihu.com</code>，则所有以 <code>zhihu.com</code>，结尾的域名都可以访问该 <code>Cookie</code>。 <code>Size</code> 字段，即此 <code>Cookie</code> 的大小。</li>
+<li><code>Http</code> 字段，即 <code>Cookie</code> 的 <code>httponly</code> 属性。若此属性为 <code>true</code>，则只有在 <code>HTTP Headers</code> 中会带有此 Cookie 的信息，而不能通过 <code>document.cookie</code> 来访问此 Cookie。</li>
+<li><code>Secure</code>，即该 <code>Cookie</code> 是否仅被使用安全协议传输。安全协议。安全协议有 <code>HTTPS、SSL</code> 等，在网络上传输数据之前先将数据加密。默认为 <code>false</code>。</li>
+</ul>
+<h3 id="Cookies，SessionStorage-和-LocalStorage-的区别？"><a href="#Cookies，SessionStorage-和-LocalStorage-的区别？" class="headerlink" title="Cookies，SessionStorage 和 LocalStorage 的区别？"></a><code>Cookies</code>，<code>SessionStorage</code> 和 <code>LocalStorage</code> 的区别？</h3><ul>
+<li><strong>相同点：</strong>都是存储在浏览器本地的</li>
+<li><strong>不同点：</strong><ul>
+<li><strong>写入方式：</strong><code>cookie</code>是由服务器端写入的，而<code>SessionStorage</code>、 <code>LocalStorage</code>都是由前端写入的</li>
+<li><strong>生命周期：</strong><code>cookie</code>的生命周期是由服务器端在写入的时候就设置好的，<code>LocalStorage</code>是写入就一直存在，除非手动清除，<code>SessionStorage</code>是页面关闭的时候就会自动清除</li>
+<li><strong>存储大小：</strong><code>cookie</code>的存储空间比较小大概4KB，<code>SessionStorage</code>、 <code>LocalStorage</code>存储空间比较大，大概5M</li>
+<li><strong>数据共享：</strong><code>Cookie</code>、<code>SessionStorage</code>、 <code>LocalStorage</code>数据共享都遵循同源原则，<code>SessionStorage</code>还限制必须是同一个页面</li>
+<li><strong>发送请求时是否携带：</strong>在前端给后端发送请求的时候会自动携带<code>Cookie</code>中的数据，但是<code>SessionStorage</code>、 <code>LocalStorage</code>不会</li>
+<li><strong>应用场景：</strong><code>Cookie</code>一般用于存储登录验证信息<code>SessionID</code> 或者 <code>token</code> ，<code>LocalStorage</code>常用于存储不易变动的数据，减轻服务器的压力，<code>SessionStorage</code>可以用来检测用户是否是刷新进入页面，如音乐播放器恢复播放进度条的功能</li>
+</ul>
+</li>
+</ul>
+<h3 id="实现可过期的localstorage数据"><a href="#实现可过期的localstorage数据" class="headerlink" title="实现可过期的localstorage数据"></a>实现可过期的<code>localstorage</code>数据</h3><ul>
+<li><strong>得分点</strong> 惰性删除、定时删除 </li>
+<li><strong>标准回答</strong> <code>localStorage</code>只能用于长久保存整个网站的数据，保存的数据没有过期时间，直到手动去删除。所以要实现可过期的<code>localStorage</code>缓存的中重点就是：如何清理过期的缓存。 <ul>
+<li>目前有两种方法，一种是惰性删除，另一种是定时删除。 </li>
+<li><strong>惰性删除</strong>是指某个键值过期后，该键值不会被马上删除，而是等到下次被使用的时候，才会被检查到过期，此时才能得到删除。实现方法是，存储的数据类型是个对象，该对象有两个key，一个是要存储的value值，另一个是当前时间。获取数据的时候，拿到存储的时间和当前时间做对比，如果超过过期时间就清除Cookie。 </li>
+<li><strong>定时删除</strong>是指，每隔一段时间执行一次删除操作，并通过限制删除操作执行的次数和频率，来减少删除操作对CPU的长期占用。另一方面定时删除也有效的减少了因惰性删除带来的对<code>localStorage</code>空间的浪费。实现过程，获取所有设置过期时间的key判断是否过期，过期就存储到数组中，遍历数组，每隔1S（固定时间）删除5个（固定个数），直到把数组中的key从<code>localstorage</code>中全部删除。 </li>
+</ul>
+</li>
+<li><strong>加分回答</strong> <ul>
+<li><code>LocalStorage</code>清空应用场景：<ul>
+<li>token存储在<code>LocalStorage</code>中，<strong>要清空</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="token-能放在cookie中吗"><a href="#token-能放在cookie中吗" class="headerlink" title="token 能放在cookie中吗"></a><code>token</code> 能放在<code>cookie</code>中吗</h3><ul>
+<li><strong>得分点</strong> 能、不设置cookie有效期、重新登录重写cookie覆盖原来的cookie </li>
+<li><strong>标准回答</strong> <ul>
+<li>能。 token一般是用来判断用户是否登录的，它内部包含的信息有：<code>uid</code>(用户唯一的身份标识)、<code>time</code>(当前时间的时间戳)、<code>sign</code>（签名，token 的前几位以哈希算法压缩成的一定长度的十六进制字符串）</li>
+<li> <code>token</code>可以存放在<code>Cookie</code>中，<code>token</code> 是否过期，应该由后端来判断，不该前端来判断，所以<code>token</code>存储在<code>cookie</code>中只要不设置<code>cookie</code>的过期时间就ok了，如果 <code>token</code> 失效，就让后端在接口中返回固定的状态表示<code>token</code> 失效，需要重新登录，再重新登录的时候，重新设置 <code>cookie</code> 中的 <code>token</code> 就行。 </li>
+</ul>
+</li>
+<li><strong>加分回答</strong> </li>
+<li><code>token</code>认证流程 <ol>
+<li>客户端使用用户名跟密码请求登录 </li>
+<li>服务端收到请求，去验证用户名与密码 </li>
+<li>验证成功后，服务端签发一个 <code>token</code> ，并把它发送给客户端 </li>
+<li>客户端接收 <code>token</code> 以后会把它存储起来，比如放在 <code>cookie</code> 里或者 <code>localStorage</code> 里 </li>
+<li>客户端每次发送请求时都需要带着服务端签发的 token（把 token 放到 HTTP 的 Header 里） </li>
+<li>服务端收到请求后，需要验证请求里带有的 token ，如验证成功则返回对应的数据</li>
+</ol>
+</li>
+</ul>
+<h3 id="请你谈谈Cookie的弊端"><a href="#请你谈谈Cookie的弊端" class="headerlink" title="请你谈谈Cookie的弊端"></a>请你谈谈Cookie的弊端</h3><blockquote>
+<p><code>cookie</code>虽然在持久保存客户端数据提供了方便，分担了服务器存储的负担，但还是有很多局限性的</p>
+</blockquote>
+<ul>
+<li>每个特定的域名下最多生成<code>20</code>个<code>cookie</code></li>
+<li><code>IE6</code>或更低版本最多<code>20</code>个<code>cookie</code></li>
+<li><code>IE7</code>和之后的版本最后可以有<code>50</code>个<code>cookie</code></li>
+<li><code>Firefox</code>最多50个<code>cookie</code></li>
+<li><code>chrome</code>和<code>Safari</code>没有做硬性限制</li>
+<li>IE 和 Opera 会清理近期最少使用的 <code>cookie</code>，<code>Firefox</code> 会随机清理 <code>cookie</code></li>
+<li><code>cookie</code> 的最大大约为 <code>4096</code> 字节，为了兼容性，一般设置不超过 <code>4095</code> 字节</li>
+<li>如果 <code>cookie</code> 被人拦截了，就可以取得所有的 <code>sessioln</code> 信息</li>
+</ul>
+<h3 id="❤跨域方案"><a href="#❤跨域方案" class="headerlink" title="❤跨域方案"></a>❤跨域方案</h3><blockquote>
+<p>很多种方法，但万变不离其宗，都是为了搞定同源策略。重用的有 <code>jsonp</code>、<code>iframe</code>、<code>cors</code>、<code>img</code>、<code>HTML5 postMessage</code>等等。其中用到 <code>html</code> 标签进行跨域的原理就是 <code>html</code> 不受同源策略影响。但只是接受 <code>Get</code> 的请求方式，这个得清楚。</p>
+</blockquote>
+<blockquote>
+<p><strong>延伸1：img iframe script 来发送跨域请求有什么优缺点？</strong></p>
+</blockquote>
+<p><strong>1. <code>iframe</code></strong></p>
+<ul>
+<li>优点：跨域完毕之后<code>DOM</code>操作和互相之间的<code>JavaScript</code>调用都是没有问题的</li>
+<li>缺点：1.若结果要以<code>URL</code>参数传递，这就意味着在结果数据量很大的时候需要分割传递，巨烦。2.还有一个是<code>iframe</code>本身带来的，母页面和<code>iframe</code>本身的交互本身就有安全性限制。</li>
+</ul>
+<p><strong>2. script</strong></p>
+<ul>
+<li>优点：可以直接返回<code>json</code>格式的数据，方便处理</li>
+<li>缺点：只接受<code>GET</code>请求方式</li>
+</ul>
+<p><strong>3. 图片ping</strong></p>
+<ul>
+<li>优点：可以访问任何<code>url</code>，一般用来进行点击追踪，做页面分析常用的方法</li>
+<li>缺点：不能访问响应文本，只能监听是否响应</li>
+</ul>
+<blockquote>
+<p><strong>延伸2：配合 webpack 进行反向代理？</strong></p>
+</blockquote>
+<p><code>webpack</code> 在 <code>devServer</code> 选项里面提供了一个 <code>proxy</code> 的参数供开发人员进行反向代理</p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token string">'/api'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  target<span class="token operator">:</span> <span class="token string">'http://www.example.com'</span><span class="token punctuation">,</span> <span class="token comment">// your target host</span>
+  changeOrigin<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// needed for virtual hosted sites</span>
+  pathRewrite<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'^/api'</span><span class="token operator">:</span> <span class="token string">''</span>  <span class="token comment">// rewrite path</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>然后再配合 <code>http-proxy-middleware</code> 插件对 <code>api</code> 请求地址进行代理</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> express <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'express'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'http-proxy-middleware'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment">// proxy api requests</span>
+<span class="token keyword">const</span> exampleProxy <span class="token operator">=</span> <span class="token function">proxy</span><span class="token punctuation">(</span>options<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 这里的 options 就是 webpack 里面的 proxy 选项对应的每个选项</span>
+
+<span class="token comment">// mount `exampleProxy` in web server</span>
+<span class="token keyword">const</span> app <span class="token operator">=</span> <span class="token function">express</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token string">'/api'</span><span class="token punctuation">,</span> exampleProxy<span class="token punctuation">)</span><span class="token punctuation">;</span>
+app<span class="token punctuation">.</span><span class="token function">listen</span><span class="token punctuation">(</span><span class="token number">3000</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>然后再用 <code>nginx</code> 把允许跨域的源地址添加到报头里面即可</p>
+</blockquote>
+<blockquote>
+<p>说到 <code>nginx</code> ，可以再谈谈 <code>CORS</code> 配置，大致如下</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">location <span class="token operator">/</span> <span class="token punctuation">{</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>$request_method <span class="token operator">=</span> <span class="token string">'OPTIONS'</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    add_header <span class="token string">'Access-Control-Allow-Origin'</span> <span class="token string">'*'</span><span class="token punctuation">;</span>  
+    add_header <span class="token string">'Access-Control-Allow-Methods'</span> <span class="token string">'GET, POST, OPTIONS'</span><span class="token punctuation">;</span> 
+    add_header <span class="token string">'Access-Control-Allow-Credentials'</span> <span class="token string">'true'</span><span class="token punctuation">;</span>
+    add_header <span class="token string">'Access-Control-Allow-Headers'</span> <span class="token string">'DNT, X-Mx-ReqToken, Keep-Alive, User-Agent, X-Requested-With, If-Modified-Since, Cache-Control, Content-Type'</span><span class="token punctuation">;</span>  
+    add_header <span class="token string">'Access-Control-Max-Age'</span> <span class="token number">86400</span><span class="token punctuation">;</span>  
+    add_header <span class="token string">'Content-Type'</span> <span class="token string">'text/plain charset=UTF-8'</span><span class="token punctuation">;</span>  
+    add_header <span class="token string">'Content-Length'</span> <span class="token number">0</span><span class="token punctuation">;</span>  
+    <span class="token keyword">return</span> <span class="token number">200</span><span class="token punctuation">;</span>  
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="为什么要有同源限制？"><a href="#为什么要有同源限制？" class="headerlink" title="为什么要有同源限制？"></a>为什么要有同源限制？</h3><ul>
+<li>同源策略指的是：协议，域名，端口相同，同源策略是一种安全协议</li>
+<li>举例说明：比如一个黑客程序，他利用<code>Iframe</code>把真正的银行登录页面嵌到他的页面上，当你使用真实的用户名，密码登录时，他的页面就可以通过<code>Javascript</code>读取到你的表单中<code>input</code>中的内容，这样用户名，密码就轻松到手了。</li>
+</ul>
+<h3 id="如何解决跨域问题"><a href="#如何解决跨域问题" class="headerlink" title="如何解决跨域问题?"></a>如何解决跨域问题?</h3><blockquote>
+<p>首先了解下浏览器的同源策略 同源策略<code>/SOP（Same origin policy）</code>是一种约定，由Netscape公司1995年引入浏览器，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，浏览器很容易受到<code>XSS</code>、<code>CSRF</code>等攻击。所谓同源是指”<strong>协议+域名+端口</strong>“三者相同，即便两个不同的域名指向同一个ip地址，也非同源</p>
+</blockquote>
+<p><strong>那么怎样解决跨域问题的呢？</strong></p>
+<ul>
+<li><strong>通过jsonp跨域</strong></li>
+</ul>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">var</span> script <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">createElement</span><span class="token punctuation">(</span><span class="token string">'script'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+script<span class="token punctuation">.</span>type <span class="token operator">=</span> <span class="token string">'text/javascript'</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 传参并指定回调执行函数为onBack</span>
+script<span class="token punctuation">.</span>src <span class="token operator">=</span> <span class="token string">'http://www.....:8080/login?user=admin&amp;callback=onBack'</span><span class="token punctuation">;</span>
+document<span class="token punctuation">.</span>head<span class="token punctuation">.</span><span class="token function">appendChild</span><span class="token punctuation">(</span>script<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 回调执行函数</span>
+<span class="token keyword">function</span> <span class="token function">onBack</span><span class="token punctuation">(</span><span class="token parameter">res</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token function">alert</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>document.domain + iframe跨域</strong></li>
+</ul>
+<blockquote>
+<p>此方案仅限主域相同，子域不同的跨域应用场景</p>
+</blockquote>
+<p>1.）父窗口：(<a target="_blank" rel="noopener" href="http://www.domain.com/a.html">http://www.domain.com/a.html</a>)</p>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>iframe</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>iframe<span class="token punctuation">"</span></span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://child.domain.com/b.html<span class="token punctuation">"</span></span><span class="token punctuation">&gt;</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>iframe</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span><span class="token punctuation">&gt;</span></span><span class="token script"><span class="token language-javascript">
+    document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span>
+    <span class="token keyword">var</span> user <span class="token operator">=</span> <span class="token string">'admin'</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>2.）子窗口：(<a target="_blank" rel="noopener" href="http://child.domain.com/b.html">http://child.domain.com/b.html</a>)</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript">document<span class="token punctuation">.</span>domain <span class="token operator">=</span> <span class="token string">'domain.com'</span><span class="token punctuation">;</span>
+<span class="token comment">// 获取父窗口中变量</span>
+<span class="token function">alert</span><span class="token punctuation">(</span><span class="token string">'get js data from parent ---&gt; '</span> <span class="token operator">+</span> window<span class="token punctuation">.</span>parent<span class="token punctuation">.</span>user<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<ul>
+<li><strong>nginx代理跨域</strong></li>
+<li><strong>nodejs中间件代理跨域</strong></li>
+<li><strong>后端在头部信息里面设置安全域名</strong></li>
+</ul>
+<ul>
+<li><p><strong>得分点：</strong>同源限制、协议、域名、端口、CORS、node中间件、JSONP、postmessage</p>
+</li>
+<li><p><strong>标准回答：</strong><br><strong>跨域：</strong>当前页面中的某个接口请求的地址和当前页面的地址如果协议、域名、端口其中有一项不同，就说该接口跨域了。<br>跨域限制的原因：浏览器为了保证网页的安全，出的同源协议策略。</p>
+<p><strong>跨域报错信息：</strong></p>
+<p><img src="https://uploadfiles.nowcoder.com/images/20220226/4107856_1645863343481/0BF44F815EA97361C3608F016702DF18" alt="img"></p>
+<p><strong>跨域解决方案</strong></p>
+<pre><code>cors：目前最常用的一种解决办法，通过设置后端允许跨域实现。
+res.setHeader('Access-Control-Allow-Origin', '*');
+res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
+</code></pre>
+<p><strong>node中间件、nginx反向代理：</strong>跨域限制的时候浏览器不能跨域访问服务器，node中间件和nginx反向代理，都是让请求发给代理服务器，静态页面面和代理服务器是同源的，然后代理服务器再向后端服务器发请求，服务器和服务器之间不存在同源限制。</p>
+<p><strong>JSONP：</strong>利用的原理是script标签可以跨域请求资源，将回调函数作为参数拼接在url中。后端收到请求，调用该回调函数，并将数据作为参数返回去，注意设置响应头返回文档类型，应该设置成javascript。</p>
+<p><strong>postmessage：</strong>H5新增API，通过发送和接收API实现跨域通信。</p>
+</li>
+<li><p><strong>加分回答：</strong></p>
+<ul>
+<li>跨域场景：前后端分离式开发、调用第三方接口</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤XSS-和-CSRF"><a href="#❤XSS-和-CSRF" class="headerlink" title="❤XSS 和 CSRF"></a>❤XSS 和 CSRF</h3><p><img src="https://s.poetries.work/images/20210415090547.png" alt="img"></p>
+<p><strong>1. XSS</strong></p>
+<blockquote>
+<p>涉及面试题：什么是 <code>XSS</code> 攻击？如何防范 <code>XSS</code> 攻击？什么是 <code>CSP</code>？</p>
+</blockquote>
+<ul>
+<li><code>XSS</code> 简单点来说，就是攻击者想尽一切办法将可以执行的代码注入到网页中。</li>
+<li><code>XSS</code> 可以分为多种类型，但是总体上我认为分为两类：持久型和非持久型。</li>
+<li>持久型也就是攻击的代码被服务端写入进数据库中，这种攻击危害性很大，因为如果网站访问量很大的话，就会导致大量正常访问页面的用户都受到攻击。</li>
+</ul>
+<blockquote>
+<p>举个例子，对于评论功能来说，就得防范持久型 <code>XSS</code> 攻击，因为我可以在评论中输入以下内容</p>
+</blockquote>
+<p><img src="https://s.poetries.work/gitee/2020/07/4.png" alt="image.png"></p>
+<ul>
+<li>这种情况如果前后端没有做好防御的话，这段评论就会被存储到数据库中，这样每个打开该页面的用户都会被攻击到。</li>
+<li>非持久型相比于前者危害就小的多了，一般通过修改 <code>URL</code> 参数的方式加入攻击代码，诱导用户访问链接从而进行攻击。</li>
+</ul>
+<blockquote>
+<p>举个例子，如果页面需要从 <code>URL</code> 中获取某些参数作为内容的话，不经过过滤就会导致攻击代码被执行</p>
+</blockquote>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token comment">&lt;!-- http://www.domain.com?name=&lt;script&gt;alert(1)&lt;/script&gt; --&gt;</span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">&gt;</span></span>{{name}}<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>但是对于这种攻击方式来说，如果用户使用 <code>Chrome</code> 这类浏览器的话，浏览器就能自动帮助用户防御攻击。但是我们不能因此就不防御此类攻击了，因为我不能确保用户都使用了该类浏览器。</p>
+</blockquote>
+<p><img src="https://s.poetries.work/gitee/2020/07/fe/19.png" alt="img"></p>
+<blockquote>
+<p>对于 <code>XSS</code> 攻击来说，通常有两种方式可以用来防御。</p>
+</blockquote>
+<ol>
+<li><strong>转义字符</strong></li>
+</ol>
+<blockquote>
+<p>首先，对于用户的输入应该是永远不信任的。最普遍的做法就是转义输入输出的内容，对于引号、尖括号、斜杠进行转义</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">function</span> <span class="token function">escape</span><span class="token punctuation">(</span><span class="token parameter">str</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&amp;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;amp;'</span><span class="token punctuation">)</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&lt;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;lt;'</span><span class="token punctuation">)</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">&gt;</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;gt;'</span><span class="token punctuation">)</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">"</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;quto;'</span><span class="token punctuation">)</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">'</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;#39;'</span><span class="token punctuation">)</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">`</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;#96;'</span><span class="token punctuation">)</span>
+  str <span class="token operator">=</span> str<span class="token punctuation">.</span><span class="token function">replace</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\/</span><span class="token regex-delimiter">/</span><span class="token regex-flags">g</span></span><span class="token punctuation">,</span> <span class="token string">'&amp;#x2F;'</span><span class="token punctuation">)</span>
+  <span class="token keyword">return</span> str
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>通过转义可以将攻击代码 <code>&lt;script&gt;alert(1)&lt;/script&gt;</code> 变成</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// -&gt; &amp;lt;script&amp;gt;alert(1)&amp;lt;&amp;#x2F;script&amp;gt;</span>
+<span class="token function">escape</span><span class="token punctuation">(</span><span class="token string">'&lt;script&gt;alert(1)&lt;/script&gt;'</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>但是对于显示富文本来说，显然不能通过上面的办法来转义所有字符，因为这样会把需要的格式也过滤掉。对于这种情况，通常采用白名单过滤的办法，当然也可以通过黑名单过滤，但是考虑到需要过滤的标签和标签属性实在太多，更加推荐使用白名单的方式</p>
+</blockquote>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token keyword">const</span> xss <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'xss'</span><span class="token punctuation">)</span>
+<span class="token keyword">let</span> html <span class="token operator">=</span> <span class="token function">xss</span><span class="token punctuation">(</span><span class="token string">'&lt;h1 id="title"&gt;XSS Demo&lt;/h1&gt;&lt;script&gt;alert("xss");&lt;/script&gt;'</span><span class="token punctuation">)</span>
+<span class="token comment">// -&gt; &lt;h1&gt;XSS Demo&lt;/h1&gt;&amp;lt;script&amp;gt;alert("xss");&amp;lt;/script&amp;gt;</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>以上示例使用了 <code>js-xss</code> 来实现，可以看到在输出中保留了 <code>h1</code> 标签且过滤了 <code>script</code>标签</p>
+</blockquote>
+<ol start="2">
+<li><strong>CSP</strong></li>
+</ol>
+<blockquote>
+<p><code>CSP</code> 本质上就是建立白名单，开发者明确告诉浏览器哪些外部资源可以加载和执行。我们只需要配置规则，如何拦截是由浏览器自己实现的。我们可以通过这种方式来尽量减少 <code>XSS</code> 攻击。</p>
+</blockquote>
+<p><strong>通常可以通过两种方式来开启 CSP</strong>：</p>
+<ul>
+<li>设置 <code>HTTP Header</code> 中的 <code>Content-Security-Policy</code></li>
+<li>设置 <code>meta</code> 标签的方式 <code>&lt;meta http-equiv="Content-Security-Policy"&gt;</code></li>
+</ul>
+<p>这里以设置 <code>HTTP Header</code> 来举例</p>
+<p><strong>只允许加载本站资源</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Content-Security-Policy: default-src ‘self’<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>只允许加载 HTTPS 协议图片</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Content-Security-Policy: img-src https://*<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>允许加载任何来源框架</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Content-Security-Policy: child-src 'none'<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>当然可以设置的属性远不止这些，你可以通过查阅 <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">文档 (opens new window)</a>的方式来学习，这里就不过多赘述其他的属性了。</p>
+</blockquote>
+<blockquote>
+<p>对于这种方式来说，只要开发者配置了正确的规则，那么即使网站存在漏洞，攻击者也不能执行它的攻击代码，并且 <code>CSP</code> 的兼容性也不错。</p>
+</blockquote>
+<p><img src="https://s.poetries.work/gitee/2020/07/fe/20.png" alt="img"></p>
+<p><strong>2 CSRF</strong></p>
+<blockquote>
+<p>跨站请求伪造（英语：<code>Cross-site request forgery</code>），也被称为 <code>one-click attack</code>或者 <code>session riding</code>，通常缩写为 <code>CSRF</code> 或者 <code>XSRF</code>， 是一种挟制用户在当前已登录的<code>Web</code>应用程序上执行非本意的操作的攻击方法</p>
+</blockquote>
+<blockquote>
+<p><code>CSRF</code> 就是利用用户的登录态发起恶意请求</p>
+</blockquote>
+<p><strong>如何攻击</strong></p>
+<blockquote>
+<p>假设网站中有一个通过 Get 请求提交用户评论的接口，那么攻击者就可以在钓鱼网站中加入一个图片，图片的地址就是评论接口</p>
+</blockquote>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">&lt;img src="http://www.domain.com/xxx?comment='attack'"/&gt;<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><img src="https://s.poetries.work/images/20210506174602.png" alt="img"></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js">res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Set-Cookie'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">username=poetry2;sameSite = strict;path=/;httpOnly;expires=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getCookirExpires</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<blockquote>
+<p>在B网站，危险网站向A网站发起请求</p>
+</blockquote>
+<pre class="line-numbers language-html" data-language="html"><code class="language-html"><span class="token doctype"><span class="token punctuation">&lt;!</span><span class="token doctype-tag">DOCTYPE</span> <span class="token name">html</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">&gt;</span></span>
+  <span class="token comment">&lt;!-- 利用img自动发送请求 --&gt;</span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>img</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>http://localhost:8000/api/user/login<span class="token punctuation">"</span></span> <span class="token punctuation">/&gt;</span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">&gt;</span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">&gt;</span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>会带上A网站的cookie</p>
+<p><img src="https://s.poetries.work/images/20210506174856.png" alt="img"></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 在A网站下发cookie的时候，加上sameSite=strict，这样B网站在发送A网站请求，不会自动带上A网站的cookie，保证了安全</span>
+
+
+<span class="token comment">// NAME=VALUE    赋予Cookie的名称及对应值</span>
+<span class="token comment">// expires=DATE  Cookie 的有效期</span>
+<span class="token comment">// path=PATH     赋予Cookie的名称及对应值</span>
+<span class="token comment">// domain=域名   作为 Cookie 适用对象的域名 （若不指定则默认为创建 Cookie 的服务器的域名） (一般不指定)</span>
+<span class="token comment">// Secure        仅在 HTTPS 安全通信时才会发送 Cookie</span>
+<span class="token comment">// HttpOnly      加以限制，使 Cookie 不能被 JavaScript 脚本访问</span>
+<span class="token comment">// SameSite      Lax|Strict|None  它允许您声明该Cookie是否仅限于第一方或者同一站点上下文</span>
+
+res<span class="token punctuation">.</span><span class="token function">setHeader</span><span class="token punctuation">(</span><span class="token string">'Set-Cookie'</span><span class="token punctuation">,</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">username=poetry;sameSite=strict;path=/;httpOnly;expires=</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span><span class="token function">getCookirExpires</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><img src="https://s.poetries.work/images/20210506175834.png" alt="img"></p>
+<p><strong>如何防御</strong></p>
+<ul>
+<li><code>Get</code> 请求不对数据进行修改</li>
+<li>不让第三方网站访问到用户 <code>Cookie</code></li>
+<li>阻止第三方网站请求接口</li>
+<li>请求时附带验证信息，比如验证码或者 <code>token</code></li>
+<li><code>SameSite Cookies</code>: 只能当前域名的网站发出的http请求，携带这个<code>Cookie</code>。当然，由于这是新的cookie属性，在兼容性上肯定会有问题</li>
+</ul>
+<blockquote>
+<p>CSRF攻击，仅仅是利用了http携带cookie的特性进行攻击的，但是攻击站点还是无法得到被攻击站点的cookie。这个和XSS不同，XSS是直接通过拿到Cookie等信息进行攻击的</p>
+</blockquote>
+<p><strong>在CSRF攻击中，就Cookie相关的特性：</strong></p>
+<ul>
+<li>http请求，会自动携带Cookie。</li>
+<li>携带的cookie，还是http请求所在域名的cookie。</li>
+</ul>
+<p><strong>3 密码安全</strong></p>
+<p><strong>加盐</strong></p>
+<blockquote>
+<p>对于密码存储来说，必然是不能明文存储在数据库中的，否则一旦数据库泄露，会对用户造成很大的损失。并且不建议只对密码单纯通过加密算法加密，因为存在彩虹表的关系</p>
+</blockquote>
+<ul>
+<li>通常需要对密码加盐，然后进行几次不同加密算法的加密</li>
+</ul>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token comment">// 加盐也就是给原密码添加字符串，增加原密码长度</span>
+<span class="token function">sha256</span><span class="token punctuation">(</span><span class="token function">sha1</span><span class="token punctuation">(</span><span class="token function">md5</span><span class="token punctuation">(</span>salt <span class="token operator">+</span> password <span class="token operator">+</span> salt<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>但是加盐并不能阻止别人盗取账号，只能确保即使数据库泄露，也不会暴露用户的真实密码。一旦攻击者得到了用户的账号，可以通过暴力破解的方式破解密码。对于这种情况，通常使用验证码增加延时或者限制尝试次数的方式。并且一旦用户输入了错误的密码，也不能直接提示用户输错密码，而应该提示账号或密码错误</p>
+</blockquote>
+<p><strong>前端加密</strong></p>
+<blockquote>
+<p>虽然前端加密对于安全防护来说意义不大，但是在遇到中间人攻击的情况下，可以避免明文密码被第三方获取</p>
+</blockquote>
+<p><strong>4. 总结</strong></p>
+<ul>
+<li><code>XSS</code>：跨站脚本攻击，是一种网站应用程序的安全漏洞攻击，是代码注入的一种。常见方式是将恶意代码注入合法代码里隐藏起来，再诱发恶意代码，从而进行各种各样的非法活动</li>
+</ul>
+<blockquote>
+<p>防范：记住一点 “所有用户输入都是不可信的”，所以得做输入过滤和转义</p>
+</blockquote>
+<ul>
+<li><code>CSRF</code>：跨站请求伪造，也称 <code>XSRF</code>，是一种挟制用户在当前已登录的<code>Web</code>应用程序上执行非本意的操作的攻击方法。与 <code>XSS</code> 相比，<code>XSS</code>利用的是用户对指定网站的信任，<code>CSRF</code>利用的是网站对用户网页浏览器的信任。</li>
+</ul>
+<blockquote>
+<p>防范：用户操作验证（验证码），额外验证机制（<code>token</code>使用）等</p>
+</blockquote>
+<h3 id="XSS攻击"><a href="#XSS攻击" class="headerlink" title="XSS攻击"></a>XSS攻击</h3><ul>
+<li><strong>得分点</strong> XSS是跨站脚本攻击、向目标网站插入恶意代码、大量用户访问网站时运行恶意脚本获取信息 </li>
+<li><strong>标准回答</strong> <ul>
+<li>XSS是跨站脚本攻击(Cross Site Scripting)，不写为CSS是为了避免和层叠样式表（Cascading Style Sheets）的缩写混淆，所以将跨站脚本攻击写为XSS。攻击者可以通过向Web页面里面插入script代码，当用户浏览这个页面时，就会运行被插入的script代码，达到攻击者的目的。XSS的危害一般是泄露用户的登录信息cookie，攻击者可以通过cookie绕过登录步骤直接进入站点。</li>
+<li>XSS的分类分为<strong>反射型</strong>和<strong>存储型</strong>。<ul>
+<li>反射型就是临时通过url访问网站，网站服务端将恶意代码从url中取出，拼接在HTML中返回给浏览器，用户就会执行恶意代码。</li>
+<li>存储型就是将恶意代码以留言的形式保存在服务器数据库，任何访问网站的人都会受到攻击。预防XSS攻击的方案基本是对数据进行严格的输出编码，比如HTML元素的编码，JavaScript编码，css编码，url编码等等。 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> <ul>
+<li><strong>XSS的危害：</strong> <ul>
+<li>获取cookie：网站中的登录一般都是用cookie作为某个用户的身份证明，这是服务器端返回的一串字符。如果cookie被攻击者拿到，那么就可以绕过密码登录。当空间、论坛如果可以被插入script代码，那么进入空间或者论坛的人的账号就可以轻易被攻击者获取。 </li>
+<li>恶意跳转：直接在页面中插入window.location.href进行跳转。 XSS的分类： <ul>
+<li>反射型XSS（非持久型XSS）：通过URL参数直接注入 </li>
+<li>存储型XSS（持久型XSS）：存储到数据库后读取时注入</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>XSS的预防：</strong> <ul>
+<li>浏览器的防御和“X-XSS-Protection”有关，默认值为1，即默认打开XSS防御，可以防御反射型的XSS，不过作用有限，只能防御注入到HTML的节点内容或属性的XSS，例如URL参数中包含script标签。不建议只依赖此防御手段。 </li>
+<li>防御HTML节点内容，通过转义&lt;为&lt;以及&gt;为&gt;来实现防御HTML节点内容。 </li>
+<li>预防HTML属性，通过转义”-&gt;&amp;quto来实现防御，一般不转义空格，但是这要求属性必须带引号。 </li>
+<li>预防JavaScript代码，通过将数据进行JSON序列化。 </li>
+<li>防御富文本是比较复杂的工程，因为富文本可以包含HTML和script，这些难以预测与防御，建议是通过白名单的方式来过滤允许的HTML标签和标签的属性来进行防御，大概的<strong>实现方式</strong>是： <ul>
+<li>将HTML代码段转成树级结构的数据 </li>
+<li>遍历树的每一个节点，过滤节点的类型和属性，或进行特殊处理 </li>
+<li>处理完成后，将树级结构转化成HTML代码 </li>
+<li>开启浏览器XSS防御：Http Only cookie，禁止 JavaScript 读取某些敏感 Cookie，攻击者完成XSS注入后也无法窃取此 Cookie。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="CSRF攻击"><a href="#CSRF攻击" class="headerlink" title="CSRF攻击"></a>CSRF攻击</h3><ul>
+<li><strong>得分点</strong> CSRF时跨站请求伪造、盗用用户身份发起请求 </li>
+<li><strong>标准回答</strong> <ul>
+<li>CSRF跨站点请求伪造（Cross Site Request Forgery）和XSS攻击一样，有巨大的危害性，就是攻击者盗用了用户的身份，以用户的身份发送恶意请求，但是对服务器来说这个请求是合理的，这样就完成了攻击者的目标。</li>
+<li><strong>CSRF攻击的过程原理是：</strong> <ul>
+<li>用户打开浏览器，访问目标网站A，输入用户名和密码请求登录 </li>
+<li>用户信息在通过认证后，网站A产生一个cookie信息返回给浏览器，这个时候用户以可正常发送请求到网站A </li>
+<li>用户在没有退出网站A之前在同一个浏览器打开了另一个新网站B。 </li>
+<li>新网站B收到用户请求之后返回一些攻击代码，并发出一个请求要求访问返回cookie的网站A </li>
+<li>浏览器收到这些攻击性代码之后根据新网站B的请求在用户不知道的情况下以用户的权限操作了cookie并向网站A服务器发起了合法的请求。 </li>
+</ul>
+</li>
+<li><strong>预防CSRF攻击主要有以下策略：</strong> <ul>
+<li>使用验证码，在表单中添加一个随机的数字或者字母验证码，强制要求用户和应用进行直接的交互。 </li>
+<li>HTTP中Referer字段，检查是不是从正确的域名访问过来，它记录了HTTP请求的来源地址。 </li>
+<li>使用token验证，在HTTP请求头中添加token字段，并且在服务器端建立一个拦截器验证这个token，如果token不对，就拒绝这个请求。 </li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> <ul>
+<li>验证HTTP Referer字段的好处就是实施起来特别简单，普通的网站开发不需要特别担心CSRF漏洞，只需要在最后面设置一个拦截器来验证referer的值就可以了，不需要改变已有的代码逻辑，非常便捷。但是这个方法也不是万无一失的，虽然referer是浏览器提供的，但是不同的浏览器可能在referer的实现上或多或少有自身的漏洞，所以使用referer的安全保证是通过浏览器实现的。</li>
+<li>使用token验证的方法要比referer更安全一些，需要把token放在一个HTTP自定义的请求头部中，解决了使用get或者post传参的不便性。</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤Service-Worker"><a href="#❤Service-Worker" class="headerlink" title="❤Service Worker"></a>❤Service Worker</h3><blockquote>
+<p><code>Service workers</code> 本质上充当Web应用程序与浏览器之间的代理服务器，也可以在网络可用时作为浏览器和网络间的代理。它们旨在（除其他之外）使得能够创建有效的离线体验，拦截网络请求并基于网络是否可用以及更新的资源是否驻留在服务器上来采取适当的动作。他们还允许访问推送通知和后台同步API</p>
+</blockquote>
+<p><strong>浏览器对 ServiceWorker 做了很多限制</strong></p>
+<ul>
+<li>在 <code>ServiceWorker</code> 中无法直接访问 <code>DOM</code>，但可以通过 <code>postMessage</code> 接口发送的消息来与其控制的页面进行通信</li>
+<li><code>ServiceWorker</code> 只能在本地环境下或 <code>HTTPS</code> 网站中使用</li>
+<li><code>ServiceWorker</code> 有作用域的限制，一个 <code>ServiceWorker</code> 脚本只能作用于当前路径及其子路径；</li>
+</ul>
+<p><strong>目前该技术通常用来做缓存文件，提高首屏速度</strong></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token comment">// index.js</span>
+<span class="token keyword">if</span> <span class="token punctuation">(</span>navigator<span class="token punctuation">.</span>serviceWorker<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  navigator<span class="token punctuation">.</span>serviceWorker
+    <span class="token punctuation">.</span><span class="token function">register</span><span class="token punctuation">(</span><span class="token string">"sw.js"</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">registration</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"service worker 注册成功"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">err</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"servcie worker 注册失败"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// sw.js</span>
+<span class="token comment">// 监听 `install` 事件，回调中缓存所需文件</span>
+self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"install"</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span><span class="token function">waitUntil</span><span class="token punctuation">(</span>
+    caches<span class="token punctuation">.</span><span class="token function">open</span><span class="token punctuation">(</span><span class="token string">"my-cache"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">cache</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> cache<span class="token punctuation">.</span><span class="token function">addAll</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"./index.html"</span><span class="token punctuation">,</span> <span class="token string">"./index.js"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">// 拦截所有请求事件</span>
+<span class="token comment">// 如果缓存中已经有请求的数据就直接用缓存，否则去请求数据</span>
+self<span class="token punctuation">.</span><span class="token function">addEventListener</span><span class="token punctuation">(</span><span class="token string">"fetch"</span><span class="token punctuation">,</span> <span class="token parameter">e</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  e<span class="token punctuation">.</span><span class="token function">respondWith</span><span class="token punctuation">(</span>
+    caches<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span>e<span class="token punctuation">.</span>request<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">response</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> response<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">"fetch source"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+  <span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<blockquote>
+<p>打开页面，可以在开发者工具中的 <code>Application</code> 看到 <code>Service Worker</code> 已经启动了</p>
+</blockquote>
+<p><img src="https://s.poetries.work/gitee/2020/09/96.png" alt="img"></p>
+<blockquote>
+<p>在 Cache 中也可以发现我们所需的文件已被缓存</p>
+</blockquote>
+<p><img src="https://s.poetries.work/gitee/2020/09/97.png" alt="img"></p>
+<blockquote>
+<p>当我们重新刷新页面可以发现我们缓存的数据是从 <code>Service</code> <code>Worker</code> 中读取的</p>
+</blockquote>
+<h3 id="❤DOM-节点操作"><a href="#❤DOM-节点操作" class="headerlink" title="❤DOM 节点操作"></a>❤DOM 节点操作</h3><p><strong>（1）创建新节点</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">createDocumentFragment</span><span class="token punctuation">(</span><span class="token punctuation">)</span>    <span class="token comment">//创建一个DOM片段</span>
+<span class="token function">createElement</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">//创建一个具体的元素</span>
+<span class="token function">createTextNode</span><span class="token punctuation">(</span><span class="token punctuation">)</span>   <span class="token comment">//创建一个文本节点</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>（2）添加、移除、替换、插入</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">appendChild</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+<span class="token function">removeChild</span><span class="token punctuation">(</span>node<span class="token punctuation">)</span>
+<span class="token function">replaceChild</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">,</span>old<span class="token punctuation">)</span>
+<span class="token function">insertBefore</span><span class="token punctuation">(</span><span class="token keyword">new</span><span class="token punctuation">,</span>old<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>（3）查找</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">getElementsByName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">getElementsByTagName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">querySelector</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">querySelectorAll</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><strong>（4）属性操作</strong></p>
+<pre class="line-numbers language-js" data-language="js"><code class="language-js"><span class="token function">getAttribute</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">setAttribute</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">hasAttribute</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">removeAttribute</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<h3 id="❤掌握页面的加载过程"><a href="#❤掌握页面的加载过程" class="headerlink" title="❤掌握页面的加载过程"></a>❤掌握页面的加载过程</h3><p><strong>网页加载流程</strong></p>
+<ul>
+<li>当我们打开网址的时候，浏览器会从服务器中获取到 HTML 内容</li>
+<li>浏览器获取到 HTML 内容后，就开始从上到下解析 HTML 的元素</li>
+<li><code>&lt;head&gt;</code>元素内容会先被解析，此时<code>浏览器还没开始渲染页面</code><ul>
+<li>我们看到<code>&lt;head&gt;</code>元素里有用于描述页面元数据的<code>&lt;meta&gt;</code>元素，还有一些<code>&lt;link&gt;</code>元素涉及外部资源（如<code>图片、CSS 样式</code>等），此时浏览器会去获取这些外部资源。除此之外，我们还能看到<code>&lt;head&gt;</code>元素中还包含着不少的<code>&lt;script&gt;</code>元素，这些<code>&lt;script&gt;</code>元素通过<code>src</code>属性指向外部资源</li>
+</ul>
+</li>
+<li>当浏览器解析到这里时（步骤 3），会暂停解析并下载 JavaScript 脚本</li>
+<li>当 JavaScript 脚本下载完成后，浏览器的控制权转交给 JavaScript 引擎。当脚本执行完成后，控制权会交回给渲染引擎，渲染引擎继续往下解析 <code>HTML</code> 页面</li>
+<li>此时<code>&lt;body&gt;</code>元素内容开始被解析，浏览器开始渲染页面</li>
+</ul>
+<blockquote>
+<ul>
+<li>在这个过程中，我们看到<code>&lt;head&gt;</code>中放置的<code>&lt;script&gt;</code>元素会阻塞页面的渲染过程：把 JavaScript 放在<code>&lt;head&gt;</code>里，意味着必须把所有 JavaScript 代码都<code>下载、解析和解释完成后，才能开始渲染页面</code>。</li>
+<li>如果外部脚本加载时间很长（比如一直无法完成下载），就会造成网页长时间失去响应，浏览器就会呈现“假死”状态，用户体验会变得很糟糕</li>
+<li>因此，对于对性能要求较高、需要快速将内容呈现给用户的网页，常常会将 JavaScript 脚本放在<code>&lt;body&gt;</code>的最后面。这样<code>可以避免资源阻塞，页面得以迅速展示</code>。我们还可以使用<code>defer/async/preload</code>等属性来标记<code>&lt;script&gt;</code>标签，来控制 JavaScript 的加载顺序</li>
+</ul>
+</blockquote>
+<p><strong>延迟加载的方式有哪些</strong></p>
+<blockquote>
+<p>js 的加载、解析和执行会阻塞页面的渲染过程，因此我们希望 js 脚本能够尽可能的延迟加载，提高页面的渲染速度。</p>
+</blockquote>
+<p><strong>几种方式是：</strong></p>
+<ul>
+<li>将 js 脚本放在文档的底部，来使 js 脚本尽可能的在最后来加载执行</li>
+<li>给 js 脚本添加 <code>defer</code> 属性，这个属性会让脚本的加载与文档的解析同步解析，然后在文档解析完成后再执行这个脚本文件，这样的话就能使页面的渲染不被阻塞。多个设置了 <code>defer</code> 属性的脚本按规范来说最后是顺序执行的，但是在一些浏览器中可能不是这样</li>
+<li>给 js 脚本添加 <code>async</code>属性，这个属性会使脚本异步加载，不会阻塞页面的解析过程，但是当脚本加载完成后立即执行 js脚本，这个时候如果文档没有解析完成的话同样会阻塞。多个 <code>async</code> 属性的脚本的执行顺序是不可预测的，一般不会按照代码的顺序依次执行</li>
+<li>动态创建 <code>DOM</code> 标签的方式，我们可以对文档的加载事件进行监听，当文档加载完成后再动态的创建 <code>script</code> 标签来引入 js 脚本</li>
+</ul>
+<p><img src="https://s.poetries.work/images/20210420215756.png" alt="img"></p>
+<p><strong>怎么判断页面是否加载完成</strong></p>
+<ul>
+<li><code>Load</code> 事件触发代表页面中的 <code>DOM</code>，<code>CSS</code>，<code>JS</code>，图片已经全部加载完毕。</li>
+<li><code>DOMContentLoaded</code> 事件触发代表初始的 <code>HTML</code> 被完全加载和解析，不需要等待 <code>CSS</code>，<code>JS</code>，图片加载</li>
+</ul>
+<h3 id="❤从输入URL到页面展示过程"><a href="#❤从输入URL到页面展示过程" class="headerlink" title="❤从输入URL到页面展示过程"></a>❤从输入URL到页面展示过程</h3><p><img src="https://s.poetries.work/images/20210504134355.png" alt="img"></p>
+<p><strong>1. DNS域名解析</strong></p>
+<p><img src="https://s.poetries.work/images/20210504134816.png" alt="img"></p>
+<ul>
+<li>根 DNS 服务器 ：返回顶级域 DNS 服务器的 IP 地址</li>
+<li>顶级域 DNS 服务器：返回权威 DNS 服务器的 IP 地址</li>
+<li>权威 DNS 服务器 ：返回相应主机的 IP 地址</li>
+</ul>
+<blockquote>
+<p>DNS的域名查找，在客户端和浏览器，本地DNS之间的查询方式是递归查询；在本地DNS服务器与根域及其子域之间的查询方式是迭代查询；</p>
+</blockquote>
+<p><img src="https://s.poetries.work/images/20210504134850.png" alt="img"></p>
+<p>在客户端输入 URL 后，会有一个递归查找的过程，从<code>浏览器缓存中查找-&gt;本地的hosts文件查找-&gt;找本地DNS解析器缓存查找-&gt;本地DNS服务器查找</code>，这个过程中任何一步找到了都会结束查找流程。</p>
+<p>如果本地DNS服务器无法查询到，则根据本地DNS服务器设置的转发器进行查询。若未用转发模式，则迭代查找过程如下图：</p>
+<p><img src="https://s.poetries.work/images/20210504134913.png" alt="img"></p>
+<p>结合起来的过程，可以用一个图表示：</p>
+<p><img src="https://s.poetries.work/images/20210504134925.png" alt="img"></p>
+<p><strong>在查找过程中，有以下优化点：</strong></p>
+<ul>
+<li>DNS存在着多级缓存，从离浏览器的距离排序的话，有以下几种: <code>浏览器缓存，系统缓存，路由器缓存，IPS服务器缓存，根域名服务器缓存，顶级域名服务器缓存，主域名服务器缓存</code>。</li>
+<li>在域名和 IP 的映射过程中，给了应用基于域名做负载均衡的机会，可以是简单的负载均衡，也可以根据地址和运营商做全局的负载均衡。</li>
+</ul>
+<p><strong>2. 建立TCP连接</strong></p>
+<blockquote>
+<p>首先，判断是不是https的，如果是，则HTTPS其实是HTTP + SSL / TLS 两部分组成，也就是在HTTP上又加了一层处理加密信息的模块。服务端和客户端的信息传输都会通过TLS进行加密，所以传输的数据都是加密后的数据</p>
+</blockquote>
+<p>进行三次握手，建立TCP连接。</p>
+<ul>
+<li>第一次握手：建立连接。客户端发送连接请求报文段</li>
+<li>第二次握手：服务器收到SYN报文段。服务器收到客户端的SYN报文段，需要对这个SYN报文段进行确认</li>
+<li>第三次握手：客户端收到服务器的SYN+ACK报文段，向服务器发送ACK报文段</li>
+</ul>
+<p><strong>SSL握手过程</strong></p>
+<ul>
+<li>第一阶段 建立安全能力 包括协议版本 会话Id 密码构件 压缩方法和初始随机数</li>
+<li>第二阶段 服务器发送证书 密钥交换数据和证书请求，最后发送请求-相应阶段的结束信号</li>
+<li>第三阶段 如果有证书请求客户端发送此证书 之后客户端发送密钥交换数据 也可以发送证书验证消息</li>
+<li>第四阶段 变更密码构件和结束握手协议</li>
+</ul>
+<p>完成了之后，客户端和服务器端就可以开始传送数据</p>
+<p><strong>发送HTTP请求，服务器处理请求，返回响应结果</strong></p>
+<blockquote>
+<p>TCP连接建立后，浏览器就可以利用 <code>HTTP／HTTPS</code> 协议向服务器发送请求了。服务器接受到请求，就解析请求头，如果头部有缓存相关信息如<code>if-none-match与if-modified-since</code>，则验证缓存是否有效，若有效则返回状态码为<code>304</code>，若无效则重新返回资源，状态码为<code>200</code></p>
+</blockquote>
+<p>这里有发生的一个过程是HTTP缓存，是一个常考的考点，大致过程如图：</p>
+<p><img src="https://s.poetries.work/images/20210504135417.png" alt="img"></p>
+<p><strong>3. 关闭TCP连接</strong></p>
+<p><strong>4. 浏览器渲染</strong></p>
+<blockquote>
+<p>按照渲染的时间顺序，流水线可分为如下几个子阶段：构建 DOM 树、样式计算、布局阶段、分层、栅格化和显示。如图：</p>
+</blockquote>
+<p><img src="https://s.poetries.work/images/20210504135549.png" alt="img"></p>
+<ul>
+<li>渲染进程将 HTML 内容转换为能够读懂DOM 树结构。</li>
+<li>渲染引擎将 CSS 样式表转化为浏览器可以理解的 <code>styleSheets</code>，计算出 <code>DOM</code> 节点的样式。</li>
+<li>创建布局树，并计算元素的布局信息。</li>
+<li>对布局树进行分层，并生成分层树。</li>
+<li>为每个图层生成绘制列表，并将其提交到合成线程。合成线程将图层分图块，并栅格化将图块转换成位图。</li>
+<li>合成线程发送绘制图块命令给浏览器进程。浏览器进程根据指令生成页面，并显示到显示器上。</li>
+</ul>
+<p><strong>构建 DOM 树</strong></p>
+<p><img src="https://s.poetries.work/images/20210504135701.png" alt="img"></p>
+<ul>
+<li>转码（Bytes -&gt; Characters）—— 读取接收到的 HTML 二进制数据，按指定编码格式将字节转换为 HTML 字符串</li>
+<li>Tokens 化（Characters -&gt; Tokens）—— 解析 HTML，将 HTML 字符串转换为结构清晰的 Tokens，每个 Token 都有特殊的含义同时有自己的一套规则</li>
+<li>构建 Nodes（Tokens -&gt; Nodes）—— 每个 Node 都添加特定的属性（或属性访问器），通过指针能够确定 Node 的父、子、兄弟关系和所属 treeScope（例如：iframe 的 treeScope 与外层页面的 treeScope 不同）</li>
+<li>构建 DOM 树（Nodes -&gt; DOM Tree）—— 最重要的工作是建立起每个结点的父子兄弟关系</li>
+</ul>
+<p><strong>样式计算</strong></p>
+<p>渲染引擎将 CSS 样式表转化为浏览器可以理解的 styleSheets，计算出 DOM 节点的样式。</p>
+<blockquote>
+<p>CSS 样式来源主要有 3 种，分别是通过 link 引用的外部 CSS 文件、style标签内的 CSS、元素的 style 属性内嵌的 CSS。</p>
+</blockquote>
+<p><strong>页面布局</strong></p>
+<blockquote>
+<p>布局过程，即<code>排除 script、meta 等功能化、非视觉节点</code>，排除 <code>display: none</code> 的节点，计算元素的位置信息，确定元素的位置，构建一棵只包含可见元素布局树。如图：</p>
+</blockquote>
+<p><img src="https://s.poetries.work/images/20210504135900.png" alt="img"></p>
+<blockquote>
+<p>其中，这个过程需要注意的是回流和重绘</p>
+</blockquote>
+<p><strong>生成分层树</strong></p>
+<blockquote>
+<p>页面中有很多复杂的效果，如一些复杂的 3D 变换、页面滚动，或者使用 z-indexing 做 z 轴排序等，为了更加方便地实现这些效果，渲染引擎还需要为特定的节点生成专用的图层，并生成一棵对应的图层树（LayerTree）</p>
+</blockquote>
+<p><strong>栅格化</strong></p>
+<blockquote>
+<p>合成线程会按照视口附近的图块来优先生成位图，实际生成位图的操作是由栅格化来执行的。所谓栅格化，是指将图块转换为位图</p>
+</blockquote>
+<p><img src="https://s.poetries.work/images/20210504140042.png" alt="img"></p>
+<p>通常一个页面可能很大，但是用户只能看到其中的一部分，我们把用户可以看到的这个部分叫做视口（viewport）。在有些情况下，有的图层可以很大，比如有的页面你使用滚动条要滚动好久才能滚动到底部，但是通过视口，用户只能看到页面的很小一部分，所以在这种情况下，要绘制出所有图层内容的话，就会产生太大的开销，而且也没有必要。</p>
+<p><strong>显示</strong></p>
+<p>最后，合成线程发送绘制图块命令给浏览器进程。浏览器进程根据指令生成页面，并显示到显示器上，渲染过程完成。</p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E5%89%8D%E7%AB%AF-%E9%9D%A2%E8%AF%95/" rel="tag"># 前端 面试</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2022/06/20/CSS/" rel="prev" title="CSS基础">
+                  <i class="fa fa-chevron-left"></i> CSS基础
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    <div class="comments" id="waline-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  © 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">henfy</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">228k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">3:28</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+<script src="/bundle.js"></script><script>
+NexT.utils.loadComments('#waline-comments', () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/Waline.min.js', () => {
+    new Waline(Object.assign({
+      lang: 'zh-CN'
+    }, {"enable":true,"serverURL":"https://waline.vercel.app","placeholder":"Just go go","avatar":"monsterid","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick","mail"],"lang":"zh-cn","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/Waline.min.js"}, {
+      el: '#waline-comments',
+      path: "/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/",
+    }));
+  }, window.Waline);
+});
+</script></body></html>
