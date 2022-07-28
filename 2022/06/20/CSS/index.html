@@ -3,11 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pikaqiu-32x32-next.ico">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 
@@ -15,13 +13,12 @@
 
 
 
-  
-
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-<meta name="description" content="介绍目前常见前端面试题，参考链接 https://interview2.poetries.top/">
+
+  <meta name="description" content="介绍目前常见前端面试题，参考链接 https://interview2.poetries.top/">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS基础">
 <meta property="og:url" content="http://example.com/2022/06/20/CSS/index.html">
@@ -38,11 +35,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s.poetries.work/gitee/2020/09/111.png">
 
-
 <link rel="canonical" href="http://example.com/2022/06/20/CSS/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -50,67 +46,61 @@
     isPost : true,
     lang   : 'zh-CN'
   };
-</script><link rel="dns-prefetch" href="https://waline.vercel.app">
-<title>CSS基础 | Henfy-Blog</title>
+</script>
+
+  <title>CSS基础 | Henfy-Blog</title>
   
+
+
 
 
 
 
   <noscript>
   <style>
-  body { margin-top: 2rem; }
-
+  .use-motion .brand,
   .use-motion .menu-item,
-  .use-motion .sidebar,
+  .sidebar-inner,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
+  .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css');loadCss('https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css"></noscript></head>
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-  <main class="main">
     <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
+      <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Henfy-Blog</h1>
-      <i class="logo-line"></i>
+      <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">Henfy-Blog</p>
   </div>
@@ -124,100 +114,65 @@
 
 
 
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
 
 
 
 </div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">CSS基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">❤盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87-BFC-block-formatting-context"><span class="nav-number">1.2.</span> <span class="nav-text">❤块级格式化上下文(BFC, block formatting context)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.3.</span> <span class="nav-text">❤层叠上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B7%A6%E5%8F%B3%E5%B1%85%E4%B8%AD%E6%96%B9%E6%A1%88"><span class="nav-number">1.4.</span> <span class="nav-text">❤左右居中方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%B8%8A%E4%B8%8B%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%96%B9%E6%A1%88"><span class="nav-number">1.5.</span> <span class="nav-text">❤上下垂直居中方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">❤未知宽高元素水平垂直居中方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.7.</span> <span class="nav-text">垂直居中的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97%E6%96%B9%E5%BC%8F"><span class="nav-number">1.8.</span> <span class="nav-text">❤选择器权重计算方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="nav-number">1.9.</span> <span class="nav-text">❤浮动和清除浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B7%A6%E8%BE%B9%E5%AE%9A%E5%AE%BD%EF%BC%8C%E5%8F%B3%E8%BE%B9%E8%87%AA%E9%80%82%E5%BA%94%E6%96%B9%E6%A1%88"><span class="nav-number">1.10.</span> <span class="nav-text">❤左边定宽，右边自适应方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B7%A6%E5%8F%B3%E4%B8%A4%E8%BE%B9%E5%AE%9A%E5%AE%BD%EF%BC%8C%E4%B8%AD%E9%97%B4%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-number">1.11.</span> <span class="nav-text">❤左右两边定宽，中间自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A6%E8%BE%B9%E5%AE%BD%E5%BA%A6%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E8%BE%B9%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-number">1.12.</span> <span class="nav-text">左边宽度固定，右边自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E4%BB%A5%E4%B8%8A%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%B7%B2%E7%9F%A5%E6%88%96%E8%80%85%E6%9C%AA%E7%9F%A5%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="nav-number">1.13.</span> <span class="nav-text">两种以上方式实现已知或者未知宽度的垂直水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-number">1.14.</span> <span class="nav-text">❤三栏布局的实现方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84CSS%E5%B8%83%E5%B1%80"><span class="nav-number">1.15.</span> <span class="nav-text">几种常见的CSS布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80"><span class="nav-number">1.15.1.</span> <span class="nav-text">圣杯布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80"><span class="nav-number">1.15.2.</span> <span class="nav-text">双飞翼布局</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4CSS%E5%8A%A8%E7%94%BB%E5%92%8C%E8%BF%87%E6%B8%A1"><span class="nav-number">1.16.</span> <span class="nav-text">❤CSS动画和过渡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3%E5%8A%A8%E7%94%BB%EF%BC%88%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BB%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%A6%82%E6%97%8B%E8%BD%AC%E7%AD%89%EF%BC%89"><span class="nav-number">1.17.</span> <span class="nav-text">CSS3动画（简单动画的实现，如旋转等）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4css3%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.18.</span> <span class="nav-text">❤css3有哪些新特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%88%97%E4%B8%BE%E5%87%A0%E4%B8%AAcss%E4%B8%AD%E5%8F%AF%E7%BB%A7%E6%89%BF%E5%92%8C%E4%B8%8D%E5%8F%AF%E7%BB%A7%E6%89%BF%E7%9A%84%E5%85%83%E7%B4%A0"><span class="nav-number">1.19.</span> <span class="nav-text">❤列举几个css中可继承和不可继承的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%A7%E6%89%BF%E5%B1%9E%E6%80%A7"><span class="nav-number">1.20.</span> <span class="nav-text">CSS有哪些继承属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81%EF%BC%88%E9%87%8D%E6%8E%92%EF%BC%89%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%EF%BC%9F"><span class="nav-number">1.21.</span> <span class="nav-text">❤重绘和回流（重排）是什么，如何避免？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-sprite%E6%98%AF%E4%BB%80%E4%B9%88-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.22.</span> <span class="nav-text">css sprite是什么,有什么优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display-none-%E4%B8%8E-visibility-hidden-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.23.</span> <span class="nav-text">display: none; 与 visibility: hidden;的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link%E4%B8%8E-import%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.24.</span> <span class="nav-text">link与@import的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFFOUC-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D"><span class="nav-number">1.25.</span> <span class="nav-text">什么是FOUC?如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display%E3%80%81float%E3%80%81position%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.26.</span> <span class="nav-text">display、float、position的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96CSS%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.27.</span> <span class="nav-text">为什么要初始化CSS样式?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display%E6%9C%89%E5%93%AA%E4%BA%9B%E5%80%BC%EF%BC%9F%E8%AF%B4%E6%98%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.28.</span> <span class="nav-text">display有哪些值？说明他们的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position%E7%9A%84%E5%80%BC%EF%BC%8C-relative%E5%92%8Cabsolute%E5%AE%9A%E4%BD%8D%E5%8E%9F%E7%82%B9%E6%98%AF"><span class="nav-number">1.29.</span> <span class="nav-text">position的值， relative和absolute定位原点是</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display-inline-block-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%8D%E4%BC%9A%E6%98%BE%E7%A4%BA%E9%97%B4%E9%9A%99%EF%BC%9F-%E6%90%BA%E7%A8%8B"><span class="nav-number">1.30.</span> <span class="nav-text">display:inline-block 什么时候不会显示间隙？(携程)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PNG%E3%80%81GIF%E3%80%81JPG%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E5%A6%82%E4%BD%95%E9%80%89"><span class="nav-number">1.31.</span> <span class="nav-text">PNG、GIF、JPG的区别及如何选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0float-left%E5%90%8E%E6%98%AF%E5%90%A6%E5%8F%98%E4%B8%BA%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="nav-number">1.32.</span> <span class="nav-text">行内元素float:left后是否变为块级元素？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E5%86%99%E5%8A%A8%E7%94%BB%EF%BC%8C%E4%BD%A0%E8%AE%A4%E4%B8%BA%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E9%97%B4%E9%9A%94%E6%98%AF%E5%A4%9A%E4%B9%85%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E9%98%BF%E9%87%8C%EF%BC%89"><span class="nav-number">1.33.</span> <span class="nav-text">如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E5%90%88%E5%B9%B6%E6%96%B9%E6%B3%95"><span class="nav-number">1.34.</span> <span class="nav-text">CSS合并方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E4%BD%A0%E6%89%80%E7%9F%A5%E9%81%93%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">1.35.</span> <span class="nav-text">列出你所知道可以改变页面布局的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E5%9C%A8%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E9%9D%A2%E7%9A%84%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.36.</span> <span class="nav-text">CSS在性能优化方面的实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base64%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.37.</span> <span class="nav-text">base64的原理及优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stylus-sass-less%E5%8C%BA%E5%88%AB"><span class="nav-number">1.38.</span> <span class="nav-text">stylus/sass/less区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postcss%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.39.</span> <span class="nav-text">postcss的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.40.</span> <span class="nav-text">自定义字体的使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%BE%8E%E5%8C%96CheckBox"><span class="nav-number">1.41.</span> <span class="nav-text">如何美化CheckBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.42.</span> <span class="nav-text">伪类和伪元素的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base64%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.43.</span> <span class="nav-text">base64的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E7%94%A8CSS%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%B9%BB%E7%81%AF%E7%89%87%E6%95%88%E6%9E%9C%E9%A1%B5%E9%9D%A2"><span class="nav-number">1.44.</span> <span class="nav-text">请用CSS写一个简单的幻灯片效果页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E8%BE%B9%E8%B7%9D%E9%87%8D%E5%8F%A0%EF%BC%9F%E9%87%8D%E5%8F%A0%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.45.</span> <span class="nav-text">什么是外边距重叠？重叠的结果是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rgba-%E5%92%8Copacity%E7%9A%84%E9%80%8F%E6%98%8E%E6%95%88%E6%9E%9C%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">1.46.</span> <span class="nav-text">rgba()和opacity的透明效果有什么不同？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E8%AE%A9%E6%96%87%E5%AD%97%E5%9C%A8%E5%9E%82%E7%9B%B4%E5%92%8C%E6%B0%B4%E5%B9%B3%E6%96%B9%E5%90%91%E4%B8%8A%E9%87%8D%E5%8F%A0%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B1%9E%E6%80%A7%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.47.</span> <span class="nav-text">可以让文字在垂直和水平方向上重叠的两个属性是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4CSS%E5%B0%BA%E5%AF%B8%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%8D%95%E4%BD%8D"><span class="nav-number">1.48.</span> <span class="nav-text">❤CSS尺寸设置的单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sass%E3%80%81LESS%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A4%A7%E5%AE%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E4%BB%96%E4%BB%AC%EF%BC%9F"><span class="nav-number">1.49.</span> <span class="nav-text">Sass、LESS是什么？大家为什么要使用他们？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E9%81%93css%E6%9C%89%E4%B8%AAcontent%E5%B1%9E%E6%80%A7%E5%90%97%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E5%BA%94%E7%94%A8%EF%BC%9F"><span class="nav-number">1.50.</span> <span class="nav-text">知道css有个content属性吗？有什么作用？有什么应用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E5%AE%9E%E7%8E%B0%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%EF%BC%9F"><span class="nav-number">1.51.</span> <span class="nav-text">如何使用CSS实现硬件加速？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E8%AF%B4css3%E7%9A%84animation"><span class="nav-number">1.52.</span> <span class="nav-text">说一说css3的animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%B0%8F%E4%BA%8E12px%E7%9A%84%E5%AD%97%E4%BD%93%E6%95%88%E6%9E%9C"><span class="nav-number">1.53.</span> <span class="nav-text">如何实现小于12px的字体效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-hack%E5%8E%9F%E7%90%86%E5%8F%8A%E5%B8%B8%E7%94%A8hack"><span class="nav-number">1.54.</span> <span class="nav-text">css hack原理及常用hack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0-collapsing-margins"><span class="nav-number">1.55.</span> <span class="nav-text">外边距折叠(collapsing margins)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E9%80%89%E6%8B%A9%E7%AC%A6%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%93%AA%E4%BA%9B%E5%B1%9E%E6%80%A7%E5%8F%AF%E4%BB%A5%E7%BB%A7%E6%89%BF"><span class="nav-number">1.56.</span> <span class="nav-text">CSS选择符有哪些？哪些属性可以继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3%E6%96%B0%E5%A2%9E%E4%BC%AA%E7%B1%BB%E6%9C%89%E9%82%A3%E4%BA%9B"><span class="nav-number">1.57.</span> <span class="nav-text">CSS3新增伪类有那些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E7%BA%AFCSS%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.58.</span> <span class="nav-text">用纯CSS创建一个三角形的原理是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%BB%A1%E5%B1%8F-%E5%93%81-%E5%AD%97%E5%B8%83%E5%B1%80-%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.59.</span> <span class="nav-text">一个满屏 品 字布局 如何设计?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#li%E4%B8%8Eli%E4%B9%8B%E9%97%B4%E6%9C%89%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E7%A9%BA%E7%99%BD%E9%97%B4%E9%9A%94%E6%98%AF%E4%BB%80%E4%B9%88%E5%8E%9F%E5%9B%A0%E5%BC%95%E8%B5%B7%E7%9A%84%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">1.60.</span> <span class="nav-text">li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96CSS%E6%A0%B7%E5%BC%8F-1"><span class="nav-number">1.61.</span> <span class="nav-text">为什么要初始化CSS样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%A0%E7%A7%8D%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.62.</span> <span class="nav-text">请列举几种隐藏元素的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rgba-%E5%92%8C-opacity-%E7%9A%84%E9%80%8F%E6%98%8E%E6%95%88%E6%9E%9C%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C"><span class="nav-number">1.63.</span> <span class="nav-text">rgba() 和 opacity 的透明效果有什么不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-%E5%B1%9E%E6%80%A7-content-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-number">1.64.</span> <span class="nav-text">css 属性 content 有什么作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B-CSS3-%E7%9A%84-Flexbox%EF%BC%88%E5%BC%B9%E6%80%A7%E7%9B%92%E5%B8%83%E5%B1%80%E6%A8%A1%E5%9E%8B%EF%BC%89%E4%BB%A5%E5%8F%8A%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.65.</span> <span class="nav-text">请解释一下 CSS3 的 Flexbox（弹性盒布局模型）以及适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%8F%E5%B8%B8%E9%81%87%E5%88%B0%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84JS%E5%85%BC%E5%AE%B9%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.66.</span> <span class="nav-text">经常遇到的浏览器的JS兼容性有哪些？解决方法是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E4%BC%98%E5%8C%96%E3%80%81%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">1.67.</span> <span class="nav-text">CSS优化、提高性能的方法有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E6%80%8E%E6%A0%B7%E8%A7%A3%E6%9E%90CSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84"><span class="nav-number">1.68.</span> <span class="nav-text">浏览器是怎样解析CSS选择器的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%BA%94%E8%AF%A5%E4%BD%BF%E7%94%A8%E5%A5%87%E6%95%B0%E8%BF%98%E6%98%AF%E5%81%B6%E6%95%B0%E7%9A%84%E5%AD%97%E4%BD%93"><span class="nav-number">1.69.</span> <span class="nav-text">在网页中的应该使用奇数还是偶数的字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E7%A6%BB%E6%A0%B7%E5%BC%8F%E6%A8%A1%E5%9D%97%E6%80%8E%E4%B9%88%E5%86%99%EF%BC%8C%E8%AF%B4%E5%87%BA%E6%80%9D%E8%B7%AF"><span class="nav-number">1.70.</span> <span class="nav-text">抽离样式模块怎么写，说出思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E7%AB%96%E5%90%91%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94%E8%AE%BE%E5%AE%9A%E6%98%AF%E7%9B%B8%E5%AF%B9%E4%BA%8E%E5%AE%B9%E5%99%A8%E7%9A%84%E9%AB%98%E5%BA%A6%E5%90%97"><span class="nav-number">1.71.</span> <span class="nav-text">元素竖向的百分比设定是相对于容器的高度吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%B1%8F%E6%BB%9A%E5%8A%A8%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-%E7%94%A8%E5%88%B0%E4%BA%86CSS%E7%9A%84%E9%82%A3%E4%BA%9B%E5%B1%9E%E6%80%A7"><span class="nav-number">1.72.</span> <span class="nav-text">全屏滚动的原理是什么？ 用到了CSS的那些属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1%EF%BC%9F%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E7%9A%84IE"><span class="nav-number">1.73.</span> <span class="nav-text">什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%A7%86%E5%B7%AE%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%99%E6%AF%8F%E9%A1%B5%E5%81%9A%E4%B8%8D%E5%90%8C%E7%9A%84%E5%8A%A8%E7%94%BB"><span class="nav-number">1.74.</span> <span class="nav-text">什么是视差滚动效果，如何给每页做不同的动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a%E6%A0%87%E7%AD%BE%E4%B8%8A%E5%9B%9B%E4%B8%AA%E4%BC%AA%E7%B1%BB%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84"><span class="nav-number">1.75.</span> <span class="nav-text">a标签上四个伪类的执行顺序是怎么样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0%E5%92%8C%E4%BC%AA%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="nav-number">1.76.</span> <span class="nav-text">伪元素和伪类的区别和作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#before-%E5%92%8C-after-%E4%B8%AD%E5%8F%8C%E5%86%92%E5%8F%B7%E5%92%8C%E5%8D%95%E5%86%92%E5%8F%B7%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">1.77.</span> <span class="nav-text">::before 和 :after 中双冒号和单冒号有什么区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9Chrome%E8%AE%B0%E4%BD%8F%E5%AF%86%E7%A0%81%E5%90%8E%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E8%A1%A8%E5%8D%95%E7%9A%84%E9%BB%84%E8%89%B2%E8%83%8C%E6%99%AF"><span class="nav-number">1.78.</span> <span class="nav-text">如何修改Chrome记住密码后自动填充表单的黄色背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%EF%BC%8C%E5%A6%82%E4%BD%95%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD%EF%BC%9F%E8%80%8C%E9%9D%9E%E7%82%B9%E5%87%BB%E9%A2%84%E8%A7%88"><span class="nav-number">1.79.</span> <span class="nav-text">网站图片文件，如何点击下载？而非点击预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height-%E6%98%AF%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%9A%84"><span class="nav-number">1.80.</span> <span class="nav-text">line-height 是如何理解的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height-%E4%B8%89%E7%A7%8D%E8%B5%8B%E5%80%BC%E6%96%B9%E5%BC%8F%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F%EF%BC%88%E5%B8%A6%E5%8D%95%E4%BD%8D%E3%80%81%E7%BA%AF%E6%95%B0%E5%AD%97%E3%80%81%E7%99%BE%E5%88%86%E6%AF%94%EF%BC%89"><span class="nav-number">1.81.</span> <span class="nav-text">line-height 三种赋值方式有何区别？（带单位、纯数字、百分比）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E5%90%8E%EF%BC%8C%E8%AF%A5%E5%85%83%E7%B4%A0%E7%9A%84-display-%E5%80%BC%E4%BC%9A%E5%A6%82%E4%BD%95%E5%8F%98%E5%8C%96"><span class="nav-number">1.82.</span> <span class="nav-text">设置元素浮动后，该元素的 display 值会如何变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E9%A1%B5%E9%9D%A2%E9%87%8C%E7%9A%84%E5%AD%97%E4%BD%93%E5%8F%98%E6%B8%85%E6%99%B0%EF%BC%8C%E5%8F%98%E7%BB%86%E7%94%A8CSS%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%EF%BC%88IOS%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E9%BD%BF%E8%BD%AE%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="nav-number">1.83.</span> <span class="nav-text">让页面里的字体变清晰，变细用CSS怎么做？（IOS手机浏览器字体齿轮设置）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#font-style-%E5%B1%9E%E6%80%A7-oblique-%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="nav-number">1.84.</span> <span class="nav-text">font-style 属性 oblique 是什么意思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display-inline-block-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BC%9A%E6%98%BE%E7%A4%BA%E9%97%B4%E9%9A%99"><span class="nav-number">1.85.</span> <span class="nav-text">display:inline-block 什么时候会显示间隙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84div%EF%BC%8C%E9%87%8C%E9%9D%A2%E6%9C%89%E4%B8%A4%E4%B8%AAdiv%EF%BC%8C%E4%B8%80%E4%B8%AA%E9%AB%98%E5%BA%A6100px%EF%BC%8C%E5%B8%8C%E6%9C%9B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%A1%AB%E6%BB%A1%E5%89%A9%E4%B8%8B%E7%9A%84%E9%AB%98%E5%BA%A6"><span class="nav-number">1.86.</span> <span class="nav-text">一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-safari-%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2%E2%80%9C%E6%A9%A1%E7%9A%AE%E7%AD%8B%E6%95%88%E6%9E%9C%E2%80%9D"><span class="nav-number">1.87.</span> <span class="nav-text">iOS safari 如何阻止“橡皮筋效果”</span></a></li></ol></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">henfy</p>
-  <div class="site-description" itemprop="description">技术分享的博客</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">6</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
     </header>
 
     
-  <div class="back-to-top" role="button" aria-label="返回顶部">
+  <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-    <div class="main-inner post posts-expand">
+          <div class="content post posts-expand">
+            
 
-
-  
-
-
-<div class="post-block">
+    
   
   
-
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/06/20/CSS/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="henfy">
       <meta itemprop="description" content="技术分享的博客">
     </span>
@@ -230,56 +185,38 @@
           CSS基础
         </h1>
 
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-06-20 01:26:49" itemprop="dateCreated datePublished" datetime="2022-06-20T01:26:49+08:00">2022-06-20</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-07-27 22:31:23" itemprop="dateModified" datetime="2022-07-27T22:31:23+08:00">2022-07-27</time>
-      </span>
+              <time title="创建时间：2022-06-20 01:26:49" itemprop="dateCreated datePublished" datetime="2022-06-20T01:26:49+08:00">2022-06-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-27 22:31:23" itemprop="dateModified" datetime="2022-07-27T22:31:23+08:00">2022-07-27</time>
+              </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/06/20/CSS/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/06/20/CSS/" data-xid="/2022/06/20/CSS/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>30k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 ≈</span>
-      <span>28 分钟</span>
-    </span>
-</div>
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>30k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 ≈</span>
+              <span>28 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -288,6 +225,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
+
+      
         <p>介绍目前常见前端面试题，参考链接 <a target="_blank" rel="noopener" href="https://interview2.poetries.top/">https://interview2.poetries.top/</a></p>
 <span id="more"></span>
 
@@ -1821,35 +1760,36 @@
     
     
 
-    <footer class="post-footer">
+      <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E5%89%8D%E7%AB%AF-%E9%9D%A2%E8%AF%95/" rel="tag"># 前端 面试</a>
           </div>
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2022/05/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/" rel="prev" title="前端面试指南">
-                  <i class="fa fa-chevron-left"></i> 前端面试指南
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="next" title="浏览器">
-                  浏览器 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/05/20/%E5%89%8D%E7%AB%AF%E9%9D%A2%E8%AF%95%E6%8C%87%E5%8D%97/" rel="prev" title="前端面试指南">
+      <i class="fa fa-chevron-left"></i> 前端面试指南
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/" rel="next" title="浏览器">
+      浏览器 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-</div>
+  
+  
+  
 
 
 
-
-
-
-    <div class="comments" id="waline-comments"></div>
+          </div>
+          
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1858,7 +1798,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -1867,48 +1807,138 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
+      let commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS%E5%9F%BA%E7%A1%80"><span class="nav-number">1.</span> <span class="nav-text">CSS基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="nav-number">1.1.</span> <span class="nav-text">❤盒模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%9D%97%E7%BA%A7%E6%A0%BC%E5%BC%8F%E5%8C%96%E4%B8%8A%E4%B8%8B%E6%96%87-BFC-block-formatting-context"><span class="nav-number">1.2.</span> <span class="nav-text">❤块级格式化上下文(BFC, block formatting context)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B1%82%E5%8F%A0%E4%B8%8A%E4%B8%8B%E6%96%87"><span class="nav-number">1.3.</span> <span class="nav-text">❤层叠上下文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B7%A6%E5%8F%B3%E5%B1%85%E4%B8%AD%E6%96%B9%E6%A1%88"><span class="nav-number">1.4.</span> <span class="nav-text">❤左右居中方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%B8%8A%E4%B8%8B%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%96%B9%E6%A1%88"><span class="nav-number">1.5.</span> <span class="nav-text">❤上下垂直居中方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%9C%AA%E7%9F%A5%E5%AE%BD%E9%AB%98%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E6%96%B9%E6%B3%95"><span class="nav-number">1.6.</span> <span class="nav-text">❤未知宽高元素水平垂直居中方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.7.</span> <span class="nav-text">垂直居中的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%83%E9%87%8D%E8%AE%A1%E7%AE%97%E6%96%B9%E5%BC%8F"><span class="nav-number">1.8.</span> <span class="nav-text">❤选择器权重计算方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8"><span class="nav-number">1.9.</span> <span class="nav-text">❤浮动和清除浮动</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B7%A6%E8%BE%B9%E5%AE%9A%E5%AE%BD%EF%BC%8C%E5%8F%B3%E8%BE%B9%E8%87%AA%E9%80%82%E5%BA%94%E6%96%B9%E6%A1%88"><span class="nav-number">1.10.</span> <span class="nav-text">❤左边定宽，右边自适应方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%B7%A6%E5%8F%B3%E4%B8%A4%E8%BE%B9%E5%AE%9A%E5%AE%BD%EF%BC%8C%E4%B8%AD%E9%97%B4%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-number">1.11.</span> <span class="nav-text">❤左右两边定宽，中间自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A6%E8%BE%B9%E5%AE%BD%E5%BA%A6%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E8%BE%B9%E8%87%AA%E9%80%82%E5%BA%94"><span class="nav-number">1.12.</span> <span class="nav-text">左边宽度固定，右边自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%A4%E7%A7%8D%E4%BB%A5%E4%B8%8A%E6%96%B9%E5%BC%8F%E5%AE%9E%E7%8E%B0%E5%B7%B2%E7%9F%A5%E6%88%96%E8%80%85%E6%9C%AA%E7%9F%A5%E5%AE%BD%E5%BA%A6%E7%9A%84%E5%9E%82%E7%9B%B4%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="nav-number">1.13.</span> <span class="nav-text">两种以上方式实现已知或者未知宽度的垂直水平居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%B8%89%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88"><span class="nav-number">1.14.</span> <span class="nav-text">❤三栏布局的实现方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%87%A0%E7%A7%8D%E5%B8%B8%E8%A7%81%E7%9A%84CSS%E5%B8%83%E5%B1%80"><span class="nav-number">1.15.</span> <span class="nav-text">几种常见的CSS布局</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80"><span class="nav-number">1.15.1.</span> <span class="nav-text">圣杯布局</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80"><span class="nav-number">1.15.2.</span> <span class="nav-text">双飞翼布局</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4CSS%E5%8A%A8%E7%94%BB%E5%92%8C%E8%BF%87%E6%B8%A1"><span class="nav-number">1.16.</span> <span class="nav-text">❤CSS动画和过渡</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3%E5%8A%A8%E7%94%BB%EF%BC%88%E7%AE%80%E5%8D%95%E5%8A%A8%E7%94%BB%E7%9A%84%E5%AE%9E%E7%8E%B0%EF%BC%8C%E5%A6%82%E6%97%8B%E8%BD%AC%E7%AD%89%EF%BC%89"><span class="nav-number">1.17.</span> <span class="nav-text">CSS3动画（简单动画的实现，如旋转等）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4css3%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-number">1.18.</span> <span class="nav-text">❤css3有哪些新特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%88%97%E4%B8%BE%E5%87%A0%E4%B8%AAcss%E4%B8%AD%E5%8F%AF%E7%BB%A7%E6%89%BF%E5%92%8C%E4%B8%8D%E5%8F%AF%E7%BB%A7%E6%89%BF%E7%9A%84%E5%85%83%E7%B4%A0"><span class="nav-number">1.19.</span> <span class="nav-text">❤列举几个css中可继承和不可继承的元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E6%9C%89%E5%93%AA%E4%BA%9B%E7%BB%A7%E6%89%BF%E5%B1%9E%E6%80%A7"><span class="nav-number">1.20.</span> <span class="nav-text">CSS有哪些继承属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E9%87%8D%E7%BB%98%E5%92%8C%E5%9B%9E%E6%B5%81%EF%BC%88%E9%87%8D%E6%8E%92%EF%BC%89%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D%EF%BC%9F"><span class="nav-number">1.21.</span> <span class="nav-text">❤重绘和回流（重排）是什么，如何避免？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-sprite%E6%98%AF%E4%BB%80%E4%B9%88-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.22.</span> <span class="nav-text">css sprite是什么,有什么优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display-none-%E4%B8%8E-visibility-hidden-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.23.</span> <span class="nav-text">display: none; 与 visibility: hidden;的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#link%E4%B8%8E-import%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.24.</span> <span class="nav-text">link与@import的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFFOUC-%E5%A6%82%E4%BD%95%E9%81%BF%E5%85%8D"><span class="nav-number">1.25.</span> <span class="nav-text">什么是FOUC?如何避免</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display%E3%80%81float%E3%80%81position%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="nav-number">1.26.</span> <span class="nav-text">display、float、position的关系</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96CSS%E6%A0%B7%E5%BC%8F"><span class="nav-number">1.27.</span> <span class="nav-text">为什么要初始化CSS样式?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display%E6%9C%89%E5%93%AA%E4%BA%9B%E5%80%BC%EF%BC%9F%E8%AF%B4%E6%98%8E%E4%BB%96%E4%BB%AC%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.28.</span> <span class="nav-text">display有哪些值？说明他们的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#position%E7%9A%84%E5%80%BC%EF%BC%8C-relative%E5%92%8Cabsolute%E5%AE%9A%E4%BD%8D%E5%8E%9F%E7%82%B9%E6%98%AF"><span class="nav-number">1.29.</span> <span class="nav-text">position的值， relative和absolute定位原点是</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display-inline-block-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%B8%8D%E4%BC%9A%E6%98%BE%E7%A4%BA%E9%97%B4%E9%9A%99%EF%BC%9F-%E6%90%BA%E7%A8%8B"><span class="nav-number">1.30.</span> <span class="nav-text">display:inline-block 什么时候不会显示间隙？(携程)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PNG%E3%80%81GIF%E3%80%81JPG%E7%9A%84%E5%8C%BA%E5%88%AB%E5%8F%8A%E5%A6%82%E4%BD%95%E9%80%89"><span class="nav-number">1.31.</span> <span class="nav-text">PNG、GIF、JPG的区别及如何选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0float-left%E5%90%8E%E6%98%AF%E5%90%A6%E5%8F%98%E4%B8%BA%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="nav-number">1.32.</span> <span class="nav-text">行内元素float:left后是否变为块级元素？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E6%9E%9C%E9%9C%80%E8%A6%81%E6%89%8B%E5%8A%A8%E5%86%99%E5%8A%A8%E7%94%BB%EF%BC%8C%E4%BD%A0%E8%AE%A4%E4%B8%BA%E6%9C%80%E5%B0%8F%E6%97%B6%E9%97%B4%E9%97%B4%E9%9A%94%E6%98%AF%E5%A4%9A%E4%B9%85%EF%BC%8C%E4%B8%BA%E4%BB%80%E4%B9%88%EF%BC%9F%EF%BC%88%E9%98%BF%E9%87%8C%EF%BC%89"><span class="nav-number">1.33.</span> <span class="nav-text">如果需要手动写动画，你认为最小时间间隔是多久，为什么？（阿里）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E5%90%88%E5%B9%B6%E6%96%B9%E6%B3%95"><span class="nav-number">1.34.</span> <span class="nav-text">CSS合并方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E5%87%BA%E4%BD%A0%E6%89%80%E7%9F%A5%E9%81%93%E5%8F%AF%E4%BB%A5%E6%94%B9%E5%8F%98%E9%A1%B5%E9%9D%A2%E5%B8%83%E5%B1%80%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">1.35.</span> <span class="nav-text">列出你所知道可以改变页面布局的属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E5%9C%A8%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E9%9D%A2%E7%9A%84%E5%AE%9E%E8%B7%B5"><span class="nav-number">1.36.</span> <span class="nav-text">CSS在性能优化方面的实践</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base64%E7%9A%84%E5%8E%9F%E7%90%86%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">1.37.</span> <span class="nav-text">base64的原理及优缺点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stylus-sass-less%E5%8C%BA%E5%88%AB"><span class="nav-number">1.38.</span> <span class="nav-text">stylus/sass/less区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#postcss%E7%9A%84%E4%BD%9C%E7%94%A8"><span class="nav-number">1.39.</span> <span class="nav-text">postcss的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93%E7%9A%84%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.40.</span> <span class="nav-text">自定义字体的使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%BE%8E%E5%8C%96CheckBox"><span class="nav-number">1.41.</span> <span class="nav-text">如何美化CheckBox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E7%B1%BB%E5%92%8C%E4%BC%AA%E5%85%83%E7%B4%A0%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.42.</span> <span class="nav-text">伪类和伪元素的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#base64%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">1.43.</span> <span class="nav-text">base64的使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E7%94%A8CSS%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E5%B9%BB%E7%81%AF%E7%89%87%E6%95%88%E6%9E%9C%E9%A1%B5%E9%9D%A2"><span class="nav-number">1.44.</span> <span class="nav-text">请用CSS写一个简单的幻灯片效果页面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%A4%96%E8%BE%B9%E8%B7%9D%E9%87%8D%E5%8F%A0%EF%BC%9F%E9%87%8D%E5%8F%A0%E7%9A%84%E7%BB%93%E6%9E%9C%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.45.</span> <span class="nav-text">什么是外边距重叠？重叠的结果是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rgba-%E5%92%8Copacity%E7%9A%84%E9%80%8F%E6%98%8E%E6%95%88%E6%9E%9C%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C%EF%BC%9F"><span class="nav-number">1.46.</span> <span class="nav-text">rgba()和opacity的透明效果有什么不同？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%AF%E4%BB%A5%E8%AE%A9%E6%96%87%E5%AD%97%E5%9C%A8%E5%9E%82%E7%9B%B4%E5%92%8C%E6%B0%B4%E5%B9%B3%E6%96%B9%E5%90%91%E4%B8%8A%E9%87%8D%E5%8F%A0%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%B1%9E%E6%80%A7%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="nav-number">1.47.</span> <span class="nav-text">可以让文字在垂直和水平方向上重叠的两个属性是什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4CSS%E5%B0%BA%E5%AF%B8%E8%AE%BE%E7%BD%AE%E7%9A%84%E5%8D%95%E4%BD%8D"><span class="nav-number">1.48.</span> <span class="nav-text">❤CSS尺寸设置的单位</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sass%E3%80%81LESS%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A4%A7%E5%AE%B6%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E4%BD%BF%E7%94%A8%E4%BB%96%E4%BB%AC%EF%BC%9F"><span class="nav-number">1.49.</span> <span class="nav-text">Sass、LESS是什么？大家为什么要使用他们？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E9%81%93css%E6%9C%89%E4%B8%AAcontent%E5%B1%9E%E6%80%A7%E5%90%97%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E5%BA%94%E7%94%A8%EF%BC%9F"><span class="nav-number">1.50.</span> <span class="nav-text">知道css有个content属性吗？有什么作用？有什么应用？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8CSS%E5%AE%9E%E7%8E%B0%E7%A1%AC%E4%BB%B6%E5%8A%A0%E9%80%9F%EF%BC%9F"><span class="nav-number">1.51.</span> <span class="nav-text">如何使用CSS实现硬件加速？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E8%AF%B4css3%E7%9A%84animation"><span class="nav-number">1.52.</span> <span class="nav-text">说一说css3的animation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%9E%E7%8E%B0%E5%B0%8F%E4%BA%8E12px%E7%9A%84%E5%AD%97%E4%BD%93%E6%95%88%E6%9E%9C"><span class="nav-number">1.53.</span> <span class="nav-text">如何实现小于12px的字体效果</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-hack%E5%8E%9F%E7%90%86%E5%8F%8A%E5%B8%B8%E7%94%A8hack"><span class="nav-number">1.54.</span> <span class="nav-text">css hack原理及常用hack</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E8%BE%B9%E8%B7%9D%E6%8A%98%E5%8F%A0-collapsing-margins"><span class="nav-number">1.55.</span> <span class="nav-text">外边距折叠(collapsing margins)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E9%80%89%E6%8B%A9%E7%AC%A6%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E5%93%AA%E4%BA%9B%E5%B1%9E%E6%80%A7%E5%8F%AF%E4%BB%A5%E7%BB%A7%E6%89%BF"><span class="nav-number">1.56.</span> <span class="nav-text">CSS选择符有哪些？哪些属性可以继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3%E6%96%B0%E5%A2%9E%E4%BC%AA%E7%B1%BB%E6%9C%89%E9%82%A3%E4%BA%9B"><span class="nav-number">1.57.</span> <span class="nav-text">CSS3新增伪类有那些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E7%BA%AFCSS%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E4%B8%89%E8%A7%92%E5%BD%A2%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.58.</span> <span class="nav-text">用纯CSS创建一个三角形的原理是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E6%BB%A1%E5%B1%8F-%E5%93%81-%E5%AD%97%E5%B8%83%E5%B1%80-%E5%A6%82%E4%BD%95%E8%AE%BE%E8%AE%A1"><span class="nav-number">1.59.</span> <span class="nav-text">一个满屏 品 字布局 如何设计?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#li%E4%B8%8Eli%E4%B9%8B%E9%97%B4%E6%9C%89%E7%9C%8B%E4%B8%8D%E8%A7%81%E7%9A%84%E7%A9%BA%E7%99%BD%E9%97%B4%E9%9A%94%E6%98%AF%E4%BB%80%E4%B9%88%E5%8E%9F%E5%9B%A0%E5%BC%95%E8%B5%B7%E7%9A%84%EF%BC%9F%E6%9C%89%E4%BB%80%E4%B9%88%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="nav-number">1.60.</span> <span class="nav-text">li与li之间有看不见的空白间隔是什么原因引起的？有什么解决办法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96CSS%E6%A0%B7%E5%BC%8F-1"><span class="nav-number">1.61.</span> <span class="nav-text">为什么要初始化CSS样式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E5%88%97%E4%B8%BE%E5%87%A0%E7%A7%8D%E9%9A%90%E8%97%8F%E5%85%83%E7%B4%A0%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">1.62.</span> <span class="nav-text">请列举几种隐藏元素的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rgba-%E5%92%8C-opacity-%E7%9A%84%E9%80%8F%E6%98%8E%E6%95%88%E6%9E%9C%E6%9C%89%E4%BB%80%E4%B9%88%E4%B8%8D%E5%90%8C"><span class="nav-number">1.63.</span> <span class="nav-text">rgba() 和 opacity 的透明效果有什么不同</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#css-%E5%B1%9E%E6%80%A7-content-%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-number">1.64.</span> <span class="nav-text">css 属性 content 有什么作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B-CSS3-%E7%9A%84-Flexbox%EF%BC%88%E5%BC%B9%E6%80%A7%E7%9B%92%E5%B8%83%E5%B1%80%E6%A8%A1%E5%9E%8B%EF%BC%89%E4%BB%A5%E5%8F%8A%E9%80%82%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">1.65.</span> <span class="nav-text">请解释一下 CSS3 的 Flexbox（弹性盒布局模型）以及适用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%8F%E5%B8%B8%E9%81%87%E5%88%B0%E7%9A%84%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84JS%E5%85%BC%E5%AE%B9%E6%80%A7%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.66.</span> <span class="nav-text">经常遇到的浏览器的JS兼容性有哪些？解决方法是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS%E4%BC%98%E5%8C%96%E3%80%81%E6%8F%90%E9%AB%98%E6%80%A7%E8%83%BD%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">1.67.</span> <span class="nav-text">CSS优化、提高性能的方法有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E6%80%8E%E6%A0%B7%E8%A7%A3%E6%9E%90CSS%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84"><span class="nav-number">1.68.</span> <span class="nav-text">浏览器是怎样解析CSS选择器的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E7%BD%91%E9%A1%B5%E4%B8%AD%E7%9A%84%E5%BA%94%E8%AF%A5%E4%BD%BF%E7%94%A8%E5%A5%87%E6%95%B0%E8%BF%98%E6%98%AF%E5%81%B6%E6%95%B0%E7%9A%84%E5%AD%97%E4%BD%93"><span class="nav-number">1.69.</span> <span class="nav-text">在网页中的应该使用奇数还是偶数的字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E7%A6%BB%E6%A0%B7%E5%BC%8F%E6%A8%A1%E5%9D%97%E6%80%8E%E4%B9%88%E5%86%99%EF%BC%8C%E8%AF%B4%E5%87%BA%E6%80%9D%E8%B7%AF"><span class="nav-number">1.70.</span> <span class="nav-text">抽离样式模块怎么写，说出思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%83%E7%B4%A0%E7%AB%96%E5%90%91%E7%9A%84%E7%99%BE%E5%88%86%E6%AF%94%E8%AE%BE%E5%AE%9A%E6%98%AF%E7%9B%B8%E5%AF%B9%E4%BA%8E%E5%AE%B9%E5%99%A8%E7%9A%84%E9%AB%98%E5%BA%A6%E5%90%97"><span class="nav-number">1.71.</span> <span class="nav-text">元素竖向的百分比设定是相对于容器的高度吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A8%E5%B1%8F%E6%BB%9A%E5%8A%A8%E7%9A%84%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F-%E7%94%A8%E5%88%B0%E4%BA%86CSS%E7%9A%84%E9%82%A3%E4%BA%9B%E5%B1%9E%E6%80%A7"><span class="nav-number">1.72.</span> <span class="nav-text">全屏滚动的原理是什么？ 用到了CSS的那些属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1%EF%BC%9F%E5%93%8D%E5%BA%94%E5%BC%8F%E8%AE%BE%E8%AE%A1%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F%E5%A6%82%E4%BD%95%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E7%9A%84IE"><span class="nav-number">1.73.</span> <span class="nav-text">什么是响应式设计？响应式设计的基本原理是什么？如何兼容低版本的IE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E8%A7%86%E5%B7%AE%E6%BB%9A%E5%8A%A8%E6%95%88%E6%9E%9C%EF%BC%8C%E5%A6%82%E4%BD%95%E7%BB%99%E6%AF%8F%E9%A1%B5%E5%81%9A%E4%B8%8D%E5%90%8C%E7%9A%84%E5%8A%A8%E7%94%BB"><span class="nav-number">1.74.</span> <span class="nav-text">什么是视差滚动效果，如何给每页做不同的动画</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a%E6%A0%87%E7%AD%BE%E4%B8%8A%E5%9B%9B%E4%B8%AA%E4%BC%AA%E7%B1%BB%E7%9A%84%E6%89%A7%E8%A1%8C%E9%A1%BA%E5%BA%8F%E6%98%AF%E6%80%8E%E4%B9%88%E6%A0%B7%E7%9A%84"><span class="nav-number">1.75.</span> <span class="nav-text">a标签上四个伪类的执行顺序是怎么样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BC%AA%E5%85%83%E7%B4%A0%E5%92%8C%E4%BC%AA%E7%B1%BB%E7%9A%84%E5%8C%BA%E5%88%AB%E5%92%8C%E4%BD%9C%E7%94%A8"><span class="nav-number">1.76.</span> <span class="nav-text">伪元素和伪类的区别和作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#before-%E5%92%8C-after-%E4%B8%AD%E5%8F%8C%E5%86%92%E5%8F%B7%E5%92%8C%E5%8D%95%E5%86%92%E5%8F%B7%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">1.77.</span> <span class="nav-text">::before 和 :after 中双冒号和单冒号有什么区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BF%AE%E6%94%B9Chrome%E8%AE%B0%E4%BD%8F%E5%AF%86%E7%A0%81%E5%90%8E%E8%87%AA%E5%8A%A8%E5%A1%AB%E5%85%85%E8%A1%A8%E5%8D%95%E7%9A%84%E9%BB%84%E8%89%B2%E8%83%8C%E6%99%AF"><span class="nav-number">1.78.</span> <span class="nav-text">如何修改Chrome记住密码后自动填充表单的黄色背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E7%AB%99%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%EF%BC%8C%E5%A6%82%E4%BD%95%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD%EF%BC%9F%E8%80%8C%E9%9D%9E%E7%82%B9%E5%87%BB%E9%A2%84%E8%A7%88"><span class="nav-number">1.79.</span> <span class="nav-text">网站图片文件，如何点击下载？而非点击预览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height-%E6%98%AF%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%9A%84"><span class="nav-number">1.80.</span> <span class="nav-text">line-height 是如何理解的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line-height-%E4%B8%89%E7%A7%8D%E8%B5%8B%E5%80%BC%E6%96%B9%E5%BC%8F%E6%9C%89%E4%BD%95%E5%8C%BA%E5%88%AB%EF%BC%9F%EF%BC%88%E5%B8%A6%E5%8D%95%E4%BD%8D%E3%80%81%E7%BA%AF%E6%95%B0%E5%AD%97%E3%80%81%E7%99%BE%E5%88%86%E6%AF%94%EF%BC%89"><span class="nav-number">1.81.</span> <span class="nav-text">line-height 三种赋值方式有何区别？（带单位、纯数字、百分比）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E7%BD%AE%E5%85%83%E7%B4%A0%E6%B5%AE%E5%8A%A8%E5%90%8E%EF%BC%8C%E8%AF%A5%E5%85%83%E7%B4%A0%E7%9A%84-display-%E5%80%BC%E4%BC%9A%E5%A6%82%E4%BD%95%E5%8F%98%E5%8C%96"><span class="nav-number">1.82.</span> <span class="nav-text">设置元素浮动后，该元素的 display 值会如何变化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A9%E9%A1%B5%E9%9D%A2%E9%87%8C%E7%9A%84%E5%AD%97%E4%BD%93%E5%8F%98%E6%B8%85%E6%99%B0%EF%BC%8C%E5%8F%98%E7%BB%86%E7%94%A8CSS%E6%80%8E%E4%B9%88%E5%81%9A%EF%BC%9F%EF%BC%88IOS%E6%89%8B%E6%9C%BA%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%97%E4%BD%93%E9%BD%BF%E8%BD%AE%E8%AE%BE%E7%BD%AE%EF%BC%89"><span class="nav-number">1.83.</span> <span class="nav-text">让页面里的字体变清晰，变细用CSS怎么做？（IOS手机浏览器字体齿轮设置）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#font-style-%E5%B1%9E%E6%80%A7-oblique-%E6%98%AF%E4%BB%80%E4%B9%88%E6%84%8F%E6%80%9D"><span class="nav-number">1.84.</span> <span class="nav-text">font-style 属性 oblique 是什么意思</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#display-inline-block-%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E4%BC%9A%E6%98%BE%E7%A4%BA%E9%97%B4%E9%9A%99"><span class="nav-number">1.85.</span> <span class="nav-text">display:inline-block 什么时候会显示间隙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E9%AB%98%E5%BA%A6%E8%87%AA%E9%80%82%E5%BA%94%E7%9A%84div%EF%BC%8C%E9%87%8C%E9%9D%A2%E6%9C%89%E4%B8%A4%E4%B8%AAdiv%EF%BC%8C%E4%B8%80%E4%B8%AA%E9%AB%98%E5%BA%A6100px%EF%BC%8C%E5%B8%8C%E6%9C%9B%E5%8F%A6%E4%B8%80%E4%B8%AA%E5%A1%AB%E6%BB%A1%E5%89%A9%E4%B8%8B%E7%9A%84%E9%AB%98%E5%BA%A6"><span class="nav-number">1.86.</span> <span class="nav-text">一个高度自适应的div，里面有两个div，一个高度100px，希望另一个填满剩下的高度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iOS-safari-%E5%A6%82%E4%BD%95%E9%98%BB%E6%AD%A2%E2%80%9C%E6%A9%A1%E7%9A%AE%E7%AD%8B%E6%95%88%E6%9E%9C%E2%80%9D"><span class="nav-number">1.87.</span> <span class="nav-text">iOS safari 如何阻止“橡皮筋效果”</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="henfy" src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">henfy</p>
+  <div class="site-description" itemprop="description">技术分享的博客</div>
 </div>
-  </main>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
 
-  <footer class="footer">
-    <div class="footer-inner">
 
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
 
 <div class="copyright">
+  
   © 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">henfy</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
     <span title="站点总字数">228k</span>
-  </span>
-  <span class="post-meta-item">
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     <span title="站点阅读时长">3:28</span>
-  </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
-    </div>
-  </footer>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   
@@ -1918,23 +1948,19 @@
 
 
 
+
+
+
+
+
+
+
+
+
+  
+
   
 
 
 
-
-
-
-
-<script src="/bundle.js"></script><script>
-NexT.utils.loadComments('#waline-comments', () => {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/Waline.min.js', () => {
-    new Waline(Object.assign({
-      lang: 'zh-CN'
-    }, {"enable":true,"serverURL":"https://waline.vercel.app","placeholder":"Just go go","avatar":"monsterid","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick","mail"],"lang":"zh-cn","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/Waline.min.js"}, {
-      el: '#waline-comments',
-      path: "/2022/06/20/CSS/",
-    }));
-  }, window.Waline);
-});
-</script></body></html>
+<script src="/bundle.js"></script></body></html>

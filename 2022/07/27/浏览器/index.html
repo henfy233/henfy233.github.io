@@ -3,11 +3,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.4.0">
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pikaqiu-32x32-next.ico">
   <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 
@@ -15,13 +13,12 @@
 
 
 
-  
-
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","version":"8.3.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
-<meta name="description" content="介绍目前常见前端面试题，浏览器基础题">
+
+  <meta name="description" content="介绍目前常见前端面试题，浏览器基础题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浏览器">
 <meta property="og:url" content="http://example.com/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/index.html">
@@ -64,11 +61,10 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s.poetries.work/images/20210415090353.png">
 
-
 <link rel="canonical" href="http://example.com/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -76,67 +72,61 @@
     isPost : true,
     lang   : 'zh-CN'
   };
-</script><link rel="dns-prefetch" href="https://waline.vercel.app">
-<title>浏览器 | Henfy-Blog</title>
+</script>
+
+  <title>浏览器 | Henfy-Blog</title>
   
+
+
 
 
 
 
   <noscript>
   <style>
-  body { margin-top: 2rem; }
-
+  .use-motion .brand,
   .use-motion .menu-item,
-  .use-motion .sidebar,
+  .sidebar-inner,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
+  .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
-<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css');loadCss('https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css"></noscript></head>
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');</script></head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-  <main class="main">
     <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="切换导航栏" role="button">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
+      <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Henfy-Blog</h1>
-      <i class="logo-line"></i>
+      <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">Henfy-Blog</p>
   </div>
@@ -150,100 +140,65 @@
 
 
 
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
 
 
 
 </div>
-        
-  
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          文章目录
-        </li>
-        <li class="sidebar-nav-overview">
-          站点概览
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">❤浏览器架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4JavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">❤JavaScript单线程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Chrome-%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E5%A4%9A%E5%B0%91%E8%BF%9B%E7%A8%8B%EF%BC%9F%E5%88%86%E5%88%AB%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">❤渲染机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93"><span class="nav-number">5.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">浏览器渲染过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">❤缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8"><span class="nav-number">8.</span> <span class="nav-text">❤浏览器存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies%EF%BC%8CSessionStorage-%E5%92%8C-LocalStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">Cookies，SessionStorage 和 LocalStorage 的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%AF%E8%BF%87%E6%9C%9F%E7%9A%84localstorage%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">实现可过期的localstorage数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#token-%E8%83%BD%E6%94%BE%E5%9C%A8cookie%E4%B8%AD%E5%90%97"><span class="nav-number">11.</span> <span class="nav-text">token 能放在cookie中吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E4%BD%A0%E8%B0%88%E8%B0%88Cookie%E7%9A%84%E5%BC%8A%E7%AB%AF"><span class="nav-number">12.</span> <span class="nav-text">请你谈谈Cookie的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%A1%88"><span class="nav-number">13.</span> <span class="nav-text">❤跨域方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E5%90%8C%E6%BA%90%E9%99%90%E5%88%B6%EF%BC%9F"><span class="nav-number">14.</span> <span class="nav-text">为什么要有同源限制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">如何解决跨域问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4XSS-%E5%92%8C-CSRF"><span class="nav-number">16.</span> <span class="nav-text">❤XSS 和 CSRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS%E6%94%BB%E5%87%BB"><span class="nav-number">17.</span> <span class="nav-text">XSS攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF%E6%94%BB%E5%87%BB"><span class="nav-number">18.</span> <span class="nav-text">CSRF攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Service-Worker"><span class="nav-number">19.</span> <span class="nav-text">❤Service Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4DOM-%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">20.</span> <span class="nav-text">❤DOM 节点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%8E%8C%E6%8F%A1%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">21.</span> <span class="nav-text">❤掌握页面的加载过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">22.</span> <span class="nav-text">❤从输入URL到页面展示过程</span></a></li></ol></div>
-        </div>
-        <!--/noindex-->
-
-        <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-  <p class="site-author-name" itemprop="name">henfy</p>
-  <div class="site-description" itemprop="description">技术分享的博客</div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives">
-          <span class="site-state-item-count">6</span>
-          <span class="site-state-item-name">日志</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">分类</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-        <span class="site-state-item-count">2</span>
-        <span class="site-state-item-name">标签</span></a>
-      </div>
-  </nav>
-</div>
-
-
-
-        </div>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
     </header>
 
     
-  <div class="back-to-top" role="button" aria-label="返回顶部">
+  <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-    <div class="main-inner post posts-expand">
+          <div class="content post posts-expand">
+            
 
-
-  
-
-
-<div class="post-block">
+    
   
   
-
-  <article itemscope="" itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/">
 
     <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/images/avatar.jpg">
       <meta itemprop="name" content="henfy">
       <meta itemprop="description" content="技术分享的博客">
     </span>
@@ -256,56 +211,38 @@
           浏览器
         </h1>
 
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2022-07-27 22:32:22" itemprop="dateCreated datePublished" datetime="2022-07-27T22:32:22+08:00">2022-07-27</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">更新于</span>
-        <time title="修改时间：2022-07-28 11:31:31" itemprop="dateModified" datetime="2022-07-28T11:31:31+08:00">2022-07-28</time>
-      </span>
+              <time title="创建时间：2022-07-27 22:32:22" itemprop="dateCreated datePublished" datetime="2022-07-27T22:32:22+08:00">2022-07-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-07-28 11:31:31" itemprop="dateModified" datetime="2022-07-28T11:31:31+08:00">2022-07-28</time>
+              </span>
 
-  
-  
-  <span class="post-meta-item">
-    
-    <span class="post-meta-item-icon">
-      <i class="far fa-comment"></i>
-    </span>
-    <span class="post-meta-item-text">Waline：</span>
-  
-    <a title="waline" href="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/#waline-comments" itemprop="discussionUrl">
-      <span class="post-comments-count waline-comment-count" id="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/" data-xid="/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-      </div>
-      <div class="post-meta">
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>30k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 ≈</span>
-      <span>28 分钟</span>
-    </span>
-</div>
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>30k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 ≈</span>
+              <span>28 分钟</span>
+            </span>
 
         </div>
       </header>
@@ -314,6 +251,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
+
+      
         <p>介绍目前常见前端面试题，浏览器基础题</p>
 <span id="more"></span>
 
@@ -1604,32 +1543,33 @@ self<span class="token punctuation">.</span><span class="token function">addEven
     
     
 
-    <footer class="post-footer">
+      <footer class="post-footer">
           <div class="post-tags">
               <a href="/tags/%E5%89%8D%E7%AB%AF-%E9%9D%A2%E8%AF%95/" rel="tag"># 前端 面试</a>
           </div>
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2022/06/20/CSS/" rel="prev" title="CSS基础">
-                  <i class="fa fa-chevron-left"></i> CSS基础
-                </a>
-            </div>
-            <div class="post-nav-item">
-            </div>
-          </div>
-    </footer>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/06/20/CSS/" rel="prev" title="CSS基础">
+      <i class="fa fa-chevron-left"></i> CSS基础
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
   </article>
-</div>
+  
+  
+  
 
 
 
-
-
-
-    <div class="comments" id="waline-comments"></div>
+          </div>
+          
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -1638,7 +1578,7 @@ self<span class="token punctuation">.</span><span class="token function">addEven
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -1647,48 +1587,138 @@ self<span class="token punctuation">.</span><span class="token function">addEven
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
+      let commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">❤浏览器架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4JavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">❤JavaScript单线程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Chrome-%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E5%A4%9A%E5%B0%91%E8%BF%9B%E7%A8%8B%EF%BC%9F%E5%88%86%E5%88%AB%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">❤渲染机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93"><span class="nav-number">5.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">浏览器渲染过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">❤缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8"><span class="nav-number">8.</span> <span class="nav-text">❤浏览器存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies%EF%BC%8CSessionStorage-%E5%92%8C-LocalStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">Cookies，SessionStorage 和 LocalStorage 的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%AF%E8%BF%87%E6%9C%9F%E7%9A%84localstorage%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">实现可过期的localstorage数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#token-%E8%83%BD%E6%94%BE%E5%9C%A8cookie%E4%B8%AD%E5%90%97"><span class="nav-number">11.</span> <span class="nav-text">token 能放在cookie中吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E4%BD%A0%E8%B0%88%E8%B0%88Cookie%E7%9A%84%E5%BC%8A%E7%AB%AF"><span class="nav-number">12.</span> <span class="nav-text">请你谈谈Cookie的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%A1%88"><span class="nav-number">13.</span> <span class="nav-text">❤跨域方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E5%90%8C%E6%BA%90%E9%99%90%E5%88%B6%EF%BC%9F"><span class="nav-number">14.</span> <span class="nav-text">为什么要有同源限制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">如何解决跨域问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4XSS-%E5%92%8C-CSRF"><span class="nav-number">16.</span> <span class="nav-text">❤XSS 和 CSRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS%E6%94%BB%E5%87%BB"><span class="nav-number">17.</span> <span class="nav-text">XSS攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF%E6%94%BB%E5%87%BB"><span class="nav-number">18.</span> <span class="nav-text">CSRF攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Service-Worker"><span class="nav-number">19.</span> <span class="nav-text">❤Service Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4DOM-%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">20.</span> <span class="nav-text">❤DOM 节点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%8E%8C%E6%8F%A1%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">21.</span> <span class="nav-text">❤掌握页面的加载过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">22.</span> <span class="nav-text">❤从输入URL到页面展示过程</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="henfy" src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">henfy</p>
+  <div class="site-description" itemprop="description">技术分享的博客</div>
 </div>
-  </main>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
 
-  <footer class="footer">
-    <div class="footer-inner">
 
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
 
 <div class="copyright">
+  
   © 
   <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">henfy</span>
-</div>
-<div class="wordcount">
-  <span class="post-meta-item">
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
     <span title="站点总字数">228k</span>
-  </span>
-  <span class="post-meta-item">
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     <span title="站点阅读时长">3:28</span>
-  </span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.js.org/muse/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> &amp; <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
-    </div>
-  </footer>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+  
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   
@@ -1698,23 +1728,19 @@ self<span class="token punctuation">.</span><span class="token function">addEven
 
 
 
+
+
+
+
+
+
+
+
+
+  
+
   
 
 
 
-
-
-
-
-<script src="/bundle.js"></script><script>
-NexT.utils.loadComments('#waline-comments', () => {
-  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/Waline.min.js', () => {
-    new Waline(Object.assign({
-      lang: 'zh-CN'
-    }, {"enable":true,"serverURL":"https://waline.vercel.app","placeholder":"Just go go","avatar":"monsterid","meta":["nick","mail","link"],"pageSize":10,"visitor":false,"comment_count":true,"requiredFields":["nick","mail"],"lang":"zh-cn","libUrl":"https://cdn.jsdelivr.net/npm/@waline/client@0.14.8/dist/Waline.min.js"}, {
-      el: '#waline-comments',
-      path: "/2022/07/27/%E6%B5%8F%E8%A7%88%E5%99%A8/",
-    }));
-  }, window.Waline);
-});
-</script></body></html>
+<script src="/bundle.js"></script></body></html>
