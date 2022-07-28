@@ -1,6 +1,164 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>数据增强 代码</title>
+    <url>/2021/04/21/Data-Augmention/</url>
+    <content><![CDATA[<p>打算做一套数据增强都适用的代码，放在博客方便copy</p>
+<span id="more"></span>
+
+<h3 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib <span class="token keyword">as</span> mpl
+<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
+<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
+<span class="token keyword">import</span> os
+<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
+<span class="token keyword">import</span> sklearn
+<span class="token keyword">import</span> sys
+<span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
+<span class="token keyword">import</span> time
+
+<span class="token keyword">from</span> tensorflow <span class="token keyword">import</span> keras
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>tf<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>version_info<span class="token punctuation">)</span>
+<span class="token keyword">for</span> module <span class="token keyword">in</span> mpl<span class="token punctuation">,</span> np<span class="token punctuation">,</span> pd<span class="token punctuation">,</span> sklearn<span class="token punctuation">,</span> tf<span class="token punctuation">,</span> keras<span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span> module<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
+
+<span class="token comment"># import PIL</span>
+<span class="token comment"># import IPython</span>
+<span class="token comment"># import kerastuner as kt</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="导入文件"><a href="#导入文件" class="headerlink" title="导入文件"></a>导入文件</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os<span class="token punctuation">,</span> random<span class="token punctuation">,</span> shutil
+
+<span class="token comment">#将 dir 目录下 train 中的各个文件夹中的文件随机移动到 dir 创建的 val 同名目录</span>
+<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">r'G:/dataset/rgbdsm/rgdsm/256_256/three grades-newGan/train/61-100'</span>
+rate <span class="token operator">=</span> <span class="token number">0.2</span> <span class="token comment">#选取的比例</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+
+    trainpath <span class="token operator">=</span> <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\train"</span>
+<span class="token comment">#     print(trainpath)</span>
+    <span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+<span class="token comment">#          print(file)</span>
+        filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span><span class="token builtin">file</span><span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
+<span class="token comment">#         print("filepath = %s " %  filepath)</span>
+
+        files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
+        filelength <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
+<span class="token comment">#         print("filelength = %d " % filelength)</span>
+
+        picklength <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>filelength <span class="token operator">*</span> rate<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"picklength = %d "</span> <span class="token operator">%</span> picklength<span class="token punctuation">)</span>
+        sample <span class="token operator">=</span> random<span class="token punctuation">.</span>sample<span class="token punctuation">(</span>files<span class="token punctuation">,</span> picklength<span class="token punctuation">)</span> <span class="token comment">#从每个子文件夹中随机选取</span>
+<span class="token comment">#         print("len-sample = %d " % len(sample))</span>
+
+        <span class="token builtin">list</span> <span class="token operator">=</span> filepath<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\\"</span><span class="token punctuation">)</span>
+        testpath <span class="token operator">=</span>  <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\test\\"</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token comment">#         print("valpath = %s"%valpath)</span>
+        isExists <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> isExists<span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> name <span class="token keyword">in</span> sample<span class="token punctuation">:</span>
+<span class="token comment">#             print("name = %s"%name)</span>
+            shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>testpath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="导入文件-1"><a href="#导入文件-1" class="headerlink" title="导入文件"></a>导入文件</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 每个日期的图片都要分20%给验证集 2021-4-20</span>
+
+<span class="token comment"># 1. 把每个分组的不同日期的图片分别归类到每个分组</span>
+<span class="token keyword">import</span> os<span class="token punctuation">,</span> random<span class="token punctuation">,</span> shutil
+
+<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">r'G:/dataset/rgbdsm/rgdsm/256_256/three grades-class'</span>
+
+datename <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'20160607'</span><span class="token punctuation">,</span> <span class="token string">'170707'</span><span class="token punctuation">,</span> <span class="token string">'2018.05.14'</span><span class="token punctuation">,</span> <span class="token string">'2018.05.23'</span><span class="token punctuation">,</span> <span class="token string">'2018.05.29'</span><span class="token punctuation">,</span> <span class="token string">'2018.06.08'</span><span class="token punctuation">,</span> <span class="token string">'2018.06.12'</span><span class="token punctuation">,</span>
+       <span class="token string">'180625'</span><span class="token punctuation">,</span> <span class="token string">'200528'</span><span class="token punctuation">,</span> <span class="token string">'200603'</span><span class="token punctuation">,</span> <span class="token string">'200612'</span><span class="token punctuation">]</span>
+
+trainpath <span class="token operator">=</span> <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\train"</span>
+<span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span><span class="token builtin">file</span><span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filepath = %s "</span> <span class="token operator">%</span>  filepath<span class="token punctuation">)</span>
+
+    files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
+
+    <span class="token keyword">for</span> date <span class="token keyword">in</span> datename<span class="token punctuation">:</span>
+        testpath <span class="token operator">=</span>  filepath <span class="token operator">+</span> <span class="token string">"\\"</span> <span class="token operator">+</span> date
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"testpath = %s "</span> <span class="token operator">%</span>  testpath<span class="token punctuation">)</span>
+        isExists <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> isExists<span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
+    <span class="token comment"># 输出所有文件和文件夹</span>
+    <span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> files<span class="token punctuation">:</span>
+        <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>splitext<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.jpg'</span><span class="token punctuation">:</span>
+            split<span class="token operator">=</span><span class="token builtin">file</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span>        <span class="token comment">#截取文件名前十个字符</span>
+            <span class="token keyword">for</span> date <span class="token keyword">in</span> datename<span class="token punctuation">:</span>
+                <span class="token keyword">if</span> date <span class="token keyword">in</span> split<span class="token punctuation">:</span>
+                    shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">#                     print(date)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 2. 把训练集每个分组的图片分20%到验证集test文件夹下</span>
+<span class="token keyword">import</span> os<span class="token punctuation">,</span> random<span class="token punctuation">,</span> shutil
+rate <span class="token operator">=</span> <span class="token number">0.2</span>
+
+<span class="token keyword">for</span> classname <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span> classname<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filepath = %s "</span> <span class="token operator">%</span>  filepath<span class="token punctuation">)</span>
+    <span class="token keyword">for</span> datename <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        datepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span>datename<span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"datepath = %s "</span> <span class="token operator">%</span>  datepath<span class="token punctuation">)</span>
+
+        files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
+        filelength <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filelength = %d "</span> <span class="token operator">%</span> filelength<span class="token punctuation">)</span>
+
+        picklength <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>filelength <span class="token operator">*</span> rate<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"picklength = %d "</span> <span class="token operator">%</span> picklength<span class="token punctuation">)</span>
+        sample <span class="token operator">=</span> random<span class="token punctuation">.</span>sample<span class="token punctuation">(</span>files<span class="token punctuation">,</span> picklength<span class="token punctuation">)</span> <span class="token comment">#从每个子文件夹中随机选取</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"len-sample = %d "</span> <span class="token operator">%</span> <span class="token builtin">len</span><span class="token punctuation">(</span>sample<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token builtin">list</span> <span class="token operator">=</span> filepath<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\\"</span><span class="token punctuation">)</span>
+        testpath <span class="token operator">=</span>  <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\test\\"</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"testpath = %s"</span><span class="token operator">%</span>testpath<span class="token punctuation">)</span>
+        isExists <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
+        <span class="token keyword">if</span> <span class="token keyword">not</span> isExists<span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> name <span class="token keyword">in</span> sample<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"originpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"afterpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>testpath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>testpath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 3. 把训练集每个分组的图片提取出来，并删除文件夹</span>
+<span class="token keyword">for</span> classname <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span> classname<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filepath = %s "</span> <span class="token operator">%</span>  filepath<span class="token punctuation">)</span>
+
+    <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">for</span> datename <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        datepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span>datename<span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"datepath = %s "</span> <span class="token operator">%</span>  datepath<span class="token punctuation">)</span>
+
+        files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
+        filelength <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filelength = %d "</span> <span class="token operator">%</span> filelength<span class="token punctuation">)</span>
+
+        <span class="token keyword">for</span> name <span class="token keyword">in</span> files<span class="token punctuation">:</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"originpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"afterpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+            shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+        <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            os<span class="token punctuation">.</span>rmdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+]]></content>
+      <categories>
+        <category>AI</category>
+      </categories>
+      <tags>
+        <tag>share</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>图像识别分类 代码</title>
     <url>/2021/04/15/Machine-Learning-Share/</url>
     <content><![CDATA[<p>打算做一套图像识别都适用的代码，放在博客方便copy</p>
@@ -302,164 +460,6 @@ Y_pred_classes <span class="token operator">=</span> np<span class="token punctu
 confusion_mtx <span class="token operator">=</span> confusion_matrix<span class="token punctuation">(</span>y_true <span class="token operator">=</span> test_generator<span class="token punctuation">.</span>classes<span class="token punctuation">,</span>y_pred <span class="token operator">=</span> Y_pred_classes<span class="token punctuation">)</span>
 <span class="token comment"># 绘制混淆矩阵</span>
 plot_confusion_matrix<span class="token punctuation">(</span>confusion_mtx<span class="token punctuation">,</span> normalize<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">,</span> target_names<span class="token operator">=</span>labels<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-]]></content>
-      <categories>
-        <category>AI</category>
-      </categories>
-      <tags>
-        <tag>share</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>数据增强 代码</title>
-    <url>/2021/04/21/Data-Augmention/</url>
-    <content><![CDATA[<p>打算做一套数据增强都适用的代码，放在博客方便copy</p>
-<span id="more"></span>
-
-<h3 id="导包"><a href="#导包" class="headerlink" title="导包"></a>导包</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> matplotlib <span class="token keyword">as</span> mpl
-<span class="token keyword">import</span> matplotlib<span class="token punctuation">.</span>pyplot <span class="token keyword">as</span> plt
-<span class="token keyword">import</span> numpy <span class="token keyword">as</span> np
-<span class="token keyword">import</span> os
-<span class="token keyword">import</span> pandas <span class="token keyword">as</span> pd
-<span class="token keyword">import</span> sklearn
-<span class="token keyword">import</span> sys
-<span class="token keyword">import</span> tensorflow <span class="token keyword">as</span> tf
-<span class="token keyword">import</span> time
-
-<span class="token keyword">from</span> tensorflow <span class="token keyword">import</span> keras
-
-<span class="token keyword">print</span><span class="token punctuation">(</span>tf<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>sys<span class="token punctuation">.</span>version_info<span class="token punctuation">)</span>
-<span class="token keyword">for</span> module <span class="token keyword">in</span> mpl<span class="token punctuation">,</span> np<span class="token punctuation">,</span> pd<span class="token punctuation">,</span> sklearn<span class="token punctuation">,</span> tf<span class="token punctuation">,</span> keras<span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>module<span class="token punctuation">.</span>__name__<span class="token punctuation">,</span> module<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span>
-
-<span class="token comment"># import PIL</span>
-<span class="token comment"># import IPython</span>
-<span class="token comment"># import kerastuner as kt</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<h3 id="导入文件"><a href="#导入文件" class="headerlink" title="导入文件"></a>导入文件</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> os<span class="token punctuation">,</span> random<span class="token punctuation">,</span> shutil
-
-<span class="token comment">#将 dir 目录下 train 中的各个文件夹中的文件随机移动到 dir 创建的 val 同名目录</span>
-<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">r'G:/dataset/rgbdsm/rgdsm/256_256/three grades-newGan/train/61-100'</span>
-rate <span class="token operator">=</span> <span class="token number">0.2</span> <span class="token comment">#选取的比例</span>
-
-<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
-
-    trainpath <span class="token operator">=</span> <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\train"</span>
-<span class="token comment">#     print(trainpath)</span>
-    <span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-<span class="token comment">#          print(file)</span>
-        filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span><span class="token builtin">file</span><span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
-<span class="token comment">#         print("filepath = %s " %  filepath)</span>
-
-        files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
-        filelength <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
-<span class="token comment">#         print("filelength = %d " % filelength)</span>
-
-        picklength <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>filelength <span class="token operator">*</span> rate<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"picklength = %d "</span> <span class="token operator">%</span> picklength<span class="token punctuation">)</span>
-        sample <span class="token operator">=</span> random<span class="token punctuation">.</span>sample<span class="token punctuation">(</span>files<span class="token punctuation">,</span> picklength<span class="token punctuation">)</span> <span class="token comment">#从每个子文件夹中随机选取</span>
-<span class="token comment">#         print("len-sample = %d " % len(sample))</span>
-
-        <span class="token builtin">list</span> <span class="token operator">=</span> filepath<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\\"</span><span class="token punctuation">)</span>
-        testpath <span class="token operator">=</span>  <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\test\\"</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token comment">#         print("valpath = %s"%valpath)</span>
-        isExists <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token keyword">not</span> isExists<span class="token punctuation">:</span>
-            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
-
-        <span class="token keyword">for</span> name <span class="token keyword">in</span> sample<span class="token punctuation">:</span>
-<span class="token comment">#             print("name = %s"%name)</span>
-            shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>testpath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="导入文件-1"><a href="#导入文件-1" class="headerlink" title="导入文件"></a>导入文件</h3><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 每个日期的图片都要分20%给验证集 2021-4-20</span>
-
-<span class="token comment"># 1. 把每个分组的不同日期的图片分别归类到每个分组</span>
-<span class="token keyword">import</span> os<span class="token punctuation">,</span> random<span class="token punctuation">,</span> shutil
-
-<span class="token builtin">dir</span> <span class="token operator">=</span> <span class="token string">r'G:/dataset/rgbdsm/rgdsm/256_256/three grades-class'</span>
-
-datename <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'20160607'</span><span class="token punctuation">,</span> <span class="token string">'170707'</span><span class="token punctuation">,</span> <span class="token string">'2018.05.14'</span><span class="token punctuation">,</span> <span class="token string">'2018.05.23'</span><span class="token punctuation">,</span> <span class="token string">'2018.05.29'</span><span class="token punctuation">,</span> <span class="token string">'2018.06.08'</span><span class="token punctuation">,</span> <span class="token string">'2018.06.12'</span><span class="token punctuation">,</span>
-       <span class="token string">'180625'</span><span class="token punctuation">,</span> <span class="token string">'200528'</span><span class="token punctuation">,</span> <span class="token string">'200603'</span><span class="token punctuation">,</span> <span class="token string">'200612'</span><span class="token punctuation">]</span>
-
-trainpath <span class="token operator">=</span> <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\train"</span>
-<span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span><span class="token builtin">file</span><span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filepath = %s "</span> <span class="token operator">%</span>  filepath<span class="token punctuation">)</span>
-
-    files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
-
-    <span class="token keyword">for</span> date <span class="token keyword">in</span> datename<span class="token punctuation">:</span>
-        testpath <span class="token operator">=</span>  filepath <span class="token operator">+</span> <span class="token string">"\\"</span> <span class="token operator">+</span> date
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"testpath = %s "</span> <span class="token operator">%</span>  testpath<span class="token punctuation">)</span>
-        isExists <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token keyword">not</span> isExists<span class="token punctuation">:</span>
-            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
-    <span class="token comment"># 输出所有文件和文件夹</span>
-    <span class="token keyword">for</span> <span class="token builtin">file</span> <span class="token keyword">in</span> files<span class="token punctuation">:</span>
-        <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>splitext<span class="token punctuation">(</span><span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> <span class="token string">'.jpg'</span><span class="token punctuation">:</span>
-            split<span class="token operator">=</span><span class="token builtin">file</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">:</span><span class="token number">10</span><span class="token punctuation">]</span>        <span class="token comment">#截取文件名前十个字符</span>
-            <span class="token keyword">for</span> date <span class="token keyword">in</span> datename<span class="token punctuation">:</span>
-                <span class="token keyword">if</span> date <span class="token keyword">in</span> split<span class="token punctuation">:</span>
-                    shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> <span class="token builtin">file</span><span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> date<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">#                     print(date)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 2. 把训练集每个分组的图片分20%到验证集test文件夹下</span>
-<span class="token keyword">import</span> os<span class="token punctuation">,</span> random<span class="token punctuation">,</span> shutil
-rate <span class="token operator">=</span> <span class="token number">0.2</span>
-
-<span class="token keyword">for</span> classname <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span> classname<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filepath = %s "</span> <span class="token operator">%</span>  filepath<span class="token punctuation">)</span>
-    <span class="token keyword">for</span> datename <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        datepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span>datename<span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"datepath = %s "</span> <span class="token operator">%</span>  datepath<span class="token punctuation">)</span>
-
-        files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
-        filelength <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filelength = %d "</span> <span class="token operator">%</span> filelength<span class="token punctuation">)</span>
-
-        picklength <span class="token operator">=</span> <span class="token builtin">int</span><span class="token punctuation">(</span>filelength <span class="token operator">*</span> rate<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"picklength = %d "</span> <span class="token operator">%</span> picklength<span class="token punctuation">)</span>
-        sample <span class="token operator">=</span> random<span class="token punctuation">.</span>sample<span class="token punctuation">(</span>files<span class="token punctuation">,</span> picklength<span class="token punctuation">)</span> <span class="token comment">#从每个子文件夹中随机选取</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"len-sample = %d "</span> <span class="token operator">%</span> <span class="token builtin">len</span><span class="token punctuation">(</span>sample<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-        <span class="token builtin">list</span> <span class="token operator">=</span> filepath<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"\\"</span><span class="token punctuation">)</span>
-        testpath <span class="token operator">=</span>  <span class="token builtin">dir</span> <span class="token operator">+</span> <span class="token string">"\\test\\"</span> <span class="token operator">+</span> <span class="token builtin">str</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">[</span><span class="token builtin">len</span><span class="token punctuation">(</span><span class="token builtin">list</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"testpath = %s"</span><span class="token operator">%</span>testpath<span class="token punctuation">)</span>
-        isExists <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>exists<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token keyword">not</span> isExists<span class="token punctuation">:</span>
-            os<span class="token punctuation">.</span>makedirs<span class="token punctuation">(</span>testpath<span class="token punctuation">)</span>
-
-        <span class="token keyword">for</span> name <span class="token keyword">in</span> sample<span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"originpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"afterpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>testpath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>testpath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-
-<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token comment"># 3. 把训练集每个分组的图片提取出来，并删除文件夹</span>
-<span class="token keyword">for</span> classname <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>trainpath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    filepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>trainpath<span class="token punctuation">,</span> classname<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>filepath<span class="token punctuation">)</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filepath = %s "</span> <span class="token operator">%</span>  filepath<span class="token punctuation">)</span>
-
-    <span class="token keyword">print</span><span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-    <span class="token keyword">for</span> datename <span class="token keyword">in</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>filepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        datepath <span class="token operator">=</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span>datename<span class="token punctuation">)</span>  <span class="token comment">#每个子文件夹</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"datepath = %s "</span> <span class="token operator">%</span>  datepath<span class="token punctuation">)</span>
-
-        files <span class="token operator">=</span> os<span class="token punctuation">.</span>listdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span>         <span class="token comment">#每个子文件夹的所有文件列表</span>
-        filelength <span class="token operator">=</span> <span class="token builtin">len</span><span class="token punctuation">(</span>files<span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"filelength = %d "</span> <span class="token operator">%</span> filelength<span class="token punctuation">)</span>
-
-        <span class="token keyword">for</span> name <span class="token keyword">in</span> files<span class="token punctuation">:</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"originpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"afterpath = %s"</span><span class="token operator">%</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-            shutil<span class="token punctuation">.</span>move<span class="token punctuation">(</span>os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>datepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>join<span class="token punctuation">(</span>filepath<span class="token punctuation">,</span> name<span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-        <span class="token keyword">if</span> os<span class="token punctuation">.</span>path<span class="token punctuation">.</span>isdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            os<span class="token punctuation">.</span>rmdir<span class="token punctuation">(</span>datepath<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 ]]></content>
       <categories>
         <category>AI</category>
