@@ -78,18 +78,1162 @@
 <p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL21lcm1haWQtanMvbWVybWFpZA==">Mermaid github<i class="fa fa-external-link-alt"></i></span></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly90aGVtZS1uZXh0LmpzLm9yZy9kb2NzL3RhZy1wbHVnaW5zL21lcm1haWQuaHRtbA==">Mermaid 使用文档<i class="fa fa-external-link-alt"></i></span></p>
 <p><span class="exturl" data-url="aHR0cHM6Ly9tZXJtYWlkLWpzLmdpdGh1Yi5pby9tZXJtYWlkLWxpdmUtZWRpdG9yLyMvZWRpdC9leUpqYjJSbElqb2laM0poY0dnZ1ZFUmNiaUFnSUNCQlcwaGhjbVJkSUMwdFBueFVaWGgwZkNCQ0tGSnZkVzVrS1Z4dUlDQWdJRUlnTFMwLUlFTjdSR1ZqYVhOcGIyNTlYRzRnSUNBZ1F5QXRMVDU4VDI1bGZDQkVXMUpsYzNWc2RDQXhYVnh1SUNBZ0lFTWdMUzAtZkZSM2Izd2dSVnRTWlhOMWJIUWdNbDBpTENKdFpYSnRZV2xrSWpwN0luUm9aVzFsSWpvaVpHVm1ZWFZzZENKOUxDSjFjR1JoZEdWRlpHbDBiM0lpT21aaGJITmxmUQ==">Mermaid 在线编辑<i class="fa fa-external-link-alt"></i></span></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="comment">// 获取 offsetTop 会导致回流，因为需要去获取正确的值</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">document</span>.querySelector(<span class="string">&#x27;.test&#x27;</span>).style.offsetTop)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<figure class="highlight yml"><table><tr><td class="code"><pre><span class="line"><span class="attr">canvas_nest:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">onmobile:</span> <span class="literal">true</span> <span class="comment"># display on mobile or not</span></span><br><span class="line">  <span class="attr">color:</span> <span class="string">&#x27;0,0,255&#x27;</span> <span class="comment"># RGB values, use &#x27;,&#x27; to separate</span></span><br><span class="line">  <span class="attr">opacity:</span> <span class="number">0.5</span> <span class="comment"># the opacity of line: 0~1</span></span><br><span class="line">  <span class="attr">zIndex:</span> <span class="number">-1</span> <span class="comment"># z-index property of the background</span></span><br><span class="line">  <span class="attr">count:</span> <span class="number">99</span> <span class="comment"># the number of lines</span></span><br></pre></td></tr></table></figure>
-
 ]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
       <tags>
         <tag>share</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Git 学习笔记</title>
+    <url>/2019/08/08/git/</url>
+    <content><![CDATA[<ul>
+<li>本文档是学习 <span class="exturl" data-url="aHR0cHM6Ly93d3cubGlhb3h1ZWZlbmcuY29tL3dpa2kvMDAxMzczOTUxNjMwNTkyOTYwNmRkMTgzNjEyNDg1NzhjNjdiODA2N2M4YzAxN2IwMDA=">廖雪峰Git教程<i class="fa fa-external-link-alt"></i></span> 后所做的笔记，教程帮忙很大，非常感谢！</li>
+<li>本笔记主要记录了教程中所用的命令，概念内容不包括在内。</li>
+<li>建议看完教程后再看Git官网的 <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9ib29rL3poL3Yy">Pro Git<i class="fa fa-external-link-alt"></i></span> 一书。</li>
+</ul>
+<span id="more"></span>
+
+
+
+<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><ul>
+<li>本文档是学习 <span class="exturl" data-url="aHR0cHM6Ly93d3cubGlhb3h1ZWZlbmcuY29tL3dpa2kvMDAxMzczOTUxNjMwNTkyOTYwNmRkMTgzNjEyNDg1NzhjNjdiODA2N2M4YzAxN2IwMDA=">廖雪峰Git教程<i class="fa fa-external-link-alt"></i></span> 后所做的笔记，教程帮忙很大，非常感谢！</li>
+<li>本笔记主要记录了教程中所用的命令，概念内容不包括在内。</li>
+<li>建议看完教程后再看Git官网的 <span class="exturl" data-url="aHR0cHM6Ly9naXQtc2NtLmNvbS9ib29rL3poL3Yy">Pro Git<i class="fa fa-external-link-alt"></i></span> 一书。</li>
+</ul>
+<h2 id="创建版本库"><a href="#创建版本库" class="headerlink" title="创建版本库"></a>创建版本库</h2><ul>
+<li><p>创建仓库并提交</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git init</code></td>
+<td align="center">初始化一个Git仓库</td>
+</tr>
+<tr>
+<td align="center"><code>git add &lt;file&gt;</code></td>
+<td align="center">添加文件到暂存区（-f 可强制添加）</td>
+</tr>
+<tr>
+<td align="center"><code>git commit -m &quot;提交说明&quot;</code></td>
+<td align="center">从暂存区提交到版本库</td>
+</tr>
+<tr>
+<td align="center"><code>cat &lt;file&gt;</code></td>
+<td align="center">查看文件内容</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="时光机穿梭"><a href="#时光机穿梭" class="headerlink" title="时光机穿梭"></a>时光机穿梭</h2><ul>
+<li><p>查看仓库状态、差异</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git status</code></td>
+<td align="center">查看仓库当前状态</td>
+</tr>
+<tr>
+<td align="center"><code>git diff &lt;file&gt;</code></td>
+<td align="center">比较工作区和暂存区的差异</td>
+</tr>
+<tr>
+<td align="center"><code>git diff --cached &lt;file&gt;</code></td>
+<td align="center">比较暂存区和版本库的差异</td>
+</tr>
+<tr>
+<td align="center"><code>git diff HEAD -- &lt;file&gt;</code></td>
+<td align="center">比较工作区和版本库的差异</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>版本回退</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git log</code></td>
+<td align="center">查看提交历史</td>
+</tr>
+<tr>
+<td align="center"><code>git log -1</code></td>
+<td align="center">查看最后一次提交历史</td>
+</tr>
+<tr>
+<td align="center"><code>git log -num</code></td>
+<td align="center">查看最后num次提交历史</td>
+</tr>
+<tr>
+<td align="center"><code>git log --pretty=oneline</code></td>
+<td align="center">单行格式显示提交历史</td>
+</tr>
+<tr>
+<td align="center"><code>git reflog</code></td>
+<td align="center">查看所有操作记录，包括删除的commit记录</td>
+</tr>
+<tr>
+<td align="center"><code>git reset --hard commit_id</code></td>
+<td align="center">切换到指定版本</td>
+</tr>
+<tr>
+<td align="center"><code>git reset --hard HEAD^</code></td>
+<td align="center">回退上一个版本</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>HEAD 表当前版本， HEAD^ 表上一版本，HEAD^^ 表上两版本，HEAD~99 表上99版本。</p>
+</blockquote>
+</li>
+<li><p>撤销修改</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git checkout -- file</code></td>
+<td align="center">撤销工作区的修改</td>
+</tr>
+<tr>
+<td align="center"><code>git reset HEAD file</code></td>
+<td align="center">撤销暂存区的修改</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>已经提交了不合适的修改到版本库时，想要撤销本次提交，可以版本回退，不过前提是没有推送到远程库。</p>
+</blockquote>
+</li>
+<li><p>删除文件</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git rm &lt;file&gt;</code></td>
+<td align="center">删除一个文件</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="推送到远程库"><a href="#推送到远程库" class="headerlink" title="推送到远程库"></a>推送到远程库</h2><ul>
+<li><p>关联远程库</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git remote add origin git@github.com:Jason-lhh/learngit.git</code></td>
+<td align="center">关联远程库</td>
+</tr>
+<tr>
+<td align="center"><code>git remote -v</code></td>
+<td align="center">查看远程库信息</td>
+</tr>
+<tr>
+<td align="center"><code>git push origin master</code></td>
+<td align="center">推送并关联指定分支到远程库</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>关联后，使用命令<code>git push -u origin master</code><strong>第一次</strong>推送master分支的所有内容；</p>
+</blockquote>
+</li>
+<li><p>从远程库克隆</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git clone git@github.com:Jason-lhh/gitskills.git</code></td>
+<td align="center">将远程仓库克隆到当前目录</td>
+</tr>
+<tr>
+<td align="center"><code>git pull</code></td>
+<td align="center">拉取远程仓库内容</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>先有远程库，后有本地库。要克隆一个仓库，首先必须知道仓库的地址，然后使用 <code>git clone git@github.com:账户名/仓库名字.git</code> 命令。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h2><ul>
+<li><p>创建与合并分支</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git branch &lt;brach&gt;</code></td>
+<td align="center">创建分支</td>
+</tr>
+<tr>
+<td align="center"><code>git branch</code></td>
+<td align="center">查看分支</td>
+</tr>
+<tr>
+<td align="center"><code>git checkout &lt;brach&gt;</code></td>
+<td align="center">切换分支</td>
+</tr>
+<tr>
+<td align="center"><code>git checkout -b &lt;brach&gt;</code></td>
+<td align="center">创建+切换分支</td>
+</tr>
+<tr>
+<td align="center"><code>git merge &lt;brach&gt;</code></td>
+<td align="center">合并某分支到当前分支（fast forward模式）</td>
+</tr>
+<tr>
+<td align="center"><code>git merge --no-ff &lt;branch&gt;</code></td>
+<td align="center">禁用快速合并</td>
+</tr>
+<tr>
+<td align="center"><code>git merge --no-ff -m &quot;提交说明&quot; &lt;branch&gt;</code></td>
+<td align="center">普通方式合并，并附提交说明</td>
+</tr>
+<tr>
+<td align="center"><code>git stash</code></td>
+<td align="center">保存当前工作环境（包括工作区和暂存区）</td>
+</tr>
+<tr>
+<td align="center"><code>git stash list</code></td>
+<td align="center">查看保存的工作列表</td>
+</tr>
+<tr>
+<td align="center"><code>git branch -d &lt;name&gt;</code></td>
+<td align="center">删除分支</td>
+</tr>
+<tr>
+<td align="center"><code>git branch -D &lt;name&gt;</code></td>
+<td align="center">强制删除分支</td>
+</tr>
+<tr>
+<td align="center"><code>git log --graph --pretty=oneline --abbrev-commit</code></td>
+<td align="center">查看分支合并图</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</p>
+</blockquote>
+</li>
+<li><p>分支管理策略图</p>
+</li>
+</ul>
+<p><img data-src="http://otp5qkej4.bkt.clouddn.com/17-8-8/89451458.jpg" alt="此处输入图片的描述"></p>
+<ul>
+<li>Bug分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">st&#x3D;&gt;start: 修复bug</span><br><span class="line">th&#x3D;&gt;operation: git stash 保存当前工作环境</span><br><span class="line">op&#x3D;&gt;operation: 切换master分支创建</span><br><span class="line">切换bug分支修复</span><br><span class="line">op1&#x3D;&gt;operation: 合并bug分支</span><br><span class="line">删除bug分支</span><br><span class="line">en&#x3D;&gt;operation: git stash pop 回到工作现场</span><br><span class="line">e&#x3D;&gt;end: 完成</span><br><span class="line"></span><br><span class="line">st-&gt;th-&gt;op-&gt;op1-&gt;en-&gt;e</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  <code>git stash list</code>   查看当前工作现场<br>  <code>git status</code>  可以用查看工作区是干净的</p>
+</blockquote>
+<ul>
+<li>多人协作</li>
+</ul>
+<p>多人协作的工作模式通常是这样：</p>
+<ol>
+<li>首先，可以试图用<code>git push origin branch-name</code>推送自己的修改；</li>
+<li>如果推送失败，则因为远程分支比你的本地更新，需要先用<code>git pull</code>试图合并；</li>
+<li>如果合并有冲突，则解决冲突，并在本地提交；</li>
+<li>没有冲突或者解决掉冲突后，再用<code>git push origin branch-name</code>推送就能成功！</li>
+</ol>
+<p>如果<code>git pull</code>提示“no tracking information”，则说明本地分支和远程分支的链接关系没有创建，用命令<code>git branch --set-upstream branch-name origin/branch-name</code>。</p>
+<p>这就是多人协作的工作模式，一旦熟悉了，就非常简单。</p>
+<h2 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h2><ul>
+<li><p>标签</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git tag</code></td>
+<td align="center">查看所有标签</td>
+</tr>
+<tr>
+<td align="center"><code>git tag &lt;tag_name&gt;</code></td>
+<td align="center">用于当前分支新建一个标签</td>
+</tr>
+<tr>
+<td align="center"><code>git tag &lt;tag_name&gt; &lt;commit_id&gt;</code></td>
+<td align="center">给指定commit打标签</td>
+</tr>
+<tr>
+<td align="center"><code>git tag -a &lt;tag_name&gt; -m &quot;标签说明&quot; &lt;commit_id&gt;</code></td>
+<td align="center">给指定commit打标签，并附说明</td>
+</tr>
+<tr>
+<td align="center"><code>git tag -s &lt;tag_name&gt; -m &quot;标签说明&quot; &lt;commit_id&gt;</code></td>
+<td align="center">用gpg私钥签名</td>
+</tr>
+<tr>
+<td align="center"><code>git tag -d &lt;tag_name&gt;</code></td>
+<td align="center">删除标签</td>
+</tr>
+<tr>
+<td align="center"><code>git show &lt;tag_name&gt;</code></td>
+<td align="center">显示标签信息</td>
+</tr>
+<tr>
+<td align="center"><code>git push origin &lt;tag_name&gt;</code></td>
+<td align="center">推送标签到远程库</td>
+</tr>
+<tr>
+<td align="center"><code>git push origin --tags</code></td>
+<td align="center">推送所有未推送的标签到远程库</td>
+</tr>
+<tr>
+<td align="center"><code>git push origin :refs/tags/&lt;tag_name&gt;</code></td>
+<td align="center">删除远程标签（先删除本地，再使用该命令删除）</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<h2 id="自定义Git"><a href="#自定义Git" class="headerlink" title="自定义Git"></a>自定义Git</h2><ul>
+<li><p>修改git样式</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git config --global user.name &quot;you_name&quot;</code></td>
+<td align="center">设置全局用户名</td>
+</tr>
+<tr>
+<td align="center"><code>git config --global user.email &quot;email@example.com&quot;</code></td>
+<td align="center">设置全局邮箱</td>
+</tr>
+<tr>
+<td align="center"><code>git config --global color.ui true</code></td>
+<td align="center">设置全局颜色显示</td>
+</tr>
+<tr>
+<td align="center"><code>git config --global alias.&lt;alias_name&gt; &lt;&#39;command_name&#39;&gt;</code></td>
+<td align="center">设置别名</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>忽略特殊文件</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git check-ignore -v &lt;file&gt;</code></td>
+<td align="center">查看忽略该文件的规则</td>
+</tr>
+</tbody></table>
+</li>
+<li><p>配置别名列表</p>
+<table>
+<thead>
+<tr>
+<th align="center">命令代码</th>
+<th align="center">代码含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center"><code>git config --global alias.st status</code></td>
+<td align="center"><code>git st</code></td>
+</tr>
+<tr>
+<td align="center"><code>git config --global alias.co checkout</code></td>
+<td align="center"><code>git checkout &lt;branch_name&gt;</code></td>
+</tr>
+<tr>
+<td align="center"><code>git config --global alias.ci commit</code></td>
+<td align="center"><code>git ci -m &quot;提交说明&quot;</code></td>
+</tr>
+<tr>
+<td align="center"><code>git config --global alias.br branch</code></td>
+<td align="center"><code>git br</code></td>
+</tr>
+<tr>
+<td align="center"><code>git confg alias.unstage &#39;reset HEAD&#39;</code></td>
+<td align="center"><code>git unstage &lt;file&gt;</code></td>
+</tr>
+<tr>
+<td align="center"><code>git confg alias.last &#39;log -1&#39;</code></td>
+<td align="center"><code>git last</code> 最近一次提交</td>
+</tr>
+</tbody></table>
+</li>
+</ul>
+<blockquote>
+<p> <code>git confg alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</code><br> <code>git lg</code> 查看提交历史</p>
+</blockquote>
+<ul>
+<li><span class="exturl" data-url="aHR0cHM6Ly93d3cubGlhb3h1ZWZlbmcuY29tL3dpa2kvMDAxMzczOTUxNjMwNTkyOTYwNmRkMTgzNjEyNDg1NzhjNjdiODA2N2M4YzAxN2IwMDAvMDAxMzc1ODM3NzAzNjA1NzliYzRiNDU4ZjA0NGNlN2FmZWQzZGY1NzkxMjNlY2EwMDA=">搭建Git服务器<i class="fa fa-external-link-alt"></i></span></li>
+</ul>
+]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>Git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue</title>
+    <url>/2022/08/07/Vue/</url>
+    <content><![CDATA[<p>介绍目前常见前端面试题，Vue基础原理题</p>
+<span id="more"></span>
+
+
+
+<h1 id="Vue-基本使用"><a href="#Vue-基本使用" class="headerlink" title="Vue 基本使用"></a>Vue 基本使用</h1><h2 id="computed-和watch"><a href="#computed-和watch" class="headerlink" title="computed 和watch"></a>computed 和watch</h2><ul>
+<li>computed 有缓存，data不变则不会重新计算</li>
+<li>watch如何深度监听？</li>
+<li>watch 监听引用类型，拿不到oldVal</li>
+</ul>
+<h2 id="class和-style"><a href="#class和-style" class="headerlink" title="class和 style"></a>class和 style</h2><ul>
+<li>使用动态属性</li>
+<li>使用驼峰式写法</li>
+</ul>
+<h2 id="条件渲染"><a href="#条件渲染" class="headerlink" title="条件渲染"></a>条件渲染</h2><ul>
+<li>V-if v-else的用法，可使用变量，也可以使用===表达式</li>
+<li>v-if 和 V-show的区别？</li>
+<li>v-if 和 V-show的使用场景？</li>
+</ul>
+<h2 id="循环（列表）渲染"><a href="#循环（列表）渲染" class="headerlink" title="循环（列表）渲染"></a>循环（列表）渲染</h2><ul>
+<li>如何遍历对象？——也可以用V-for</li>
+<li>key的重要性。key 不能乱写（如random或者index）</li>
+<li>V-for和v-if不能一起使用！</li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><ul>
+<li>event参数，自定义参数</li>
+</ul>
+<ol>
+<li><p>event 是原生的</p>
+</li>
+<li><p>事件被挂载到当前元素</p>
+</li>
+</ol>
+<p>​     和 DOM 事件一样</p>
+<ul>
+<li>事件修饰符，按键修饰符</li>
+</ul>
+<p>事件修饰符</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;！--阻止单击事件继续传播--&gt;</span><br><span class="line">&lt;a v-on:click.stop&#x3D;&quot;doThis&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">&lt;！--提交事件不再重载页面--&gt;</span><br><span class="line">&lt;form v-on:submit.prevent&#x3D;&quot;onSubmit&quot;&gt;&lt;&#x2F;form&gt;</span><br><span class="line">&lt;！--修饰符可以串联--&gt;</span><br><span class="line">&lt;a v-on:click.stop.prevent&#x3D;&quot;doThat&quot;&gt;&lt;&#x2F;a&gt;</span><br><span class="line">&lt;！--只有修饰符--&gt;</span><br><span class="line">&lt;form v-on:submit.prevent&gt;&lt;&#x2F;form&gt;</span><br><span class="line">&lt;！--添加事件监听器时使用事件捕获模式--&gt;</span><br><span class="line">&lt;！--即内部元素触发的事件先在此处理，然后才交由内部元素进行处理--&gt;</span><br><span class="line">&lt;div v-on:click.capture&#x3D;&quot;doThis&quot;&gt;...&lt;&#x2F;div&gt;</span><br><span class="line">&lt;！--只当在event.target是当前元素自身时触发处理函数--&gt;</span><br><span class="line">&lt;！--即事件不是从内部元素触发的--&gt;</span><br><span class="line">&lt;div v-on:click.self&#x3D;&quot;doThat&quot;&gt;...&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<p>按键修饰符</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;！--即使ALt或Shift被一同按下时也会触发--&gt;</span><br><span class="line">&lt;button @click.ctrl&#x3D;&quot;onClick&quot;&gt;A&lt;&#x2F;button&gt;</span><br><span class="line">&lt;！--有且只有Ctrl被按下的时候才触发--&gt;</span><br><span class="line">&lt;button @click.ctrl.exact&#x3D;&quot;onCtrlClick&quot;&gt;A&lt;&#x2F;button&gt;</span><br><span class="line">&lt;！--没有任何系统修饰符被按下的时候才触发--&gt;</span><br><span class="line">&lt;button @click.exact&#x3D;&quot;onClick&quot;&gt;A&lt;&#x2F;button&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<ul>
+<li>【观察】事件被绑定到哪里？</li>
+</ul>
+<h2 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h2><ul>
+<li>v-model</li>
+<li>常见表单项textarea checkbox radio select</li>
+<li>修饰符lazy number trim</li>
+</ul>
+<h2 id="Vue-组件使用"><a href="#Vue-组件使用" class="headerlink" title="Vue 组件使用"></a>Vue 组件使用</h2><ul>
+<li>props和$emit</li>
+<li>组件间通讯-自定义事件</li>
+<li>组件生命周期</li>
+</ul>
+<h2 id="生命周期（单个组件）"><a href="#生命周期（单个组件）" class="headerlink" title="生命周期（单个组件）"></a>生命周期（单个组件）</h2><ul>
+<li>挂载阶段 created mounted </li>
+<li>更新阶段 updated</li>
+<li>销毁阶段 destroyed</li>
+</ul>
+<p><img data-src="https://cn.vuejs.org/images/lifecycle.png" alt="Vue 实例生命周期"></p>
+<blockquote>
+<p>created mounted的区别</p>
+<p>el temp之间，create Vue实例初始化了，但还没渲染完成，mount已经渲染完成</p>
+</blockquote>
+<h1 id="Vue-高级特性"><a href="#Vue-高级特性" class="headerlink" title="Vue 高级特性"></a>Vue 高级特性</h1><ul>
+<li>不是每个都很常用，但用到的时候必须要知道</li>
+<li>考察候选人对Vue的掌握是否全面，且有深度</li>
+<li>考察做过的项目是否有深度和复杂度（至少能用到高级特性）</li>
+</ul>
+<h2 id="Vue-高级特性-1"><a href="#Vue-高级特性-1" class="headerlink" title="Vue 高级特性"></a>Vue 高级特性</h2><ul>
+<li>自定义v-model</li>
+<li>$nextTick</li>
+<li>slot</li>
+<li>动态、异步组件</li>
+<li>keep-alive</li>
+<li>mixin</li>
+</ul>
+<h2 id="nextTick"><a href="#nextTick" class="headerlink" title="$nextTick"></a>$nextTick</h2><ul>
+<li>Vue 是异步渲染（原理部分会详细讲解）</li>
+<li>data改变之后，DOM不会立刻渲染</li>
+<li>$nextTick会在DOM 渲染之后被触发，以获取最新DOM节点</li>
+</ul>
+<h2 id="slot"><a href="#slot" class="headerlink" title="slot"></a>slot</h2><ul>
+<li>基本使用</li>
+<li>作用域插槽</li>
+<li>具名插槽</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220805160755455.png" alt="image-20220805160755455"></p>
+<h2 id="动态组件"><a href="#动态组件" class="headerlink" title="动态组件"></a>动态组件</h2><ul>
+<li>:is=”component-name”用法</li>
+<li>需要根据数据，动态渲染的场景。即组件类型不确定。</li>
+</ul>
+<h2 id="异步组件"><a href="#异步组件" class="headerlink" title="异步组件"></a>异步组件</h2><ul>
+<li>import()函数</li>
+<li>按需加载，异步加载大组件</li>
+</ul>
+<h2 id="keep-alive"><a href="#keep-alive" class="headerlink" title="keep-alive"></a>keep-alive</h2><ul>
+<li>缓存组件</li>
+<li>频繁切换，不需要重复渲染</li>
+<li>Vue常见性能优化</li>
+</ul>
+<p>应用场景：tab切换 </p>
+<p>在Vue层级里面缓存切换，而v-show是在css层级display：none里</p>
+<h2 id="mixin"><a href="#mixin" class="headerlink" title="mixin"></a>mixin</h2><ul>
+<li>多个组件有相同的逻辑，抽离出来</li>
+<li>mixin 并不是完美的解决方案，会有一些问题</li>
+<li>Vue3提出的Composition API 旨在解决这些问题</li>
+</ul>
+<h3 id="mixin的问题"><a href="#mixin的问题" class="headerlink" title="mixin的问题"></a>mixin的问题</h3><ul>
+<li>变量来源不明确，不利于阅读</li>
+<li>多mixin 可能会造成命名冲突</li>
+<li>mixin 和组件可能出现多对多的关系，复杂度较高</li>
+</ul>
+<h2 id="相关的面试技巧"><a href="#相关的面试技巧" class="headerlink" title="相关的面试技巧"></a>相关的面试技巧</h2><ul>
+<li>可以不太深入，但必须知道</li>
+<li>熟悉基本用法，了解使用场景</li>
+<li>最好能和自己的项目经验结合起来</li>
+</ul>
+<h1 id="Vuex-使用"><a href="#Vuex-使用" class="headerlink" title="Vuex 使用"></a>Vuex 使用</h1><ul>
+<li>面试考点并不多（因为熟悉Vue之后，vuex 没有难度）</li>
+<li>但基本概念、基本使用和API必须要掌握</li>
+<li>可能会考察 state的数据结构设计（后面会讲）</li>
+</ul>
+<h2 id="Vuex-基本概念"><a href="#Vuex-基本概念" class="headerlink" title="Vuex 基本概念"></a>Vuex 基本概念</h2><ul>
+<li>state</li>
+<li>mutation</li>
+<li>getters</li>
+<li>action</li>
+</ul>
+<h2 id="用于Vue组件"><a href="#用于Vue组件" class="headerlink" title="用于Vue组件"></a>用于Vue组件</h2><ul>
+<li>dispatch</li>
+<li>commit</li>
+<li>mapState</li>
+<li>mapGetters</li>
+<li>mapActions</li>
+<li>mapMutations</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220805221041300.png" alt="image-20220805221041300"></p>
+<p>Actions才能做异步操作</p>
+<h2 id="Vue-router-使用"><a href="#Vue-router-使用" class="headerlink" title="Vue-router 使用"></a>Vue-router 使用</h2><ul>
+<li>面试考点并不多（前提是熟悉Vue）</li>
+<li>路由模式（hash、H5 history）</li>
+<li>路由配置（动态路由、懒加载）</li>
+</ul>
+<h3 id="Vue-router-路由模式"><a href="#Vue-router-路由模式" class="headerlink" title="Vue-router 路由模式"></a>Vue-router 路由模式</h3><ul>
+<li>hash模式（默认），如<span class="exturl" data-url="aHR0cDovL2FiYy5jb20vIy91c2VyLzEw">http://abc.com/#/user/10<i class="fa fa-external-link-alt"></i></span></li>
+<li>H5 history 模式，如<span class="exturl" data-url="aHR0cDovL2FiYy5jb20vdXNlci8yMA==">http://abc.com/user/20<i class="fa fa-external-link-alt"></i></span></li>
+<li>后者需要server 端支持，因此无特殊需求可选择前者</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter（&#123;</span><br><span class="line">	mode: ‘history<span class="string">&#x27;, //使用h5 history模式</span></span><br><span class="line"><span class="string">    routes: [...]</span></span><br><span class="line"><span class="string">&#125;）</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="动态路由"><a href="#动态路由" class="headerlink" title="动态路由"></a>动态路由</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> User=&#123;</span><br><span class="line">    <span class="comment">//获取参数如 10 20</span></span><br><span class="line">    template: <span class="string">&#x27;&lt;div&gt; User &#123;&#123; $route.params.id &#125;&#125; &lt;/div&gt;&#x27;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes:[</span><br><span class="line">        <span class="comment">//动态路径参数以冒号开头。能命中/user/10 /user/20等格式的路由</span></span><br><span class="line">        &#123; </span><br><span class="line">            path:‘/user/:id<span class="string">&#x27;, </span></span><br><span class="line"><span class="string">         	component: User</span></span><br><span class="line"><span class="string">        &#125;</span></span><br><span class="line"><span class="string">    ]</span></span><br><span class="line"><span class="string">&#125;)</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="懒加载"><a href="#懒加载" class="headerlink" title="懒加载"></a>懒加载</h4><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">	routes:[</span><br><span class="line">        &#123;</span><br><span class="line">            path:<span class="string">&#x27;/&#x27;</span>, </span><br><span class="line">            component:<span class="function">()=&gt;</span><span class="keyword">import</span>(</span><br><span class="line">                <span class="comment">/* webpackChunkName:&quot;navigator&quot;*/</span></span><br><span class="line">                <span class="string">&#x27;/../components/Navigator&#x27;</span></span><br><span class="line">            )</span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            path:<span class="string">&#x27;/feedback&#x27;</span>, </span><br><span class="line">            component:<span class="function">()=&gt;</span><span class="keyword">import</span>(</span><br><span class="line">                <span class="comment">/* webpackChunkName:&quot;feedback&quot;*/</span></span><br><span class="line">                <span class="string">&#x27;./../components/FeedBack&#x27;</span></span><br><span class="line">            )</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Vuex-Vue-router总结"><a href="#Vuex-Vue-router总结" class="headerlink" title="Vuex Vue-router总结"></a>Vuex Vue-router总结</h3><ul>
+<li>面试考点并不多（前提是熟悉Vue）</li>
+<li>掌握基本概念，基本使用</li>
+<li>面试官时间有限，需考察最核心、最常用的问题，而非边角问题</li>
+</ul>
+<h2 id="Vue-原理（大厂必考）"><a href="#Vue-原理（大厂必考）" class="headerlink" title="Vue 原理（大厂必考）"></a>Vue 原理（大厂必考）</h2><ul>
+<li>面试为何会考察原理？<ul>
+<li>之前然知其所以然——各行业通用的道理</li>
+<li>了解原理，才能应用的更好（竞争激烈，择优录取）</li>
+<li>大厂造轮子（有钱有资源，业务定制，技术KPI）</li>
+</ul>
+</li>
+<li>面试中如何考察？以何种方式？<ul>
+<li>考察重点，而不是考察细节。掌握好2/8原则</li>
+<li>和使用相关联的原理，例如vdom、模板渲染</li>
+<li>整体流程是否全面？热门技术是否有深度？</li>
+</ul>
+</li>
+<li>Vue 原理包括哪些？<ul>
+<li>组件化</li>
+<li>响应式</li>
+<li>vdom和diff</li>
+<li>模板编译</li>
+<li>渲染过程</li>
+<li>前端路由</li>
+</ul>
+</li>
+</ul>
+<h2 id="组件化基础"><a href="#组件化基础" class="headerlink" title="组件化基础"></a>组件化基础</h2><ul>
+<li>“很久以前“就有组件化<ul>
+<li>asp jsp php 已经有组件化了</li>
+<li>nodejs 中也有类似的组件化</li>
+</ul>
+</li>
+<li>数据驱动视图（MVVM，setState）<ul>
+<li>传统组件，只是静态渲染，更新还要依赖于操作DOM</li>
+<li>数据驱动视图-Vue MVVM</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://img-blog.csdnimg.cn/20210203114716657.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTUyMw==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ul>
+<li>数据驱动视图-React setState（暂时按下不表）</li>
+</ul>
+<h2 id="Vue-响应式"><a href="#Vue-响应式" class="headerlink" title="Vue 响应式"></a>Vue 响应式</h2><ul>
+<li>组件data的数据一旦变化，立刻触发视图的更新</li>
+<li>实现数据驱动视图的第一步</li>
+<li>考察Vue原理的第一题</li>
+</ul>
+<ul>
+<li>核心API-Object.defineProperty</li>
+<li>如何实现响应式，代码演示</li>
+<li>Object.defineProperty的一些缺点（Vue3.0启用Proxy）<ul>
+<li>Proxy 兼容性不好，且无法polyfill</li>
+<li>Vue2.x还会存在一段时间，所以都得学</li>
+<li>Vue3.0相关知识，下一章讲，这里只是先提一下</li>
+</ul>
+</li>
+</ul>
+<h3 id="Object-defineProperty-基本用法"><a href="#Object-defineProperty-基本用法" class="headerlink" title="Object.defineProperty 基本用法"></a>Object.defineProperty 基本用法</h3><figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> data = &#123;&#125;</span><br><span class="line"><span class="keyword">const</span> name = <span class="string">&#x27;zhangsan&#x27;</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(data,<span class="string">&quot;name&quot;</span>,&#123;</span><br><span class="line">    get: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;get&#x27;</span>)</span><br><span class="line">        <span class="keyword">return</span> name</span><br><span class="line">    &#125;, </span><br><span class="line">    set: <span class="function"><span class="keyword">function</span>(<span class="params">newVal</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">&#x27;set&#x27;</span>)</span><br><span class="line">        name=newVal</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">//测试</span></span><br><span class="line"><span class="built_in">console</span>.log(data.name) <span class="comment">//get zhangsan</span></span><br><span class="line">data.name=<span class="string">&#x27;list&#x27;</span>        <span class="comment">//set</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="Object-defineProperty-实现响应式"><a href="#Object-defineProperty-实现响应式" class="headerlink" title="Object.defineProperty 实现响应式"></a>Object.defineProperty 实现响应式</h3><ul>
+<li>如何监听对象（深度监听），监听数组（需要特殊处理）</li>
+<li>复杂对象，深度监听</li>
+<li>Object.defineProperty <strong>缺点：</strong><ul>
+<li>深度监听，需要递归到底，一次性计算量大</li>
+<li>无法监听新增属性/删除属性（Vue.set Vue.delete）</li>
+<li>无法原生监听数组，需要特殊处理</li>
+</ul>
+</li>
+</ul>
+<h2 id="虚拟DOM（Virtual-DOM）和diff"><a href="#虚拟DOM（Virtual-DOM）和diff" class="headerlink" title="虚拟DOM（Virtual DOM）和diff"></a>虚拟DOM（Virtual DOM）和diff</h2><ul>
+<li>vdom 是实现vue和React的重要基石</li>
+<li>dif 算法是vdom中最核心、最关键的部分</li>
+<li>vdom是一个热门话题，也是面试中的热门问题</li>
+</ul>
+<h3 id="VDOM"><a href="#VDOM" class="headerlink" title="VDOM"></a>VDOM</h3><h4 id="原因："><a href="#原因：" class="headerlink" title="原因："></a>原因：</h4><ul>
+<li>DOM操作非常耗费性能</li>
+<li>以前用jQuery，可以自行控制DOM操作的时机，手动调整</li>
+<li>Vue和React 是数据驱动视图，如何有效控制DOM操作？</li>
+</ul>
+<h4 id="解决方案-vdom"><a href="#解决方案-vdom" class="headerlink" title="解决方案-vdom"></a>解决方案-vdom</h4><ul>
+<li>有了一定复杂度，想减少计算次数比较难</li>
+<li>能不能把计算，更多的转移为JS计算？因为JS执行速度很快</li>
+<li>vdom-用JS模拟DOM结构，计算出最小的变更，操作DOM</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220807004410446.png" alt="image-20220807004410446"></p>
+<h4 id="通过snabbdom学习vdom"><a href="#通过snabbdom学习vdom" class="headerlink" title="通过snabbdom学习vdom"></a>通过snabbdom学习vdom</h4><ul>
+<li><p>简洁强大的vdom库，易学易用</p>
+</li>
+<li><p>Vue 参考它实现的vdom和diff</p>
+</li>
+<li><p><span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL3NuYWJiZG9tL3NuYWJiZG9t">https://github.com/snabbdom/snabbdom<i class="fa fa-external-link-alt"></i></span></p>
+</li>
+<li><p>Vue3.0重写了vdom的代码，优化了性能</p>
+</li>
+<li><p>但vdom的基本理念不变，面试考点也不变</p>
+</li>
+<li><p>React vdom具体实现和Vue也不同，但不妨碍统一学习</p>
+</li>
+</ul>
+<h4 id="snabbdom-重点总结"><a href="#snabbdom-重点总结" class="headerlink" title="snabbdom 重点总结"></a>snabbdom 重点总结</h4><ul>
+<li>h函数</li>
+<li>vnode 数据结构</li>
+<li>patch 函数</li>
+</ul>
+<h4 id="vdom总结"><a href="#vdom总结" class="headerlink" title="vdom总结"></a>vdom总结</h4><ul>
+<li>用JS模拟DOM结构（vnode）</li>
+<li>新旧vnode对比，得出最小的更新范围，最后更新DOM</li>
+<li>数据驱动视图的模式下，有效控制DOM操作</li>
+</ul>
+<h3 id="diff-算法"><a href="#diff-算法" class="headerlink" title="diff 算法"></a>diff 算法</h3><ul>
+<li>diff 算法是vdom中最核心、最关键的部分</li>
+<li>diff 算法能在日常使用vue React中体现出来（如key）</li>
+<li>dif 算法是前端热门话题，面试“宠儿”</li>
+</ul>
+<h4 id="diff-算法概述"><a href="#diff-算法概述" class="headerlink" title="diff 算法概述"></a>diff 算法概述</h4><ul>
+<li>diff即对比，是一个广泛的概念，如linux diff命令、git diff等</li>
+<li>两个js对象也可以做 diff，如 <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2N1am9qcy9qaWZm">https://github.com/cujojs/jiff<i class="fa fa-external-link-alt"></i></span></li>
+<li>两棵树做 diff，如这里的vdom diff</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220807012438747.png" alt="image-20220807012438747"></p>
+<h4 id="树diff的时间复杂度O-n-3"><a href="#树diff的时间复杂度O-n-3" class="headerlink" title="树diff的时间复杂度O(n^3)"></a>树diff的时间复杂度O(n^3)</h4><ul>
+<li>第一，遍历tree1</li>
+<li>第二，遍历tree2</li>
+<li>第三，排序</li>
+<li>1000个节点，要计算1亿次，算法不可用</li>
+</ul>
+<h4 id="优化时间复杂度到O-n"><a href="#优化时间复杂度到O-n" class="headerlink" title="优化时间复杂度到O(n)"></a>优化时间复杂度到O(n)</h4><ul>
+<li>只比较同一层级，不跨级比较</li>
+<li>tag不相同，则直接删掉重建，不再深度比较</li>
+<li>tag和key，两者都相同，则认为是相同节点，不再深度比较</li>
+</ul>
+<h4 id="diff-算法总结"><a href="#diff-算法总结" class="headerlink" title="diff 算法总结"></a>diff 算法总结</h4><ul>
+<li>patchVnode</li>
+<li>addVnodes removeVnodes</li>
+<li>updateChildren（key的重要性）</li>
+</ul>
+<h3 id="vdom-和-diff-总结"><a href="#vdom-和-diff-总结" class="headerlink" title="vdom 和 diff-总结"></a>vdom 和 diff-总结</h3><ul>
+<li>细节不重要，updateChildren的过程也不重要，不要深究</li>
+<li>vdom核心概念很重要：h、vnode、patch、diff、key等</li>
+<li>vdom存在的价值更加重要：数据驱动视图，控制DOM操作</li>
+</ul>
+<h2 id="模板编译"><a href="#模板编译" class="headerlink" title="模板编译"></a>模板编译</h2><ul>
+<li>模板是vue开发中最常用的部分，即与使用相关联的原理</li>
+<li>它不是html，有指令、插值、JS表达式，到底是什么？</li>
+<li>面试不会直接问，但会通过“组件渲染和更新过程”考察</li>
+</ul>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><ul>
+<li>前置知识：JS 的 with 语法<ul>
+<li>改变 {} 内自由变量的查找规则，当做 obj 属性来查找</li>
+<li>如果找不到匹配的 obj 属性，就会报错</li>
+<li>with要慎用，它打破了作用域规则，易读性变差</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808185033268.png" alt="JS 的 with 语法"></p>
+<ul>
+<li>vue template complier 将模板编译为 render 函数</li>
+<li>执行 render 函数生成 vnode</li>
+</ul>
+<h3 id="编译模板"><a href="#编译模板" class="headerlink" title="编译模板"></a>编译模板</h3><ul>
+<li>模板不是html，有指令、插值、JS表达式，能实现判断、循环</li>
+<li>html是标签语言，只有JS才能实现判断、循环（图灵完备的）</li>
+<li>因此，模板一定是转换为某种JS代码，即编译模板</li>
+</ul>
+<ul>
+<li>原理：<ul>
+<li>模板编译为render函数，执行render 函数返回vnode</li>
+<li>基于vnode 再执行patch 和diff（后面会讲）</li>
+<li>使用webpack vue-loader，会在开发环境下编译模板（重要）</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>vue 组件中使用render代替 template<ul>
+<li>讲完模板编译，再讲这个render，就比较好理解了</li>
+<li>在有些复杂情况中，不能用template，可以考虑用 render</li>
+<li>React 一直都用render（没有模板），和这里一样</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">Vue.component(<span class="string">&#x27;heading&#x27;</span>,&#123;</span><br><span class="line">    <span class="comment">// template: `xxxx`, </span></span><br><span class="line">	render: <span class="function"><span class="keyword">function</span>(<span class="params">createElement</span>)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> createElement(</span><br><span class="line">    		<span class="string">&#x27;h&#x27;</span>+<span class="built_in">this</span>.level,  </span><br><span class="line">			[</span><br><span class="line">				createElement(<span class="string">&#x27;a&#x27;</span>, &#123;</span><br><span class="line">    				attrs: &#123;</span><br><span class="line">    					name:<span class="string">&#x27;headerId&#x27;</span>, </span><br><span class="line">						href: <span class="string">&#x27;#&#x27;</span> + <span class="string">&#x27;headerId&#x27;</span></span><br><span class="line">					&#125;</span><br><span class="line">				&#125;,<span class="string">&#x27; this is a tag&#x27;</span>)</span><br><span class="line">			]</span><br><span class="line">		)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>with 语法</li>
+<li>模板到 render 函数，再到 vnode，再到渲染和更新</li>
+<li>vue 组件可以用 render 代替 template</li>
+</ul>
+<h2 id="组件渲染-更新过程"><a href="#组件渲染-更新过程" class="headerlink" title="组件渲染/更新过程"></a>组件渲染/更新过程</h2><ul>
+<li>一个组件渲染到页面，修改data触发更新（数据驱动视图）</li>
+<li>其背后原理是什么，需要掌握哪些要点？</li>
+<li>考察对流程了解的全面程度</li>
+</ul>
+<h3 id="回顾学过的知识"><a href="#回顾学过的知识" class="headerlink" title="回顾学过的知识"></a>回顾学过的知识</h3><ul>
+<li>响应式：监听 data 属性 getter setter（包括数组）</li>
+<li>模板编译：模板到render函数，再到vnode</li>
+<li>vdom:patch（elem，vnode）和patch（vnode，newVnode）</li>
+</ul>
+<h3 id="组件渲染-更新过程-1"><a href="#组件渲染-更新过程-1" class="headerlink" title="组件渲染/更新过程"></a>组件渲染/更新过程</h3><ul>
+<li>初次渲染过程<ul>
+<li>解析模板为render函数（或在开发环境已完成，vue-loader）</li>
+<li>触发响应式，监听 data 属性 getter setter</li>
+<li>执行render函数，生成vnode，patch（elem，vnode）<ul>
+<li>注意点 ：执行 render 函数会触发 getter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>更新过程<ul>
+<li>修改data，触发setter（此前在getter中已被监听）</li>
+<li>重新执行render 函数，生成newVnode</li>
+<li>patch（vnode，newVnode）</li>
+</ul>
+</li>
+<li>异步渲染<ul>
+<li>回顾$nextTick</li>
+<li>汇总data的修改，一次性更新视图</li>
+<li>减少DOM操作次数，提高性能</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808224251967.png" alt="完成流程图"></p>
+<h3 id="总结-1"><a href="#总结-1" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>渲染和响应式的关系</li>
+<li>渲染和模板编译的关系</li>
+<li>渲染和vdom的关系</li>
+<li>初次渲染过程</li>
+<li>更新过程</li>
+<li>异步渲染</li>
+</ul>
+<h2 id="前端路由原理"><a href="#前端路由原理" class="headerlink" title="前端路由原理"></a>前端路由原理</h2><ul>
+<li>稍微复杂一点的SPA(单页面应用)，都需要路由</li>
+<li>vue-router 也是vue全家桶的标配之一</li>
+<li>属于“和日常使用相关联的原理”，面试常考</li>
+</ul>
+<ul>
+<li>回顾vue-router的路由模式<ul>
+<li>hash（默认）<ul>
+<li>hash变化会触发网页跳转，即浏览器的前进、后退</li>
+<li>hash 变化不会刷新页面，SPA必需的特点</li>
+<li>hash 永远不会提交到server端（前端自生自灭）</li>
+</ul>
+</li>
+<li>H5 history<ul>
+<li>用url规范的路由，但<strong>跳转时不刷新页面</strong></li>
+<li>history.pushState</li>
+<li>window.onpopstate</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808225514147.png" alt="网页url组成部分"></p>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808230646856.png" alt="hash代码演示"></p>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808231904132.png" alt="H5 history代码演示"></p>
+<h3 id="总结-2"><a href="#总结-2" class="headerlink" title="总结"></a>总结</h3><ul>
+<li>hash - window.onhashchange</li>
+<li>H5 history - history.pushState 和 window.onpopstate</li>
+<li>H5 history 需要后端支持</li>
+</ul>
+<h3 id="两者选择"><a href="#两者选择" class="headerlink" title="两者选择"></a>两者选择</h3><ul>
+<li>to B的系统推荐用hash，简单易用，对url规范不敏感<ul>
+<li>后台管理页面</li>
+</ul>
+</li>
+<li>to C的系统，可以考虑选择H5 history，但需要服务端支持</li>
+<li>能选择简单的，就别用复杂的，要考虑成本和收益</li>
+</ul>
+<h1 id="面试题"><a href="#面试题" class="headerlink" title="面试题"></a>面试题</h1><h2 id="❤-v-if-和-v-show区别"><a href="#❤-v-if-和-v-show区别" class="headerlink" title="❤ v-if 和 v-show区别"></a>❤ v-if 和 v-show区别</h2><ul>
+<li><strong>得分点</strong> v-show true/false都渲染 、 v-if true渲染 false不渲染</li>
+<li><strong>标准回答</strong><ul>
+<li>作用: 都是控制元素隐藏和显示的指令</li>
+<li>区别： <ul>
+<li><strong>v-show:</strong> 控制的元素无论是true还是false，都被渲染出来了，通过CSS display：none控制元素隐藏 </li>
+<li><strong>v-if:</strong> 控制的元素是true，进行渲染，如果是false不渲染，根本在dom树结构中不显示</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li>应用：<ul>
+<li><strong>v-show:</strong> 适合使用在切换频繁显示/隐藏的元素上</li>
+<li><strong>v-if:</strong> 适合使用在切换不频繁，且元素内容很多，渲染一次性能消耗很大的元素上</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-v-for-为什么要用-key"><a href="#❤-v-for-为什么要用-key" class="headerlink" title="❤ v-for 为什么要用 key"></a>❤ v-for 为什么要用 key</h2><ul>
+<li><strong>得分点</strong> 性能优化、diff算法节点比对、key不能是index</li>
+<li><strong>标准回答</strong> <ul>
+<li>为了性能优化 因为vue是虚拟DOM，更新DOM时用diff算法对节点进行一一比对，比如有很多li元素，要在某个位置插入一个li元素，但没有给li上加key，那么在进行运算的时候，就会将所有li元素重新渲染一遍，但是如果有key，那么它就会按照key一一比对li元素，只需要创建新的li元素，插入即可，不需要对其他元素进行修改和重新渲染。</li>
+<li>必须用key，且不能是index和random</li>
+<li><strong>原理：</strong>diff 算法中通过 tag 和 key 来判断，是否是 sameNode</li>
+<li><strong>效果：</strong>减少渲染次数，提升渲染性能</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> <ul>
+<li>key也不能是li元素的index，因为假设我们给数组前插入一个新元素，它的下标是0，那么和原来的第一个元素重复了，整个数组的key都发生了改变，这样就跟没有key的情况一样了</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-Vue-组件生命周期"><a href="#❤-Vue-组件生命周期" class="headerlink" title="❤ Vue 组件生命周期"></a>❤ Vue 组件生命周期</h2><ul>
+<li><strong>得分点</strong> beforeCreate、created、beforeMounted、mounted beforeUpdate、updated 、 beforeDestroy、destroyed</li>
+<li><strong>标准回答</strong> <ul>
+<li>钩子函数用来描述一个组件从引入到退出的全过程中的某个过程，整个过程称为生命周期。 </li>
+<li>钩子函数按照组件生命周期的过程分为，挂载阶段=&gt;更新阶段=&gt;销毁阶段。 </li>
+<li>每个阶段对应的钩子函数 挂载阶段：beforeCreate、created、beforeMounted、mounted 更新阶段：beforeUpdate、updated 销毁阶段：beforeDestroy、destroyed 每个阶段特点与适合做什么 <ul>
+<li>created：实例创建完成，可访问data、computed、watch、methods上的方法和数据，未挂载到DOM，不能访问到el属性，el属性，ref属性内容为空数组常用于简单的ajax请求，页面的初始化 </li>
+<li>beforeMount：在挂载开始之前被调用，beforeMount之前，会找到对应的template，并编译成render函数 </li>
+<li>mounted：实例挂载到DOM上，此时可以通过DOM API获取到DOM节点，$ref属性可以访问常用于获取VNode信息和操作，ajax请求 </li>
+<li>beforeupdate：响应式数据更新时调用，发生在虚拟DOM打补丁之前，适合在更新之前访问现有的DOM，比如手动移除已添加的事件监听器 </li>
+<li>updated：虚拟 DOM 重新渲染和打补丁之后调用，组件DOM已经更新，可执行依赖于DOM的操作避免在这个钩子函数中操作数据，可能陷入死循环 </li>
+<li>beforeDestroy：实例销毁之前调用。这一步，实例仍然完全可用，this仍能获取到实例，常用于销毁定时器、解绑全局事件、销毁插件对象等操作</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> </li>
+<li>父子组件钩子函数在三个阶段的代码执行顺序：<ul>
+<li><strong>挂载：</strong>父亲created&gt; 子created &gt; 子mounted&gt; 父亲mounted&gt; </li>
+<li><strong>更新：</strong>父亲beforeUpdate &gt; 子beforeUpdated &gt; 子updated &gt; 父亲updated </li>
+<li><strong>销毁：</strong>父亲beforeDestroy&gt; 子beforeDestroy &gt; 子destroyed&gt; 父destroyed</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-Vue-组件通信的方式"><a href="#❤-Vue-组件通信的方式" class="headerlink" title="❤ Vue 组件通信的方式"></a>❤ Vue 组件通信的方式</h2><ul>
+<li><strong>得分点</strong> 父子通信、自定义属性、<code>props</code>、<code>$emit</code>、<code>EventBus</code>、<code>$on</code>、<code>VueX </code></li>
+<li><strong>标准回答</strong></li>
+<li>Vue组件的通信方式分为两大类，一类是父子组件通信，另一类是任何关系类型组件通信（父子、兄弟、非兄弟） <ul>
+<li><strong>父子组件的通信方式：</strong> <ul>
+<li>父给子传递数据，通过给子组件添加自定义属性，比如：，list是父组件给子组件传递的数据。子获取父的数据，在子组件中使用props属性获取，props是只读，不可以被修改，所有被修改都会失效和被警告 </li>
+<li>子给父传递数据，通过给子组件传递父组件的方法，子组件调用父组件的方法传递数据，比如：<code>deleteHandler</code>就是父组件的函数，在子组件中通过<code>this.$emit(&#39;方法名&#39;,参数)</code>，调用父组件的方法，并把数据传递到父组件。 </li>
+</ul>
+</li>
+<li><strong>任何关系类型组件通信（父子、兄弟、非兄弟）方式：</strong> 自定义事件<ul>
+<li>EventBus： 使用方法是创建一个新的Vue实例，需要通信的组件都引入该Vue实例，传递数据的组件使用 <code>event.$emit(&#39;名称&#39;,参数)</code>发送数据，接收数据的组件使用 <code>event.$on(&#39;名称&#39;,方法)</code>接收数据。</li>
+</ul>
+</li>
+<li>VueX： 集中管理项目公共数据，Vuex 的状态存储是响应式的，当 Vue 组件从 store 中读取状态的时候，若 store 中的状态发生变化，那么相应的组件也会相应地得到高效更新。不能直接改变 store 中的状态。改变 store 中的状态的唯一途径就是显式地提交 (commit) mutation。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong></li>
+<li>EventBus的优缺点，<ul>
+<li><strong>缺点：</strong>vue是单页应用，如果你在某一个页面刷新了之后，与之相关的EventBus会被移除，这样就导致业务走不下去。同时如果页面中有反复操作的业务，EventBus在监听的时候就会触发很多次，需要好好处理EventBus在项目中的关系。在vue页面销毁时，同时移除EventBus事件监听。</li>
+<li><strong>优点：</strong>解决了多层组件之间繁琐的事件传播，使用原理十分简单，代码量少。适合于简单，组件传递数据较少的项目，大型项目业务复杂的还是尽量使用VueX</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-Vue-组件渲染和更新的过程"><a href="#❤-Vue-组件渲染和更新的过程" class="headerlink" title="❤ Vue 组件渲染和更新的过程"></a>❤ Vue 组件渲染和更新的过程</h2><ul>
+<li>初次渲染过程<ul>
+<li>解析模板为render函数（或在开发环境已完成，vue-loader）</li>
+<li>触发响应式，监听 data 属性 getter setter</li>
+<li>执行render函数，生成vnode，patch（elem，vnode）<ul>
+<li>注意点 ：执行 render 函数会触发 getter</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>更新过程<ul>
+<li>修改data，触发setter（此前在getter中已被监听）</li>
+<li>重新执行render 函数，生成newVnode</li>
+<li>patch（vnode，newVnode）</li>
+</ul>
+</li>
+<li>异步渲染<ul>
+<li>回顾$nextTick</li>
+<li>汇总data的修改，一次性更新视图</li>
+<li>减少DOM操作次数，提高性能</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808224251967.png" alt="完成流程图"></p>
+<h2 id="❤-Vue2-双向绑定的原理与缺陷"><a href="#❤-Vue2-双向绑定的原理与缺陷" class="headerlink" title="❤ Vue2 双向绑定的原理与缺陷"></a>❤ Vue2 双向绑定的原理与缺陷</h2><ul>
+<li><strong>得分点：</strong> <code>Object.defineProperty</code>、<code>getter</code>、<code>setter</code></li>
+<li><strong>标准回答：</strong> Vue响应式指的是：组件的data发生变化，立刻触发视图的更新<ul>
+<li><strong>原理：</strong> Vue 采用数据劫持结合发布者-订阅者模式的方式来实现数据的响应式，通过<code>Object.defineProperty()</code>来劫持数据的<code>setter</code>，<code>getter</code>，在数据变动时发布消息给订阅者，订阅者收到消息后进行相应的处理。 通过原生js提供的监听数据的API，当数据发生变化的时候，在回调函数中修改dom</li>
+<li><strong>核心API：</strong><code>Object.defineProperty()</code> API的使用<ul>
+<li><strong>作用：</strong>用来定义对象属性 </li>
+<li><strong>特点：</strong> 默认情况下定义的数据的属性不能修改；描述属性和存取属性不能同时使用，使用会报错</li>
+<li><strong>响应式原理：</strong> 获取属性值会触发<code>getter</code>方法；设置属性值会触发<code>setter</code>方法 在<code>setter</code>方法中调用修改dom的方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答：</strong> <code>Object.defineProperty</code>的<strong>缺点</strong><ul>
+<li>一次性递归到底开销很大，如果数据很大，大量的递归导致调用栈溢出</li>
+<li>不能监听对象的新增属性和删除属性</li>
+<li>无法正确的监听数组的方法，当监听的下标对应的数据发生改变时</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-Vue3-实现数据双向绑定的方法"><a href="#❤-Vue3-实现数据双向绑定的方法" class="headerlink" title="❤ Vue3 实现数据双向绑定的方法"></a>❤ Vue3 实现数据双向绑定的方法</h2><ul>
+<li><strong>得分点</strong> Proxy、数据拦截、劫持整个对象、返回一个新对象、有13种劫持</li>
+<li><strong>标准回答</strong> Vue3.0 是通过Proxy实现的数据双向绑定，Proxy是ES6中新增的一个特性，实现的过程是在目标对象之前设置了一层“拦截”，外界对该对象的访问，都必须先通过这层拦截，因此提供了一种机制，可以对外界的访问进行过滤和改写。<ul>
+<li>用法： ES6 原生提供 Proxy 构造函数，用来生成 Proxy 实例。 var proxy = new Proxy(target, handler) target: 是用Proxy包装的被代理对象（可以是任何类型的对象，包括原生数组，函数，甚至另一个代理）。</li>
+<li>handler: 是一个对象，其声明了代理target 的一些操作，其属性是当执行一个操作时定义代理的行为的函数。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li><code>Object.defineProperty</code> 的问题：在Vue中，<code>Object.defineProperty</code>无法监控到数组下标的变化，导致直接通过数组的下标给数组设置值，不能实时响应。目前只针对以上方法做了hack处理，所以数组属性是检测不到的，有局限性Object.defineProperty只能劫持对象的属性,因此我们需要对每个对象的每个属性进行遍历。Vue里，是通过递归以及遍历data对象来实现对数据的监控的，如果属性值也是对象那么需要深度遍历,显然如果能劫持一个完整的对象，不管是对操作性还是性能都会有一个很大的提升。</li>
+<li>Proxy的两个优点：可以劫持整个对象，并返回一个新对象，有13种劫持</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-Vuex-是什么，每个属性是干嘛的，如何使用-？"><a href="#❤-Vuex-是什么，每个属性是干嘛的，如何使用-？" class="headerlink" title="❤ Vuex 是什么，每个属性是干嘛的，如何使用 ？"></a>❤ Vuex 是什么，每个属性是干嘛的，如何使用 ？</h2><ul>
+<li><strong>得分点：</strong>state、mutations、getters、actions、module、store.commit、store.dispatch</li>
+<li><strong>标准回答：</strong> Vuex是集中管理项目公共数据的。<ul>
+<li>Vuex 有state、mutations 、getters、actions、module属性。</li>
+<li>state 属性用来存储公共管理的数据。</li>
+<li>mutations 属性定义改变state中数据的方法， 注意：不要在mutation中的方法中写异步方法ajax，那样数据就不可跟踪了 。</li>
+<li>getters 属性可以认为是定义 store 的计算属性。就像计算属性一样，getter 的返回值会根据它的依赖被缓存起来，且只有当它的依赖值发生了改变才会被重新计算。</li>
+<li>action属性类似于 mutation，不同在于：Action 提交的是 mutation，而不是直接变更状态。Action 可以包含任意异步操作。</li>
+<li>moudle属性是将store分割成模块。每个模块拥有自己的 state、mutation、action、getter、甚至是嵌套子模块，从上至下进行同样方式的分割<ul>
+<li>使用方法： state ：直接以对象方式添加属性 mutations ：通过<code>store.commit</code>调用 action：通过 <code>store.dispatch</code> 方法触发 getters：直接通过store.getters.调用</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答：</strong> 可以使用mapState、mapMutations、mapAction、mapGetters一次性获取每个属性下对应的多个方法。 VueX在大型项目中比较常用，非关系组件传递数据比较方便。</li>
+</ul>
+<h2 id="请简单实现双向数据绑定mvvm"><a href="#请简单实现双向数据绑定mvvm" class="headerlink" title="请简单实现双向数据绑定mvvm"></a>请简单实现双向数据绑定<code>mvvm</code></h2><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">&quot;input&quot;</span>/&gt;</span></span><br><span class="line">const data = &#123;&#125;;</span><br><span class="line">const input = document.getElementById(&#x27;input&#x27;);</span><br><span class="line">Object.defineProperty(data, &#x27;text&#x27;, &#123;</span><br><span class="line">  set(value) &#123;</span><br><span class="line">    input.value = value;</span><br><span class="line">    this.value = value;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line">input.onChange = function(e) &#123;</span><br><span class="line">  data.text = e.target.value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="❤HashRouter-和-HistoryRouter的区别和原理？"><a href="#❤HashRouter-和-HistoryRouter的区别和原理？" class="headerlink" title="❤HashRouter 和 HistoryRouter的区别和原理？"></a>❤HashRouter 和 HistoryRouter的区别和原理？</h2><ul>
+<li><p><strong>得分点</strong> <code>#</code> <code>window.onhashchange</code> <code>history.pushState </code> <code>window.onpopstate</code></p>
+</li>
+<li><p><strong>标准回答</strong></p>
+<ul>
+<li>HashRouter和 HistoryRouter的<strong>区别</strong>：<ol>
+<li>history和hash都是利用浏览器的两种特性实现前端路由，history是利用浏览历史记录栈的API实现，hash是监听location对象hash值变化事件来实现</li>
+<li>history的url没有’#’号，hash反之</li>
+<li>相同的url，history会触发添加到浏览器历史记录栈中，hash不会触发，history需要后端配合，如果后端不配合刷新新页面会出现404，hash不需要。</li>
+</ol>
+</li>
+<li><strong>HashRouter的原理：</strong>通过<code>window.onhashchange</code>方法获取新URL中hash值，再做进一步处理</li>
+<li><strong>HistoryRouter的原理：</strong>通过<code>history.pushState </code>使用它做页面跳转不会触发页面刷新，使用<code>window.onpopstate</code> 监听浏览器的前进和后退，再做其他处理</li>
+</ul>
+</li>
+<li><p><strong>加分回答</strong> hash模式下url会带有#，需要url更优雅时，可以使用history模式。 需要兼容低版本的浏览器时，建议使用hash模式。 需要添加任意类型数据到记录时，可以使用history模式。</p>
+</li>
+</ul>
+<h2 id="❤-Diff-算法"><a href="#❤-Diff-算法" class="headerlink" title="❤ Diff 算法"></a>❤ Diff 算法</h2><ul>
+<li><strong>得分点</strong> patch、patchVnode、updateChildren(key重要性)、vue优化时间复杂度为O(n)</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>Diff算法比较过程</strong></li>
+<li>第一步：<strong>patch</strong>函数中对新老节点进行比较 如果新节点不存在就销毁老节点 如果老节点不存在，直接创建新的节点 当两个节点是相同节点的时候，进入 patchVnode 的过程，比较两个节点的内部</li>
+<li>第二步：<strong>patchVnode</strong>函数比较两个虚拟节点内部 如果两个虚拟节点完全相同，返回 当前vnode 的children 不是textNode，再分成三种情况 <ul>
+<li>有新children，没有旧children，创建新的 </li>
+<li>没有新children，有旧children，删除旧的 </li>
+<li>新children、旧children都有</li>
+<li>执行<code>updateChildren</code>比较children的差异，这里就是diff算法的核心 当前vnode 的children 是textNode，直接更新text</li>
+</ul>
+</li>
+<li>第三步：<strong>updateChildren</strong>函数子节点进行比较<ul>
+<li><strong>第一步 头头比较</strong>。若相似，旧头新头指针后移（即 <code>oldStartIdx++</code> &amp;&amp; <code>newStartIdx++</code>），真实dom不变，进入下一次循环；不相似，进入第二步。</li>
+<li><strong>第二步 尾尾比较</strong>。若相似，旧尾新尾指针前移（即 <code>oldEndIdx--</code> &amp;&amp; <code>newEndIdx--</code>），真实dom不变，进入下一次循环；不相似，进入第三步。</li>
+<li><strong>第三步 头尾比较</strong>。若相似，旧头指针后移，新尾指针前移（即 <code>oldStartIdx++</code> &amp;&amp; <code>newEndIdx--</code>），未确认dom序列中的头移到尾，进入下一次循环；不相似，进入第四步。</li>
+<li><strong>第四步 尾头比较</strong>。若相似，旧尾指针前移，新头指针后移（即 <code>oldEndIdx--</code> &amp;&amp; <code>newStartIdx++</code>），未确认dom序列中的尾移到头，进入下一次循环；不相似，进入第五步。</li>
+<li><strong>第五步</strong> 若节点有key且在旧子节点数组中找到sameVnode（tag和key都一致），则将其dom移动到当前真实dom序列的头部，新头指针后移（即 <code>newStartIdx++</code>）；否则，vnode对应的dom（<code>vnode[newStartIdx].elm</code>）插入当前真实dom序列的头部，新头指针后移（即 <code>newStartIdx++</code>）。</li>
+<li>但结束循环后，有两种情况需要考虑：<ul>
+<li>新的字节点数组（newCh）被遍历完（<code>newStartIdx &gt; newEndIdx</code>）。那就需要把多余的旧dom（<code>oldStartIdx -&gt; oldEndIdx</code>）都删除，上述例子中就是<code>c,d</code>；</li>
+<li>新的字节点数组（oldCh）被遍历完（<code>oldStartIdx &gt; oldEndIdx</code>）。那就需要把多余的新dom（<code>newStartIdx -&gt; newEndIdx</code>）都添加。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808180242109.png" alt="updateChildren函数图示"></p>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220808175958519.png" alt="不使用key和使用key的对比"></p>
+<h2 id="❤-Vue-的-keep-alive"><a href="#❤-Vue-的-keep-alive" class="headerlink" title="❤ Vue 的 keep-alive"></a>❤ Vue 的 keep-alive</h2><ul>
+<li><strong>得分点</strong> 缓存组件、条件缓存、路由配合条件缓存、不重新加载、activated、deactivated</li>
+<li><strong>标准回答</strong><ul>
+<li><code>&lt;keep-alive&gt;</code>作用：缓存组件，提升性能，避免重复加载一些不需要经常变动且内容较多的组件。</li>
+<li><code>&lt;keep-alive&gt;</code>的使用方法：使用<code>&lt;keep-alive&gt;</code>标签对需要缓存的组件进行包裹，默认情况下被<code>&lt;keep-alive&gt;</code>标签包裹的组件都会进行缓存，区分被包裹的组件是否缓存有两种方法，<ul>
+<li>第一种是给keepalive 添加属性，组件名称指的是具体组件添加的name，不是路由里面的name。include 包含的组件(可以为字符串，数组，以及正则表达式,只有匹配的组件会被缓存)。exclude 排除的组件(以为字符串，数组，以及正则表达式,任何匹配的组件都不会被缓存)。</li>
+<li>第二种也是最常用的一种是，和路由配合使用：在路由中添加meta属性。 使用keepalive导致组件不重新加载，也就不会重新执行生命周期的函数，如果要解决这个问题，就需要两个属性进入时触发：activated 退出时触发：deactivated</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li><code>&lt;keep-alive&gt;</code>适用的场景：首页展示固定数据的组件，比如banner九宫格</keep-alive></keep-alive></keep-alive></keep-alive></keep-alive></li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-computed-和-watch-的区别"><a href="#❤-computed-和-watch-的区别" class="headerlink" title="❤ computed 和 watch 的区别"></a>❤ computed 和 watch 的区别</h2><ul>
+<li><strong>得分点</strong> computed值有缓存、触发条件是依赖值发生更改、 watch无缓存支持异步、监听数据变化</li>
+<li><strong>标准回答</strong><ul>
+<li>computed： 是计算属性，依赖其它属性值，并且 computed 的值有缓存，只有它依赖的属性值发生改变，下一次获取 computed 的值时才会重新计算 computed 的值；</li>
+<li>watch： 更多的是观察的作用，支持异步，类似于某些数据的监听回调 ，每当监听的数据变化时都会执行回调进行后续操作；</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li>computed应用场景：需要进行数值计算，并且依赖于其它数据时，应该使用 computed，因为可以利用 computed 的缓存特性，避免每次获取值时，都要重新计算；</li>
+<li>watch应用场景：需要在数据变化时执行异步或开销较大的操作时，应该使用 watch，使用 watch 选项允许我们执行异步操作 ( 访问一个 API )，限制我们执行该操作的频率，并在我们得到最终结果前，设置中间状态。这些都是计算属性无法做到的。</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-Vue-中-nextTick-作用与原理"><a href="#❤-Vue-中-nextTick-作用与原理" class="headerlink" title="❤ Vue 中 $nextTick 作用与原理"></a>❤ Vue 中 $nextTick 作用与原理</h2><ul>
+<li><strong>得分点</strong> 异步渲染、获取DOM、Promise</li>
+<li><strong>标准回答</strong> Vue 在更新 DOM 时是异步执行的，在修改数据后，视图不会立刻更新，而是等同一事件循环中的所有数据变化完成之后，再统一进行视图更新。所以修改完数据，立即在方法中获取DOM，获取的仍然是未修改的DOM。<ul>
+<li><code>$nextTick</code>的作用是：该方法中的代码会在当前渲染完成后执行，就解决了异步渲染获取不到更新后DOM的问题了。</li>
+<li><code>$nextTick</code>的原理：<code>$nextTick</code> 本质是返回一个Promise</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li>应用场景：在钩子函数created()里面想要获取操作Dom，把操作DOM的方法放在 <code>$nextTick</code>中</li>
+</ul>
+</li>
+</ul>
+<h2 id="❤-vue-router-实现懒加载的方法"><a href="#❤-vue-router-实现懒加载的方法" class="headerlink" title="❤ vue-router 实现懒加载的方法"></a>❤ vue-router 实现懒加载的方法</h2><ul>
+<li><p><strong>得分点</strong> import、require</p>
+</li>
+<li><p><strong>标准回答</strong></p>
+<ul>
+<li><p>vue-router 实现懒加载的方法有两种：</p>
+<ul>
+<li><p><strong>ES6的impot方式:</strong></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">component: <span class="function">() =&gt;</span> <span class="keyword">import</span>(</span><br><span class="line">    <span class="comment">/* webpackChunkName: &quot;about&quot; */</span></span><br><span class="line">    <span class="string">&#x27;../views/About.vue&#x27;</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+<li><p>VUE中的异步组件进行懒加载方式:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">component: <span class="function"><span class="params">resolve</span>=&gt;</span>(</span><br><span class="line">    <span class="built_in">require</span>([<span class="string">&#x27;../views/About&#x27;</span>],resolve)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>加分回答</strong></p>
+<ul>
+<li>vue-router 实现懒加载的作用：性能优化，不用到该路由，不加载该组件。</li>
+</ul>
+</li>
+</ul>
+<h1 id="Vue-面试真题演练"><a href="#Vue-面试真题演练" class="headerlink" title="Vue 面试真题演练"></a>Vue 面试真题演练</h1><ul>
+<li>自己觉得是面试重点</li>
+<li>网上收集整理的面试题</li>
+<li>热门技术和知识点</li>
+</ul>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -1148,7 +2292,8 @@
         <category>前端</category>
       </categories>
       <tags>
-        <tag>前端 面试</tag>
+        <tag>前端</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -2260,7 +3405,8 @@ res.setHeader(&quot;Access-Control-Allow-Methods&quot;, &quot;GET, PUT, OPTIONS,
         <category>前端</category>
       </categories>
       <tags>
-        <tag>前端 面试</tag>
+        <tag>前端</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
   <entry>
@@ -7019,7 +8165,8 @@ res.setHeader(&quot;Access-Control-Allow-Methods&quot;, &quot;GET, PUT, OPTIONS,
         <category>前端</category>
       </categories>
       <tags>
-        <tag>前端 面试</tag>
+        <tag>前端</tag>
+        <tag>面试</tag>
       </tags>
   </entry>
 </search>
