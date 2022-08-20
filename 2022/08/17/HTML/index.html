@@ -1,0 +1,1468 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+
+
+
+
+  
+  
+  
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"henfy233.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"defaul"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍目前常见前端面试题，HTML 基础原理题 参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HTML">
+<meta property="og:url" content="http://henfy233.github.io/2022/08/17/HTML/index.html">
+<meta property="og:site_name" content="Henfy-Blog">
+<meta property="og:description" content="介绍目前常见前端面试题，HTML 基础原理题 参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s.poetries.work/images/20210421163450.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210421163848.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210421164758.png">
+<meta property="og:image" content="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0a8a139519f46dfa2d1992c58eb5397~tplv-k3u1fbpfcp-zoom-in-crop-mark:3402:0:0:0.awebp">
+<meta property="og:image" content="https://s.poetries.work/cos/202204032131039.png">
+<meta property="article:published_time" content="2022-08-17T12:18:18.000Z">
+<meta property="article:modified_time" content="2022-08-17T12:54:30.468Z">
+<meta property="article:author" content="henfy">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s.poetries.work/images/20210421163450.png">
+
+<link rel="canonical" href="http://henfy233.github.io/2022/08/17/HTML/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>HTML | Henfy-Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext');loadCss('//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');loadCss('//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css');loadCss('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"></noscript></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Henfy-Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">专注以前端领域开发</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://henfy233.github.io/2022/08/17/HTML/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="henfy">
+      <meta itemprop="description" content="技术分享的博客">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henfy-Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          HTML
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2022-08-17 20:18:18 / 修改时间：20:54:30" itemprop="dateCreated datePublished" datetime="2022-08-17T20:18:18+08:00">2022-08-17</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>25k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 ≈</span>
+              <span>22 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>介绍目前常见前端面试题，HTML 基础原理题</p>
+<p>参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点</p>
+<span id="more"></span>
+
+
+
+<h2 id="HTML、HTTP、web综合问题"><a href="#HTML、HTTP、web综合问题" class="headerlink" title="HTML、HTTP、web综合问题"></a>HTML、HTTP、web综合问题</h2><h3 id="❤-常用的meta标签有哪些"><a href="#❤-常用的meta标签有哪些" class="headerlink" title="❤ 常用的meta标签有哪些"></a>❤ 常用的meta标签有哪些</h3><p><code>meta</code> 标签由 <code>name</code> 和 <code>content</code> 属性定义，<strong>用来描述网页文档的属性</strong>，比如网页的作者，网页描述，关键词等，除了HTTP标准固定了一些<code>name</code>作为大家使用的共识，开发者还可以自定义name。</p>
+<p>常用的meta标签：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">（1）`charset`，用来描述HTML文档的编码类型：</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> &gt;</span></span><br><span class="line"></span><br><span class="line">（2） keywords，页面关键词：</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"keywords"</span> <span class="attr">content</span>=<span class="string">"关键词"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">（3）description，页面描述：</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"description"</span> <span class="attr">content</span>=<span class="string">"页面描述内容"</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">（4）refresh，页面重定向和刷新：</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"refresh"</span> <span class="attr">content</span>=<span class="string">"0;url="</span> /&gt;</span></span><br><span class="line"></span><br><span class="line">（5）viewport，适配移动端，可以控制视口的大小和比例：</span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1, maximum-scale=1"</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中，<code>content</code> 参数有以下几种：</p>
+<ul>
+<li><code>width viewport</code> ：宽度(数值/device-width)</li>
+<li><code>height viewport</code> ：高度(数值/device-height)</li>
+<li><code>initial-scale</code> ：初始缩放比例</li>
+<li><code>maximum-scale</code> ：最大缩放比例</li>
+<li><code>minimum-scale</code> ：最小缩放比例</li>
+<li><code>user-scalable</code> ：是否允许用户缩放(yes/no）</li>
+</ul>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">（6）搜索引擎索引方式：</span><br><span class="line">&lt;meta name="robots" content="index,follow" /&gt;</span><br></pre></td></tr></tbody></table></figure>
+
+<p>其中，<code>content</code> 参数有以下几种：</p>
+<ul>
+<li><code>all</code>：文件将被检索，且页面上的链接可以被查询；</li>
+<li><code>none</code>：文件将不被检索，且页面上的链接不可以被查询；</li>
+<li><code>index</code>：文件将被检索；</li>
+<li><code>follow</code>：页面上的链接可以被查询；</li>
+<li><code>noindex</code>：文件将不被检索；</li>
+<li><code>nofollow</code>：页面上的链接不可以被查询。</li>
+</ul>
+<h3 id="❤-meta-标签：自动刷新-跳转"><a href="#❤-meta-标签：自动刷新-跳转" class="headerlink" title="❤ meta 标签：自动刷新/跳转"></a>❤ meta 标签：自动刷新/跳转</h3><p>假设要实现一个类似 PPT 自动播放的效果，你很可能会想到使用 JavaScript 定时器控制页面跳转来实现。但其实有更加简洁的实现方法，比如通过 meta 标签来实现：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Refresh"</span> <span class="attr">content</span>=<span class="string">"5; URL=page2.html"</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p>上面的代码会在 5s 之后自动跳转到同域下的 page2.html 页面。我们要实现 PPT 自动播放的功能，只需要在每个页面的 meta 标签内设置好下一个页面的地址即可。</p>
+<p>另一种场景，比如每隔一分钟就需要刷新页面的大屏幕监控，也可以通过 meta 标签来实现，只需去掉后面的 URL 即可：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Refresh"</span> <span class="attr">content</span>=<span class="string">"60"</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>meta viewport相关</strong></p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span>  <span class="comment">&lt;!--H5标准声明，使用 HTML5 doctype，不区分大小写--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span> <span class="attr">lang</span>=<span class="string">”en”</span>&gt;</span> <span class="comment">&lt;!--标准的 lang 属性写法--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">’utf-8′</span>&gt;</span>    <span class="comment">&lt;!--声明文档使用的字符编码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”</span> <span class="attr">content</span>=<span class="string">”IE</span>=<span class="string">edge,chrome</span>=<span class="string">1″/</span>&gt;</span>   <span class="comment">&lt;!--优先使用 IE 最新版本和 Chrome--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”description”</span> <span class="attr">content</span>=<span class="string">”不超过150个字符”/</span>&gt;</span>       <span class="comment">&lt;!--页面描述--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”keywords”</span> <span class="attr">content</span>=<span class="string">””/</span>&gt;</span>     <span class="comment">&lt;!-- 页面关键词--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”author”</span> <span class="attr">content</span>=<span class="string">”name,</span> <span class="attr">email</span>@<span class="attr">gmail.com</span>”/&gt;</span>    <span class="comment">&lt;!--网页作者--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”robots”</span> <span class="attr">content</span>=<span class="string">”index,follow”/</span>&gt;</span>      <span class="comment">&lt;!--搜索引擎抓取--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”viewport”</span> <span class="attr">content</span>=<span class="string">”initial-scale</span>=<span class="string">1,</span> <span class="attr">maximum-scale</span>=<span class="string">3,</span> <span class="attr">minimum-scale</span>=<span class="string">1,</span> <span class="attr">user-scalable</span>=<span class="string">no”</span>&gt;</span> <span class="comment">&lt;!--为移动设备添加 viewport--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-mobile-web-app-title”</span> <span class="attr">content</span>=<span class="string">”标题”</span>&gt;</span> <span class="comment">&lt;!--iOS 设备 begin--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-mobile-web-app-capable”</span> <span class="attr">content</span>=<span class="string">”yes”/</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--添加到主屏后的标题（iOS 6 新增）是否启用 WebApp 全屏模式，删除苹果默认的工具栏和菜单栏--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-itunes-app”</span> <span class="attr">content</span>=<span class="string">”app-id</span>=<span class="string">myAppStoreID,</span> <span class="attr">affiliate-data</span>=<span class="string">myAffiliateData,</span> <span class="attr">app-argument</span>=<span class="string">myURL”</span>&gt;</span></span><br><span class="line"><span class="comment">&lt;!--添加智能 App 广告条 Smart App Banner（iOS 6+ Safari）--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”apple-mobile-web-app-status-bar-style”</span> <span class="attr">content</span>=<span class="string">”black”/</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”format-detection”</span> <span class="attr">content</span>=<span class="string">”telphone</span>=<span class="string">no,</span> <span class="attr">email</span>=<span class="string">no”/</span>&gt;</span>  <span class="comment">&lt;!--设置苹果工具栏颜色--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”renderer”</span> <span class="attr">content</span>=<span class="string">”webkit”</span>&gt;</span> <span class="comment">&lt;!-- 启用360浏览器的极速模式(webkit)--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”X-UA-Compatible”</span> <span class="attr">content</span>=<span class="string">”IE</span>=<span class="string">edge”</span>&gt;</span>     <span class="comment">&lt;!--避免IE使用兼容模式--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”Cache-Control”</span> <span class="attr">content</span>=<span class="string">”no-siteapp”</span> /&gt;</span>    <span class="comment">&lt;!--不让百度转码--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”HandheldFriendly”</span> <span class="attr">content</span>=<span class="string">”true”</span>&gt;</span>     <span class="comment">&lt;!--针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”MobileOptimized”</span> <span class="attr">content</span>=<span class="string">”320″</span>&gt;</span>   <span class="comment">&lt;!--微软的老式浏览器--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”screen-orientation”</span> <span class="attr">content</span>=<span class="string">”portrait”</span>&gt;</span>   <span class="comment">&lt;!--uc强制竖屏--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”x5-orientation”</span> <span class="attr">content</span>=<span class="string">”portrait”</span>&gt;</span>    <span class="comment">&lt;!--QQ强制竖屏--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”full-screen”</span> <span class="attr">content</span>=<span class="string">”yes”</span>&gt;</span>              <span class="comment">&lt;!--UC强制全屏--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”x5-fullscreen”</span> <span class="attr">content</span>=<span class="string">”true”</span>&gt;</span>       <span class="comment">&lt;!--QQ强制全屏--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”browsermode”</span> <span class="attr">content</span>=<span class="string">”application”</span>&gt;</span>   <span class="comment">&lt;!--UC应用模式--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”x5-page-mode”</span> <span class="attr">content</span>=<span class="string">”app”</span>&gt;</span>   <span class="comment">&lt;!-- QQ应用模式--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">”msapplication-tap-highlight”</span> <span class="attr">content</span>=<span class="string">”no”</span>&gt;</span>    <span class="comment">&lt;!--windows phone 点击无高亮设置页面不缓存--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”pragma”</span> <span class="attr">content</span>=<span class="string">”no-cache”</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”cache-control”</span> <span class="attr">content</span>=<span class="string">”no-cache”</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">”expires”</span> <span class="attr">content</span>=<span class="string">”0″</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="❤-viewport"><a href="#❤-viewport" class="headerlink" title="❤ viewport"></a>❤ viewport</h3><figure class="highlight javascript"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"</span> /&gt;</span><br><span class="line">   <span class="comment">// width    设置viewport宽度，为一个正整数，或字符串‘device-width’</span></span><br><span class="line">   <span class="comment">// device-width  设备宽度</span></span><br><span class="line">   <span class="comment">// height   设置viewport高度，一般设置了宽度，会自动解析出高度，可以不用设置</span></span><br><span class="line">   <span class="comment">// initial-scale    默认缩放比例（初始缩放比例），为一个数字，可以带小数</span></span><br><span class="line">   <span class="comment">// minimum-scale    允许用户最小缩放比例，为一个数字，可以带小数</span></span><br><span class="line">   <span class="comment">// maximum-scale    允许用户最大缩放比例，为一个数字，可以带小数</span></span><br><span class="line">   <span class="comment">// user-scalable    是否允许手动缩放</span></span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>延伸提问<ul>
+<li>怎样处理 移动端 <code>1px</code> 被 渲染成 <code>2px</code>问题</li>
+</ul>
+</li>
+</ul>
+<p><strong>局部处理</strong></p>
+<ul>
+<li><code>meta</code>标签中的 <code>viewport</code>属性 ，<code>initial-scale</code> 设置为 <code>1</code></li>
+<li><code>rem</code>按照设计稿标准走，外加利用<code>transfrome</code> 的<code>scale(0.5)</code> 缩小一倍即可；</li>
+</ul>
+<p><strong>全局处理</strong></p>
+<ul>
+<li><code>mate</code>标签中的 <code>viewport</code>属性 ，<code>initial-scale</code> 设置为 <code>0.5</code></li>
+<li><code>rem</code> 按照设计稿标准走即可</li>
+</ul>
+<h3 id="❤-性能优化"><a href="#❤-性能优化" class="headerlink" title="❤ 性能优化"></a>❤ 性能优化</h3><blockquote>
+<p>性能优化是前端开发中避不开的问题，<code>性能问题无外乎两方面原因：渲染速度慢、请求时间长</code>。性能优化虽然涉及很多复杂的原因和解决方案，但其实只要通过合理地使用标签，就可以在一定程度上提升渲染速度以及减少请求时间</p>
+</blockquote>
+<p><strong>1. script 标签：调整加载顺序提升渲染速度</strong></p>
+<ul>
+<li>由于浏览器的底层运行机制，<code>渲染引擎在解析 HTML 时，若遇到 script 标签引用文件，则会暂停解析过程</code>，同时<code>通知网络线程加载文件，文件加载后会切换至 JavaScript 引擎来执行对应代码</code>，<code>代码执行完成之后切换至渲染引擎继续渲染页面</code>。</li>
+<li>在这一过程中可以看到，<code>页面渲染过程中包含了请求文件以及执行文件的时间</code>，但页面的首次渲染可能并不依赖这些文件，这些请求和执行文件的动作反而延长了用户看到页面的时间，从而降低了用户体验。</li>
+</ul>
+<p><strong>为了减少这些时间损耗，可以借助 script 标签的 3 个属性来实现。</strong></p>
+<ul>
+<li><code>async 属性</code>。立即请求文件，但不阻塞渲染引擎，而是<code>文件加载完毕后阻塞渲染引擎并立即执行文件内容</code></li>
+<li><code>defer 属性</code>。立即请求文件，但不阻塞渲染引擎，<code>等到解析完 HTML 之后再执行</code>文件内容</li>
+<li>HTML5 标准 type 属性，对应值为“module”。让浏览器按照 ECMA Script 6 标准将文件当作模块进行解析，默认阻塞效果同 defer，也可以配合 async 在请求完成后立即执行。</li>
+</ul>
+<p><img data-src="https://s.poetries.work/images/20210421163450.png" alt="img"></p>
+<blockquote>
+<p>绿色的线表示执行解析 HTML ，蓝色的线表示请求文件，红色的线表示执行文件</p>
+</blockquote>
+<p><code>当渲染引擎解析 HTML 遇到 script 标签引入文件时，会立即进行一次渲染</code>。所以这也就是为什么构建工具会把编译好的引用 JavaScript 代码的 script 标签放入到 body 标签底部，因为当渲染引擎执行到 body 底部时会先将已解析的内容渲染出来，然后再去请求相应的 JavaScript 文件</p>
+<p><strong>2. link 标签：通过预处理提升渲染速度</strong></p>
+<p>在我们对大型单页应用进行性能优化时，也许会用到按需懒加载的方式，来加载对应的模块，但如果能合理利用 <code>link</code> 标签的 <code>rel</code> 属性值来进行预加载，就能进一步提升渲染速度。</p>
+<ul>
+<li><code>dns-prefetch</code>。当 <code>link</code> 标签的 <code>rel</code> 属性值为“dns-prefetch”时，<code>浏览器会对某个域名预先进行 DNS 解析并缓存</code>。这样，当浏览器在请求同域名资源的时候，能省去从域名查询 IP 的过程，从而<code>减少时间损耗</code>。下图是淘宝网设置的 DNS 预解析 <img data-src="https://s.poetries.work/images/20210421163848.png" alt="img"></li>
+<li><code>preconnect</code>。让浏览器在一个 HTTP 请求正式发给服务器前预先执行一些操作，这包括<code>DNS 解析、TLS 协商、TCP 握手</code>，通过消除往返延迟来为用户节省时间</li>
+<li><code>prefetch/preload</code>。两个值都是<code>让浏览器预先下载并缓存某个资源</code>，但不同的是，<code>prefetch 可能会在浏览器忙时被忽略</code>，而 <code>preload 则是一定会被预先下载</code>。</li>
+<li><code>prerender</code>。浏览器不仅会加载资源，还会解析执行页面，进行预渲染</li>
+</ul>
+<p>这几个属性值恰好反映了浏览器获取资源文件的过程，在这里我绘制了一个流程简图，方便你记忆。</p>
+<p><img data-src="https://s.poetries.work/images/20210421164758.png" alt="img"></p>
+<p><strong>3. 搜索优化</strong></p>
+<ul>
+<li>meta 标签：提取关键信息<ul>
+<li>通过 meta 标签可以设置页面的描述信息，从而让搜索引擎更好地展示搜索结果。</li>
+<li>示例 <code>&lt;meta name="description" content="全球最大的中文搜索引擎、致力于让网民更便捷地获取信息，找到所求。百度超过千亿的中文网页数据库，可以瞬间找到相关的搜索结果。"&gt;</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="❤-defer-和-async-的区别"><a href="#❤-defer-和-async-的区别" class="headerlink" title="❤ defer 和 async 的区别"></a>❤ defer 和 async 的区别</h3><ul>
+<li><strong>得分点</strong> 加载JS文档和渲染文档可以同时进行、JS代码立即执行、JS代码不立即执行、渲染引擎和JS引擎互斥</li>
+<li><strong>标准回答</strong> 浏览器会立即加载JS文件并执行指定的脚本，“立即”指的是在渲染该 script 标签之下的文档元素之前，也就是说不等待后续载入的文档元素，读到就加载并执行<ul>
+<li>加上<strong>async</strong>属性，加载JS文档和渲染文档可以同时进行（异步），当JS加载完成，JS代码立即执行，会阻塞HTML渲染。</li>
+<li>加上<strong>defer</strong>，加载后续文档元素的过程将和 script.js 的加载并行进行（异步），当HTML渲染完成，才会执行JS代码。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li><strong>渲染阻塞的原因：</strong> 由于 JavaScript 是可操纵 DOM 的,如果在修改这些元素属性同时渲染界面（即 JavaScript 线程和 UI 线程同时运行）,那么渲染线程前后获得的元素数据就可能不一致了。因此为了防止渲染出现不可预期的结果,浏览器设置 GUI 渲染线程与 JavaScript 引擎为互斥的关系。当浏览器在执行 JavaScript 程序的时候,GUI 渲染线程会被保存在一个队列中,直到 JS 程序执行完成,才会接着执行。如果 JS 执行的时间过长,这样就会造成页面的渲染不连贯,导致页面渲染加载阻塞的感觉</li>
+</ul>
+</li>
+</ul>
+<p>下图可以直观的看出三者之间的区别:</p>
+<p> <img data-src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/b0a8a139519f46dfa2d1992c58eb5397~tplv-k3u1fbpfcp-zoom-in-crop-mark:3402:0:0:0.awebp" alt="image.png"></p>
+<p>其中蓝色代表js脚本网络加载时间，红色代表js脚本执行时间，绿色代表html解析。</p>
+<p><strong>defer 和 async属性都是去异步加载外部的JS脚本文件，它们都不会阻塞页面的解析</strong>，其区别如下：</p>
+<ul>
+<li><strong>执行顺序：</strong> 多个带async属性的标签，不能保证加载的顺序；多个带defer属性的标签，按照加载顺序执行；</li>
+<li><strong>脚本是否并行执行：async属性，表示后续文档的加载和执行与js脚本的加载和执行是并行进行的</strong>，即异步执行；defer属性，加载后续文档的过程和js脚本的加载(此时仅加载不执行)是并行进行的(异步)，js脚本需要等到文档所有元素解析完成之后才执行，DOMContentLoaded事件触发执行之前。</li>
+</ul>
+<h3 id="❤-如何高效操作DOM"><a href="#❤-如何高效操作DOM" class="headerlink" title="❤ 如何高效操作DOM"></a>❤ 如何高效操作DOM</h3><p><strong>为什么说 DOM 操作耗时</strong></p>
+<p><strong>1.1 线程切换</strong></p>
+<ul>
+<li>浏览器为了避免两个引擎同时修改页面而造成渲染结果不一致的情况，增加了另外一个机制，这<code>两个引擎具有互斥性</code>，也就是说在某个时刻只有<code>一个引擎在运行，另一个引擎会被阻塞</code>。操作系统在进行线程切换的时候需要保存上一个线程执行时的状态信息并读取下一个线程的状态信息，俗称上下文切换。而这个操作相对而言是比较耗时的</li>
+<li>每次 DOM 操作就会引发线程的上下文切换——从 JavaScript 引擎切换到渲染引擎执行对应操作，然后再切换回 JavaScript 引擎继续执行，这就带来了性能损耗。单次切换消耗的时间是非常少的，但是如果频繁地大量切换，那么就会产生性能问题</li>
+</ul>
+<p>比如下面的测试代码，循环读取一百万次 DOM 中的 body 元素的耗时是读取 JSON 对象耗时的 10 倍。</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 测试次数：一百万次</span></span><br><span class="line"><span class="keyword">const</span> times = <span class="number">1000000</span></span><br><span class="line"><span class="comment">// 缓存body元素</span></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'object'</span>)</span><br><span class="line"><span class="keyword">let</span> body = <span class="built_in">document</span>.body</span><br><span class="line"><span class="comment">// 循环赋值对象作为对照参考</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;times;i++) {</span><br><span class="line">  <span class="keyword">let</span> tmp = body</span><br><span class="line">}</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'object'</span>)<span class="comment">// object: 1.77197265625ms</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'dom'</span>)</span><br><span class="line"><span class="comment">// 循环读取body元素引发线程切换</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;times;i++) {</span><br><span class="line">  <span class="keyword">let</span> tmp = <span class="built_in">document</span>.body</span><br><span class="line">}</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'dom'</span>)<span class="comment">// dom: 18.302001953125ms</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>1.2 重新渲染</strong></p>
+<p>另一个更加耗时的因素是元素及样式变化引起的再次渲染，在<code>渲染过程中最耗时的两个步骤为重排（Reflow）与重绘（Repaint）</code>。</p>
+<p>浏览器在渲染页面时会将 HTML 和 CSS 分别解析成 DOM 树和 CSSOM 树，然后合并进行排布，再绘制成我们可见的页面。如果在操作 DOM 时涉及到元素、样式的修改，就会引起渲染引擎重新计算样式生成 CSSOM 树，同时还有可能触发对元素的重新排布和重新绘制</p>
+<ul>
+<li>可能会影响到其他元素排布的操作就会引起重排，继而引发重绘<ul>
+<li>修改元素边距、大小</li>
+<li>添加、删除元素</li>
+<li>改变窗口大小</li>
+</ul>
+</li>
+<li>引起重绘<ul>
+<li>设置背景图片</li>
+<li>修改字体颜色</li>
+<li>改变 <code>visibility</code>属性值</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>了解更多关于重绘和重排的样式属性，可以参看这个网址：<span class="exturl" data-url="aHR0cHM6Ly9jc3N0cmlnZ2Vycy5jb20v">https://csstriggers.com/ (opens new window)<i class="fa fa-external-link-alt"></i></span>。</p>
+</blockquote>
+<p><strong>2. 如何高效操作 DOM</strong></p>
+<blockquote>
+<p>明白了 DOM 操作耗时之��后，要提升性能就变得很简单了，反其道而行之，减少这些操作即可</p>
+</blockquote>
+<p><strong>2.1 在循环外操作元素</strong></p>
+<p>比如下面两段测试代码对比了读取 1000 次 JSON 对象以及访问 1000 次 body 元素的耗时差异，相差一个数量级</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> times = <span class="number">10000</span>;</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'switch'</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; times; i++) {</span><br><span class="line">  <span class="built_in">document</span>.body === <span class="number">1</span> ? <span class="built_in">console</span>.log(<span class="number">1</span>) : <span class="keyword">void</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'switch'</span>) <span class="comment">// 1.873046875ms</span></span><br><span class="line"><span class="keyword">var</span> body = <span class="built_in">JSON</span>.stringify(<span class="built_in">document</span>.body)</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'batch'</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; times; i++) {</span><br><span class="line">  body === <span class="number">1</span> ? <span class="built_in">console</span>.log(<span class="number">1</span>) : <span class="keyword">void</span> <span class="number">0</span>;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'batch'</span>) <span class="comment">// 0.846923828125ms</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>2.2 批量操作元素</strong></p>
+<p>比如说要创建 1 万个 div 元素，在循环中直接创建再添加到父元素上耗时会非常多。如果采用字符串拼接的形式，先将 1 万个 div 元素的 html 字符串拼接成一个完整字符串，然后赋值给 <code>body</code> 元素的 <code>innerHTML</code> 属性就可以明显减少耗时</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> times = <span class="number">10000</span>;</span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'createElement'</span>)</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; times; i++) {</span><br><span class="line">  <span class="keyword">const</span> div = <span class="built_in">document</span>.createElement(<span class="string">'div'</span>)</span><br><span class="line">  <span class="built_in">document</span>.body.appendChild(div)</span><br><span class="line">}</span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'createElement'</span>)<span class="comment">// 54.964111328125ms</span></span><br><span class="line"><span class="built_in">console</span>.time(<span class="string">'innerHTML'</span>)</span><br><span class="line"><span class="keyword">let</span> html=<span class="string">''</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; times; i++) {</span><br><span class="line">  html+=<span class="string">'&lt;div&gt;&lt;/div&gt;'</span></span><br><span class="line">}</span><br><span class="line"><span class="built_in">document</span>.body.innerHTML += html <span class="comment">// 31.919921875ms</span></span><br><span class="line"><span class="built_in">console</span>.timeEnd(<span class="string">'innerHTML'</span>)</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="❤-HTML-语义化"><a href="#❤-HTML-语义化" class="headerlink" title="❤ HTML 语义化"></a>❤ HTML 语义化</h3><ul>
+<li><strong>得分点</strong> 语义化标签、利于页面内容结构化、利于无CSS页面可读、利于SEO、利于代码可读</li>
+<li><strong>标准回答</strong><ul>
+<li>HTML语义化就是指在使用HTML标签构建页面时，避免大篇幅的使用无语义的标签，比如要求尽可能的使用具有语义的标签，比如<code>&lt;header&gt;</code>、<code>&lt;footer&gt;</code>等。</li>
+<li> 举例说明： 页面中有一个标题，可以用<code>&lt;/footer&gt; &lt;/header&gt;</code>标签实现标题<code>This is a top level heading</code>，也可以使用<code>span+CSS</code>实现标题的样式 <code>Is this a top level heading?</code> 虽然这两种写法都会实现标题的样式，但是建议使用<code>header</code>标签实现。</li>
+<li><strong>使用HTML语义化标签的作用：</strong><ul>
+<li>对机器友好，带有语义的文字表现力丰富，更适合搜索引擎的爬虫爬取有效信息，有利于SEO，搜索引擎根据标签来确定上下文和各个关键字的权重。除此之外，语义类还支持读屏软件，根据文章可以自动生成目录；</li>
+<li>对开发者友好，使用语义类标签增强了可读性，结构更加清晰，开发者能清晰的看出网页的结构，便于团队的开发与维护。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li>HTML5语义化标签并没有广泛使用，比如京东、淘宝等，还是使用div元素，设置id是header或者footer，这个可能是因为HTML5新增的语义化标签的作用不是特别大，网站没有必要重写</li>
+</ul>
+</li>
+</ul>
+<p>常见的语义化标签：</p>
+<figure class="highlight html"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">header</span>&gt;</span><span class="tag">&lt;/<span class="name">header</span>&gt;</span>  头部</span><br><span class="line"><span class="tag">&lt;<span class="name">nav</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span>  导航栏</span><br><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span><span class="tag">&lt;/<span class="name">section</span>&gt;</span>  区块（有语义化的div）</span><br><span class="line"><span class="tag">&lt;<span class="name">main</span>&gt;</span><span class="tag">&lt;/<span class="name">main</span>&gt;</span>  主要区域</span><br><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span><span class="tag">&lt;/<span class="name">article</span>&gt;</span>  主要内容</span><br><span class="line"><span class="tag">&lt;<span class="name">aside</span>&gt;</span><span class="tag">&lt;/<span class="name">aside</span>&gt;</span>  侧边栏</span><br><span class="line"><span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span>  底部</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h3 id="行内元素-块级元素-空-void-元素"><a href="#行内元素-块级元素-空-void-元素" class="headerlink" title="行内元素 块级元素 空(void)元素"></a>行内元素 块级元素 空(void)元素</h3><ul>
+<li>行内元素有：<code>a b span img input select strong</code></li>
+<li>块级元素有：<code>div ul ol li dl dt dd h1 h2 h3 h4… p</code></li>
+<li>空元素：<code>&lt;br&gt; &lt;hr&gt; &lt;img&gt; &lt;input&gt; &lt;link&gt; &lt;meta&gt;</code></li>
+</ul>
+<ul>
+<li>行内元素和块级元素的区别<ul>
+<li>行内元素不可以设置宽高，不独占一行</li>
+<li>块级元素可以设置宽高，独占一行</li>
+</ul>
+</li>
+</ul>
+<h3 id="前端需要注意哪些SEO"><a href="#前端需要注意哪些SEO" class="headerlink" title="前端需要注意哪些SEO"></a>前端需要注意哪些SEO</h3><ul>
+<li>合理的<code>title</code>、<code>description</code>、<code>keywords</code>：搜索对着三项的权重逐个减小，<code>title</code>值强调重点即可，重要关键词出现不要超过2次，而且要靠前，不同页面<code>title</code>要有所不同；<code>description</code>把页面内容高度概括，长度合适，不可过分堆砌关键词，不同页面<code>description</code>有所不同；<code>keywords</code>列举出重要关键词即可</li>
+<li>语义化的<code>HTML</code>代码，符合W3C规范：语义化代码让搜索引擎容易理解网页</li>
+<li>重要内容<code>HTML</code>代码放在最前：搜索引擎抓取<code>HTML</code>顺序是从上到下，有的搜索引擎对抓取长度有限制，保证重要内容一定会被抓取</li>
+<li>重要内容不要用<code>js</code>输出：爬虫不会执行js获取内容</li>
+<li>少用<code>iframe</code>：搜索引擎不会抓取<code>iframe</code>中的内容</li>
+<li>非装饰性图片必须加<code>alt</code></li>
+<li>提高网站速度：网站速度是搜索引擎排序的一个重要指标</li>
+</ul>
+<h3 id="lt-img-gt-的title和alt有什么区别"><a href="#lt-img-gt-的title和alt有什么区别" class="headerlink" title="<img>的title和alt有什么区别"></a><code>&lt;img&gt;</code>的<code>title</code>和<code>alt</code>有什么区别</h3><ul>
+<li><code>title</code> 通常当鼠标滑动到元素上的时候显示</li>
+<li><code>alt</code>是<code>&lt;img&gt;</code>的特有属性，是图片内容的等价描述，用于图片无法加载时显示、读屏器阅读图片。可提图片高可访问性，除了纯装饰图片外都必须设置有意义的值，搜索引擎会重点分析。</li>
+</ul>
+<h3 id="HTTP的几种请求方法用途"><a href="#HTTP的几种请求方法用途" class="headerlink" title="HTTP的几种请求方法用途"></a>HTTP的几种请求方法用途</h3><ul>
+<li><code>GET</code>方法<ul>
+<li>发送一个请求来取得服务器上的某一资源</li>
+</ul>
+</li>
+<li><code>POST</code>方法<ul>
+<li>向<code>URL</code>指定的资源提交数据或附加新的数据</li>
+</ul>
+</li>
+<li><code>PUT</code>方法<ul>
+<li>跟<code>POST</code>方法很像，也是想服务器提交数据。但是，它们之间有不同。<code>PUT</code>指定了资源在服务器上的位置，而<code>POST</code>没有</li>
+</ul>
+</li>
+<li><code>HEAD</code>方法<ul>
+<li>只请求页面的首部</li>
+</ul>
+</li>
+<li><code>DELETE</code>方法<ul>
+<li>删除服务器上的某资源</li>
+</ul>
+</li>
+<li><code>OPTIONS</code>方法<ul>
+<li>它用于获取当前<code>URL</code>所支持的方法。如果请求成功，会有一个<code>Allow</code>的头包含类似<code>“GET,POST”</code>这样的信息</li>
+</ul>
+</li>
+<li><code>TRACE</code>方法<ul>
+<li><code>TRACE</code>方法被用于激发一个远程的，应用层的请求消息回路</li>
+</ul>
+</li>
+<li><code>CONNECT</code>方法<ul>
+<li>把请求连接转换到透明的<code>TCP/IP</code>通道</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤从浏览器地址栏输入url到显示页面的步骤"><a href="#❤从浏览器地址栏输入url到显示页面的步骤" class="headerlink" title="❤从浏览器地址栏输入url到显示页面的步骤"></a>❤从浏览器地址栏输入url到显示页面的步骤</h3><p><strong>基础版本</strong></p>
+<ul>
+<li>浏览器根据请求的<code>URL</code>交给<code>DNS</code>域名解析，找到真实<code>IP</code>，向服务器发起请求；</li>
+<li>服务器交给后台处理完成后返回数据，浏览器接收文件（<code>HTML、JS、CSS</code>、图象等）；</li>
+<li>浏览器对加载到的资源（<code>HTML、JS、CSS</code>等）进行语法解析，建立相应的内部数据结构（如<code>HTML</code>的<code>DOM</code>）；</li>
+<li>载入解析到的资源文件，渲染页面，完成。</li>
+</ul>
+<p><strong>详细版</strong></p>
+<ol>
+<li>在浏览器地址栏输入URL</li>
+<li>浏览器查看<strong>缓存</strong>，如果请求资源在缓存中并且新鲜，跳转到转码步骤<ol>
+<li>如果资源未缓存，发起新请求</li>
+<li>如果已缓存，检验是否足够新鲜，足够新鲜直接提供给客户端，否则与服务器进行验证。</li>
+<li>检验新鲜通常有两个HTTP头进行控制<code>Expires</code>和<code>Cache-Control</code>：<ul>
+<li>HTTP1.0提供Expires，值为一个绝对时间表示缓存新鲜日期</li>
+<li>HTTP1.1增加了Cache-Control: max-age=,值为以秒为单位的最大新鲜时间</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>浏览器<strong>解析URL</strong>获取协议，主机，端口，path</li>
+<li>浏览器<strong>组装一个HTTP（GET）请求报文</strong></li>
+<li>浏览器<strong>获取主机ip地址</strong>，过程如下：<ol>
+<li>浏览器缓存</li>
+<li>本机缓存</li>
+<li>hosts文件</li>
+<li>路由器缓存</li>
+<li>ISP DNS缓存</li>
+<li>DNS递归查询（可能存在负载均衡导致每次IP不一样）</li>
+</ol>
+</li>
+<li><strong>打开一个socket与目标IP地址，端口建立TCP链接</strong>，三次握手如下：<ol>
+<li>客户端发送一个TCP的<strong>SYN=1，Seq=X</strong>的包到服务器端口</li>
+<li>服务器发回<strong>SYN=1， ACK=X+1， Seq=Y</strong>的响应包</li>
+<li>客户端发送<strong>ACK=Y+1， Seq=Z</strong></li>
+</ol>
+</li>
+<li>TCP链接建立后<strong>发送HTTP请求</strong></li>
+<li>服务器接受请求并解析，将请求转发到服务程序，如虚拟主机使用HTTP Host头部判断请求的服务程序</li>
+<li>服务器检查<strong>HTTP请求头是否包含缓存验证信息</strong>如果验证缓存新鲜，返回<strong>304</strong>等对应状态码</li>
+<li>处理程序读取完整请求并准备HTTP响应，可能需要查询数据库等操作</li>
+<li>服务器将<strong>响应报文通过TCP连接发送回浏览器</strong></li>
+<li>浏览器接收HTTP响应，然后根据情况选择<strong>关闭TCP连接或者保留重用，关闭TCP连接的四次握手如下</strong>：<ol>
+<li>主动方发送<strong>Fin=1， Ack=Z， Seq= X</strong>报文</li>
+<li>被动方发送<strong>ACK=X+1， Seq=Z</strong>报文</li>
+<li>被动方发送<strong>Fin=1， ACK=X， Seq=Y</strong>报文</li>
+<li>主动方发送<strong>ACK=Y， Seq=X</strong>报文</li>
+</ol>
+</li>
+<li>浏览器检查响应状态吗：是否为1XX，3XX， 4XX， 5XX，这些情况处理与2XX不同</li>
+<li>如果资源可缓存，<strong>进行缓存</strong></li>
+<li>对响应进行<strong>解码</strong>（例如gzip压缩）</li>
+<li>根据资源类型决定如何处理（假设资源为HTML文档）</li>
+<li><strong>解析HTML文档，构件DOM树，下载资源，构造CSSOM树，执行js脚本</strong>，这些操作没有严格的先后顺序，以下分别解释</li>
+<li><strong>构建DOM树</strong>：<ol>
+<li><strong>Tokenizing</strong>：根据HTML规范将字符流解析为标记</li>
+<li><strong>Lexing</strong>：词法分析将标记转换为对象并定义属性和规则</li>
+<li><strong>DOM construction</strong>：根据HTML标记关系将对象组成DOM树</li>
+</ol>
+</li>
+<li>解析过程中遇到图片、样式表、js文件，<strong>启动下载</strong></li>
+<li>构建<strong>CSSOM树</strong>：<ol>
+<li><strong>Tokenizing</strong>：字符流转换为标记流</li>
+<li><strong>Node</strong>：根据标记创建节点</li>
+<li><strong>CSSOM</strong>：节点创建CSSOM树</li>
+</ol>
+</li>
+<li><span class="exturl" data-url="aHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vd2ViL2Z1bmRhbWVudGFscy9wZXJmb3JtYW5jZS9jcml0aWNhbC1yZW5kZXJpbmctcGF0aC9yZW5kZXItdHJlZS1jb25zdHJ1Y3Rpb24=">根据DOM树和CSSOM树构建渲染树 (opens new window)<i class="fa fa-external-link-alt"></i></span>:<ol>
+<li>从DOM树的根节点遍历所有<strong>可见节点</strong>，不可见节点包括：1）<code>script</code>,<code>meta</code>这样本身不可见的标签。2)被css隐藏的节点，如<code>display: none</code></li>
+<li>对每一个可见节点，找到恰当的CSSOM规则并应用</li>
+<li>发布可视节点的内容和计算样式</li>
+</ol>
+</li>
+<li><strong>js解析如下</strong>：<ol>
+<li>浏览器创建Document对象并解析HTML，将解析到的元素和文本节点添加到文档中，此时<strong>document.readystate为loading</strong></li>
+<li>HTML解析器遇到<strong>没有async和defer的script时</strong>，将他们添加到文档中，然后执行行内或外部脚本。这些脚本会同步执行，并且在脚本下载和执行时解析器会暂停。这样就可以用document.write()把文本插入到输入流中。<strong>同步脚本经常简单定义函数和注册事件处理程序，他们可以遍历和操作script和他们之前的文档内容</strong></li>
+<li>当解析器遇到设置了<strong>async</strong>属性的script时，开始下载脚本并继续解析文档。脚本会在它<strong>下载完成后尽快执行</strong>，但是<strong>解析器不会停下来等它下载</strong>。异步脚本**禁止使用document.write()**，它们可以访问自己script和之前的文档元素</li>
+<li>当文档完成解析，document.readState变成interactive</li>
+<li>所有<strong>defer</strong>脚本会<strong>按照在文档出现的顺序执行</strong>，延迟脚本<strong>能访问完整文档树</strong>，禁止使用document.write()</li>
+<li>浏览器<strong>在Document对象上触发DOMContentLoaded事件</strong></li>
+<li>此时文档完全解析完成，浏览器可能还在等待如图片等内容加载，等这些<strong>内容完成载入并且所有异步脚本完成载入和执行</strong>，document.readState变为complete，window触发load事件</li>
+</ol>
+</li>
+<li><strong>显示页面</strong>（HTML解析过程中会逐步显示页面）</li>
+</ol>
+<p><strong>详细简版</strong></p>
+<ol>
+<li>从浏览器接收<code>url</code>到开启网络请求线程（这一部分可以展开浏览器的机制以及进程与线程之间的关系）</li>
+<li>开启网络线程到发出一个完整的<code>HTTP</code>请求（这一部分涉及到dns查询，<code>TCP/IP</code>请求，五层因特网协议栈等知识）</li>
+<li>从服务器接收到请求到对应后台接收到请求（这一部分可能涉及到负载均衡，安全拦截以及后台内部的处理等等）</li>
+<li>后台和前台的<code>HTTP</code>交互（这一部分包括<code>HTTP</code>头部、响应码、报文结构、<code>cookie</code>等知识，可以提下静态资源的<code>cookie</code>优化，以及编码解码，如<code>gzip</code>压缩等）</li>
+<li>单独拎出来的缓存问题，<code>HTTP</code>的缓存（这部分包括http缓存头部，<code>ETag</code>，<code>catch-control</code>等）</li>
+<li>浏览器接收到<code>HTTP</code>数据包后的解析流程（解析<code>html</code>-词法分析然后解析成<code>dom</code>树、解析<code>css</code>生成<code>css</code>规则树、合并成<code>render</code>树，然后<code>layout</code>、<code>painting</code>渲染、复合图层的合成、<code>GPU</code>绘制、外链资源的处理、<code>loaded</code>和<code>DOMContentLoaded</code>等）</li>
+<li><code>CSS</code>的可视化格式模型（元素的渲染规则，如包含块，控制框，<code>BFC</code>，<code>IFC</code>等概念）</li>
+<li><code>JS</code>引擎解析过程（<code>JS</code>的解释阶段，预处理阶段，执行阶段生成执行上下文，<code>VO</code>，作用域链、回收机制等等）</li>
+<li>其它（可以拓展不同的知识模块，如跨域，web安全，<code>hybrid</code>模式等等内容）</li>
+</ol>
+<p><strong>牛客网解释：</strong></p>
+<ul>
+<li><strong>得分点</strong> DNS解析、TCP握手、HTTP缓存、重定向、服务器状态码、渲染引擎和JS引擎互斥、渲染过程、浏览器进程、网络进程、渲染进程</li>
+<li><strong>标准回答</strong><ul>
+<li>输入地址，浏览器查找域名的 IP 地址。</li>
+<li>浏览器向 该 IP 地址的web 服务器发送一个 HTTP 请求，在发送请求之前浏览器和服务器建立TCP的三次握手，判断是否是HTTP缓存，如果是强制缓存且在有效期内，不再向服务器发请求，如果是HTTP协商缓存向后端发送请求且和后端服务器对比，在有效期内，服务器返回304，直接从浏览器获取数据，如果不在有效期内服务器返回200，返回新数据。</li>
+<li>请求发送出去服务器返回重定向，浏览器再按照重定向的地址重新发送请求。 如果请求的参数有问题，服务器端返回404，如果服务器端挂了返回500。</li>
+<li>如果有数据一切正常，当浏览器拿到服务器的数据之后，开始渲染页面同时获取HTML页面中图片、音频、视频、CSS、JS，在这期间获取到JS文件之后，会直接执行JS代码，阻塞浏览器渲染，因为渲染引擎和JS引擎互斥，不能同时工作，所以通常把Script标签放在body标签的底部。</li>
+<li>渲染过程就是先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤浏览器渲染过程"><a href="#❤浏览器渲染过程" class="headerlink" title="❤浏览器渲染过程"></a>❤浏览器渲染过程</h3><p><strong>牛客网解释：</strong></p>
+<ul>
+<li><strong>得分点</strong> dom树、stylesheet、布局树、分层、光栅化、合成</li>
+<li><strong>标准回答</strong> 浏览器拿到HTML，先将HTML转换成dom树，再将CSS样式转换成stylesheet，根据dom树和stylesheet创建布局树，对布局树进行分层，为每个图层生成绘制列表，再将图层分成图块，紧接着光栅化将图块转换成位图，最后合成绘制生成页面。</li>
+<li><strong>加分回答</strong><ul>
+<li>分层的目的：避免整个页面渲染，把页面分成多个图层，尤其是动画的时候，把动画独立出一个图层，渲染时只渲染该图层就ok，transform，z-index等，浏览器会自动优化生成图层</li>
+<li>光栅化目的：页面如果很长但是可视区很小，避免渲染非可视区的样式造成资源浪费，所以将每个图层又划分成多个小个子，当前只渲染可视区附近区域</li>
+</ul>
+</li>
+</ul>
+<h3 id="如何进行网站性能优化"><a href="#如何进行网站性能优化" class="headerlink" title="如何进行网站性能优化"></a>如何进行网站性能优化</h3><ul>
+<li><code>content</code>方面<ul>
+<li>减少<code>HTTP</code>请求：合并文件、<code>CSS</code>精灵、<code>inline Image</code></li>
+<li>减少<code>DNS</code>查询：<code>DNS</code>缓存、将资源分布到恰当数量的主机名</li>
+<li>减少<code>DOM</code>元素数量</li>
+</ul>
+</li>
+<li><code>Server</code>方面<ul>
+<li>使用<code>CDN</code></li>
+<li>配置<code>ETag</code></li>
+<li>对组件使用<code>Gzip</code>压缩</li>
+</ul>
+</li>
+<li><code>Cookie</code>方面<ul>
+<li>减小<code>cookie</code>大小</li>
+</ul>
+</li>
+<li><code>css</code>方面<ul>
+<li>将样式表放到页面顶部</li>
+<li>不使用<code>CSS</code>表达式</li>
+<li>使用<code>&lt;link&gt;</code>不使用<code>@import</code></li>
+</ul>
+</li>
+<li><code>Javascript</code>方面<ul>
+<li>将脚本放到页面底部</li>
+<li>将<code>javascript</code>和<code>css</code>从外部引入</li>
+<li>压缩<code>javascript</code>和<code>css</code></li>
+<li>删除不需要的脚本</li>
+<li>减少<code>DOM</code>访问</li>
+</ul>
+</li>
+<li>图片方面<ul>
+<li>优化图片：根据实际颜色需要选择色深、压缩</li>
+<li>优化<code>css</code>精灵</li>
+<li>不要在<code>HTML</code>中拉伸图片</li>
+</ul>
+</li>
+</ul>
+<p><strong>你有用过哪些前端性能优化的方法？</strong></p>
+<ul>
+<li>减少http请求次数：CSS Sprites, JS、CSS源码压缩、图片大小控制合适；网页Gzip，CDN托管，data缓存 ，图片服务器。</li>
+<li>前端模板 JS+数据，减少由于HTML标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</li>
+<li>用innerHTML代替DOM操作，减少DOM操作次数，优化javascript性能。</li>
+<li>当需要设置的样式很多时设置className而不是直接操作style</li>
+<li>少用全局变量、缓存DOM节点查找的结果。减少IO读取操作</li>
+<li>避免使用CSS Expression（css表达式)又称Dynamic properties(动态属性)</li>
+<li>图片预加载，将样式表放在顶部，将脚本放在底部 加上时间戳</li>
+<li>避免在页面的主体布局中使用table，table要等其中的内容完全下载之后才会显示出来，显示比div+css布局慢</li>
+</ul>
+<p><strong>谈谈性能优化问题</strong></p>
+<ul>
+<li>代码层面：避免使用css表达式，避免使用高级选择器，通配选择器</li>
+<li>缓存利用：缓存Ajax，使用CDN，使用外部js和css文件以便缓存，添加Expires头，服务端配置Etag，减少DNS查找等</li>
+<li>请求数量：合并样式和脚本，使用css图片精灵，初始首屏之外的图片资源按需加载，静态资源延迟加载</li>
+<li>请求带宽：压缩文件，开启GZIP</li>
+</ul>
+<p><strong>前端性能优化最佳实践？</strong></p>
+<ul>
+<li>性能评级工具（PageSpeed 或 YSlow）</li>
+<li>合理设置 HTTP 缓存：Expires 与 Cache-control</li>
+<li>静态资源打包，开启 Gzip 压缩（节省响应流量）</li>
+<li>CSS3 模拟图像，图标base64（降低请求数）</li>
+<li>模块延迟(defer)加载/异步(async)加载</li>
+<li>Cookie 隔离（节省请求流量）</li>
+<li>localStorage（本地存储）</li>
+<li>使用 CDN 加速（访问最近服务器）</li>
+<li>启用 HTTP/2（多路复用，并行加载）</li>
+<li>前端自动化（gulp/webpack）</li>
+</ul>
+<h3 id="❤前端性能优化手段"><a href="#❤前端性能优化手段" class="headerlink" title="❤前端性能优化手段"></a>❤前端性能优化手段</h3><ul>
+<li><strong>得分点</strong> 图片压缩和文件压缩、雪碧图/精灵图、节流防抖、HTTP缓存、本地缓存、Vue的keep-alive缓存、ssr服务器端渲染、懒加载、对dom查询进行缓存、将dom操作合并</li>
+<li><strong>标准回答</strong> 前端性能优化分为两类，一类是文件加载更快，另一类是文件渲染更快。<ul>
+<li>加载更快的方法： 让传输的数据包更小（压缩文件/图片）：图片压缩和文件压缩</li>
+<li>减少网络请求的次数：雪碧图/精灵图、节流防抖</li>
+<li>减少渲染的次数：缓存（HTTP缓存、本地缓存、Vue的keep-alive缓存等）</li>
+<li>渲染更快的方法： 提前渲染：ssr服务器端渲染</li>
+<li>避免渲染阻塞：CSS放在HTML的head中 JS放在HTML的body底部</li>
+<li>避免无用渲染：懒加载</li>
+<li>减少渲染次数：对dom查询进行缓存、将dom操作合并、使用减少重排的标签</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> 雪碧图的应用场景一般是项目中不常更换的一些固定图标组合在一起，比如logo、搜索图标、切换图标等。 电商项目中最常用到的懒加载，一般在查看商品展示的时候通常下拉加载更多，因为商品数据太多，一次性请求过来数据太大且渲染的时间太长。</li>
+</ul>
+<h3 id="❤性能优化有哪些性能指标，如何量化"><a href="#❤性能优化有哪些性能指标，如何量化" class="headerlink" title="❤性能优化有哪些性能指标，如何量化"></a>❤性能优化有哪些性能指标，如何量化</h3><ul>
+<li><strong>得分点</strong> 加载速度、第一个请求响应时间、页面加载时间、交互动作的反馈时间、帧率FPS、异步请求完成时间 Lighthouse、Throttling 、Performance、Network、WebPageTest</li>
+<li><strong>标准回答</strong><ul>
+<li>常用的性能优化指标<ul>
+<li>Speed Index（lighthouse，速度指数）</li>
+<li>TTFB（Network，第一个请求响应时间）</li>
+</ul>
+</li>
+<li>页面加载时间</li>
+<li>首次渲染<ul>
+<li>交互动作的反馈时间<ul>
+<li>帧率FPS（动画 ctrl+shift+p）</li>
+</ul>
+</li>
+<li>异步请求完成时间</li>
+<li>使用性能测量工具进行量化<ul>
+<li>Chrome DevTools</li>
+</ul>
+</li>
+<li>开发调试、性能评测<ul>
+<li>Audit(Lighthouse)</li>
+<li>Throttling</li>
+</ul>
+</li>
+<li>调整网络吞吐<ul>
+<li>Performance 性能分析</li>
+</ul>
+</li>
+<li>Network 网络加载分析<ul>
+<li>Lighthouse</li>
+</ul>
+</li>
+<li>网站整体质量评估</li>
+<li>还可以提出优化建议<ul>
+<li>WebPageTest - 测试多地点(球各地的用户访问你的网站的性能情况)</li>
+</ul>
+</li>
+<li>全面性能报告（first view,repeat view,waterfall chart 等等）<ul>
+<li>WebPageTest 还可以进行本地安装，让你的应用在还没上线的时候就可以测试。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li>常用的性能测量API<ul>
+<li>DNS 解析耗时: domnLookupEnd - domnLookupStart TCP</li>
+<li>连接耗时: connectEnd - connectStart SSL</li>
+<li>安全连接耗时: connectEnd - secureConnectionStart</li>
+<li>网络请求耗时 (TTFB): responseStart - requestStart</li>
+<li>数据传输耗时: responseEnd - responseStart DOM</li>
+<li>解析耗时: domInteractive - responseEnd</li>
+<li>资源加载耗时: loadEventStart - domContentLoadedEventEnd</li>
+<li>First Byte时间: responseStart - domnLookupStart</li>
+<li>白屏时间: responseEnd - fetchStart</li>
+<li>首次可交互时间: domInteractive - fetchStart</li>
+<li>DOM Ready 时间: domContentLoadEventEnd - fetchStart</li>
+<li>页面完全加载时间: loadEventStart - fetchStart</li>
+<li>http 头部大小： transferSize - encodedBodySize</li>
+<li>重定向次数：performance.navigation.redirectCount</li>
+<li>重定向耗时: redirectEnd - redirectStart</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="渲染优化"><a href="#渲染优化" class="headerlink" title="渲染优化"></a>渲染优化</h3><ul>
+<li>禁止使用<code>iframe</code>（阻塞父文档<code>onload</code>事件）<ul>
+<li><code>iframe</code>会阻塞主页面的<code>Onload</code>事件</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于SEO</li>
+<li><code>iframe</code>和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
+<li>使用<code>iframe</code>之前需要考虑这两个缺点。如果需要使用<code>iframe</code>，最好是通过<code>javascript</code></li>
+<li>动态给<code>iframe</code>添加<code>src</code>属性值，这样可以绕开以上两个问题</li>
+</ul>
+</li>
+<li>禁止使用<code>gif</code>图片实现<code>loading</code>效果（降低<code>CPU</code>消耗，提升渲染性能）</li>
+<li>使用<code>CSS3</code>代码代替<code>JS</code>动画（尽可能避免重绘重排以及回流）</li>
+<li>对于一些小图标，可以使用base64位编码，以减少网络请求。但不建议大图使用，比较耗费<code>CPU</code><ul>
+<li>小图标优势在于<ul>
+<li>减少<code>HTTP</code>请求</li>
+<li>避免文件跨域</li>
+<li>修改及时生效</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>页面头部的<code>&lt;style&gt;&lt;/style&gt;</code> <code>&lt;script&gt;&lt;/script&gt;</code> 会阻塞页面；（因为 <code>Renderer</code>进程中 <code>JS</code>线程和渲染线程是互斥的）</li>
+<li>页面中空的 <code>href</code> 和 <code>src</code> 会阻塞页面其他资源的加载 (阻塞下载进程)</li>
+<li>网页<code>gzip</code>，<code>CDN</code>托管，<code>data</code>缓存 ，图片服务器</li>
+<li>前端模板 JS+数据，减少由于<code>HTML</code>标签导致的带宽浪费，前端用变量保存AJAX请求结果，每次操作本地变量，不用请求，减少请求次数</li>
+<li>用<code>innerHTML</code>代替<code>DOM</code>操作，减少<code>DOM</code>操作次数，优化<code>javascript</code>性能</li>
+<li>当需要设置的样式很多时设置<code>className</code>而不是直接操作<code>style</code></li>
+<li>少用全局变量、缓存<code>DOM</code>节点查找的结果。减少<code>IO</code>读取操作</li>
+<li>图片预加载，将样式表放在顶部，将脚本放在底部 加上时间戳</li>
+<li>对普通的网站有一个统一的思路，就是尽量向前端优化、减少数据库操作、减少磁盘<code>IO</code></li>
+</ul>
+<h3 id="HTTP状态码及其含义"><a href="#HTTP状态码及其含义" class="headerlink" title="HTTP状态码及其含义"></a>HTTP状态码及其含义</h3><ul>
+<li><code>1XX</code>：信息状态码<ul>
+<li><code>100 Continue</code> 继续，一般在发送<code>post</code>请求时，已发送了<code>http header</code>之后服务端将返回此信息，表示确认，之后发送具体参数信息</li>
+</ul>
+</li>
+<li><code>2XX</code>：成功状态码<ul>
+<li><code>200 OK</code> 正常返回信息</li>
+<li><code>201 Created</code> 请求成功并且服务器创建了新的资源</li>
+<li><code>202 Accepted</code> 服务器已接受请求，但尚未处理</li>
+</ul>
+</li>
+<li><code>3XX</code>：重定向<ul>
+<li><code>301 Moved Permanently</code> 请求的网页已永久移动到新位置。</li>
+<li><code>302 Found</code> 临时性重定向。</li>
+<li><code>303 See Other</code> 临时性重定向，且总是使用 <code>GET</code> 请求新的 <code>URI</code>。</li>
+<li><code>304 Not Modified</code> 自从上次请求后，请求的网页未修改过。</li>
+</ul>
+</li>
+<li><code>4XX</code>：客户端错误<ul>
+<li><code>400 Bad Request</code> 服务器无法理解请求的格式，客户端不应当尝试再次使用相同的内容发起请求。</li>
+<li><code>401 Unauthorized</code> 请求未授权。</li>
+<li><code>403 Forbidden</code> 禁止访问。</li>
+<li><code>404 Not Found</code> 找不到如何与 <code>URI</code> 相匹配的资源。</li>
+</ul>
+</li>
+<li><code>5XX</code>:服务器错误<ul>
+<li><code>500 Internal Server Error</code> 最常见的服务器端错误。</li>
+<li><code>503 Service Unavailable</code> 服务器端暂时无法处理请求（可能是过载或维护）。</li>
+</ul>
+</li>
+</ul>
+<h3 id="介绍一下你对浏览器内核的理解？"><a href="#介绍一下你对浏览器内核的理解？" class="headerlink" title="介绍一下你对浏览器内核的理解？"></a>介绍一下你对浏览器内核的理解？</h3><ul>
+<li>主要分成两部分：渲染引擎(<code>layout engineer</code>或<code>Rendering Engine</code>)和<code>JS</code>引擎</li>
+<li>渲染引擎：负责取得网页的内容（<code>HTML</code>、<code>XML</code>、图像等等）、整理讯息（例如加入<code>CSS</code>等），以及计算网页的显示方式，然后会输出至显示器或打印机。浏览器的内核的不同对于网页的语法解释会有不同，所以渲染的效果也不相同。所有网页浏览器、电子邮件客户端以及其它需要编辑、显示网络内容的应用程序都需要内核</li>
+<li><code>JS</code>引擎：解析和执行<code>javascript</code>来实现网页的动态效果</li>
+<li>最开始渲染引擎和<code>JS</code>引擎并没有区分的很明确，后来JS引擎越来越独立，内核就倾向于只指渲染引擎</li>
+</ul>
+<p><strong>常见的浏览器内核有哪些</strong></p>
+<ul>
+<li><code>Trident</code>内核：<code>IE,MaxThon,TT,The World,360</code>,搜狗浏览器等。[又称MSHTML]</li>
+<li><code>Gecko</code>内核：<code>Netscape6</code>及以上版本，<code>FF,MozillaSuite/SeaMonkey</code>等</li>
+<li><code>Presto</code>内核：<code>Opera7</code>及以上。 [<code>Opera</code>内核原为：Presto，现为：<code>Blink</code>;]</li>
+<li><code>Webkit</code>内核：<code>Safari,Chrome</code>等。 [ <code>Chrome</code>的<code>Blink</code>（<code>WebKit</code>的分支）]</li>
+</ul>
+<h3 id="❤html5有哪些新特性、移除了那些元素？"><a href="#❤html5有哪些新特性、移除了那些元素？" class="headerlink" title="❤html5有哪些新特性、移除了那些元素？"></a>❤html5有哪些新特性、移除了那些元素？</h3><ul>
+<li><code>HTML5</code> 现在已经不是 <code>SGML</code> 的子集，主要是关于图像，位置，存储，多任务等功能的增加<ul>
+<li>新增选择器 <code>document.querySelector</code>、<code>document.querySelectorAll</code></li>
+<li>拖拽释放(<code>Drag and drop</code>) API</li>
+<li>媒体播放的 <code>video</code> 和 <code>audio</code></li>
+<li>本地存储 <code>localStorage</code> 和 <code>sessionStorage</code></li>
+<li>离线应用 <code>manifest</code></li>
+<li>桌面通知 <code>Notifications</code></li>
+<li>语意化标签 <code>article</code>、<code>footer</code>、<code>header</code>、<code>nav</code>、<code>section</code></li>
+<li>增强表单控件 <code>calendar</code>、<code>date</code>、<code>time</code>、<code>email</code>、<code>url</code>、<code>search</code></li>
+<li>地理位置 <code>Geolocation</code></li>
+<li>多任务 <code>webworker</code></li>
+<li>全双工通信协议 <code>websocket</code></li>
+<li>历史管理 <code>history</code></li>
+<li>跨域资源共享(CORS) <code>Access-Control-Allow-Origin</code></li>
+<li>页面可见性改变事件 <code>visibilitychange</code></li>
+<li>跨窗口通信 <code>PostMessage</code></li>
+<li><code>Form Data</code> 对象</li>
+<li>绘画 <code>canvas</code></li>
+</ul>
+</li>
+<li>移除的元素：<ul>
+<li>纯表现的元素：<code>basefont</code>、<code>big</code>、<code>center</code>、<code>font</code>、 <code>s</code>、<code>strike</code>、<code>tt</code>、<code>u</code></li>
+<li>对可用性产生负面影响的元素：<code>frame</code>、<code>frameset</code>、<code>noframes</code></li>
+</ul>
+</li>
+<li>支持<code>HTML5</code>新标签：<ul>
+<li><code>IE8/IE7/IE6</code>支持通过<code>document.createElement</code>方法产生的标签</li>
+<li>可以利用这一特性让这些浏览器支持<code>HTML5</code>新标签</li>
+<li>浏览器支持新标签后，还需要添加标签默认的样式</li>
+</ul>
+</li>
+<li>当然也可以直接使用成熟的框架、比如<code>html5shim</code></li>
+</ul>
+<p><strong>如何区分 HTML 和 HTML5</strong></p>
+<ul>
+<li><code>DOCTYPE</code>声明、新增的结构元素、功能元素</li>
+</ul>
+<h3 id="HTML5的离线储存怎么使用，工作原理能不能解释一下？"><a href="#HTML5的离线储存怎么使用，工作原理能不能解释一下？" class="headerlink" title="HTML5的离线储存怎么使用，工作原理能不能解释一下？"></a><code>HTML5</code>的离线储存怎么使用，工作原理能不能解释一下？</h3><ul>
+<li>在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件</li>
+<li>原理：<code>HTML5</code>的离线存储是基于一个新建的<code>.appcache</code>文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像<code>cookie</code>一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示</li>
+<li>如何使用：<ul>
+<li>页面头部像下面一样加入一个<code>manifest</code>的属性；</li>
+<li>在<code>cache.manifest</code>文件的编写离线存储的资源</li>
+<li>在离线状态时，操作<code>window.applicationCache</code>进行需求实现</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">CACHE MANIFEST</span><br><span class="line">#v0.11</span><br><span class="line">CACHE:</span><br><span class="line">js/app.js</span><br><span class="line">css/style.css</span><br><span class="line">NETWORK:</span><br><span class="line">resourse/logo.png</span><br><span class="line">FALLBACK:</span><br><span class="line">/offline.html</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢"><a href="#浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢" class="headerlink" title="浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢"></a>浏览器是怎么对<code>HTML5</code>的离线储存资源进行管理和加载的呢</h3><ul>
+<li>在线的情况下，浏览器发现<code>html</code>头部有<code>manifest</code>属性，它会请求<code>manifest</code>文件，如果是第一次访问<code>app</code>，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过<code>app</code>并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的<code>manifest</code>文件与旧的<code>manifest</code>文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。</li>
+<li>离线的情况下，浏览器就直接使用离线存储的资源。</li>
+</ul>
+<h3 id="iframe有那些缺点？"><a href="#iframe有那些缺点？" class="headerlink" title="iframe有那些缺点？"></a>iframe有那些缺点？</h3><ul>
+<li><code>iframe</code>会阻塞主页面的<code>Onload</code>事件</li>
+<li>搜索引擎的检索程序无法解读这种页面，不利于<code>SEO</code></li>
+<li><code>iframe</code>和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载</li>
+<li>使用<code>iframe</code>之前需要考虑这两个缺点。如果需要使用<code>iframe</code>，最好是通过<code>javascript</code>动态给<code>iframe</code>添加<code>src</code>属性值，这样可以绕开以上两个问题</li>
+</ul>
+<h3 id="WEB标准以及W3C标准是什么"><a href="#WEB标准以及W3C标准是什么" class="headerlink" title="WEB标准以及W3C标准是什么?"></a>WEB标准以及W3C标准是什么?</h3><ul>
+<li>标签闭合、标签小写、不乱嵌套、使用外链<code>css</code>和<code>js</code>、结构行为表现的分离</li>
+</ul>
+<h3 id="xhtml和html有什么区别"><a href="#xhtml和html有什么区别" class="headerlink" title="xhtml和html有什么区别?"></a>xhtml和html有什么区别?</h3><ul>
+<li>一个是功能上的差别<ul>
+<li>主要是<code>XHTML</code>可兼容各大浏览器、手机以及<code>PDA</code>，并且浏览器也能快速正确地编译网页</li>
+</ul>
+</li>
+<li>另外是书写习惯的差别<ul>
+<li><code>XHTML</code> 元素必须被正确地嵌套，闭合，区分大小写，文档必须拥有根元素</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤DOCTYPE-⽂档类型-的作⽤"><a href="#❤DOCTYPE-⽂档类型-的作⽤" class="headerlink" title="❤DOCTYPE(⽂档类型) 的作⽤"></a>❤DOCTYPE(⽂档类型) 的作⽤</h3><ul>
+<li>DOCTYPE是HTML5中一种标准通用标记语言的文档类型声明，它的目的是<strong>告诉浏览器（解析器）应该以什么样（html或xhtml）的文档类型定义来解析文档</strong>，不同的渲染模式会影响浏览器对 CSS 代码甚⾄ JavaScript 脚本的解析。它必须声明在HTML⽂档的第⼀⾏。</li>
+<li>浏览器渲染页面的两种模式（可通过document.compatMode获取，比如，语雀官网的文档类型是<strong>CSS1Compat</strong>）：<ul>
+<li><strong>CSS1Compat：标准模式（Strick mode）</strong>，默认模式，浏览器使用W3C的标准解析渲染页面。在标准模式中，浏览器以其支持的最高标准呈现页面。</li>
+<li>**BackCompat：怪异模式(混杂模式)(Quick mode)**，浏览器使用自己的怪异模式解析渲染页面。在怪异模式中，页面以一种比较宽松的向后兼容的方式显示。</li>
+</ul>
+</li>
+</ul>
+<h3 id="Doctype作用-严格模式与混杂模式如何区分？它们有何意义"><a href="#Doctype作用-严格模式与混杂模式如何区分？它们有何意义" class="headerlink" title="Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?"></a>Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?</h3><ul>
+<li>页面被加载的时，<code>link</code>会同时被加载，而<code>@imort</code>页面被加载的时，<code>link</code>会同时被加载，而<code>@import</code>引用的<code>CSS</code>会等到页面被加载完再加载 <code>import</code>只在<code>IE5</code>以上才能识别，而<code>link</code>是<code>XHTML</code>标签，无兼容问题 <code>link</code>方式的样式的权重 高于<code>@import</code>的权重</li>
+<li><code>&lt;!DOCTYPE&gt;</code> 声明位于文档中的最前面，处于 <code>&lt;html&gt;</code> 标签之前。告知浏览器的解析器， 用什么文档类型 规范来解析这个文档</li>
+<li>严格模式的排版和 <code>JS</code> 运作模式是 以该浏览器支持的最高标准运行</li>
+<li>在混杂模式中，页面以宽松的向后兼容的方式显示。模拟老式浏览器的行为以防止站点无法工作。 <code>DOCTYPE</code>不存在或格式不正确会导致文档以混杂模式呈现</li>
+</ul>
+<h3 id="HTML全局属性-global-attribute-有哪些"><a href="#HTML全局属性-global-attribute-有哪些" class="headerlink" title="HTML全局属性(global attribute)有哪些"></a>HTML全局属性(global attribute)有哪些</h3><ul>
+<li><code>class</code>:为元素设置类标识</li>
+<li><code>data-*</code>: 为元素增加自定义属性</li>
+<li><code>draggable</code>: 设置元素是否可拖拽</li>
+<li><code>id</code>: 元素<code>id</code>，文档内唯一</li>
+<li><code>lang</code>: 元素内容的的语言</li>
+<li><code>style</code>: 行内<code>css</code>样式</li>
+<li><code>title</code>: 元素相关的建议信息</li>
+</ul>
+<h3 id="Canvas和SVG有什么区别？"><a href="#Canvas和SVG有什么区别？" class="headerlink" title="Canvas和SVG有什么区别？"></a>Canvas和SVG有什么区别？</h3><ul>
+<li><code>svg</code>绘制出来的每一个图形的元素都是独立的<code>DOM</code>节点，能够方便的绑定事件或用来修改。<code>canvas</code>输出的是一整幅画布</li>
+<li><code>svg</code>输出的图形是矢量图形，后期可以修改参数来自由放大缩小，不会失真和锯齿。而<code>canvas</code>输出标量画布，就像一张图片一样，放大会失真或者锯齿</li>
+</ul>
+<h3 id="HTML5-为什么只需要写-lt-DOCTYPE-HTML-gt"><a href="#HTML5-为什么只需要写-lt-DOCTYPE-HTML-gt" class="headerlink" title="HTML5 为什么只需要写 <!DOCTYPE HTML>"></a>HTML5 为什么只需要写 <code>&lt;!DOCTYPE HTML&gt;</code></h3><ul>
+<li><code>HTML5</code> 不基于 <code>SGML</code>，因此不需要对<code>DTD</code>进行引用，但是需要<code>doctype</code>来规范浏览器的行为</li>
+<li>而<code>HTML4.01</code>基于<code>SGML</code>,所以需要对<code>DTD</code>进行引用，才能告知浏览器文档所使用的文档类型</li>
+</ul>
+<h3 id="如何在页面上实现一个圆形的可点击区域？"><a href="#如何在页面上实现一个圆形的可点击区域？" class="headerlink" title="如何在页面上实现一个圆形的可点击区域？"></a>如何在页面上实现一个圆形的可点击区域？</h3><ul>
+<li><code>svg</code></li>
+<li><code>border-radius</code></li>
+<li>纯<code>js</code>实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等</li>
+</ul>
+<h3 id="网页验证码是干嘛的，是为了解决什么安全问题"><a href="#网页验证码是干嘛的，是为了解决什么安全问题" class="headerlink" title="网页验证码是干嘛的，是为了解决什么安全问题"></a>网页验证码是干嘛的，是为了解决什么安全问题</h3><ul>
+<li>区分用户是计算机还是人的公共全自动程序。可以防止恶意破解密码、刷票、论坛灌水</li>
+<li>有效防止黑客对某一个特定注册用户用特定程序暴力破解方式进行不断的登陆尝试</li>
+</ul>
+<h3 id="你做的页面在哪些浏览器测试过？这些浏览器的内核分别是什么"><a href="#你做的页面在哪些浏览器测试过？这些浏览器的内核分别是什么" class="headerlink" title="你做的页面在哪些浏览器测试过？这些浏览器的内核分别是什么?"></a>你做的页面在哪些浏览器测试过？这些浏览器的内核分别是什么?</h3><ul>
+<li><code>IE</code>: <code>trident</code>内核</li>
+<li><code>Firefox</code>：<code>gecko</code>内核</li>
+<li><code>Safari</code>:<code>webkit</code>内核</li>
+<li><code>Opera</code>:以前是<code>presto</code>内核，<code>Opera</code>现已改用Google - <code>Chrome</code>的<code>Blink</code>内核</li>
+<li><code>Chrome:Blink</code>(基于<code>webkit</code>，Google与Opera Software共同开发)</li>
+</ul>
+<h3 id="div-css的布局较table布局有什么优点？"><a href="#div-css的布局较table布局有什么优点？" class="headerlink" title="div+css的布局较table布局有什么优点？"></a>div+css的布局较table布局有什么优点？</h3><ul>
+<li>改版的时候更方便 只要改<code>css</code>文件。</li>
+<li>页面加载速度更快、结构化清晰、页面显示简洁。</li>
+<li>表现与结构相分离。</li>
+<li>易于优化（<code>seo</code>）搜索引擎更友好，排名更容易靠前。</li>
+</ul>
+<h3 id="a：img的alt与title有何异同？b：strong与em的异同？"><a href="#a：img的alt与title有何异同？b：strong与em的异同？" class="headerlink" title="a：img的alt与title有何异同？b：strong与em的异同？"></a>a：img的alt与title有何异同？b：strong与em的异同？</h3><ul>
+<li><code>alt(alt text)</code>:为不能显示图像、窗体或<code>applets</code>的用户代理（<code>UA</code>），<code>alt</code>属性用来指定替换文字。替换文字的语言由<code>lang</code>属性指定。(在IE浏览器下会在没有<code>title</code>时把<code>alt</code>当成 <code>tool tip</code>显示)</li>
+<li><code>title(tool tip)</code>:该属性为设置该属性的元素提供建议性的信息</li>
+<li><code>strong</code>:粗体强调标签，强调，表示内容的重要性</li>
+<li><code>em</code>:斜体强调标签，更强烈强调，表示内容的强调点</li>
+</ul>
+<h3 id="你能描述一下渐进增强和优雅降级之间的不同吗"><a href="#你能描述一下渐进增强和优雅降级之间的不同吗" class="headerlink" title="你能描述一下渐进增强和优雅降级之间的不同吗"></a>你能描述一下渐进增强和优雅降级之间的不同吗</h3><ul>
+<li>渐进增强：针对低版本浏览器进行构建页面，保证最基本的功能，然后再针对高级浏览器进行效果、交互等改进和追加功能达到更好的用户体验。</li>
+<li>优雅降级：一开始就构建完整的功能，然后再针对低版本浏览器进行兼容。</li>
+</ul>
+<blockquote>
+<p>区别：优雅降级是从复杂的现状开始，并试图减少用户体验的供给，而渐进增强则是从一个非常基础的，能够起作用的版本开始，并不断扩充，以适应未来环境的需要。降级（功能衰减）意味着往回看；而渐进增强则意味着朝前看，同时保证其根基处于安全地带</p>
+</blockquote>
+<h3 id="为什么利用多个域名来存储网站资源会更有效？"><a href="#为什么利用多个域名来存储网站资源会更有效？" class="headerlink" title="为什么利用多个域名来存储网站资源会更有效？"></a>为什么利用多个域名来存储网站资源会更有效？</h3><ul>
+<li><code>CDN</code>缓存更方便</li>
+<li>突破浏览器并发限制</li>
+<li>节约<code>cookie</code>带宽</li>
+<li>节约主域名的连接数，优化页面响应速度</li>
+<li>防止不必要的安全问题</li>
+</ul>
+<h3 id="❤src与href的区别"><a href="#❤src与href的区别" class="headerlink" title="❤src与href的区别"></a>❤src与href的区别</h3><ul>
+<li>src 和href 都是<strong>用来引用外部的资源</strong>，它们的区别如下：<ul>
+<li><strong>src：</strong> 表示对资源的引用，它指向的内容会嵌入到当前标签所在的位置。src会将其指向的资源下载并应⽤到⽂档内，如请求js脚本。当浏览器解析到该元素时，会暂停其他资源的下载和处理，直到将该资源加载、编译、执⾏完毕，所以⼀般js脚本会放在页面底部。</li>
+<li><strong>href：</strong> 表示超文本引用，它指向一些网络资源，建立和当前元素或本文档的链接关系。当浏览器识别到它他指向的文件时，就会并行下载资源，不会停止对当前文档的处理。 常用在a、link等标签上。</li>
+</ul>
+</li>
+</ul>
+<h3 id="知道的网页制作会用到的图片格式有哪些？"><a href="#知道的网页制作会用到的图片格式有哪些？" class="headerlink" title="知道的网页制作会用到的图片格式有哪些？"></a>知道的网页制作会用到的图片格式有哪些？</h3><ul>
+<li><code>png-8</code>、<code>png-24</code>、<code>jpeg</code>、<code>gif</code>、<code>svg</code></li>
+</ul>
+<blockquote>
+<p>但是上面的那些都不是面试官想要的最后答案。面试官希望听到是<code>Webp</code>,<code>Apng</code>。（是否有关注新技术，新鲜事物）</p>
+</blockquote>
+<ul>
+<li><strong>Webp</strong>：<code>WebP</code>格式，谷歌（google）开发的一种旨在加快图片加载速度的图片格式。图片压缩体积大约只有<code>JPEG</code>的<code>2/3</code>，并能节省大量的服务器带宽资源和数据空间。<code>Facebook Ebay</code>等知名网站已经开始测试并使用<code>WebP</code>格式。</li>
+<li>在质量相同的情况下，WebP格式图像的体积要比JPEG格式图像小<code>40%</code>。</li>
+<li><strong>Apng</strong>：全称是<code>“Animated Portable Network Graphics”</code>, 是PNG的位图动画扩展，可以实现png格式的动态图片效果。04年诞生，但一直得不到各大浏览器厂商的支持，直到日前得到 <code>iOS safari 8</code>的支持，有望代替<code>GIF</code>成为下一代动态图标准</li>
+</ul>
+<h3 id="在css-js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？"><a href="#在css-js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？" class="headerlink" title="在css/js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？"></a>在css/js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？</h3><blockquote>
+<p><code>dns</code>缓存，<code>cdn</code>缓存，浏览器缓存，服务器缓存</p>
+</blockquote>
+<h3 id="一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"><a href="#一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。" class="headerlink" title="一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。"></a>一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</h3><ul>
+<li>图片懒加载，在页面上的未可视区域可以添加一个滚动事件，判断图片位置与浏览器顶端的距离与页面的距离，如果前者小于后者，优先加载。</li>
+<li>如果为幻灯片、相册等，可以使用图片预加载技术，将当前展示图片的前一张和后一张优先下载。</li>
+<li>如果图片为css图片，可以使用<code>CSSsprite</code>，<code>SVGsprite</code>，<code>Iconfont</code>、<code>Base64</code>等技术。</li>
+<li>如果图片过大，可以使用特殊编码的图片，加载时会先加载一张压缩的特别厉害的缩略图，以提高用户体验。</li>
+<li>如果图片展示区域小于图片的真实大小，则因在服务器端根据业务需要先行进行图片压缩，图片压缩后大小与展示一致。</li>
+</ul>
+<h3 id="常见排序算法的时间复杂度-空间复杂度"><a href="#常见排序算法的时间复杂度-空间复杂度" class="headerlink" title="常见排序算法的时间复杂度,空间复杂度"></a>常见排序算法的时间复杂度,空间复杂度</h3><p><img data-src="https://s.poetries.work/cos/202204032131039.png" alt="img"></p>
+<h3 id="web开发中会话跟踪的方法有哪些"><a href="#web开发中会话跟踪的方法有哪些" class="headerlink" title="web开发中会话跟踪的方法有哪些"></a>web开发中会话跟踪的方法有哪些</h3><ul>
+<li><code>cookie</code></li>
+<li><code>session</code></li>
+<li><code>url</code>重写</li>
+<li>隐藏<code>input</code></li>
+<li><code>ip</code>地址</li>
+</ul>
+<h3 id="HTTP-request报文结构是怎样的"><a href="#HTTP-request报文结构是怎样的" class="headerlink" title="HTTP request报文结构是怎样的"></a>HTTP request报文结构是怎样的</h3><ol>
+<li>首行是<strong>Request-Line</strong>包括：<strong>请求方法</strong>，<strong>请求URI</strong>，<strong>协议版本</strong>，<strong>CRLF</strong></li>
+<li>首行之后是若干行<strong>请求头</strong>，包括<strong>general-header</strong>，<strong>request-header</strong>或者<strong>entity-header</strong>，每个一行以CRLF结束</li>
+<li>请求头和消息实体之间有一个<strong>CRLF分隔</strong></li>
+<li>根据实际请求需要可能包含一个<strong>消息实体</strong> 一个请求报文例子如下：</li>
+</ol>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">GET /Protocols/rfc2616/rfc2616-sec5.html HTTP/1.1</span><br><span class="line">Host: www.w3.org</span><br><span class="line">Connection: keep-alive</span><br><span class="line">Cache-Control: max-age=0</span><br><span class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</span><br><span class="line">User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/35.0.1916.153 Safari/537.36</span><br><span class="line">Referer: https://www.google.com.hk/</span><br><span class="line">Accept-Encoding: gzip,deflate,sdch</span><br><span class="line">Accept-Language: zh-CN,zh;q=0.8,en;q=0.6</span><br><span class="line">Cookie: authorstyle=yes</span><br><span class="line">If-None-Match: "2cc8-3e3073913b100"</span><br><span class="line">If-Modified-Since: Wed, 01 Sep 2004 13:24:52 GMT</span><br><span class="line"></span><br><span class="line">name=qiu&amp;age=25</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="HTTP-response报文结构是怎样的"><a href="#HTTP-response报文结构是怎样的" class="headerlink" title="HTTP response报文结构是怎样的"></a>HTTP response报文结构是怎样的</h3><ul>
+<li>首行是状态行包括：<strong>HTTP版本，状态码，状态描述</strong>，后面跟一个CRLF</li>
+<li>首行之后是<strong>若干行响应头</strong>，包括：<strong>通用头部，响应头部，实体头部</strong></li>
+<li>响应头部和响应实体之间用<strong>一个CRLF空行</strong>分隔</li>
+<li>最后是一个可能的<strong>消息实体</strong> 响应报文例子如下：</li>
+</ul>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Date: Tue, 08 Jul 2014 05:28:43 GMT</span><br><span class="line">Server: Apache/2</span><br><span class="line">Last-Modified: Wed, 01 Sep 2004 13:24:52 GMT</span><br><span class="line">ETag: "40d7-3e3073913b100"</span><br><span class="line">Accept-Ranges: bytes</span><br><span class="line">Content-Length: 16599</span><br><span class="line">Cache-Control: max-age=21600</span><br><span class="line">Expires: Tue, 08 Jul 2014 11:28:43 GMT</span><br><span class="line">P3P: policyref="http://www.w3.org/2001/05/P3P/p3p.xml"</span><br><span class="line">Content-Type: text/html; charset=iso-8859-1</span><br><span class="line"></span><br><span class="line">{"name": "qiu", "age": 25}</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="title与h1的区别、b与strong的区别、i与em的区别"><a href="#title与h1的区别、b与strong的区别、i与em的区别" class="headerlink" title="title与h1的区别、b与strong的区别、i与em的区别"></a>title与h1的区别、b与strong的区别、i与em的区别</h3><ul>
+<li><code>title</code>属性没有明确意义只表示是个标题，H1则表示层次明确的标题，对页面信息的抓取也有很大的影响</li>
+<li><code>strong</code>是标明重点内容，有语气加强的含义，使用阅读设备阅读网络时：<code>&lt;strong&gt;</code>会重读，而<code>&lt;B&gt;</code>是展示强调内容</li>
+<li>i内容展示为斜体，em表示强调的文本</li>
+</ul>
+<p>-</p>
+<h3 id="git-fetch-和-git-pull的区别"><a href="#git-fetch-和-git-pull的区别" class="headerlink" title="git fetch 和 git pull的区别"></a>git fetch 和 git pull的区别</h3><ul>
+<li><code>git pull</code>：相当于是从远程获取最新版本并<code>merge</code>到本地</li>
+<li><code>git fetch</code>：相当于是从远程获取最新版本到本地，不会自动<code>merge</code></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\15\React\" rel="bookmark">React</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\16\Webpack\" rel="bookmark">Webpack</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\小程序\" rel="bookmark">小程序</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\ES6\" rel="bookmark">ES6</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\05\20\前端面试指南\" rel="bookmark">前端面试指南</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>henfy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://henfy233.github.io/2022/08/17/HTML/" title="HTML">http://henfy233.github.io/2022/08/17/HTML/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/17/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" rel="prev" title="小程序">
+      <i class="fa fa-chevron-left"></i> 小程序
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/17/ES6/" rel="next" title="ES6">
+      ES6 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML%E3%80%81HTTP%E3%80%81web%E7%BB%BC%E5%90%88%E9%97%AE%E9%A2%98"><span class="nav-number">1.</span> <span class="nav-text">HTML、HTTP、web综合问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E5%B8%B8%E7%94%A8%E7%9A%84meta%E6%A0%87%E7%AD%BE%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">1.1.</span> <span class="nav-text">❤ 常用的meta标签有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-meta-%E6%A0%87%E7%AD%BE%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0-%E8%B7%B3%E8%BD%AC"><span class="nav-number">1.2.</span> <span class="nav-text">❤ meta 标签：自动刷新/跳转</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-viewport"><span class="nav-number">1.3.</span> <span class="nav-text">❤ viewport</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.4.</span> <span class="nav-text">❤ 性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-defer-%E5%92%8C-async-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.5.</span> <span class="nav-text">❤ defer 和 async 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E6%93%8D%E4%BD%9CDOM"><span class="nav-number">1.6.</span> <span class="nav-text">❤ 如何高效操作DOM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-HTML-%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="nav-number">1.7.</span> <span class="nav-text">❤ HTML 语义化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0-%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0-%E7%A9%BA-void-%E5%85%83%E7%B4%A0"><span class="nav-number">1.8.</span> <span class="nav-text">行内元素 块级元素 空(void)元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E5%93%AA%E4%BA%9BSEO"><span class="nav-number">1.9.</span> <span class="nav-text">前端需要注意哪些SEO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lt-img-gt-%E7%9A%84title%E5%92%8Calt%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">1.10.</span> <span class="nav-text">&lt;img&gt;的title和alt有什么区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E7%9A%84%E5%87%A0%E7%A7%8D%E8%AF%B7%E6%B1%82%E6%96%B9%E6%B3%95%E7%94%A8%E9%80%94"><span class="nav-number">1.11.</span> <span class="nav-text">HTTP的几种请求方法用途</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%BB%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9C%B0%E5%9D%80%E6%A0%8F%E8%BE%93%E5%85%A5url%E5%88%B0%E6%98%BE%E7%A4%BA%E9%A1%B5%E9%9D%A2%E7%9A%84%E6%AD%A5%E9%AA%A4"><span class="nav-number">1.12.</span> <span class="nav-text">❤从浏览器地址栏输入url到显示页面的步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="nav-number">1.13.</span> <span class="nav-text">❤浏览器渲染过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%BF%9B%E8%A1%8C%E7%BD%91%E7%AB%99%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.14.</span> <span class="nav-text">如何进行网站性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E5%89%8D%E7%AB%AF%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%89%8B%E6%AE%B5"><span class="nav-number">1.15.</span> <span class="nav-text">❤前端性能优化手段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%9C%89%E5%93%AA%E4%BA%9B%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87%EF%BC%8C%E5%A6%82%E4%BD%95%E9%87%8F%E5%8C%96"><span class="nav-number">1.16.</span> <span class="nav-text">❤性能优化有哪些性能指标，如何量化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E4%BC%98%E5%8C%96"><span class="nav-number">1.17.</span> <span class="nav-text">渲染优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP%E7%8A%B6%E6%80%81%E7%A0%81%E5%8F%8A%E5%85%B6%E5%90%AB%E4%B9%89"><span class="nav-number">1.18.</span> <span class="nav-text">HTTP状态码及其含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8B%E4%BD%A0%E5%AF%B9%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%E7%9A%84%E7%90%86%E8%A7%A3%EF%BC%9F"><span class="nav-number">1.19.</span> <span class="nav-text">介绍一下你对浏览器内核的理解？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4html5%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B0%E7%89%B9%E6%80%A7%E3%80%81%E7%A7%BB%E9%99%A4%E4%BA%86%E9%82%A3%E4%BA%9B%E5%85%83%E7%B4%A0%EF%BC%9F"><span class="nav-number">1.20.</span> <span class="nav-text">❤html5有哪些新特性、移除了那些元素？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5%E7%9A%84%E7%A6%BB%E7%BA%BF%E5%82%A8%E5%AD%98%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8%EF%BC%8C%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86%E8%83%BD%E4%B8%8D%E8%83%BD%E8%A7%A3%E9%87%8A%E4%B8%80%E4%B8%8B%EF%BC%9F"><span class="nav-number">1.21.</span> <span class="nav-text">HTML5的离线储存怎么使用，工作原理能不能解释一下？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E6%80%8E%E4%B9%88%E5%AF%B9HTML5%E7%9A%84%E7%A6%BB%E7%BA%BF%E5%82%A8%E5%AD%98%E8%B5%84%E6%BA%90%E8%BF%9B%E8%A1%8C%E7%AE%A1%E7%90%86%E5%92%8C%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%91%A2"><span class="nav-number">1.22.</span> <span class="nav-text">浏览器是怎么对HTML5的离线储存资源进行管理和加载的呢</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#iframe%E6%9C%89%E9%82%A3%E4%BA%9B%E7%BC%BA%E7%82%B9%EF%BC%9F"><span class="nav-number">1.23.</span> <span class="nav-text">iframe有那些缺点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB%E6%A0%87%E5%87%86%E4%BB%A5%E5%8F%8AW3C%E6%A0%87%E5%87%86%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.24.</span> <span class="nav-text">WEB标准以及W3C标准是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#xhtml%E5%92%8Chtml%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">1.25.</span> <span class="nav-text">xhtml和html有什么区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4DOCTYPE-%E2%BD%82%E6%A1%A3%E7%B1%BB%E5%9E%8B-%E7%9A%84%E4%BD%9C%E2%BD%A4"><span class="nav-number">1.26.</span> <span class="nav-text">❤DOCTYPE(⽂档类型) 的作⽤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Doctype%E4%BD%9C%E7%94%A8-%E4%B8%A5%E6%A0%BC%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%B7%B7%E6%9D%82%E6%A8%A1%E5%BC%8F%E5%A6%82%E4%BD%95%E5%8C%BA%E5%88%86%EF%BC%9F%E5%AE%83%E4%BB%AC%E6%9C%89%E4%BD%95%E6%84%8F%E4%B9%89"><span class="nav-number">1.27.</span> <span class="nav-text">Doctype作用? 严格模式与混杂模式如何区分？它们有何意义?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML%E5%85%A8%E5%B1%80%E5%B1%9E%E6%80%A7-global-attribute-%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">1.28.</span> <span class="nav-text">HTML全局属性(global attribute)有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Canvas%E5%92%8CSVG%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">1.29.</span> <span class="nav-text">Canvas和SVG有什么区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML5-%E4%B8%BA%E4%BB%80%E4%B9%88%E5%8F%AA%E9%9C%80%E8%A6%81%E5%86%99-lt-DOCTYPE-HTML-gt"><span class="nav-number">1.30.</span> <span class="nav-text">HTML5 为什么只需要写 &lt;!DOCTYPE HTML&gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%9C%A8%E9%A1%B5%E9%9D%A2%E4%B8%8A%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E5%9C%86%E5%BD%A2%E7%9A%84%E5%8F%AF%E7%82%B9%E5%87%BB%E5%8C%BA%E5%9F%9F%EF%BC%9F"><span class="nav-number">1.31.</span> <span class="nav-text">如何在页面上实现一个圆形的可点击区域？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BD%91%E9%A1%B5%E9%AA%8C%E8%AF%81%E7%A0%81%E6%98%AF%E5%B9%B2%E5%98%9B%E7%9A%84%EF%BC%8C%E6%98%AF%E4%B8%BA%E4%BA%86%E8%A7%A3%E5%86%B3%E4%BB%80%E4%B9%88%E5%AE%89%E5%85%A8%E9%97%AE%E9%A2%98"><span class="nav-number">1.32.</span> <span class="nav-text">网页验证码是干嘛的，是为了解决什么安全问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E5%81%9A%E7%9A%84%E9%A1%B5%E9%9D%A2%E5%9C%A8%E5%93%AA%E4%BA%9B%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B5%8B%E8%AF%95%E8%BF%87%EF%BC%9F%E8%BF%99%E4%BA%9B%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%86%85%E6%A0%B8%E5%88%86%E5%88%AB%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">1.33.</span> <span class="nav-text">你做的页面在哪些浏览器测试过？这些浏览器的内核分别是什么?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#div-css%E7%9A%84%E5%B8%83%E5%B1%80%E8%BE%83table%E5%B8%83%E5%B1%80%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%82%B9%EF%BC%9F"><span class="nav-number">1.34.</span> <span class="nav-text">div+css的布局较table布局有什么优点？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#a%EF%BC%9Aimg%E7%9A%84alt%E4%B8%8Etitle%E6%9C%89%E4%BD%95%E5%BC%82%E5%90%8C%EF%BC%9Fb%EF%BC%9Astrong%E4%B8%8Eem%E7%9A%84%E5%BC%82%E5%90%8C%EF%BC%9F"><span class="nav-number">1.35.</span> <span class="nav-text">a：img的alt与title有何异同？b：strong与em的异同？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%A0%E8%83%BD%E6%8F%8F%E8%BF%B0%E4%B8%80%E4%B8%8B%E6%B8%90%E8%BF%9B%E5%A2%9E%E5%BC%BA%E5%92%8C%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7%E4%B9%8B%E9%97%B4%E7%9A%84%E4%B8%8D%E5%90%8C%E5%90%97"><span class="nav-number">1.36.</span> <span class="nav-text">你能描述一下渐进增强和优雅降级之间的不同吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%88%A9%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%9F%9F%E5%90%8D%E6%9D%A5%E5%AD%98%E5%82%A8%E7%BD%91%E7%AB%99%E8%B5%84%E6%BA%90%E4%BC%9A%E6%9B%B4%E6%9C%89%E6%95%88%EF%BC%9F"><span class="nav-number">1.37.</span> <span class="nav-text">为什么利用多个域名来存储网站资源会更有效？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4src%E4%B8%8Ehref%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.38.</span> <span class="nav-text">❤src与href的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9F%A5%E9%81%93%E7%9A%84%E7%BD%91%E9%A1%B5%E5%88%B6%E4%BD%9C%E4%BC%9A%E7%94%A8%E5%88%B0%E7%9A%84%E5%9B%BE%E7%89%87%E6%A0%BC%E5%BC%8F%E6%9C%89%E5%93%AA%E4%BA%9B%EF%BC%9F"><span class="nav-number">1.39.</span> <span class="nav-text">知道的网页制作会用到的图片格式有哪些？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8css-js%E4%BB%A3%E7%A0%81%E4%B8%8A%E7%BA%BF%E4%B9%8B%E5%90%8E%E5%BC%80%E5%8F%91%E4%BA%BA%E5%91%98%E7%BB%8F%E5%B8%B8%E4%BC%9A%E4%BC%98%E5%8C%96%E6%80%A7%E8%83%BD%EF%BC%8C%E4%BB%8E%E7%94%A8%E6%88%B7%E5%88%B7%E6%96%B0%E7%BD%91%E9%A1%B5%E5%BC%80%E5%A7%8B%EF%BC%8C%E4%B8%80%E6%AC%A1js%E8%AF%B7%E6%B1%82%E4%B8%80%E8%88%AC%E6%83%85%E5%86%B5%E4%B8%8B%E6%9C%89%E5%93%AA%E4%BA%9B%E5%9C%B0%E6%96%B9%E4%BC%9A%E6%9C%89%E7%BC%93%E5%AD%98%E5%A4%84%E7%90%86%EF%BC%9F"><span class="nav-number">1.40.</span> <span class="nav-text">在css/js代码上线之后开发人员经常会优化性能，从用户刷新网页开始，一次js请求一般情况下有哪些地方会有缓存处理？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E4%B8%8A%E6%9C%89%E5%A4%A7%E9%87%8F%E7%9A%84%E5%9B%BE%E7%89%87%EF%BC%88%E5%A4%A7%E5%9E%8B%E7%94%B5%E5%95%86%E7%BD%91%E7%AB%99%EF%BC%89%EF%BC%8C%E5%8A%A0%E8%BD%BD%E5%BE%88%E6%85%A2%EF%BC%8C%E4%BD%A0%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E6%B3%95%E4%BC%98%E5%8C%96%E8%BF%99%E4%BA%9B%E5%9B%BE%E7%89%87%E7%9A%84%E5%8A%A0%E8%BD%BD%EF%BC%8C%E7%BB%99%E7%94%A8%E6%88%B7%E6%9B%B4%E5%A5%BD%E7%9A%84%E4%BD%93%E9%AA%8C%E3%80%82"><span class="nav-number">1.41.</span> <span class="nav-text">一个页面上有大量的图片（大型电商网站），加载很慢，你有哪些方法优化这些图片的加载，给用户更好的体验。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95%E7%9A%84%E6%97%B6%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6-%E7%A9%BA%E9%97%B4%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="nav-number">1.42.</span> <span class="nav-text">常见排序算法的时间复杂度,空间复杂度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#web%E5%BC%80%E5%8F%91%E4%B8%AD%E4%BC%9A%E8%AF%9D%E8%B7%9F%E8%B8%AA%E7%9A%84%E6%96%B9%E6%B3%95%E6%9C%89%E5%93%AA%E4%BA%9B"><span class="nav-number">1.43.</span> <span class="nav-text">web开发中会话跟踪的方法有哪些</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-request%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84"><span class="nav-number">1.44.</span> <span class="nav-text">HTTP request报文结构是怎样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTTP-response%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84"><span class="nav-number">1.45.</span> <span class="nav-text">HTTP response报文结构是怎样的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#title%E4%B8%8Eh1%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%81b%E4%B8%8Estrong%E7%9A%84%E5%8C%BA%E5%88%AB%E3%80%81i%E4%B8%8Eem%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.46.</span> <span class="nav-text">title与h1的区别、b与strong的区别、i与em的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-fetch-%E5%92%8C-git-pull%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.47.</span> <span class="nav-text">git fetch 和 git pull的区别</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="henfy" src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">henfy</p>
+  <div class="site-description" itemprop="description">技术分享的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlbmZ5MjMz" title="GitHub → https://github.com/henfy233"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOjYxOTg5OTU3M0BxcS5jb20=" title="E-Mail → mailto:619899573@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">henfy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">270k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:06</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> &amp; <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax="" async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+
+
+
+    </div>
+
+
+<script src="/bundle.js"></script><script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+;
+
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+;
+
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  ;
+
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '95a51042662de49c617b',
+      clientSecret: '4aad194349abd9bf63cee6abd3f5153ae20c50ab',
+      repo        : 'henfy233.github.io',
+      owner       : 'henfy233',
+      admin       : ['henfy233'],
+      id          : '27a7664ebed40ddac1f691e51aa5993c',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script></body></html>

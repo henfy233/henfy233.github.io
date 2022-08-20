@@ -1,0 +1,901 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+
+
+
+
+  
+  
+  
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"henfy233.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"defaul"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍目前常见前端面试题，React 基础原理题 参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="React">
+<meta property="og:url" content="http://henfy233.github.io/2022/08/15/React/index.html">
+<meta property="og:site_name" content="Henfy-Blog">
+<meta property="og:description" content="介绍目前常见前端面试题，React 基础原理题 参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816153508667.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816153121217.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816154312614.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816162018653.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816165110420.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816170204073.png">
+<meta property="article:published_time" content="2022-08-15T13:57:16.000Z">
+<meta property="article:modified_time" content="2022-08-16T15:20:57.914Z">
+<meta property="article:author" content="henfy">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816153508667.png">
+
+<link rel="canonical" href="http://henfy233.github.io/2022/08/15/React/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>React | Henfy-Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext');loadCss('//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');loadCss('//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css');loadCss('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"></noscript></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Henfy-Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">专注以前端领域开发</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://henfy233.github.io/2022/08/15/React/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="henfy">
+      <meta itemprop="description" content="技术分享的博客">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henfy-Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          React
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-15 21:57:16" itemprop="dateCreated datePublished" datetime="2022-08-15T21:57:16+08:00">2022-08-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-16 23:20:57" itemprop="dateModified" datetime="2022-08-16T23:20:57+08:00">2022-08-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 ≈</span>
+              <span>6 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>介绍目前常见前端面试题，React 基础原理题</p>
+<p>参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点</p>
+<span id="more"></span>
+
+
+
+<h2 id="React-vs-Vue"><a href="#React-vs-Vue" class="headerlink" title="React vs Vue"></a>React vs Vue</h2><ul>
+<li>React 和 Vue 一样重要（特别是大厂面试），力求两者都学会</li>
+<li>React 和 Vue 有很多相通之处，而且正在趋于一致</li>
+<li>React 比 Vue 学习成本高，尤其对于初学者</li>
+</ul>
+<h3 id="React-使用"><a href="#React-使用" class="headerlink" title="React 使用"></a>React 使用</h3><ul>
+<li>基本使用——常用，必须会</li>
+<li>高级特性——不常用，但体现深度</li>
+<li>Redux 和 React-router 使用</li>
+</ul>
+<h3 id="自己去看文档不行吗？"><a href="#自己去看文档不行吗？" class="headerlink" title="自己去看文档不行吗？"></a>自己去看文档不行吗？</h3><ul>
+<li>行。但这种一种最低效的方式</li>
+<li>文档是一个备忘录，给会用的人查阅，并不是入门教程</li>
+<li>文档全面冗长且细节过多，不能突出面试考点</li>
+</ul>
+<h3 id="回顾之前的-React-面试题"><a href="#回顾之前的-React-面试题" class="headerlink" title="回顾之前的 React 面试题"></a>回顾之前的 React 面试题</h3><ul>
+<li>React 组件如何通讯</li>
+<li>JSX 本质是什么</li>
+<li><code>context</code> 是什么，有何用途？</li>
+<li><code>shouldComponentUpdate</code> 的用途</li>
+<li>描述 <code>redux</code> 单项数据流</li>
+<li><code>setState</code> 是同步还是异步？（场景图，见下页）</li>
+</ul>
+<h3 id="针对上述题目"><a href="#针对上述题目" class="headerlink" title="针对上述题目"></a>针对上述题目</h3><ul>
+<li>先自己思考，不着急解答</li>
+<li>可能会涉及 React 原理（本来应用和原理就是分不开的）</li>
+<li>这几道题是“开胃菜”，后面还有真题演练“大餐”</li>
+</ul>
+<h3 id="关于React-17"><a href="#关于React-17" class="headerlink" title="关于React 17"></a>关于React 17</h3><ul>
+<li>没有明显的新特性，和 React16 的使用是一致的</li>
+<li>面试时也不会被重点考察</li>
+<li>放心学习，需要注意的地方，视频中会重点提醒出来</li>
+</ul>
+<h2 id="React-基本使用"><a href="#React-基本使用" class="headerlink" title="React 基本使用"></a>React 基本使用</h2><ul>
+<li>日常使用，必须掌握，面试必考（不一定全考）</li>
+<li>梳理知识点，从冗长的文档中摘出考点和重点</li>
+<li>考察形式不限（参考后面的面试真题），但都在范围之内</li>
+</ul>
+<h3 id="JSX-基本使用"><a href="#JSX-基本使用" class="headerlink" title="JSX 基本使用"></a>JSX 基本使用</h3><ul>
+<li>变量、表达式</li>
+<li>class style</li>
+<li>子元素和组件</li>
+</ul>
+<blockquote>
+<p>代码示例用到 react-code-demo 项目的 BaseUse 组件的 JSXBaseDemo</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816153508667.png" alt="JSX 基本使用"></p>
+<h3 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h3><ul>
+<li>if else</li>
+<li>三元表达式</li>
+<li>逻辑运算符 &amp;&amp; ||</li>
+</ul>
+<blockquote>
+<p>代码示例用到 react-code-demo 项目的 BaseUse 组件的 ConditionDemo</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816153121217.png" alt="条件判断"></p>
+<h3 id="渲染列表"><a href="#渲染列表" class="headerlink" title="渲染列表"></a>渲染列表</h3><ul>
+<li>map</li>
+<li>key</li>
+</ul>
+<blockquote>
+<p>代码示例用到 react-code-demo 项目的 BaseUse 组件的 ListDemo</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816154312614.png" alt="渲染列表"></p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><ul>
+<li>bind this</li>
+<li>关于 event 参数</li>
+<li>传递自定义参数</li>
+</ul>
+<blockquote>
+<p>代码示例用到 react-code-demo 项目的 BaseUse 组件的 EventDemo</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816162018653.png" alt="事件"></p>
+<h3 id="React-17-事件绑定到-root"><a href="#React-17-事件绑定到-root" class="headerlink" title="React 17 事件绑定到 root"></a>React 17 事件绑定到 root</h3><ul>
+<li>React 16 绑定到 document</li>
+<li>React 17 事件绑定到 root 组件</li>
+<li>有利于多个 React 版本并存，例如微前端</li>
+</ul>
+<img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816165110420.png" alt="React17 事件绑定到 root" style="zoom: 67%;">
+
+
+
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><ul>
+<li>受控组件</li>
+<li>input textarea select 用 value</li>
+<li>checkbox radio 用 checked</li>
+</ul>
+<blockquote>
+<p>代码示例用到 react-code-demo 项目的 BaseUse 组件的 FormDemo</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220816170204073.png" alt="表单"></p>
+<h3 id="组件使用"><a href="#组件使用" class="headerlink" title="组件使用"></a>组件使用</h3><ul>
+<li>props 传递数据</li>
+<li>props传递函数</li>
+<li>props类型检查</li>
+</ul>
+<blockquote>
+<p>代码示例用到 react-code-demo 项目的 BaseUse 组件的 PropsDemo</p>
+</blockquote>
+<p>进度：看到 7-8 React父子组件通讯 视频</p>
+<h2 id="React面试题"><a href="#React面试题" class="headerlink" title="React面试题"></a>React面试题</h2><h3 id="❤-React-生命周期的各个阶段"><a href="#❤-React-生命周期的各个阶段" class="headerlink" title="❤ React 生命周期的各个阶段"></a>❤ React 生命周期的各个阶段</h3><ul>
+<li><strong>得分点：</strong> <code>constructor</code>、<code>componentDidMount</code>、<code>componentDidUpdate</code>、<code>componentWillUnmount</code>、<code>getDerivedStateFromProps</code>、<code>shouldComponentUpdate</code>、<code>getSnapshotBeforeUpdate</code>、<code>componentWillUpdate</code>。</li>
+<li><strong>标准回答</strong><ul>
+<li>React的生命周期中常用的有：<ul>
+<li><code>constructor</code>，负责数据初始化。</li>
+<li><code>render</code>，将 jsx 转换成真实的dom节点。</li>
+<li><code>componentDidMount</code>，组件第一次渲染完成时触发。</li>
+<li><code>componentDidUpdate</code>，组件更新完成时触发。</li>
+<li><code>componentWillUnmount</code>，组件销毁和卸载时触发。</li>
+</ul>
+</li>
+<li>不常用的有：<ul>
+<li><code>getDerivedStateFromProps</code>，更新state和处理回调。</li>
+<li><code>shouldComponentUpdate</code>，用于性能优化。</li>
+<li><code>getSnapshotBeforeUpdate</code>，替代了<code>componentWillUpdate</code>。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> React 的生命周期中有常用的和不常用的。<ul>
+<li><strong>常用的有：</strong><ul>
+<li><code>constructor()</code>： 完成了数据的初始化。注意：只要使用了constructor()就必须写super()，否则this指向会出错。 -</li>
+<li><code>render()</code>： render()函数会将jsx生成的dom插入到目标节点中。在每次组件更新时，react通过diff算法比较更新前和更新之后的dom节点，找到最小的有差异的dom位置并更新，花费最小的开销。</li>
+<li><code>componentDidMount()</code>： 组件第一次渲染完成，此时dom节点已经生成，在这里调用接口请求，返回数据后使用setState()更新数据后重新渲染。</li>
+<li><code>componentDidUpdate(prevProps,prevState)</code>： 组件更新完成。每次react重新渲染之后都会进入这个生命周期，可以拿到更新之前的props和state。</li>
+<li><code>componentWillUnmount()</code>： 在这个生命周期完成组件的数据销毁和卸载，移除所有的定时器和监听。</li>
+</ul>
+</li>
+<li> <strong>不常用的有：</strong></li>
+<li><code>getDerivedStateFromProps(nextProps,prevState)</code>： 代替老版的componentWillReceiveProps()。官方将更新state与触发回调重新分配到了componentWillReceiveProps()中，让组件整体的更新逻辑更加清晰，并且在当前生命周期中，禁止使用this.props，强制让开发者们通过比较nextProps和PrevState去保证数据的正确行为。</li>
+<li><code>shouldComponentUpdate()</code>： return true可以渲染，return false不重新渲染。为什么会出现这个SCU生命周期？主要用于性能优化。也是唯一可以控制组件渲染的生命周期，在setState之后state发生改变组件会重新渲染，在当前生命周期内return false会阻止组件的更新。因为react中父组件重新渲染导致子组件也重新渲染，这时在子组件的当前生命周期内做判断是否真的需要重新渲染。</li>
+<li><code>getSnapshotBeforeUpdate(prevProps, prevState)</code>： 代替componentWillUpdate()，核心区别在于getSnapshotBeforeUpdate()中读取到的dom元素状态是可以保证和componentDidUpdate()中的一致。</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤-React-组件间传值的方法"><a href="#❤-React-组件间传值的方法" class="headerlink" title="❤ React 组件间传值的方法"></a>❤ React 组件间传值的方法</h3><ul>
+<li><strong>得分点</strong> props、context、发布/订阅。</li>
+<li><strong>标准回答</strong> React 中组件之间的传值方法有很多，按照不同的组件间关系可以把组件传值的方法分为父子组件传值，跨级组件传值和非嵌套关系组件传值。<ul>
+<li><strong>父子组件</strong>常用的传值方法是当父组件给子组件传值时通过<code>props</code>，子组件向父组件传值通过回调函数来传值。</li>
+<li><strong>跨级组件</strong>常用的传值方法是<code>props</code>一层一层的传，或者使用<code>context</code>对象，将父组件设置为生产者而子组件都设置对应的<code>contextType</code>即可。</li>
+<li><strong>非嵌套关系组件</strong>传值的方法是使用共同的父级组件进行<code>props</code>传值，或者通过<code>context</code>传值，推荐使用发布/订阅的自定义事件传值。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> React中组件间传值方法有很多，按照不同的组件间关系可以把组件间传值的方法分为：<ul>
+<li><strong>父子组件传值：</strong>父子组件传值是最常见的应用场景也是非常简单的一种通信方式，父组件通过向子组件传递<code>props</code>，子组件得到<code>props</code>之后做处理就行。而子组件向父组件传值需要通过回调函数触发，具体操作是父组件将一个函数作为<code>props</code>的属性传递给子组件，子组件通过<code>this.props.xxx()</code>调用父组件的函数，参数根据需要自己进行搭配即可。</li>
+<li><strong>跨级组件传值：</strong>跨级的组件之间传值无非就是重复多个父子组件传值的过程。一般跨级的传值方式有两种，分别是：<ul>
+<li>一层一层的传递<code>props</code>：写法很复杂，耦合程度也很高，如果两个组件之间隔了很多层，那么也会影响中间组件的性能，开销大。不过这种方法也是可以的，如果组件之间的层级不是非常多，可以考虑使用这个方法。</li>
+</ul>
+</li>
+<li><strong>context对象：</strong><code>context</code>相当于一个全局的变量，是一个大的容器，可以把需要传递的数据放在这个容器中，不论嵌套多深都可以轻易的使用。具体操作是创建一个<code>context</code>对象，需要输入默认值。在父组件中使用生产者标签将需要传值的所有子组件包裹起来。子组件通过指定<code>contextType</code>获取到这个<code>context</code>对象，直接调用this.context即可获得值。</li>
+<li><strong>非嵌套关系组件传值：</strong>就是没有任何包含关系的组件之间的传值，包括了兄弟组件。对于肺嵌套关系组件传值一般用两种方法： - 通过相同的父组件传值：子组件通过回调函数的形式将数据传给父组件，父组件直接通过属性将数据传递给子组件。</li>
+<li><strong>context：</strong>利用共同的父组件<code>context</code>对象进行传值</li>
+<li><strong>通过发布/订阅进行传递：</strong>也可以说是自定义事件。重点是在子组件的<code>componentDidMount</code>生命周期通过声明一个自定义事件，然后在<code>componentWillUnmount</code>生命周期组件销毁时移除自定义事件。</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤-React-事件绑定原理"><a href="#❤-React-事件绑定原理" class="headerlink" title="❤ React 事件绑定原理"></a>❤ React 事件绑定原理</h3><ul>
+<li><strong>得分点</strong> 非原生事件、SyntheticBaseEvent</li>
+<li><strong>标准回答</strong><ul>
+<li>React中event事件不是原生事件，而是对原生event进行了封装的新类SyntheticBaseEvent，模拟出DOM事件的所有功能，通过<code>event.nativeEvent</code>可以获取到原生事件。</li>
+<li>React17版本开始所有事件都绑定在root根组件上，之前都是绑定在document上。</li>
+<li>React中event和DOM事件不一样，和Vue也不一样。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> React并不是将click事件绑在该div的真实DOM上，而是在root处监听所有支持的事件，当事件发生并冒泡至root处时，React将事件内容封装并交由真正的处理函数运行。这样的方式不仅减少了内存消耗，还能在组件挂载销毁时统一订阅和移除事件。另外冒泡到 root上的事件也不是原生浏览器事件，而是 React 自己实现的合成事件（SyntheticBaseEvent）。因此我们如果不想要事件冒泡的话，调用 <code>event.stopPropagation</code> 是无效的，而应该调用<code>event.preventDefault</code>。</li>
+</ul>
+<h3 id="❤-ReactRouter-基本用法"><a href="#❤-ReactRouter-基本用法" class="headerlink" title="❤ ReactRouter 基本用法"></a>❤ ReactRouter 基本用法</h3><ul>
+<li><strong>得分点</strong> 路由的模式有两种、hash模式、history模式、路由的动态传参、重定向、高阶路由组件。</li>
+<li><strong>标准回答</strong> react的路由保证了界面和URL的同步，拥有简单的API和强大的功能。react中的路由模式有两种，分别是：<code>hash</code>路由和<code>history</code>路由。<ul>
+<li>首先用析构的方法引入需要用到的路由方式，需要注意的是路由所有的配置都必须被包裹在hash路由或者history路由里面。</li>
+<li>然后在路由标签内先再配置Route标签，它的参数有：path，路由匹配的路径。component，路由匹配成功之后渲染的组件。</li>
+<li>react中路由的跳转使用Link标签，它的参数to指路由匹配的路径，也需要引入。NavLink标签和Link的区别就是渲染成a标签之后会自带一个class属性，对应的是NavLink标签的active属性。</li>
+<li>react路由中有高阶路由组件<code>withRouter</code>，它和普通路由一样需要引入，主要作用是增加了路由跳转的方式，可以调用<code>history</code>方法进行函数中路由的跳转。</li>
+<li>react中路由的动态传值是一个重点，{/:属性名}和{/属性名/值}搭配的方式进行传值，在需要接收参数的组件通过<code>this.props.match.params</code>来进行接收。react中路由的query传值是通过问号的方法将参数拼接在url之后，在需要接收参数的组件通过<code>url.parse(this.props.location.search).query</code>获取参数。</li>
+<li>路由的重定向需要用组件<code>Redirect</code>来完成，参数<code>to</code>是目标组件。 </li>
+<li>路由的懒加载需要从react中引入<code>Suspense</code>和<code>lazy</code>，引入组件时通过<code>lazy(() =&gt; import())</code>来引入，使用<code>Suspense</code>标签将<code>Route</code>包裹起来即可。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong><ul>
+<li>react中路由模式分为<code>hash</code>路由和<code>history</code>路由。<ul>
+<li><strong>hash路由</strong>的原理是<code>window.onhashchange</code>监听，url前面会有一个#号，这个就是锚点，每个路由前面都会有 # 锚点，特点是 # 之后的数据改变不会发起请求，因此改变 hash 不会重新加载页面。</li>
+<li><strong>history路由</strong>的原理是<code>window.history API</code>，在HTML5中新增了<code>pushState</code>和<code>replaceState</code>方法，这两个方法是在浏览器的历史记录栈上做文章，提供了对历史记录做修改的功能，虽然更改了url但是不会向服务器发起请求。history模式虽然去掉了hash模式的#锚点，但是它怕刷新，因为刷新时是真实的请求。而hash模式下，修改的是#锚点之后的信息，浏览器不会将#锚点之后的数据发送到服务器，所以没有问题。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="❤-setState-是同步还是异步的"><a href="#❤-setState-是同步还是异步的" class="headerlink" title="❤ setState 是同步还是异步的"></a>❤ setState 是同步还是异步的</h3><ul>
+<li><strong>得分点</strong> 是同步也是异步、合成事件、生命周期函数、原生事件、定时器</li>
+<li><strong>标准回答</strong> setState在合成事件和生命周期函数中是异步的，在原生事件和定时器中都是同步的。</li>
+<li><strong>加分回答</strong><ul>
+<li><code>setState</code>本身不分同步或者异步，而是取决于是否处于<code>batch update</code>中。组件中的所有函数在执行时临时设置一个变量<code>isBatchingUpdates = true</code>，当遇到<code>setState</code>时，如果<code>isBatchingUpdates</code>是<code>true</code>，那么<code>setState</code>就是异步的，如果是<code>false</code>，那么<code>setState</code>就是同步的。那么什么时候<code>isBatchingUpdates</code>会被设置成false呢？</li>
+<li>当函数运行结束时<code>isBatchingUpdates = false</code> </li>
+<li>当函数遇到<code>setTimeout</code>、<code>setInterval</code>时<code>isBatchingUpdates = false</code></li>
+<li>当dom添加自定义事件时<code>isBatchingUpdates = false</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="❤-React-中-hooks-的优缺点"><a href="#❤-React-中-hooks-的优缺点" class="headerlink" title="❤ React 中 hooks 的优缺点"></a>❤ React 中 hooks 的优缺点</h3><ul>
+<li><strong>得分点</strong> 可读性强、组件层级变得更浅、不再需要考虑class组件中this指向、部分生命周期不支持</li>
+<li><strong>标准回答</strong><ul>
+<li><strong>优点：</strong><ul>
+<li>代码的可读性强，在使用<code>hooks</code>之前比如发布/订阅自定义事件被挂载在<code>componentDidMount</code>生命周期中，然后需要在<code>componentWillUnmount</code>生命周期中将它清楚，这样就不便于开发者维护和迭代。在使用<code>hooks</code>之后，通过<code>useEffect</code>可以将<code>componentDidMount</code>生命周期、<code>componentDidUpdate</code>生命周期和<code>componentWillUnmount</code>生命周期聚合起来，方便代码的维护。</li>
+<li>组件层级变得更浅了，在使用hooks之前通常使用高阶组件HOC的方法来复用多个组件公共的状态，增强组建的功能，这样肯定是加大了组件渲染的开销，损失了性能。但是在hooks中可以通过自定义组件<code>useXxx()</code>的方法将多个组件之间的共享逻辑放在自定义hook中，就可以轻松的进行数据互通。</li>
+<li>不再需要考虑class组件中this指向的问题，hook在函数组件中不需要通过<code>this.state</code>或者<code>this.fn</code>来获取数据或者方法。</li>
+</ul>
+</li>
+<li><strong>缺点：</strong>hooks的useEffect只包括了<code>componentDidMount</code>、<code>componentDidUpdate</code>还有<code>componentWillUnmount</code>这三个生命周期，对于<code>getSnapshotBeforeUpdate</code>和<code>componentDidCatch</code>等其他的生命周期没有支持。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong> 使用useEffect时候里面不能写太多依赖项，将各个不同的功能划分为多个useEffect模块，将各项功能拆开写，这是遵循了软件设计的“单一职责模式”。如果遇到状态不同步的情况，使用手动传递参数的形式。如果业务复杂，就使用Component代替hooks，hooks的出现并不是取代了class组件，而是在函数组件的基础上可以实现一部分的类似class组件功能。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\16\Webpack\" rel="bookmark">Webpack</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\小程序\" rel="bookmark">小程序</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\ES6\" rel="bookmark">ES6</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\05\20\前端面试指南\" rel="bookmark">前端面试指南</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\06\20\CSS\" rel="bookmark">CSS基础</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>henfy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://henfy233.github.io/2022/08/15/React/" title="React">http://henfy233.github.io/2022/08/15/React/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/07/Vue/" rel="prev" title="Vue">
+      <i class="fa fa-chevron-left"></i> Vue
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/16/Other/" rel="next" title="面试其他问题">
+      面试其他问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#React-vs-Vue"><span class="nav-number">1.</span> <span class="nav-text">React vs Vue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#React-%E4%BD%BF%E7%94%A8"><span class="nav-number">1.1.</span> <span class="nav-text">React 使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%87%AA%E5%B7%B1%E5%8E%BB%E7%9C%8B%E6%96%87%E6%A1%A3%E4%B8%8D%E8%A1%8C%E5%90%97%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">自己去看文档不行吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE%E4%B9%8B%E5%89%8D%E7%9A%84-React-%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">回顾之前的 React 面试题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%92%88%E5%AF%B9%E4%B8%8A%E8%BF%B0%E9%A2%98%E7%9B%AE"><span class="nav-number">1.4.</span> <span class="nav-text">针对上述题目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EReact-17"><span class="nav-number">1.5.</span> <span class="nav-text">关于React 17</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">2.</span> <span class="nav-text">React 基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">JSX 基本使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9D%A1%E4%BB%B6%E5%88%A4%E6%96%AD"><span class="nav-number">2.2.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B8%B2%E6%9F%93%E5%88%97%E8%A1%A8"><span class="nav-number">2.3.</span> <span class="nav-text">渲染列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">2.4.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#React-17-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%88%B0-root"><span class="nav-number">2.5.</span> <span class="nav-text">React 17 事件绑定到 root</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95"><span class="nav-number">2.6.</span> <span class="nav-text">表单</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%84%E4%BB%B6%E4%BD%BF%E7%94%A8"><span class="nav-number">2.7.</span> <span class="nav-text">组件使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#React%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">React面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-React-%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9A%84%E5%90%84%E4%B8%AA%E9%98%B6%E6%AE%B5"><span class="nav-number">3.1.</span> <span class="nav-text">❤ React 生命周期的各个阶段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-React-%E7%BB%84%E4%BB%B6%E9%97%B4%E4%BC%A0%E5%80%BC%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">3.2.</span> <span class="nav-text">❤ React 组件间传值的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-React-%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A%E5%8E%9F%E7%90%86"><span class="nav-number">3.3.</span> <span class="nav-text">❤ React 事件绑定原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-ReactRouter-%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"><span class="nav-number">3.4.</span> <span class="nav-text">❤ ReactRouter 基本用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-setState-%E6%98%AF%E5%90%8C%E6%AD%A5%E8%BF%98%E6%98%AF%E5%BC%82%E6%AD%A5%E7%9A%84"><span class="nav-number">3.5.</span> <span class="nav-text">❤ setState 是同步还是异步的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-React-%E4%B8%AD-hooks-%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">3.6.</span> <span class="nav-text">❤ React 中 hooks 的优缺点</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="henfy" src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">henfy</p>
+  <div class="site-description" itemprop="description">技术分享的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlbmZ5MjMz" title="GitHub → https://github.com/henfy233"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOjYxOTg5OTU3M0BxcS5jb20=" title="E-Mail → mailto:619899573@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">henfy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">270k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:06</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> &amp; <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax="" async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+
+
+
+    </div>
+
+
+<script src="/bundle.js"></script><script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+;
+
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+;
+
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  ;
+
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '95a51042662de49c617b',
+      clientSecret: '4aad194349abd9bf63cee6abd3f5153ae20c50ab',
+      repo        : 'henfy233.github.io',
+      owner       : 'henfy233',
+      admin       : ['henfy233'],
+      id          : '063e609cd7f1886192528b110e03cb80',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script></body></html>

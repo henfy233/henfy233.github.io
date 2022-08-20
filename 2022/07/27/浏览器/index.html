@@ -32,6 +32,7 @@
 <meta property="og:image" content="https://s.poetries.work/images/20210415090353.png">
 <meta property="og:image" content="https://s.poetries.work/images/20210415092040.png">
 <meta property="og:image" content="https://s.poetries.work/images/20210415092356.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210409105003.png">
 <meta property="og:image" content="https://s.poetries.work/gitee/2019/10/19.png">
 <meta property="og:image" content="https://s.poetries.work/gitee/2019/10/20.png">
 <meta property="og:image" content="https://s.poetries.work/gitee/2019/10/21.png">
@@ -58,11 +59,13 @@
 <meta property="og:image" content="https://s.poetries.work/images/20210504135701.png">
 <meta property="og:image" content="https://s.poetries.work/images/20210504135900.png">
 <meta property="og:image" content="https://s.poetries.work/images/20210504140042.png">
+<meta property="og:image" content="https://s.poetries.work/images/202203211356046.png">
+<meta property="og:image" content="https://s.poetries.work/images/202203211356643.png">
 <meta property="article:published_time" content="2022-07-27T14:32:22.000Z">
-<meta property="article:modified_time" content="2022-08-08T08:11:29.323Z">
+<meta property="article:modified_time" content="2022-08-19T15:24:09.603Z">
 <meta property="article:author" content="henfy">
-<meta property="article:tag" content="前端">
 <meta property="article:tag" content="面试">
+<meta property="article:tag" content="前端">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://s.poetries.work/images/20210415090353.png">
 
@@ -165,12 +168,12 @@
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a>
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">8</span></a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -253,7 +256,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-08 16:11:29" itemprop="dateModified" datetime="2022-08-08T16:11:29+08:00">2022-08-08</time>
+                <time title="修改时间：2022-08-19 23:24:09" itemprop="dateModified" datetime="2022-08-19T23:24:09+08:00">2022-08-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -278,14 +281,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>31k</span>
+              <span>38k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 ≈</span>
-              <span>28 分钟</span>
+              <span>35 分钟</span>
             </span>
 
         </div>
@@ -301,7 +304,7 @@
 <span id="more"></span>
 
 <p><img data-src="https://s.poetries.work/images/20210415090353.png" alt="img"></p>
-<h3 id="❤浏览器架构"><a href="#❤浏览器架构" class="headerlink" title="❤浏览器架构"></a>❤浏览器架构</h3><p><strong>单进程浏览器时代</strong></p>
+<h3 id="❤-浏览器架构"><a href="#❤-浏览器架构" class="headerlink" title="❤ 浏览器架构"></a>❤ 浏览器架构</h3><p><strong>单进程浏览器时代</strong></p>
 <blockquote>
 <p>单进程浏览器是指浏览器的所有功能模块都是运行在同一个进程里，这些模块包含了网络、插件、JavaScript运行环境、渲染引擎和页面等。其实早在2007年之前，市面上浏览器都是单进程的</p>
 </blockquote>
@@ -332,53 +335,35 @@
 <li><strong>网络进程</strong>。主要负责页面的网络资源加载，之前是作为一个模块运行在浏览器进程里面的，直至最近才独立出来，成为一个单独的进程。</li>
 <li><strong>插件进程</strong>。主要是负责插件的运行，因插件易崩溃，所以需要通过插件进程来隔离，以保证插件进程崩溃不会对浏览器和页面造成影响</li>
 </ul>
-<h3 id="❤JavaScript单线程模型"><a href="#❤JavaScript单线程模型" class="headerlink" title="❤JavaScript单线程模型"></a>❤JavaScript单线程模型</h3><blockquote>
-<p>JavaScript语言的一大特点就是单线程，也就是说，同一时间只能做一件事，前面的任务没做完，后面的任务只能等着。</p>
+<h3 id="介绍一下HTTPS和HTTP区别"><a href="#介绍一下HTTPS和HTTP区别" class="headerlink" title="介绍一下HTTPS和HTTP区别"></a>介绍一下HTTPS和HTTP区别</h3><blockquote>
+<p>HTTPS 要比 HTTPS 多了 secure 安全性这个概念，实际上， HTTPS 并不是一个新的应用层协议，它其实就是 HTTP + TLS/SSL 协议组合而成，而安全性的保证正是 SSL/TLS 所做的工作。</p>
 </blockquote>
-<p><strong>1. 为什么JavaScript是单线程的呢?</strong></p>
+<p><strong>SSL</strong></p>
+<p>安全套接层（Secure Sockets Layer）</p>
+<p><strong>TLS</strong></p>
+<p>（传输层安全，Transport Layer Security）</p>
+<p>现在主流的版本是 TLS/1.2, 之前的 TLS1.0、TLS1.1 都被认为是不安全的，在不久的将来会被完全淘汰。</p>
+<p><strong>HTTPS 就是身披了一层 SSL 的 HTTP</strong>。</p>
+<p><img data-src="https://s.poetries.work/images/20210409105003.png" alt="img"></p>
+<p>那么区别有哪些呢👇</p>
 <ul>
-<li>这主要与JavaScript用途有关。它的主要用途是与用户互动，以及操作DOM。如果JavaScript是多线程的，会带来很多复杂的问题，假如 JavaScript有A和B两个线程，A线程在DOM节点上添加了内容，B线程删除了这个节点，应该是哪个为准呢? 所以，为了避免复杂性，所以设计成了单线程。</li>
-<li>虽然 HTML5 提出了Web Worker标准。Web Worker 的作用，就是为 JavaScript 创造多线程环境，允许主线程创建 Worker 线程，将一些任务分配给后者运行。但是子线程完全受主线程控制，且不得操作DOM。所以这个并没有改变JavaScript单线程的本质。一般使用 Web Worker 的场景是代码中有很多计算密集型或高延迟的任务，可以考虑分配给 Worker 线程。</li>
-<li>但是使用的时候一定要注意，worker 线程是为了让你的程序跑的更快，但是如果 worker 线程和主线程之间通信的时间大于了你不使用worker线程的时间，结果就得不偿失了。</li>
+<li>HTTP 是明文传输协议，HTTPS 协议是由 SSL+HTTP 协议构建的可进行加密传输、身份认证的网络协议，比 HTTP 协议安全。</li>
+<li>HTTPS比HTTP更加安全，对搜索引擎更友好，利于SEO,谷歌、百度优先索引HTTPS网页。</li>
+<li>HTTPS标准端口443，HTTP标准端口80。</li>
+<li>HTTPS需要用到SSL证书，而HTTP不用。</li>
 </ul>
-<p><strong>2. 浏览器内核中线程之间的关系</strong></p>
+<p>我觉得记住以下两点HTTPS主要作用就行👇</p>
+<ol>
+<li>对数据进行加密，并建立一个信息安全通道，来保证传输过程中的数据安全;</li>
+<li>对网站服务器进行真实身份认证。</li>
+</ol>
+<p><strong>HTTPS的缺点</strong></p>
 <ul>
-<li>GUI渲染线程和JS引擎线程互斥<ul>
-<li>js是可以操作DOM的，如果在修改这些元素的同时渲染页面（js线程和ui线程同时运行），那么渲染线程前后获得的元素数据可能就不一致了。</li>
+<li>证书费用以及更新维护。</li>
+<li>HTTPS 降低一定用户访问速度（实际上优化好就不是缺点了）。</li>
+<li>HTTPS 消耗 CPU 资源，需要增加大量机器。</li>
 </ul>
-</li>
-<li>JS阻塞页面加载<ul>
-<li>js如果执行时间过长就会阻塞页面</li>
-</ul>
-</li>
-</ul>
-<p><strong>3. 浏览器是多进程的优点</strong></p>
-<ul>
-<li>默认新开 一个 tab 页面 新建 一个进程,所以单个 tab 页面崩溃不会影响到整个浏览器。</li>
-<li>第三方插件崩溃也不会影响到整个浏览器。</li>
-<li>多进程可以充分利用现代 CPU 多核的优势。</li>
-<li>方便使用沙盒模型隔离插件等进程,提高浏览器的稳定性。</li>
-</ul>
-<p><strong>4. 进程和线程又是什么呢</strong></p>
-<p>进程（process）和线程（thread）是操作系统的基本概念。</p>
-<ul>
-<li>进程是 CPU 资源分配的最小单位（是能拥有资源和独立运行的最小单位）。</li>
-<li>线程是 CPU 调度的最小单位（是建立在进程基础上的一次程序运行单位）。</li>
-</ul>
-<blockquote>
-<p>由于每个进程至少要做一件事,所以一个进程至少有一个线程。系统会给每个进程分配独立的内存,因此进程有它独立的资源。同一进程内的各个线程之间共享该进程的内存空间（包括代码段,数据集,堆等）。</p>
-</blockquote>
-<p>进程可以理解为一个工厂不不同车间，相互独立。线程是车间里的工人，可以自己做自己的事情,也可以相互配合做同一件事情。</p>
-<p><strong>5. 任务队列</strong></p>
-<ul>
-<li>单线程就意味着，所有任务都要排队执行，前一个任务结束，才会执行后一个任务。</li>
-<li>如果一个任务需要执行，但此时JavaScript引擎正在执行其他任务，那么这个任务就需要放到一个队列中进行等待。等到线程空闲时，就可以从这个队列中取出最早加入的任务进行执行（类似于我们去银行排队办理业务，单线程相当于说这家银行只有一个服务窗口，一次只能为一个人服务，后面到的就需要排队，而任务队列就是排队区，先到的就优先服务）</li>
-</ul>
-<p><strong>注意：</strong> 如果当前线程空闲，并且队列为空，那每次加入队列的函数将立即执行。</p>
-<blockquote>
-<p>为什么会有任务队列？ 由于 JS 是单线程的，同步执行任务会造成浏览器的阻塞，所以我们将 JS 分成一个又一个的任务，通过不停的循环来执行事件队列中的任务。</p>
-</blockquote>
-<h3 id="❤Chrome-打开一个页面需要启动多少进程？分别有哪些进程？"><a href="#❤Chrome-打开一个页面需要启动多少进程？分别有哪些进程？" class="headerlink" title="❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？"></a>❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</h3><p>打开 1 个页面至少需要 1 个网络进程、1 个浏览器进程、1 个 GPU 进程以及 1 个渲染进程，共 4 个；最新的 Chrome 浏览器包括：1 个浏览器（Browser）主进程、1 个 GPU 进程、1 个网络（NetWork）进程、多个渲染进程和多个插件进程。</p>
+<h3 id="❤-Chrome-打开一个页面需要启动多少进程？分别有哪些进程？"><a href="#❤-Chrome-打开一个页面需要启动多少进程？分别有哪些进程？" class="headerlink" title="❤ Chrome 打开一个页面需要启动多少进程？分别有哪些进程？"></a>❤ Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</h3><p>打开 1 个页面至少需要 1 个网络进程、1 个浏览器进程、1 个 GPU 进程以及 1 个渲染进程，共 4 个；最新的 Chrome 浏览器包括：1 个浏览器（Browser）主进程、1 个 GPU 进程、1 个网络（NetWork）进程、多个渲染进程和多个插件进程。</p>
 <ul>
 <li><code>浏览器进程</code>：主要负责界面显示、用户交互、子进程管理，同时提供存储等功能。</li>
 <li><code>渲染进程</code>：核心任务是将 HTML、CSS 和 JavaScript 转换为用户可以与之交互的网页，排版引擎 Blink 和 JavaScript 引擎 V8 都是运行在该进程中，默认情况下，Chrome 会为每个 Tab 标签创建一个渲染进程。出于安全考虑，渲染进程都是运行在沙箱模式下。</li>
@@ -386,7 +371,7 @@
 <li><code>网络进程</code>：主要负责页面的网络资源加载，之前是作为一个模块运行在浏览器进程里面的，直至最近才独立出来，成为一个单独的进程。</li>
 <li><code>插件进程</code>：主要是负责插件的运行，因插件易崩溃，所以需要通过插件进程来隔离，以保证插件进程崩溃不会对浏览器和页面造成影响。</li>
 </ul>
-<h3 id="❤渲染机制"><a href="#❤渲染机制" class="headerlink" title="❤渲染机制"></a>❤渲染机制</h3><p><strong>1. 浏览器如何渲染网页</strong></p>
+<h3 id="❤-渲染机制"><a href="#❤-渲染机制" class="headerlink" title="❤ 渲染机制"></a>❤ 渲染机制</h3><p><strong>1. 浏览器如何渲染网页</strong></p>
 <p><strong>概述：浏览器渲染一共有五步</strong></p>
 <ol>
 <li>处理 <code>HTML</code> 并构建 <code>DOM</code> 树。</li>
@@ -609,7 +594,7 @@
 </ul>
 </li>
 </ul>
-<h3 id="❤缓存机制"><a href="#❤缓存机制" class="headerlink" title="❤缓存机制"></a>❤缓存机制</h3><p><strong>1. 首先得明确 http 缓存的好处</strong></p>
+<h3 id="❤-缓存机制"><a href="#❤-缓存机制" class="headerlink" title="❤ 缓存机制"></a>❤ 缓存机制</h3><p><strong>1. 首先得明确 http 缓存的好处</strong></p>
 <ul>
 <li>减少了冗余的数据传输，减少网费</li>
 <li>减少服务器端的压力</li>
@@ -771,7 +756,44 @@
 <li>ETag（表示资源内容的唯一标识，随服务器response返回，仅根据文件内容是否变化判断）</li>
 <li>If-None-Match（服务器通过比较请求头部的If-None-Match与当前资源的ETag是否一致来判断资源是否在两次请求之间有过修改，如果没有修改，则命中协商缓存）</li>
 </ul>
-<h3 id="❤浏览器存储"><a href="#❤浏览器存储" class="headerlink" title="❤浏览器存储"></a>❤浏览器存储</h3><blockquote>
+<h4 id="浏览器缓存"><a href="#浏览器缓存" class="headerlink" title="浏览器缓存"></a>浏览器缓存</h4><blockquote>
+<p>浏览器缓存分为强缓存和协商缓存。当客户端请求某个资源时，获取缓存的流程如下</p>
+</blockquote>
+<ul>
+<li>先根据这个资源的一些 <code>http header</code> 判断它是否命中强缓存，如果命中，则直接从本地获取缓存资源，不会发请求到服务器；</li>
+<li>当强缓存没有命中时，客户端会发送请求到服务器，服务器通过另一些<code>request header</code>验证这个资源是否命中协商缓存，称为<code>http</code>再验证，如果命中，服务器将请求返回，但不返回资源，而是告诉客户端直接从缓存中获取，客户端收到返回后就会从缓存中获取资源；</li>
+<li>强缓存和协商缓存共同之处在于，如果命中缓存，服务器都不会返回资源； 区别是，强缓存不对发送请求到服务器，但协商缓存会。</li>
+<li>当协商缓存也没命中时，服务器就会将资源发送回客户端。</li>
+<li>当 <code>ctrl+f5</code> 强制刷新网页时，直接从服务器加载，跳过强缓存和协商缓存；</li>
+<li>当 <code>f5</code>刷新网页时，跳过强缓存，但是会检查协商缓存；</li>
+</ul>
+<p><strong>强缓存</strong></p>
+<ul>
+<li><code>Expires</code>（该字段是 <code>http1.0</code> 时的规范，值为一个绝对时间的 <code>GMT</code> 格式的时间字符串，代表缓存资源的过期时间）</li>
+<li><code>Cache-Control:max-age</code>（该字段是 <code>http1.1</code>的规范，强缓存利用其 <code>max-age</code> 值来判断缓存资源的最大生命周期，它的值单位为秒）</li>
+</ul>
+<p><strong>协商缓存</strong></p>
+<ul>
+<li><code>Last-Modified</code>（值为资源最后更新时间，随服务器response返回）</li>
+<li><code>If-Modified-Since</code>（通过比较两个时间来判断资源在两次请求期间是否有过修改，如果没有修改，则命中协商缓存）</li>
+<li><code>ETag</code>（表示资源内容的唯一标识，随服务器<code>response</code>返回）</li>
+<li><code>If-None-Match</code>（服务器通过比较请求头部的<code>If-None-Match</code>与当前资源的<code>ETag</code>是否一致来判断资源是否在两次请求之间有过修改，如果没有修改，则命中协商缓存）</li>
+</ul>
+<h4 id="说一下浏览器的缓存机制"><a href="#说一下浏览器的缓存机制" class="headerlink" title="说一下浏览器的缓存机制"></a>说一下浏览器的缓存机制</h4><blockquote>
+<p>浏览器缓存机制有两种，一种为强缓存，一种为协商缓存</p>
+</blockquote>
+<ul>
+<li>对于强缓存，浏览器在第一次请求的时候，会直接下载资源，然后缓存在本地，第二次请求的时候，直接使用缓存。</li>
+<li>对于协商缓存，第一次请求缓存且保存缓存标识与时间，重复请求向服务器发送缓存标识和最后缓存时间，服务端进行校验，如果失效则使用缓存</li>
+</ul>
+<p><strong>协商缓存相关设置</strong></p>
+<ul>
+<li><code>Exprires</code>：服务端的响应头，第一次请求的时候，告诉客户端，该资源什么时候会过期。<code>Exprires</code>的缺陷是必须保证服务端时间和客户端时间严格同步。</li>
+<li><code>Cache-control：max-age</code>：表示该资源多少时间后过期，解决了客户端和服务端时间必须同步的问题，</li>
+<li><code>If-None-Match/ETag</code>：缓存标识，对比缓存时使用它来标识一个缓存，第一次请求的时候，服务端会返回该标识给客户端，客户端在第二次请求的时候会带上该标识与服务端进行对比并返回<code>If-None-Match</code>标识是否表示匹配。</li>
+<li><code>Last-modified/If-Modified-Since</code>：第一次请求的时候服务端返回<code>Last-modified</code>表明请求的资源上次的修改时间，第二次请求的时候客户端带上请求头<code>If-Modified-Since</code>，表示资源上次的修改时间，服务端拿到这两个字段进行对比</li>
+</ul>
+<h3 id="❤-浏览器存储"><a href="#❤-浏览器存储" class="headerlink" title="❤ 浏览器存储"></a>❤ 浏览器存储</h3><blockquote>
 <p>我们经常需要对业务中的一些数据进行存储，通常可以分为 短暂性存储 和 持久性储存。</p>
 </blockquote>
 <ul>
@@ -893,6 +915,10 @@
 </ul>
 </li>
 </ul>
+<h3 id="实现Storage，使得该对象为单例，并对localStorage进行封装设置值setItem-key-value-和getItem-key"><a href="#实现Storage，使得该对象为单例，并对localStorage进行封装设置值setItem-key-value-和getItem-key" class="headerlink" title="实现Storage，使得该对象为单例，并对localStorage进行封装设置值setItem(key,value)和getItem(key)"></a>实现Storage，使得该对象为单例，并对<code>localStorage</code>进行封装设置值setItem(key,value)和getItem(key)</h3><figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> instance = <span class="literal">null</span>;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Storage</span> </span>{</span><br><span class="line">  <span class="keyword">static</span> <span class="function"><span class="title">getInstance</span>(<span class="params"></span>)</span> {</span><br><span class="line">    <span class="keyword">if</span> (!instance) {</span><br><span class="line">      instance = <span class="keyword">new</span> Storage();</span><br><span class="line">    }</span><br><span class="line">    <span class="keyword">return</span> instance;</span><br><span class="line">  }</span><br><span class="line">  setItem = <span class="function">(<span class="params">key, value</span>) =&gt;</span> <span class="built_in">localStorage</span>.setItem(key, value),</span><br><span class="line">  getItem = <span class="function"><span class="params">key</span> =&gt;</span> <span class="built_in">localStorage</span>.getItem(key)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
 <h3 id="token-能放在cookie中吗"><a href="#token-能放在cookie中吗" class="headerlink" title="token 能放在cookie中吗"></a><code>token</code> 能放在<code>cookie</code>中吗</h3><ul>
 <li><strong>得分点</strong> 能、不设置cookie有效期、重新登录重写cookie覆盖原来的cookie</li>
 <li><strong>标准回答</strong><ul>
@@ -924,7 +950,7 @@
 <li><code>cookie</code> 的最大大约为 <code>4096</code> 字节，为了兼容性，一般设置不超过 <code>4095</code> 字节</li>
 <li>如果 <code>cookie</code> 被人拦截了，就可以取得所有的 <code>sessioln</code> 信息</li>
 </ul>
-<h3 id="❤跨域方案"><a href="#❤跨域方案" class="headerlink" title="❤跨域方案"></a>❤跨域方案</h3><blockquote>
+<h3 id="❤-跨域方案"><a href="#❤-跨域方案" class="headerlink" title="❤ 跨域方案"></a>❤ 跨域方案</h3><blockquote>
 <p>很多种方法，但万变不离其宗，都是为了搞定同源策略。重用的有 <code>jsonp</code>、<code>iframe</code>、<code>cors</code>、<code>img</code>、<code>HTML5 postMessage</code>等等。其中用到 <code>html</code> 标签进行跨域的原理就是 <code>html</code> 不受同源策略影响。但只是接受 <code>Get</code> 的请求方式，这个得清楚。</p>
 </blockquote>
 <blockquote>
@@ -1017,7 +1043,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 </ul>
 </li>
 </ul>
-<h3 id="❤XSS-和-CSRF"><a href="#❤XSS-和-CSRF" class="headerlink" title="❤XSS 和 CSRF"></a>❤XSS 和 CSRF</h3><p><img data-src="https://s.poetries.work/images/20210415090547.png" alt="img"></p>
+<h3 id="❤-XSS-和-CSRF"><a href="#❤-XSS-和-CSRF" class="headerlink" title="❤ XSS 和 CSRF"></a>❤ XSS 和 CSRF</h3><p><img data-src="https://s.poetries.work/images/20210415090547.png" alt="img"></p>
 <p><strong>1. XSS</strong></p>
 <blockquote>
 <p>涉及面试题：什么是 <code>XSS</code> 攻击？如何防范 <code>XSS</code> 攻击？什么是 <code>CSP</code>？</p>
@@ -1232,7 +1258,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 </ul>
 </li>
 </ul>
-<h3 id="❤Service-Worker"><a href="#❤Service-Worker" class="headerlink" title="❤Service Worker"></a>❤Service Worker</h3><blockquote>
+<h3 id="❤-Service-Worker"><a href="#❤-Service-Worker" class="headerlink" title="❤ Service Worker"></a>❤ Service Worker</h3><blockquote>
 <p><code>Service workers</code> 本质上充当Web应用程序与浏览器之间的代理服务器，也可以在网络可用时作为浏览器和网络间的代理。它们旨在（除其他之外）使得能够创建有效的离线体验，拦截网络请求并基于网络是否可用以及更新的资源是否驻留在服务器上来采取适当的动作。他们还允许访问推送通知和后台同步API</p>
 </blockquote>
 <p><strong>浏览器对 ServiceWorker 做了很多限制</strong></p>
@@ -1255,7 +1281,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 <blockquote>
 <p>当我们重新刷新页面可以发现我们缓存的数据是从 <code>Service</code> <code>Worker</code> 中读取的</p>
 </blockquote>
-<h3 id="❤DOM-节点操作"><a href="#❤DOM-节点操作" class="headerlink" title="❤DOM 节点操作"></a>❤DOM 节点操作</h3><p><strong>（1）创建新节点</strong></p>
+<h3 id="❤-DOM-节点操作"><a href="#❤-DOM-节点操作" class="headerlink" title="❤ DOM 节点操作"></a>❤ DOM 节点操作</h3><p><strong>（1）创建新节点</strong></p>
 <figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">createDocumentFragment()    <span class="comment">//创建一个DOM片段</span></span><br><span class="line">createElement()   <span class="comment">//创建一个具体的元素</span></span><br><span class="line">createTextNode()   <span class="comment">//创建一个文本节点</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p><strong>（2）添加、移除、替换、插入</strong></p>
@@ -1269,7 +1295,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 
 
 
-<h3 id="❤掌握页面的加载过程"><a href="#❤掌握页面的加载过程" class="headerlink" title="❤掌握页面的加载过程"></a>❤掌握页面的加载过程</h3><p><strong>网页加载流程</strong></p>
+<h3 id="❤-掌握页面的加载过程"><a href="#❤-掌握页面的加载过程" class="headerlink" title="❤ 掌握页面的加载过程"></a>❤ 掌握页面的加载过程</h3><p><strong>网页加载流程</strong></p>
 <ul>
 <li>当我们打开网址的时候，浏览器会从服务器中获取到 HTML 内容</li>
 <li>浏览器获取到 HTML 内容后，就开始从上到下解析 HTML 的元素</li>
@@ -1305,7 +1331,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 <li><code>Load</code> 事件触发代表页面中的 <code>DOM</code>，<code>CSS</code>，<code>JS</code>，图片已经全部加载完毕。</li>
 <li><code>DOMContentLoaded</code> 事件触发代表初始的 <code>HTML</code> 被完全加载和解析，不需要等待 <code>CSS</code>，<code>JS</code>，图片加载</li>
 </ul>
-<h3 id="❤从输入URL到页面展示过程"><a href="#❤从输入URL到页面展示过程" class="headerlink" title="❤从输入URL到页面展示过程"></a>❤从输入URL到页面展示过程</h3><p><img data-src="https://s.poetries.work/images/20210504134355.png" alt="img"></p>
+<h3 id="❤-从输入URL到页面展示过程"><a href="#❤-从输入URL到页面展示过程" class="headerlink" title="❤ 从输入URL到页面展示过程"></a>❤ 从输入URL到页面展示过程</h3><p><img data-src="https://s.poetries.work/images/20210504134355.png" alt="img"></p>
 <p><strong>1. DNS域名解析</strong></p>
 <p><img data-src="https://s.poetries.work/images/20210504134816.png" alt="img"></p>
 <ul>
@@ -1398,6 +1424,254 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 <p>通常一个页面可能很大，但是用户只能看到其中的一部分，我们把用户可以看到的这个部分叫做视口（viewport）。在有些情况下，有的图层可以很大，比如有的页面你使用滚动条要滚动好久才能滚动到底部，但是通过视口，用户只能看到页面的很小一部分，所以在这种情况下，要绘制出所有图层内容的话，就会产生太大的开销，而且也没有必要。</p>
 <p><strong>显示</strong></p>
 <p>最后，合成线程发送绘制图块命令给浏览器进程。浏览器进程根据指令生成页面，并显示到显示器上，渲染过程完成。</p>
+<h3 id="常见web安全及防护原理"><a href="#常见web安全及防护原理" class="headerlink" title="常见web安全及防护原理"></a>常见web安全及防护原理</h3><ul>
+<li><code>sql</code>注入原理<ul>
+<li>就是通过把<code>SQL</code>命令插入到<code>Web</code>表单递交或输入域名或页面请求的查询字符串，最终达到欺骗服务器执行恶意的SQL命令</li>
+</ul>
+</li>
+<li>总的来说有以下几点<ul>
+<li>永远不要信任用户的输入，要对用户的输入进行校验，可以通过正则表达式，或限制长度，对单引号和双<code>"-"</code>进行转换等</li>
+<li>永远不要使用动态拼装SQL，可以使用参数化的<code>SQL</code>或者直接使用存储过程进行数据查询存取</li>
+<li>永远不要使用管理员权限的数据库连接，为每个应用使用单独的权限有限的数据库连接</li>
+<li>不要把机密信息明文存放，请加密或者<code>hash</code>掉密码和敏感的信息</li>
+</ul>
+</li>
+</ul>
+<p><strong>XSS原理及防范</strong></p>
+<ul>
+<li><code>Xss(cross-site scripting)</code>攻击指的是攻击者往<code>Web</code>页面里插入恶意<code>html</code>标签或者<code>javascript</code>代码。比如：攻击者在论坛中放一个看似安全的链接，骗取用户点击后，窃取<code>cookie</code>中的用户私密信息；或者攻击者在论坛中加一个恶意表单，当用户提交表单的时候，却把信息传送到攻击者的服务器中，而不是用户原本以为的信任站点</li>
+</ul>
+<p><strong>XSS防范方法</strong></p>
+<ul>
+<li>首先代码里对用户输入的地方和变量都需要仔细检查长度和对<code>”&lt;”,”&gt;”,”;”,”’”</code>等字符做过滤；其次任何内容写到页面之前都必须加以encode，避免不小心把<code>html tag</code> 弄出来。这一个层面做好，至少可以堵住超过一半的XSS 攻击</li>
+</ul>
+<p><strong>XSS与CSRF有什么区别吗？</strong></p>
+<ul>
+<li><code>XSS</code>是获取信息，不需要提前知道其他用户页面的代码和数据包。<code>CSRF</code>是代替用户完成指定的动作，需要知道其他用户页面的代码和数据包。要完成一次<code>CSRF</code>攻击，受害者必须依次完成两个步骤</li>
+<li>登录受信任网站<code>A</code>，并在本地生成<code>Cookie</code></li>
+<li>在不登出<code>A</code>的情况下，访问危险网站<code>B</code></li>
+</ul>
+<p><strong>CSRF的防御</strong></p>
+<ul>
+<li>服务端的<code>CSRF</code>方式方法很多样，但总的思想都是一致的，就是在客户端页面增加伪随机数</li>
+<li>通过验证码的方法</li>
+</ul>
+<h3 id="❤-WebSocket"><a href="#❤-WebSocket" class="headerlink" title="❤ WebSocket"></a>❤ WebSocket</h3><blockquote>
+<p>由于 <code>http</code> 存在一个明显的弊端（消息只能有客户端推送到服务器端，而服务器端不能主动推送到客户端），导致如果服务器如果有连续的变化，这时只能使用轮询，而轮询效率过低，并不适合。于是 <code>WebSocket</code>被发明出来</p>
+</blockquote>
+<blockquote>
+<p>相比与 <code>http</code> 具有以下优点</p>
+</blockquote>
+<ul>
+<li>支持双向通信，实时性更强；</li>
+<li>可以发送文本，也可以二进制文件；</li>
+<li>协议标识符是 <code>ws</code>，加密后是 <code>wss</code> ；</li>
+<li>较少的控制开销。连接创建后，<code>ws</code>客户端、服务端进行数据交换时，协议控制的数据包头部较小。在不包含头部的情况下，服务端到客户端的包头只有<code>2~10</code>字节（取决于数据包长度），客户端到服务端的的话，需要加上额外的4字节的掩码。而<code>HTTP</code>协议每次通信都需要携带完整的头部；</li>
+<li>支持扩展。ws协议定义了扩展，用户可以扩展协议，或者实现自定义的子协议。（比如支持自定义压缩算法等）</li>
+<li>无跨域问题。</li>
+</ul>
+<blockquote>
+<p>实现比较简单，服务端库如 <code>socket.io</code>、<code>ws</code>，可以很好的帮助我们入门。而客户端也只需要参照 <code>api</code> 实现即可</p>
+</blockquote>
+<h4 id="WebSocket-的实现和应用"><a href="#WebSocket-的实现和应用" class="headerlink" title="WebSocket 的实现和应用"></a>WebSocket 的实现和应用</h4><p><span class="exturl" data-url="aHR0cHM6Ly9pbnRlcnZpZXcyLnBvZXRyaWVzLnRvcC9kb2NzL2V4Y2VsbGVudC1kb2NzLzE0LUhUVFAlRTYlQTglQTElRTUlOUQlOTcuaHRtbCNfNy13ZWJzb2NrZXQlRTclOUElODQlRTUlQUUlOUUlRTclOEUlQjAlRTUlOTIlOEMlRTUlQkElOTQlRTclOTQlQTg=">参考链接<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p><code>Websocket</code> 是一个 持久化的协议， 基于 <code>http</code> ， 服务端可以 主动 <code>push</code></p>
+</blockquote>
+<p><strong>兼容：</strong></p>
+<blockquote>
+<ul>
+<li><code>FLASH Socket</code></li>
+<li>长轮询： 定时发送 <code>ajax</code></li>
+<li><code>long poll</code>： 发送 –&gt; 有消息时再 <code>response</code></li>
+</ul>
+</blockquote>
+<ul>
+<li><code>new WebSocket(url)</code></li>
+<li><code>ws.onerror = fn</code></li>
+<li><code>ws.onclose = fn</code></li>
+<li><code>ws.onopen = fn</code></li>
+<li><code>ws.onmessage = fn</code></li>
+<li><code>ws.send()</code></li>
+</ul>
+<h4 id="什么是-WebSocket"><a href="#什么是-WebSocket" class="headerlink" title="什么是 WebSocket"></a>什么是 WebSocket</h4><blockquote>
+<p>WebSocket 是 HTML5 中的协议，支持持久连续，http 协议不支持持久性连接。Http1.0 和 HTTP1.1 都不支持持久性的链接，HTTP1.1 中的 keep-alive，将多个 http 请求合并为 1个</p>
+</blockquote>
+<h4 id="WebSocket-是什么样的协议，具体有什么优点"><a href="#WebSocket-是什么样的协议，具体有什么优点" class="headerlink" title="WebSocket 是什么样的协议，具体有什么优点"></a>WebSocket 是什么样的协议，具体有什么优点</h4><ul>
+<li>HTTP 的生命周期通过 Request 来界定，也就是 Request 一个 Response，那么在 Http1.0 协议中，这次 Http 请求就结束了。在 Http1.1 中进行了改进，是的有一个 connection: Keep-alive，也就是说，在一个 Http 连接中，可以发送多个 Request，接收多个 Response。 但是必须记住，在 Http 中一个 Request 只能对应有一个 Response，而且这个 Response 是被动的，不能主动发起。</li>
+<li>WebSocket 是基于 Http 协议的，或者说借用了 Http 协议来完成一部分握手，在握手阶段 与 Http 是相同的。我们来看一个 websocket 握手协议的实现，基本是 2 个属性，upgrade， connection。</li>
+</ul>
+<p>基本请求如下:</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">GET /chat HTTP/1.1</span><br><span class="line">Host: server.example.com</span><br><span class="line">Upgrade: websocket</span><br><span class="line">Connection: Upgrade</span><br><span class="line">Sec-WebSocket-Key: x3JJHMbDL1EzLkh9GBhXDw== Sec-WebSocket-Protocol: chat, superchat Sec-WebSocket-Version: 13</span><br><span class="line">Origin: http://example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<p>多了下面 2 个属性:</p>
+<figure class="highlight text"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Upgrade:webSocket </span><br><span class="line">Connection:Upgrade</span><br></pre></td></tr></tbody></table></figure>
+
+<p>告诉服务器发送的是 <code>websocket</code></p>
+<h4 id="理解WebSocket协议的底层原理、与HTTP的区别"><a href="#理解WebSocket协议的底层原理、与HTTP的区别" class="headerlink" title="理解WebSocket协议的底层原理、与HTTP的区别"></a>理解WebSocket协议的底层原理、与HTTP的区别</h4><blockquote>
+<p>WebSocket 是一个持久化的网络通信协议，可以在单个 TCP 连接上进行 <strong>全双工通讯</strong> ，没有了 <strong>Request</strong> 和 <strong>Response</strong> 的概念，两者地位完全平等，连接一旦建立，客户端和服务端之间可以实时进行双向数据传输。</p>
+</blockquote>
+<ol>
+<li>HTTP 是非持久协议，客户端想知道服务端的处理进度只能通过长轮询或者是 long poll 的方式，但是前者对服务器压力大，后者则会因为一直等待响应造成阻塞。</li>
+</ol>
+<p><img data-src="https://s.poetries.work/images/202203211356046.png" alt="img"></p>
+<ol>
+<li>虽然 http1.1 默认开启了 keep-alive 长连接保持了这个 TCP 通道使得在一个 HTTP 连接中可以发送多个请求，接受多个响应，但是一个请求只能有一个响应，而且这个响应也是被动的，不能主动发起</li>
+<li>WebSocket 虽然是独立于 HTTP 的一种协议，但是 WebSocket 必须依赖 HTTP 协议进行一次握手（在握手阶段是一样的），握手成功后，数据就直接从 TCP 通道传输，与 HTTP 无关了，可以用一张图理解两者有交集，但并不是全部。</li>
+</ol>
+<p><img data-src="https://s.poetries.work/images/202203211356643.png" alt="img"></p>
+<p><strong>socket</strong></p>
+<ol>
+<li>socket 也被称为套接字，与 HTTP 和 WebSocket 不一样，socket 不是协议，它是在程序层面上对传输层协议（可以主要理解为 TCP / IP）的接口封装。可以理解为一个能够提供端对端的通信的调用接口（API）。</li>
+<li>对于程序员而言，其需要在 A 端创建一个 socket 实例，并为这个实例提供其所要连接的 B 端的 IP 地址和端口号，而在 B 端创建另一个 socket 实例，并且绑定本地端口号来进行监听。当 A 和 B 建立连接后，双方就建立了一个端对端的 TCP</li>
+</ol>
+<p><strong>应用场景</strong></p>
+<blockquote>
+<p>WebSocket 可以做弹幕、消息订阅、多玩家游戏、协同编辑、股票基金实时报价、视频会议、在线教育、聊天室等应用实时监听服务端变化。</p>
+</blockquote>
+<p><strong>WebCocket 握手</strong></p>
+<ul>
+<li>WebSocket 握手请求报文</li>
+</ul>
+<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GET</span> <span class="string">/chat</span> <span class="meta">HTTP/1.1</span></span><br><span class="line"><span class="attribute">Host</span><span class="punctuation">: </span>server.example.com</span><br><span class="line"><span class="attribute">Upgrade</span><span class="punctuation">: </span>websocket</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>Upgrade</span><br><span class="line"><span class="attribute">Sec-WebSocket-Key</span><span class="punctuation">: </span>x3JJHMbDL1EzLkh9GBhXDw==</span><br><span class="line"><span class="attribute">Sec-WebSocket-Protocol</span><span class="punctuation">: </span>chat, superchat</span><br><span class="line"><span class="attribute">Sec-WebSocket-Version</span><span class="punctuation">: </span>13</span><br><span class="line"><span class="attribute">Origin</span><span class="punctuation">: </span>http://example.com</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>下面是与传统 HTTP 报文不同的地方：</p>
+</blockquote>
+<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Upgrade</span><span class="punctuation">: </span>websocket</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>Upgrade</span><br></pre></td></tr></tbody></table></figure>
+
+<p>表示发起的是 WebSocket 协议</p>
+<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Sec-WebSocket-Key</span><span class="punctuation">: </span>x3JJHMbDL1EzLkh9GBhXDw==</span><br><span class="line"><span class="attribute">Sec-WebSocket-Protocol</span><span class="punctuation">: </span>chat, superchat</span><br><span class="line"><span class="attribute">Sec-WebSocket-Version</span><span class="punctuation">: </span>13</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><p><code>Sec-WebSocket-Key</code> 是由浏览器随机生成的，验证是否可以进行 WebSocket 通信，防止恶意或者无意的连接；</p>
+</li>
+<li><p><code>Sec-WebSocket-Protocol</code> 是用户自定义的字符串，用来标识服务所以需要的协议；</p>
+</li>
+<li><p><code>Sec-WebSocket-Version</code> 表示支持的 WebSocket 版本。</p>
+</li>
+<li><p>服务端响应</p>
+</li>
+</ul>
+<figure class="highlight http"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">HTTP/1.1</span> <span class="number">101</span> </span><br><span class="line">Switching Protocols</span><br><span class="line"><span class="attribute">Upgrade</span><span class="punctuation">: </span>websocket</span><br><span class="line"><span class="attribute">Connection</span><span class="punctuation">: </span>Upgrade</span><br><span class="line"><span class="attribute">Sec-WebSocket-Accept</span><span class="punctuation">: </span>HSmrc0sMlYUkAGmm5OPpG2HaGWk=</span><br><span class="line"><span class="attribute">Sec-WebSocket-Protocol</span><span class="punctuation">: </span>chat</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>101 响应码 表示要转换协议。</li>
+<li><code>Connection: Upgrade</code> 表示升级新协议请求。</li>
+<li><code>Upgrade: websocket</code> 表示升级为 WebSocket 协议。</li>
+<li><code>Sec-WebSocket-Accept</code> 是经过服务器确认，并加密过后的 <code>Sec-WebSocket-Key</code> ，用来证明客户端和服务端之间能够进行通信了。</li>
+<li><code>Sec-WebSocket-Protocol</code> 表示最终使用的协议。</li>
+</ul>
+<blockquote>
+<p>至此，客户端和服务器握手成功建立了 WebSocket 连接，HTTP 已经完成了他所有工作，接下来就是完全按照 WebSocket 协议进行通信。</p>
+</blockquote>
+<p><strong>WebSocket 心跳</strong></p>
+<p>可能会有某些未知情况导致 socket 断开，而客户端和服务端却不知道，需要客户端定时发送一个 <strong>心跳 ping</strong> 让服务端知道自己在线，服务端也需要回复一个 <strong>心跳 pong</strong> 告诉客户端自己可用，否则视为断开。</p>
+<p><strong>WebSocket 状态</strong></p>
+<blockquote>
+<p>WebSocket 对象中的 readyState 属性有四种状态：</p>
+</blockquote>
+<ul>
+<li>0：表示正在连接</li>
+<li>1：表示连接成功，可以通信了</li>
+<li>2：表示连接正在关闭</li>
+<li>3：表示连接已经关闭，或者打开连接失败</li>
+</ul>
+<p><strong>websocket和HTTP有什么不一样小结</strong></p>
+<ul>
+<li>双向通信</li>
+<li>数据格式比较轻量，性能开销小，通信高效<ul>
+<li>协议控制的数据包头部较小，而<code>HTTP</code>协议每次通信都需要携带完整的头部</li>
+</ul>
+</li>
+<li>更好的二进制支持</li>
+<li>没有同源限制，客户端可以与任意服务器通信</li>
+<li>与 <code>HTTP</code> 协议有着良好的兼容性。默认端口也是<code>80</code>和<code>443</code>，并且握手阶段采用 <code>HTTP</code> 协议，因此握手时不容易屏蔽，能通过各种 <code>HTTP</code> 代理服务器</li>
+</ul>
+<h3 id="WEB-应用从服务器主动推送-Data-到客户端有那些方式"><a href="#WEB-应用从服务器主动推送-Data-到客户端有那些方式" class="headerlink" title="WEB 应用从服务器主动推送 Data 到客户端有那些方式"></a>WEB 应用从服务器主动推送 Data 到客户端有那些方式</h3><ul>
+<li><p><code>AJAX</code> 轮询</p>
+</li>
+<li><p><code>html5</code> 服务器推送事件 <code>(new EventSource(SERVER_URL)).addEventListener("message", func);</code></p>
+</li>
+<li><p>html5 Websocket</p>
+<ul>
+<li><code>(new WebSocket(SERVER_URL)).addEventListener("message", func);</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="检测浏览器版本版本有哪些方式？"><a href="#检测浏览器版本版本有哪些方式？" class="headerlink" title="检测浏览器版本版本有哪些方式？"></a>检测浏览器版本版本有哪些方式？</h3><ul>
+<li>根据 <code>navigator.userAgent</code> <code>UA.toLowerCase().indexOf('chrome')</code></li>
+<li>根据 <code>window</code> 对象的成员 <code>'ActiveXObject' in window</code></li>
+</ul>
+<h3 id="❤-浏览器垃圾回收机制？"><a href="#❤-浏览器垃圾回收机制？" class="headerlink" title="❤ 浏览器垃圾回收机制？"></a>❤ 浏览器垃圾回收机制？</h3><ul>
+<li><strong>得分点</strong> 栈垃圾回收、堆垃圾回收、新生区老生区、Scavenge算法、标记-清除算法、标记-整理算法、全停顿、增量标记</li>
+<li><strong>标准回答</strong> 浏览器垃圾回收机制根据数据的存储方式分为栈垃圾回收和堆垃圾回收。<ul>
+<li><strong>栈垃圾回收</strong>的方式非常简便，当一个函数执行结束之后，JavaScript 引擎会通过向下移动 ESP 来销毁该函数保存在栈中的执行上下文，遵循先进后出的原则。</li>
+<li><strong>堆垃圾回收</strong>，当函数直接结束，栈空间处理完成了，但是堆空间的数据虽然没有被引用，但是还是存储在堆空间中，需要垃圾回收器将堆空间中的垃圾数据回收。</li>
+</ul>
+</li>
+<li>为了使垃圾回收达到更好的效果，根据对象的生命周期不一样，使用不同的垃圾回收的算法。在 V8 中会把堆分为新生代和老生代两个区域，新生代中存放的是生存时间短的对象，老生代中存放的生存时间久的对象。<ul>
+<li>新生区中使用Scavenge算法，老生区中使用标记-清除算法和标记-整理算法。</li>
+</ul>
+</li>
+<li><strong>加分回答</strong></li>
+<li><strong>Scavenge算法：</strong><ol>
+<li>标记：对对象区域中的垃圾进行标记</li>
+<li>清除垃圾数据和整理碎片化内存：副垃圾回收器会把这些存活的对象复制到空闲区域中，并且有序的排列起来，复制后空闲区域就没有内存碎片了</li>
+<li>角色翻转：完成复制后，对象区域与空闲区域进行角色翻转，也就是原来的对象区域变成空闲区域，原来的空闲区域变成了对象区域，这样就完成了垃圾对象的回收操作，同时这种角色翻转的操作还能让新生代中的这两块区域无限重复使用下去</li>
+</ol>
+</li>
+<li><strong>标记-清除算法：</strong><ol>
+<li>标记：标记阶段就是从一组根元素开始，递归遍历这组根元素，在这个遍历过程中，能到达的元素称为活动对象，没有到达的元素就可以判断为垃圾数据。</li>
+<li>清除：将垃圾数据进行清除。</li>
+<li>产生内存碎片：对一块内存多次执行标记 - 清除算法后，会产生大量不连续的内存碎片。而碎片过多会导致大对象无法分配到足够的连续内存。</li>
+</ol>
+</li>
+<li><strong>标记-整理算法</strong><ol>
+<li>标记：和标记 - 清除的标记过程一样，从一组根元素开始，递归遍历这组根元素，在这个遍历过程中，能到达的元素标记为活动对象。</li>
+<li>整理：让所有存活的对象都向内存的一端移动</li>
+<li>清除：清理掉端边界以外的内存 V8 是使用副垃圾回收器和主垃圾回收器处理垃圾回收的，不过由于 JavaScript 是运行在主线程之上的，一旦执行垃圾回收算法，都需要将正在执行的 JavaScript 脚本暂停下来，待垃圾回收完毕后再恢复脚本执行。我们把这种行为叫做<strong>全停顿</strong>。 为了降低老生代的垃圾回收而造成的卡顿，V8 将标记过程分为一个个的子标记过程，同时让垃圾回收标记和 JavaScript 应用逻辑交替进行，直到标记阶段完成，我们把这个算法称为增量标记（Incremental Marking）算法</li>
+</ol>
+</li>
+</ul>
+<h3 id="Javascript垃圾回收方法"><a href="#Javascript垃圾回收方法" class="headerlink" title="Javascript垃圾回收方法"></a>Javascript垃圾回收方法</h3><ul>
+<li>标记清除（mark and sweep）</li>
+</ul>
+<blockquote>
+<ul>
+<li>这是JavaScript最常见的垃圾回收方式，当变量进入执行环境的时候，比如函数中声明一个变量，垃圾回收器将其标记为“进入环境”，当变量离开环境的时候（函数执行结束）将其标记为“离开环境”</li>
+<li>垃圾回收器会在运行的时候给存储在内存中的所有变量加上标记，然后去掉环境中的变量以及被环境中变量所引用的变量（闭包），在这些完成之后仍存在标记的就是要删除的变量了</li>
+</ul>
+</blockquote>
+<p><strong>引用计数(reference counting)</strong></p>
+<blockquote>
+<p>在低版本IE中经常会出现内存泄露，很多时候就是因为其采用引用计数方式进行垃圾回收。引用计数的策略是跟踪记录每个值被使用的次数，当声明了一个 变量并将一个引用类型赋值给该变量的时候这个值的引用次数就加1，如果该变量的值变成了另外一个，则这个值得引用次数减1，当这个值的引用次数变为0的时 候，说明没有变量在使用，这个值没法被访问了，因此可以将其占用的空间回收，这样垃圾回收器会在运行的时候清理掉引用次数为0的值占用的空间</p>
+</blockquote>
+<h3 id="垃圾回收"><a href="#垃圾回收" class="headerlink" title="垃圾回收"></a>垃圾回收</h3><blockquote>
+<p>找出那些不再继续使用的变 量，然后释放其占用的内存。为此，垃圾收集器会按照固定的时间间隔(或代码执行中预定的收集时间)， 周期性地执行这一操作。</p>
+</blockquote>
+<p><strong>标记清除</strong></p>
+<blockquote>
+<p>先所有都加上标记，再把环境中引用到的变量去除标记。剩下的就是没用的了</p>
+</blockquote>
+<p><strong>引用计数</strong></p>
+<blockquote>
+<p>跟踪记录每 个值被引用的次数。清除引用次数为0的变量 ⚠️会有循环引用问题 。循环引用如果大量存在就会导致内存泄露。</p>
+</blockquote>
+<h3 id="描述浏览器的渲染过程，DOM树和渲染树的区别"><a href="#描述浏览器的渲染过程，DOM树和渲染树的区别" class="headerlink" title="描述浏览器的渲染过程，DOM树和渲染树的区别"></a>描述浏览器的渲染过程，DOM树和渲染树的区别</h3><ul>
+<li>浏览器的渲染过程：<ul>
+<li>解析<code>HTML</code>构建 <code>DOM</code>(DOM树)，并行请求 <code>css/image/js</code></li>
+<li><code>CSS</code> 文件下载完成，开始构建 <code>CSSOM</code>(<code>CSS</code>树)</li>
+<li><code>CSSOM</code> 构建结束后，和 <code>DOM</code> 一起生成 <code>Render Tree</code>(渲染树)</li>
+<li>布局(<code>Layout</code>)：计算出每个节点在屏幕中的位置</li>
+<li>显示(<code>Painting</code>)：通过显卡把页面画到屏幕上</li>
+</ul>
+</li>
+<li><code>DOM</code>树 和 渲染树 的区别：<ul>
+<li><code>DOM</code>树与<code>HTML</code>标签一一对应，包括<code>head</code>和隐藏元素</li>
+<li>渲染树不包括<code>head</code>和隐藏元素，大段文本的每一个行都是独立节点，每一个节点都有对应的<code>css</code>属性</li>
+</ul>
+</li>
+</ul>
 
     </div>
 
@@ -1408,10 +1682,16 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
   <div class="popular-posts-header">相关文章</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\08\07\Vue\" rel="bookmark">Vue</a></div>
+      <div class="popular-posts-title"><a href="\2022\08\15\React\" rel="bookmark">React</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\06\20\CSS\" rel="bookmark">CSS基础</a></div>
+      <div class="popular-posts-title"><a href="\2022\08\16\Webpack\" rel="bookmark">Webpack</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\小程序\" rel="bookmark">小程序</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\ES6\" rel="bookmark">ES6</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="\2022\05\20\前端面试指南\" rel="bookmark">前端面试指南</a></div>
@@ -1439,8 +1719,8 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
       <footer class="post-footer">
           
           <div class="post-tags">
-              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
               <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
           </div>
 
         
@@ -1496,7 +1776,7 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">❤浏览器架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4JavaScript%E5%8D%95%E7%BA%BF%E7%A8%8B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">❤JavaScript单线程模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Chrome-%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E5%A4%9A%E5%B0%91%E8%BF%9B%E7%A8%8B%EF%BC%9F%E5%88%86%E5%88%AB%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">❤Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">❤渲染机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93"><span class="nav-number">5.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">浏览器渲染过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">❤缓存机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8"><span class="nav-number">8.</span> <span class="nav-text">❤浏览器存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies%EF%BC%8CSessionStorage-%E5%92%8C-LocalStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">Cookies，SessionStorage 和 LocalStorage 的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%AF%E8%BF%87%E6%9C%9F%E7%9A%84localstorage%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">实现可过期的localstorage数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#token-%E8%83%BD%E6%94%BE%E5%9C%A8cookie%E4%B8%AD%E5%90%97"><span class="nav-number">11.</span> <span class="nav-text">token 能放在cookie中吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E4%BD%A0%E8%B0%88%E8%B0%88Cookie%E7%9A%84%E5%BC%8A%E7%AB%AF"><span class="nav-number">12.</span> <span class="nav-text">请你谈谈Cookie的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%A1%88"><span class="nav-number">13.</span> <span class="nav-text">❤跨域方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E5%90%8C%E6%BA%90%E9%99%90%E5%88%B6%EF%BC%9F"><span class="nav-number">14.</span> <span class="nav-text">为什么要有同源限制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">15.</span> <span class="nav-text">如何解决跨域问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4XSS-%E5%92%8C-CSRF"><span class="nav-number">16.</span> <span class="nav-text">❤XSS 和 CSRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS%E6%94%BB%E5%87%BB"><span class="nav-number">17.</span> <span class="nav-text">XSS攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF%E6%94%BB%E5%87%BB"><span class="nav-number">18.</span> <span class="nav-text">CSRF攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4Service-Worker"><span class="nav-number">19.</span> <span class="nav-text">❤Service Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4DOM-%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">20.</span> <span class="nav-text">❤DOM 节点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E6%8E%8C%E6%8F%A1%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">21.</span> <span class="nav-text">❤掌握页面的加载过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">22.</span> <span class="nav-text">❤从输入URL到页面展示过程</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%9E%B6%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">❤ 浏览器架构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8BHTTPS%E5%92%8CHTTP%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">介绍一下HTTPS和HTTP区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-Chrome-%E6%89%93%E5%BC%80%E4%B8%80%E4%B8%AA%E9%A1%B5%E9%9D%A2%E9%9C%80%E8%A6%81%E5%90%AF%E5%8A%A8%E5%A4%9A%E5%B0%91%E8%BF%9B%E7%A8%8B%EF%BC%9F%E5%88%86%E5%88%AB%E6%9C%89%E5%93%AA%E4%BA%9B%E8%BF%9B%E7%A8%8B%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">❤ Chrome 打开一个页面需要启动多少进程？分别有哪些进程？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E6%B8%B2%E6%9F%93%E6%9C%BA%E5%88%B6"><span class="nav-number">4.</span> <span class="nav-text">❤ 渲染机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93"><span class="nav-number">5.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B"><span class="nav-number">6.</span> <span class="nav-text">浏览器渲染过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-number">7.</span> <span class="nav-text">❤ 缓存机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98"><span class="nav-number">7.1.</span> <span class="nav-text">浏览器缓存</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6"><span class="nav-number">7.2.</span> <span class="nav-text">说一下浏览器的缓存机制</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%AD%98%E5%82%A8"><span class="nav-number">8.</span> <span class="nav-text">❤ 浏览器存储</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Cookies%EF%BC%8CSessionStorage-%E5%92%8C-LocalStorage-%E7%9A%84%E5%8C%BA%E5%88%AB%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">Cookies，SessionStorage 和 LocalStorage 的区别？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E5%8F%AF%E8%BF%87%E6%9C%9F%E7%9A%84localstorage%E6%95%B0%E6%8D%AE"><span class="nav-number">10.</span> <span class="nav-text">实现可过期的localstorage数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Storage%EF%BC%8C%E4%BD%BF%E5%BE%97%E8%AF%A5%E5%AF%B9%E8%B1%A1%E4%B8%BA%E5%8D%95%E4%BE%8B%EF%BC%8C%E5%B9%B6%E5%AF%B9localStorage%E8%BF%9B%E8%A1%8C%E5%B0%81%E8%A3%85%E8%AE%BE%E7%BD%AE%E5%80%BCsetItem-key-value-%E5%92%8CgetItem-key"><span class="nav-number">11.</span> <span class="nav-text">实现Storage，使得该对象为单例，并对localStorage进行封装设置值setItem(key,value)和getItem(key)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#token-%E8%83%BD%E6%94%BE%E5%9C%A8cookie%E4%B8%AD%E5%90%97"><span class="nav-number">12.</span> <span class="nav-text">token 能放在cookie中吗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B7%E4%BD%A0%E8%B0%88%E8%B0%88Cookie%E7%9A%84%E5%BC%8A%E7%AB%AF"><span class="nav-number">13.</span> <span class="nav-text">请你谈谈Cookie的弊端</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E8%B7%A8%E5%9F%9F%E6%96%B9%E6%A1%88"><span class="nav-number">14.</span> <span class="nav-text">❤ 跨域方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E6%9C%89%E5%90%8C%E6%BA%90%E9%99%90%E5%88%B6%EF%BC%9F"><span class="nav-number">15.</span> <span class="nav-text">为什么要有同源限制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E9%97%AE%E9%A2%98"><span class="nav-number">16.</span> <span class="nav-text">如何解决跨域问题?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-XSS-%E5%92%8C-CSRF"><span class="nav-number">17.</span> <span class="nav-text">❤ XSS 和 CSRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#XSS%E6%94%BB%E5%87%BB"><span class="nav-number">18.</span> <span class="nav-text">XSS攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSRF%E6%94%BB%E5%87%BB"><span class="nav-number">19.</span> <span class="nav-text">CSRF攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-Service-Worker"><span class="nav-number">20.</span> <span class="nav-text">❤ Service Worker</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-DOM-%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">21.</span> <span class="nav-text">❤ DOM 节点操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E6%8E%8C%E6%8F%A1%E9%A1%B5%E9%9D%A2%E7%9A%84%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">22.</span> <span class="nav-text">❤ 掌握页面的加载过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E4%BB%8E%E8%BE%93%E5%85%A5URL%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%B1%95%E7%A4%BA%E8%BF%87%E7%A8%8B"><span class="nav-number">23.</span> <span class="nav-text">❤ 从输入URL到页面展示过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81web%E5%AE%89%E5%85%A8%E5%8F%8A%E9%98%B2%E6%8A%A4%E5%8E%9F%E7%90%86"><span class="nav-number">24.</span> <span class="nav-text">常见web安全及防护原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-WebSocket"><span class="nav-number">25.</span> <span class="nav-text">❤ WebSocket</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#WebSocket-%E7%9A%84%E5%AE%9E%E7%8E%B0%E5%92%8C%E5%BA%94%E7%94%A8"><span class="nav-number">25.1.</span> <span class="nav-text">WebSocket 的实现和应用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-WebSocket"><span class="nav-number">25.2.</span> <span class="nav-text">什么是 WebSocket</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebSocket-%E6%98%AF%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84%E5%8D%8F%E8%AE%AE%EF%BC%8C%E5%85%B7%E4%BD%93%E6%9C%89%E4%BB%80%E4%B9%88%E4%BC%98%E7%82%B9"><span class="nav-number">25.3.</span> <span class="nav-text">WebSocket 是什么样的协议，具体有什么优点</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%90%86%E8%A7%A3WebSocket%E5%8D%8F%E8%AE%AE%E7%9A%84%E5%BA%95%E5%B1%82%E5%8E%9F%E7%90%86%E3%80%81%E4%B8%8EHTTP%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">25.4.</span> <span class="nav-text">理解WebSocket协议的底层原理、与HTTP的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WEB-%E5%BA%94%E7%94%A8%E4%BB%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%BB%E5%8A%A8%E6%8E%A8%E9%80%81-Data-%E5%88%B0%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%89%E9%82%A3%E4%BA%9B%E6%96%B9%E5%BC%8F"><span class="nav-number">26.</span> <span class="nav-text">WEB 应用从服务器主动推送 Data 到客户端有那些方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A3%80%E6%B5%8B%E6%B5%8F%E8%A7%88%E5%99%A8%E7%89%88%E6%9C%AC%E7%89%88%E6%9C%AC%E6%9C%89%E5%93%AA%E4%BA%9B%E6%96%B9%E5%BC%8F%EF%BC%9F"><span class="nav-number">27.</span> <span class="nav-text">检测浏览器版本版本有哪些方式？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E2%9D%A4-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%9C%BA%E5%88%B6%EF%BC%9F"><span class="nav-number">28.</span> <span class="nav-text">❤ 浏览器垃圾回收机制？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Javascript%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E6%96%B9%E6%B3%95"><span class="nav-number">29.</span> <span class="nav-text">Javascript垃圾回收方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6"><span class="nav-number">30.</span> <span class="nav-text">垃圾回收</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%8F%E8%BF%B0%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E6%B8%B2%E6%9F%93%E8%BF%87%E7%A8%8B%EF%BC%8CDOM%E6%A0%91%E5%92%8C%E6%B8%B2%E6%9F%93%E6%A0%91%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">31.</span> <span class="nav-text">描述浏览器的渲染过程，DOM树和渲染树的区别</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1511,14 +1791,14 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">15</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -1577,12 +1857,12 @@ res.setHeader("Access-Control-Allow-Methods", "GET, PUT, OPTIONS, POST");
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">261k</span>
+    <span title="站点总字数">270k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3:57</span>
+    <span title="站点阅读时长">4:06</span>
 </div>
   <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> &amp; <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
   </div>

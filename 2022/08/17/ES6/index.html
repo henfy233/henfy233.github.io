@@ -1,0 +1,882 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+
+
+
+
+  
+  
+  
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"henfy233.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"defaul"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍目前常见前端面试题，参考链接 https://interview2.poetries.top/">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6">
+<meta property="og:url" content="http://henfy233.github.io/2022/08/17/ES6/index.html">
+<meta property="og:site_name" content="Henfy-Blog">
+<meta property="og:description" content="介绍目前常见前端面试题，参考链接 https://interview2.poetries.top/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s.poetries.work/images/20210414175500.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210414210720.png">
+<meta property="article:published_time" content="2022-08-17T14:22:47.000Z">
+<meta property="article:modified_time" content="2022-08-19T15:14:42.122Z">
+<meta property="article:author" content="henfy">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s.poetries.work/images/20210414175500.png">
+
+<link rel="canonical" href="http://henfy233.github.io/2022/08/17/ES6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ES6 | Henfy-Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext');loadCss('//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');loadCss('//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css');loadCss('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"></noscript></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Henfy-Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">专注以前端领域开发</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://henfy233.github.io/2022/08/17/ES6/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="henfy">
+      <meta itemprop="description" content="技术分享的博客">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henfy-Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ES6
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-17 22:22:47" itemprop="dateCreated datePublished" datetime="2022-08-17T22:22:47+08:00">2022-08-17</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-19 23:14:42" itemprop="dateModified" datetime="2022-08-19T23:14:42+08:00">2022-08-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>8.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 ≈</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>介绍目前常见前端面试题，参考链接 <span class="exturl" data-url="aHR0cHM6Ly9pbnRlcnZpZXcyLnBvZXRyaWVzLnRvcC8=">https://interview2.poetries.top/<i class="fa fa-external-link-alt"></i></span></p>
+<span id="more"></span>
+
+
+
+<h3 id="ES6"><a href="#ES6" class="headerlink" title="ES6"></a>ES6</h3><h4 id="ES6-的了解"><a href="#ES6-的了解" class="headerlink" title="ES6 的了解"></a>ES6 的了解</h4><ul>
+<li>新增模板字符串（为<code>JavaScript</code>提供了简单的字符串插值功能）</li>
+<li>箭头函数（操作符左边为输入的参数，而右边则是进行的操作以及返回的值<code>Inputs=&gt;outputs</code>。）</li>
+<li><code>for-of</code>（用来遍历数据—例如数组中的值。）</li>
+<li><code>arguments</code>对象可被不定参数和默认参数完美代替。</li>
+<li><code>ES6</code>将<code>promise</code>对象纳入规范，提供了原生的<code>Promise</code>对象。</li>
+<li>增加了<code>let</code>和<code>const</code>命令，用来声明变量。</li>
+<li>增加了块级作用域。<code>let</code>命令实际上就增加了块级作用域。</li>
+<li>ES6规定，<code>var</code>命令和<code>function</code>命令声明的全局变量，属于全局对象的属性；</li>
+<li><code>let</code>命令、<code>const</code>命令、<code>class</code>命令声明的全局变量，不属于全局对象的属性。</li>
+<li>还有就是引入<code>module</code>模块的概念</li>
+</ul>
+<h4 id="了解ECMAScript6的新特性？"><a href="#了解ECMAScript6的新特性？" class="headerlink" title="了解ECMAScript6的新特性？"></a>了解ECMAScript6的新特性？</h4><ul>
+<li>块级作用区域 <code>let a = 1;</code></li>
+<li>可定义常量 <code>const PI = 3.141592654;</code></li>
+<li>变量解构赋值 <code>var [a, b, c] = [1, 2, 3];</code></li>
+<li>字符串的扩展(模板字符串) <code>var sum =</code>${a + b}<code>;</code></li>
+<li>数组的扩展(转换数组类型) <code>Array.from($('li'));</code></li>
+<li>函数的扩展(扩展运算符) <code>[1, 2].push(...[3, 4, 5]);</code></li>
+<li>对象的扩展(同值相等算法) <code>Object.is(NaN, NaN);</code></li>
+<li>新增数据类型(Symbol) <code>let uid = Symbol('uid');</code></li>
+<li>新增数据结构(Map) <code>let set = new Set([1, 2, 2, 3]);</code></li>
+<li>for…of循环 <code>for(let val of arr){};</code></li>
+<li>Promise对象 <code>var promise = new Promise(func);</code></li>
+<li>Generator函数 <code>function* foo(x){yield x; return x*x;}</code></li>
+<li>引入Class(类) <code>class Foo {}</code></li>
+<li>引入模块体系 <code>export default func;</code></li>
+<li>引入async函数[ES7]</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">asyncPrint</span>(<span class="params">value, ms</span>) </span>{</span><br><span class="line">      <span class="keyword">await</span> timeout(ms);</span><br><span class="line">      <span class="built_in">console</span>.log(value)</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+
+
+<h4 id="❤-ES6的箭头函数"><a href="#❤-ES6的箭头函数" class="headerlink" title="❤ ES6的箭头函数"></a>❤ ES6的箭头函数</h4><p>箭头函数与普通函数的区别？</p>
+<ul>
+<li>函数体内的<code>this</code>对象，就是定义时所在的对象，而不是使用时所在的对象</li>
+<li>不可以当作构造函数，也就是说，不可以使用<code>new</code>命令，否则会抛出一个错误</li>
+<li>不可以使用<code>arguments</code>对象，该对象在函数体内不存在。如果要用，可以用<code>Rest</code>参数代替</li>
+<li>不可以使用<code>yield</code>命令，因此箭头函数不能用作<code>Generator</code>函数</li>
+</ul>
+<ul>
+<li><p><strong>得分点</strong> 没有this、this是从外部获取、不能使用new、没有arguments、没有原型和super</p>
+</li>
+<li><p><strong>标准回答</strong> 箭头函数相当于匿名函数，简化了函数定义。</p>
+<ul>
+<li>箭头函数有两种写法，当函数体是单条语句的时候可以省略{}和return。另一种是包含多条语句，不可以省略{}和return。<ul>
+<li>箭头函数最大的特点就是没有this，所以this是从外部获取，就是继承外部的执行上下文中的this，</li>
+<li>由于没有this关键字所以箭头函数也不能作为构造函数，也就是说，不可以使用<code>new</code>命令，否则会抛出一个错误</li>
+<li> 同时通过 <code>call()</code> 或 <code>apply()</code> 方法调用一个函数时，只能传递参数（不能绑定this），第一个参数会被忽略。箭头函数也没有原型和super。</li>
+<li>不能使用yield关键字，因此箭头函数不能用作 Generator 函数。不能返回直接对象字面量。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>加分回答</strong></p>
+<ul>
+<li><p>箭头函数的<strong>不适用</strong>场景：</p>
+<ul>
+<li><p>定义对象上的方法 当调用<code> dog.jumps</code> 时，<code>lives</code> 并没有递减。因为 <code>this</code> 没有绑定值，而继承父级作用域。 </p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> dog = { </span><br><span class="line">    lives: <span class="number">20</span>, </span><br><span class="line">    jumps: <span class="function">() =&gt;</span> { <span class="built_in">this</span>.lives--; } </span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>不适合做事件处理程序 此时触发点击事件，this不是button，无法进行class切换 </p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> button = <span class="built_in">document</span>.querySelector(<span class="string">'button'</span>); </span><br><span class="line">button.addEventListener(<span class="string">'click'</span>, <span class="function">() =&gt;</span> { </span><br><span class="line">	<span class="built_in">this</span>.classList.toggle(<span class="string">'on'</span>); </span><br><span class="line">});</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+</li>
+<li><p>箭头函数函数<strong>适用</strong>场景：</p>
+<ul>
+<li><p>简单的函数表达式，内部没有this引用，没有递归、事件绑定、解绑定，适用于map、filter等方法中，写法简洁 </p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]; </span><br><span class="line"><span class="keyword">var</span> newArr = arr.map(<span class="function">(<span class="params">num</span>)=&gt;</span>num*num)</span><br></pre></td></tr></tbody></table></figure></li>
+<li><p>内层函数表达式，需要调用this，且this应与外层函数一致时 </p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> group = { </span><br><span class="line">    title: <span class="string">"Our Group"</span>, </span><br><span class="line">    students: [<span class="string">"John"</span>, <span class="string">"Pete"</span>, <span class="string">"Alice"</span>], </span><br><span class="line">    <span class="function"><span class="title">showList</span>(<span class="params"></span>)</span> { </span><br><span class="line">        <span class="built_in">this</span>.students.forEach( </span><br><span class="line">            student =&gt; alert(<span class="built_in">this</span>.title + <span class="string">': '</span> + student) ); </span><br><span class="line">    } </span><br><span class="line">}; </span><br><span class="line">group.showList();</span><br></pre></td></tr></tbody></table></figure></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="ES5、ES6和ES2015有什么区别"><a href="#ES5、ES6和ES2015有什么区别" class="headerlink" title="ES5、ES6和ES2015有什么区别?"></a>ES5、ES6和ES2015有什么区别?</h3><blockquote>
+<p><code>ES2015</code>特指在<code>2015</code>年发布的新一代<code>JS</code>语言标准，<code>ES6</code>泛指下一代JS语言标准，包含<code>ES2015</code>、<code>ES2016</code>、<code>ES2017</code>、<code>ES2018</code>等。现阶段在绝大部分场景下，<code>ES2015</code>默认等同<code>ES6</code>。<code>ES5</code>泛指上一代语言标准。<code>ES2015</code>可以理解为<code>ES5</code>和<code>ES6</code>的时间分界线</p>
+</blockquote>
+<h3 id="babel是什么，有什么作用"><a href="#babel是什么，有什么作用" class="headerlink" title="babel是什么，有什么作用?"></a>babel是什么，有什么作用?</h3><blockquote>
+<p><code>babel</code>是一个 <code>ES6</code> 转码器，可以将 <code>ES6</code> 代码转为 <code>ES5</code> 代码，以便兼容那些还没支持<code>ES6</code>的平台</p>
+</blockquote>
+<h3 id="let有什么用，有了-var-为什么还要用let？"><a href="#let有什么用，有了-var-为什么还要用let？" class="headerlink" title="let有什么用，有了 var 为什么还要用let？"></a>let有什么用，有了 var 为什么还要用let？</h3><blockquote>
+<p>在<code>ES6</code>之前，声明变量只能用<code>var</code>，<code>var</code>方式声明变量其实是很不合理的，准确的说，是因为<code>ES5</code>里面没有块级作用域是很不合理的。没有块级作用域回来带很多难以理解的问题，比如<code>for</code>循环<code>var</code>变量泄露，变量覆盖等问题。<code>let</code>声明的变量拥有自己的块级作用域，且修复了<code>var</code>声明变量带来的变量提升问题。</p>
+</blockquote>
+<h3 id="ECMAScript6-怎么写class么"><a href="#ECMAScript6-怎么写class么" class="headerlink" title="ECMAScript6 怎么写class么"></a>ECMAScript6 怎么写class么</h3><ul>
+<li>这个语法糖可以让有<code>OOP</code>基础的人更快上手<code>js</code>，至少是一个官方的实现了</li>
+<li>但对熟悉<code>js</code>的人来说，这个东西没啥大影响；一个<code>Object.creat()</code>搞定继承，比<code>class</code>简洁清晰的多</li>
+</ul>
+<h3 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h3><p><span class="exturl" data-url="aHR0cHM6Ly9pbnRlcnZpZXcyLnBvZXRyaWVzLnRvcC9kb2NzL2Jhc2UvaW1wcm92ZS5odG1sI18xNS1wcm9taXNl">参考链接<i class="fa fa-external-link-alt"></i></span></p>
+<blockquote>
+<p>这里你谈 <code>promise</code>的时候，除了将他解决的痛点以及常用的 <code>API</code> 之外，最好进行拓展把 <code>eventloop</code> 带进来好好讲一下，<code>microtask</code>(微任务)、<code>macrotask</code>(任务) 的执行顺序，如果看过 <code>promise</code> 源码，最好可以谈一谈 原生 <code>Promise</code> 是如何实现的。<code>Promise</code> 的关键点在于<code>callback</code> 的两个参数，一个是 <code>resovle</code>，一个是 <code>reject</code>。还有就是 <code>Promise</code> 的链式调用（<code>Promise.then()</code>，每一个 <code>then</code> 都是一个责任人）</p>
+</blockquote>
+<ul>
+<li><code>Promise</code> 是 <code>ES6</code> 新增的语法，解决了回调地狱的问题。</li>
+<li>可以把 <code>Promise</code>看成一个状态机。初始是 <code>pending</code> 状态，可以通过函数 <code>resolve</code> 和 <code>reject</code>，将状态转变为 <code>resolved</code> 或者 <code>rejected</code> 状态，状态一旦改变就不能再次变化。</li>
+<li><code>then</code> 函数会返回一个 <code>Promise</code> 实例，并且该返回值是一个新的实例而不是之前的实例。因为 <code>Promise</code> 规范规定除了 <code>pending</code> 状态，其他状态是不可以改变的，如果返回的是一个相同实例的话，多个 <code>then</code> 调用就失去意义了。 对于 <code>then</code> 来说，本质上可以把它看成是 <code>flatMap</code></li>
+</ul>
+<h4 id="1-Promise-的基本情况"><a href="#1-Promise-的基本情况" class="headerlink" title="1. Promise 的基本情况"></a>1. Promise 的基本情况</h4><blockquote>
+<p>简单来说它就是一个容器，里面保存着某个未来才会结束的事件（通常是异步操作）的结果。从语法上说，Promise 是一个对象，从它可以获取异步操作的消息</p>
+</blockquote>
+<p>一般 Promise 在执行过程中，必然会处于以下几种状态之一。</p>
+<ul>
+<li>待定（<code>pending</code>）：初始状态，既没有被完成，也没有被拒绝。</li>
+<li>已完成（<code>fulfilled</code>）：操作成功完成。</li>
+<li>已拒绝（<code>rejected</code>）：操作失败。</li>
+</ul>
+<blockquote>
+<p>待定状态的 <code>Promise</code> 对象执行的话，最后要么会通过一个值完成，要么会通过一个原因被拒绝。当其中一种情况发生时，我们用 <code>Promise</code> 的 <code>then</code> 方法排列起来的相关处理程序就会被调用。因为最后 <code>Promise.prototype.then</code> 和 <code>Promise.prototype.catch</code> 方法返回的是一个 <code>Promise</code>， 所以它们可以继续被链式调用</p>
+</blockquote>
+<p>关于 Promise 的状态流转情况，有一点值得注意的是，内部状态改变之后不可逆，你需要在编程过程中加以注意。文字描述比较晦涩，我们直接通过一张图就能很清晰地看出 Promise 内部状态流转的情况</p>
+<p><img data-src="https://s.poetries.work/images/20210414175500.png" alt="img"></p>
+<p>从上图可以看出，我们最开始创建一个新的 <code>Promise</code> 返回给 <code>p1</code> ，然后开始执行，状态是 pending，当执行 <code>resolve</code>之后状态就切换为 <code>fulfilled</code>，执行 <code>reject</code> 之后就变为 <code>rejected</code> 的状态</p>
+<h4 id="2-Promise-的静态方法"><a href="#2-Promise-的静态方法" class="headerlink" title="2. Promise 的静态方法"></a>2. Promise 的静态方法</h4><ul>
+<li><code>all</code> 方法<ul>
+<li>语法： <code>Promise.all（iterable）</code></li>
+<li>参数： 一个可迭代对象，如 <code>Array</code>。</li>
+<li>描述： 此方法对于汇总多个<code>promise</code>的结果很有用，在 ES6 中可以将多个<code>Promise.all</code>异步请求并行操作，返回结果一般有下面两种情况。<ul>
+<li>当所有结果成功返回时按照请求顺序返回成功结果。</li>
+<li>当其中有一个失败方法时，则进入失败方法</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>我们来看下业务的场景，对于下面这个业务场景页面的加载，将多个请求合并到一起，用 all 来实现可能效果会更好，请看代码片段</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 在一个页面中需要加载获取轮播列表、获取店铺列表、获取分类列表这三个操作，页面需要同时发出请求进行页面渲染，这样用 `Promise.all` 来实现，看起来更清晰、一目了然。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//1.获取轮播数据列表</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getBannerList</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>{</span><br><span class="line">      <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">        resolve(<span class="string">'轮播数据'</span>)</span><br><span class="line">      },<span class="number">300</span>) </span><br><span class="line">  })</span><br><span class="line">}</span><br><span class="line"><span class="comment">//2.获取店铺列表</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getStoreList</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>{</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">      resolve(<span class="string">'店铺数据'</span>)</span><br><span class="line">    },<span class="number">500</span>)</span><br><span class="line">  })</span><br><span class="line">}</span><br><span class="line"><span class="comment">//3.获取分类列表</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getCategoryList</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve,reject</span>)=&gt;</span>{</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{</span><br><span class="line">      resolve(<span class="string">'分类数据'</span>)</span><br><span class="line">    },<span class="number">700</span>)</span><br><span class="line">  })</span><br><span class="line">}</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">initLoad</span>(<span class="params"></span>)</span>{ </span><br><span class="line">  <span class="built_in">Promise</span>.all([getBannerList(),getStoreList(),getCategoryList()])</span><br><span class="line">  .then(<span class="function"><span class="params">res</span>=&gt;</span>{</span><br><span class="line">    <span class="built_in">console</span>.log(res) </span><br><span class="line">  }).catch(<span class="function"><span class="params">err</span>=&gt;</span>{</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">  })</span><br><span class="line">} </span><br><span class="line">initLoad()</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>allSettled</code>方法<ul>
+<li><code>Promise.allSettled</code> 的语法及参数跟 <code>Promise.all</code> 类似，其参数接受一个 <code>Promise</code> 的数组，返回一个新的 <code>Promise</code>。<code>唯一的不同在于，执行完之后不会失败</code>，也就是说当 <code>Promise.allSettled</code> 全部处理完成后，我们可以拿到每个 <code>Promise</code> 的状态，而不管其是否处理成功</li>
+</ul>
+</li>
+<li>我们来看一下用 <code>allSettled</code> 实现的一段代码</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> resolved = <span class="built_in">Promise</span>.resolve(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">const</span> rejected = <span class="built_in">Promise</span>.reject(-<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> allSettledPromise = <span class="built_in">Promise</span>.allSettled([resolved, rejected]);</span><br><span class="line">allSettledPromise.then(<span class="function"><span class="keyword">function</span> (<span class="params">results</span>) </span>{</span><br><span class="line">  <span class="built_in">console</span>.log(results);</span><br><span class="line">});</span><br><span class="line"><span class="comment">// 返回结果：</span></span><br><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//    { status: 'fulfilled', value: 2 },</span></span><br><span class="line"><span class="comment">//    { status: 'rejected', reason: -1 }</span></span><br><span class="line"><span class="comment">// ]</span></span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>从上面代码中可以看到，<code>Promise.allSettled</code> 最后返回的是一个数组，记录传进来的参数中每个 Promise 的返回值，这就是和 all 方法不太一样的地方。</p>
+</blockquote>
+<ul>
+<li><code>any</code>方法<ul>
+<li>语法： <code>Promise.any（iterable）</code></li>
+<li>参数： <code>iterable</code> 可迭代的对象，例如 <code>Array</code>。</li>
+<li>描述： <code>any</code> 方法返回一个 <code>Promise</code>，只要参数 <code>Promise</code> 实例有一个变成 <code>fulfilled</code>状态，最后 <code>any</code>返回的实例就会变成 <code>fulfilled</code> 状态；如果所有参数 <code>Promise</code> 实例都变成 <code>rejected</code> 状态，包装实例就会变成 <code>rejected</code> 状态。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> resolved = <span class="built_in">Promise</span>.resolve(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">const</span> rejected = <span class="built_in">Promise</span>.reject(-<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> anyPromise = <span class="built_in">Promise</span>.any([resolved, rejected]);</span><br><span class="line">anyPromise.then(<span class="function"><span class="keyword">function</span> (<span class="params">results</span>) </span>{</span><br><span class="line">  <span class="built_in">console</span>.log(results);</span><br><span class="line">});</span><br><span class="line"><span class="comment">// 返回结果：</span></span><br><span class="line"><span class="comment">// 2</span></span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>从改造后的代码中可以看出，只要其中一个 <code>Promise</code> 变成 <code>fulfilled</code>状态，那么 <code>any</code> 最后就返回这个<code>promise</code>。由于上面 <code>resolved</code> 这个 Promise 已经是 <code>resolve</code> 的了，故最后返回结果为 <code>2</code></p>
+</blockquote>
+<ul>
+<li><code>race</code>方法<ul>
+<li>语法： <code>Promise.race（iterable）</code></li>
+<li>参数： <code>iterable</code> 可迭代的对象，例如 <code>Array</code>。</li>
+<li>描述： <code>race</code>方法返回一个 <code>Promise</code>，只要参数的 <code>Promise</code> 之中有一个实例率先改变状态，则 <code>race</code> 方法的返回状态就跟着改变。那个率先改变的 <code>Promise</code> 实例的返回值，就传递给 <code>race</code> 方法的回调函数</li>
+</ul>
+</li>
+<li>我们来看一下这个业务场景，对于图片的加载，特别适合用 race 方法来解决，将图片请求和超时判断放到一起，用 race 来实现图片的超时判断。请看代码片段。</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求某个图片资源</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestImg</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ resolve(img); }</span><br><span class="line">    img.src = <span class="string">'http://www.baidu.com/img/flexible/logo/pc/result.png'</span>;</span><br><span class="line">  });</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">}</span><br><span class="line"><span class="comment">//延时函数，用于给请求计时</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>{</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ reject(<span class="string">'图片请求超时'</span>); }, <span class="number">5000</span>);</span><br><span class="line">  });</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">Promise</span>.race([requestImg(), timeout()])</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>{</span><br><span class="line">  <span class="built_in">console</span>.log(results);</span><br><span class="line">})</span><br><span class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params">reason</span>)</span>{</span><br><span class="line">  <span class="built_in">console</span>.log(reason);</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从上面的代码中可以看出，采用 Promise 的方式来判断图片是否加载成功，也是针对 Promise.race 方法的一个比较好的业务场景</span></span><br></pre></td></tr></tbody></table></figure>
+
+<p><img data-src="https://s.poetries.work/images/20210414210720.png" alt="img"></p>
+<p><strong>promise手写实现，面试够用版：</strong></p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myPromise</span>(<span class="params">constructor</span>)</span>{</span><br><span class="line">    <span class="keyword">let</span> self=<span class="built_in">this</span>;</span><br><span class="line">    self.status=<span class="string">"pending"</span> <span class="comment">//定义状态改变前的初始状态</span></span><br><span class="line">    self.value=<span class="literal">undefined</span>; <span class="comment">//定义状态为resolved的时候的状态</span></span><br><span class="line">    self.reason=<span class="literal">undefined</span>; <span class="comment">//定义状态为rejected的时候的状态</span></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">resolve</span>(<span class="params">value</span>)</span>{</span><br><span class="line">        <span class="comment">//两个==="pending"，保证了状态的改变是不可逆的</span></span><br><span class="line">       <span class="keyword">if</span>(self.status===<span class="string">"pending"</span>){</span><br><span class="line">          self.value=value;</span><br><span class="line">          self.status=<span class="string">"resolved"</span>;</span><br><span class="line">       }</span><br><span class="line">    }</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">reject</span>(<span class="params">reason</span>)</span>{</span><br><span class="line">        <span class="comment">//两个==="pending"，保证了状态的改变是不可逆的</span></span><br><span class="line">       <span class="keyword">if</span>(self.status===<span class="string">"pending"</span>){</span><br><span class="line">          self.reason=reason;</span><br><span class="line">          self.status=<span class="string">"rejected"</span>;</span><br><span class="line">       }</span><br><span class="line">    }</span><br><span class="line">    <span class="comment">//捕获构造异常</span></span><br><span class="line">    <span class="keyword">try</span>{</span><br><span class="line">       <span class="title">constructor</span>(<span class="params">resolve,reject</span>);</span><br><span class="line">    }<span class="keyword">catch</span>(e){</span><br><span class="line">       reject(e);</span><br><span class="line">    }</span><br><span class="line">}</span><br><span class="line"><span class="comment">// 定义链式调用的then方法</span></span><br><span class="line">myPromise.prototype.then=<span class="function"><span class="keyword">function</span>(<span class="params">onFullfilled,onRejected</span>)</span>{</span><br><span class="line">   <span class="keyword">let</span> self=<span class="built_in">this</span>;</span><br><span class="line">   <span class="keyword">switch</span>(self.status){</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"resolved"</span>:</span><br><span class="line">        onFullfilled(self.value);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> <span class="string">"rejected"</span>:</span><br><span class="line">        onRejected(self.reason);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">default</span>:       </span><br><span class="line">   }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<p><strong>详细源码</strong></p>
+<p><span class="exturl" data-url="aHR0cHM6Ly9zZWdtZW50ZmF1bHQuY29tL2EvMTE5MDAwMDAxMzM5NjYwMQ==">https://segmentfault.com/a/1190000013396601<i class="fa fa-external-link-alt"></i></span></p>
+<h4 id="对-promise-的了解"><a href="#对-promise-的了解" class="headerlink" title="对 promise 的了解"></a>对 promise 的了解</h4><ul>
+<li>依照 <code>Promise/A+</code> 的定义，<code>Promise</code> 有四种状态：<ul>
+<li><code>pending:</code> 初始状态, 非 <code>fulfilled</code> 或 <code>rejected.</code></li>
+<li><code>fulfilled:</code> 成功的操作.</li>
+<li><code>rejected:</code> 失败的操作.</li>
+<li><code>settled: Promise</code>已被<code>fulfilled</code>或<code>rejected</code>，且不是<code>pending</code></li>
+</ul>
+</li>
+<li>另外， <code>fulfilled</code>与 <code>rejected</code>一起合称 <code>settled</code></li>
+<li><code>Promise</code> 对象用来进行延迟(<code>deferred</code>) 和异步(<code>asynchronous</code>) 计算</li>
+<li>可以把 <code>Promise</code>看成一个状态机。初始是 <code>pending</code> 状态，可以通过函数 <code>resolve</code> 和 <code>reject</code>，将状态转变为 <code>resolved</code> 或者 <code>rejected</code> 状态，状态一旦改变就不能再次变化。</li>
+<li><code>then</code> 函数会返回一个 <code>Promise</code> 实例，并且该返回值是一个新的实例而不是之前的实例。因为 <code>Promise</code> 规范规定除了 <code>pending</code> 状态，其他状态是不可以改变的，如果返回的是一个相同实例的话，多个 <code>then</code>调用就失去意义了</li>
+</ul>
+<h4 id="Promise-的构造函数"><a href="#Promise-的构造函数" class="headerlink" title="Promise 的构造函数"></a>Promise 的构造函数</h4><ul>
+<li>构造一个 <code>Promise</code>，最基本的用法如下：</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>{</span><br><span class="line">        <span class="keyword">if</span> (...) {  <span class="comment">// succeed</span></span><br><span class="line">            resolve(result);</span><br><span class="line">        } <span class="keyword">else</span> {   <span class="comment">// fails</span></span><br><span class="line">            reject(<span class="built_in">Error</span>(errMessage));</span><br><span class="line">        }</span><br><span class="line">    });</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li><code>Promise</code> 实例拥有 <code>then</code> 方法（具有 <code>then</code> 方法的对象，通常被称为<code>thenable</code>）。它的使用方法如下：</li>
+</ul>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">promise.then(onFulfilled, onRejected)</span><br></pre></td></tr></tbody></table></figure>
+
+<ul>
+<li>接收两个函数作为参数，一个在 <code>fulfilled</code> 的时候被调用，一个在<code>rejected</code>的时候被调用，接收参数就是 <code>future</code>，<code>onFulfilled</code> 对应<code>resolve</code>, <code>onRejected</code>对应 <code>reject</code></li>
+</ul>
+<p><strong>什么是 Promise ？</strong></p>
+<ul>
+<li>Promise 就是一个对象，用来表示并传递异步操作的最终结果</li>
+<li>Promise 最主要的交互方式：将回调函数传入 then 方法来获得最终结果或出错原因</li>
+<li>Promise 代码书写上的表现：以“链式调用”代替回调函数层层嵌套（回调地狱）</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\15\React\" rel="bookmark">React</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\16\Webpack\" rel="bookmark">Webpack</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\小程序\" rel="bookmark">小程序</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\05\20\前端面试指南\" rel="bookmark">前端面试指南</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\06\20\CSS\" rel="bookmark">CSS基础</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>henfy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://henfy233.github.io/2022/08/17/ES6/" title="ES6">http://henfy233.github.io/2022/08/17/ES6/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/17/HTML/" rel="prev" title="HTML">
+      <i class="fa fa-chevron-left"></i> HTML
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#ES6"><span class="nav-number">1.</span> <span class="nav-text">ES6</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ES6-%E7%9A%84%E4%BA%86%E8%A7%A3"><span class="nav-number">1.1.</span> <span class="nav-text">ES6 的了解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3ECMAScript6%E7%9A%84%E6%96%B0%E7%89%B9%E6%80%A7%EF%BC%9F"><span class="nav-number">1.2.</span> <span class="nav-text">了解ECMAScript6的新特性？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%9D%A4-ES6%E7%9A%84%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"><span class="nav-number">1.3.</span> <span class="nav-text">❤ ES6的箭头函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ES5%E3%80%81ES6%E5%92%8CES2015%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB"><span class="nav-number">2.</span> <span class="nav-text">ES5、ES6和ES2015有什么区别?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#babel%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%8C%E6%9C%89%E4%BB%80%E4%B9%88%E4%BD%9C%E7%94%A8"><span class="nav-number">3.</span> <span class="nav-text">babel是什么，有什么作用?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#let%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%8C%E6%9C%89%E4%BA%86-var-%E4%B8%BA%E4%BB%80%E4%B9%88%E8%BF%98%E8%A6%81%E7%94%A8let%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">let有什么用，有了 var 为什么还要用let？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ECMAScript6-%E6%80%8E%E4%B9%88%E5%86%99class%E4%B9%88"><span class="nav-number">5.</span> <span class="nav-text">ECMAScript6 怎么写class么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Promise"><span class="nav-number">6.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-Promise-%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%83%85%E5%86%B5"><span class="nav-number">6.1.</span> <span class="nav-text">1. Promise 的基本情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-Promise-%E7%9A%84%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"><span class="nav-number">6.2.</span> <span class="nav-text">2. Promise 的静态方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9-promise-%E7%9A%84%E4%BA%86%E8%A7%A3"><span class="nav-number">6.3.</span> <span class="nav-text">对 promise 的了解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-%E7%9A%84%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">6.4.</span> <span class="nav-text">Promise 的构造函数</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="henfy" src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">henfy</p>
+  <div class="site-description" itemprop="description">技术分享的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlbmZ5MjMz" title="GitHub → https://github.com/henfy233"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOjYxOTg5OTU3M0BxcS5jb20=" title="E-Mail → mailto:619899573@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">henfy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">270k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:06</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> &amp; <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax="" async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+
+
+
+    </div>
+
+
+<script src="/bundle.js"></script><script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+;
+
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+;
+
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  ;
+
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '95a51042662de49c617b',
+      clientSecret: '4aad194349abd9bf63cee6abd3f5153ae20c50ab',
+      repo        : 'henfy233.github.io',
+      owner       : 'henfy233',
+      admin       : ['henfy233'],
+      id          : 'b62c24680598d4b943b2c70ba2e47c13',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script></body></html>

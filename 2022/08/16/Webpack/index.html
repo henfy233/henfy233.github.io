@@ -1,0 +1,1055 @@
+<!DOCTYPE html><html lang="zh-CN"><head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="referrer" content="no-referrer">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/pikaqiu-32x32-next.ico">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+
+
+
+
+  
+  
+  
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"henfy233.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":true,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"defaul"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":"gitalk","storage":true,"lazyload":true,"nav":{"gitalk":{"order":-2}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="介绍目前常见前端面试题，Webpack 基础原理题 参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack">
+<meta property="og:url" content="http://henfy233.github.io/2022/08/16/Webpack/index.html">
+<meta property="og:site_name" content="Henfy-Blog">
+<meta property="og:description" content="介绍目前常见前端面试题，Webpack 基础原理题 参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817013518697.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817012328746.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817014754028.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817020422470.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817021253989.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817021511726.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817021631998.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817022151751.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817105916125.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817111227398.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817111857149.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817112958120.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817113717873.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817114128409.png">
+<meta property="og:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817115819164.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210409165629.png">
+<meta property="og:image" content="https://s.poetries.work/images/20210409165723.png">
+<meta property="article:published_time" content="2022-08-16T09:07:14.000Z">
+<meta property="article:modified_time" content="2022-08-19T11:03:53.387Z">
+<meta property="article:author" content="henfy">
+<meta property="article:tag" content="面试">
+<meta property="article:tag" content="前端">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817013518697.png">
+
+<link rel="canonical" href="http://henfy233.github.io/2022/08/16/Webpack/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Webpack | Henfy-Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<script>function loadCss(l){var d=document,h=d.head,s=d.createElement('link');s.rel='stylesheet';s.href=l;!function e(f){if (d.body)return f();setTimeout(function(){e(f)})}(function(){h.appendChild(s);});}loadCss('/style.css');loadCss('//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext');loadCss('//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css');loadCss('//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css');loadCss('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css');</script><noscript><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="//fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|youyuan:300,300italic,400,400italic,700,700italic|Inconsolata:300,300italic,400,400italic,700,700italic&amp;display=swap&amp;subset=latin,latin-ext"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css"></noscript></head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Henfy-Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">专注以前端领域开发</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">5</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">15</span></a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" placeholder="搜索..." spellcheck="false" type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope="" itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://henfy233.github.io/2022/08/16/Webpack/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="henfy">
+      <meta itemprop="description" content="技术分享的博客">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Henfy-Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Webpack
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-16 17:07:14" itemprop="dateCreated datePublished" datetime="2022-08-16T17:07:14+08:00">2022-08-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-19 19:03:53" itemprop="dateModified" datetime="2022-08-19T19:03:53+08:00">2022-08-19</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%89%8D%E7%AB%AF/" itemprop="url" rel="index"><span itemprop="name">前端</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 ≈</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>介绍目前常见前端面试题，Webpack 基础原理题</p>
+<p>参考慕课网实战课 前端框架及项目面试－聚焦 Vue3 React Webpack 总结的知识点</p>
+<span id="more"></span>
+
+
+
+<h2 id="webpack"><a href="#webpack" class="headerlink" title="webpack"></a>webpack</h2><ul>
+<li>webpack 已是前端打包构建的不二选择</li>
+<li>每日必用，面试必考</li>
+<li>成熟的工具，重点在于配置和使用，原理并不高优</li>
+</ul>
+<h3 id="讲解范围"><a href="#讲解范围" class="headerlink" title="讲解范围"></a>讲解范围</h3><ul>
+<li>基本配置</li>
+<li>高级配置</li>
+<li>优化打包效率</li>
+<li>优化产出代码</li>
+<li>构建流程概述</li>
+<li>babel</li>
+</ul>
+<h3 id="关于webpack-5"><a href="#关于webpack-5" class="headerlink" title="关于webpack 5"></a>关于webpack 5</h3><ul>
+<li>webpack5 主要是内部效率的优化</li>
+<li>对比 webpack4，没有太多使用上的改动</li>
+<li>你可以直接使用 webpack5 来学习课程</li>
+</ul>
+<h3 id="回顾之前的-webpack-面试题"><a href="#回顾之前的-webpack-面试题" class="headerlink" title="回顾之前的 webpack 面试题"></a>回顾之前的 webpack 面试题</h3><ul>
+<li>前端代码为何要进行构建和打包？</li>
+<li>module chunk bundle 分别什么意思，有何区别？</li>
+<li>loader 和 plugin 的区别？</li>
+<li>webpack 如何实现懒加载？</li>
+<li>webpack 常见性能优化</li>
+<li>babel-runtime 和 babel-polyfill 的区别</li>
+</ul>
+<h3 id="webpack-基本配置"><a href="#webpack-基本配置" class="headerlink" title="webpack 基本配置"></a>webpack 基本配置</h3><ul>
+<li>vue-cli create-react-app</li>
+<li>常用上述脚手架，而不会自己配置 webpack？</li>
+<li>则面试不会通过</li>
+</ul>
+<ul>
+<li>拆分配置和merge</li>
+<li>启用本地服务</li>
+<li>处理 ES6</li>
+<li>处理样式</li>
+<li>处理图片</li>
+<li>（模块化）</li>
+</ul>
+<blockquote>
+<p>代码示例用到 webpack-demo 项目的 build-base-conf</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817013518697.png" alt="webpack 基本配置"></p>
+<h3 id="webpack-高级配置"><a href="#webpack-高级配置" class="headerlink" title="webpack 高级配置"></a>webpack 高级配置</h3><ul>
+<li>基本配置只能做demo，不能做线上项目</li>
+<li>面试考察基本配置，只是为了快速判断你是否用过 webpack</li>
+<li>以下高级配置，也是通过面试的必要条件</li>
+</ul>
+<ul>
+<li>多入口</li>
+<li>抽离 CSS 文件</li>
+<li>抽离公共代码</li>
+</ul>
+<ul>
+<li>多入口</li>
+</ul>
+<blockquote>
+<p>代码示例用到 webpack-demo 项目的 build-multi-entry</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817012328746.png" alt="多入口"></p>
+<ul>
+<li>抽离 CSS 文件</li>
+</ul>
+<blockquote>
+<p>代码示例用到 webpack-demo 项目的 build-min-extract-css</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817014754028.png" alt="抽离 CSS 文件"></p>
+<ul>
+<li>抽离公共代码</li>
+</ul>
+<blockquote>
+<p>代码示例用到 webpack-demo 项目的 build-splitChunks</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817020422470.png" alt="抽离公共代码"></p>
+<ul>
+<li>懒加载</li>
+</ul>
+<img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817021253989.png" alt="懒加载">
+
+<ul>
+<li>处理 JSX</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817021511726.png" alt="处理 JSX"></p>
+<ul>
+<li>处理 Vue</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817021631998.png" alt="处理 Vue"></p>
+<h3 id="module-chunk-bundle-的区别"><a href="#module-chunk-bundle-的区别" class="headerlink" title="module chunk bundle 的区别"></a>module chunk bundle 的区别</h3><ul>
+<li>module - 各个源码文件，webpack 中一切皆模块</li>
+<li>chunk - 多模块合并成的，如<code>entry</code> <code>import()</code> <code>splitChunk</code></li>
+<li>bundle - 最终的输出文件</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817022151751.png" alt="module chunk bundle的区别"></p>
+<h3 id="webpack-性能优化"><a href="#webpack-性能优化" class="headerlink" title="webpack 性能优化"></a>webpack 性能优化</h3><ul>
+<li>大厂必考 &amp; 社区热议话题</li>
+<li>优化打包构建速度 - 开发体验和效率</li>
+<li>优化产出代码 - 产品性能</li>
+</ul>
+<h4 id="webpack-性能优化-构建速度"><a href="#webpack-性能优化-构建速度" class="headerlink" title="webpack 性能优化 - 构建速度"></a>webpack 性能优化 - 构建速度</h4><ul>
+<li>优化 babel-loader</li>
+<li>IgnorePlugin</li>
+<li>noParse</li>
+<li>happyPack</li>
+<li>ParallelUglifyPlugin</li>
+<li>自动刷新</li>
+<li>热更新</li>
+<li>DllPlugin</li>
+</ul>
+<p><strong>代码演示：</strong></p>
+<ul>
+<li>优化 <code>babel-loader</code></li>
+</ul>
+<blockquote>
+<p>代码示例用到 webpack-demo 项目的 build-optimization</p>
+</blockquote>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817105916125.png" alt="优化 babel-loader"></p>
+<ul>
+<li><p><code>IgnorePlugin</code> 避免引入无用模块</p>
+<ul>
+<li><code>import moment from ‘moment'</code></li>
+<li>默认会引入所有语言 JS 代码，代码过大</li>
+<li>如何只引入中文？</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817111227398.png" alt="IgnorePlugin 避免引入无用模块"></p>
+</li>
+<li><p><code>noParse</code> 避免重复打包</p>
+</li>
+</ul>
+<img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817111857149.png" alt="noParse 避免重复打包" style="zoom: 67%;">
+
+<ul>
+<li><p><code>IgnorePlugin</code> vs <code>noParse</code></p>
+<ul>
+<li><code>IgnorePlugin</code> 直接不引入，代码中没有</li>
+<li><code>noParse</code> 引入，但不打包</li>
+</ul>
+</li>
+<li><p><code>happyPack</code> 多进程打包</p>
+<ul>
+<li>JS 单线程，开启多进程打包</li>
+<li>提高构建速度（特别是多核CPU）</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817112958120.png" alt="happyPack 多进程打包"></p>
+</li>
+<li><p><code>ParallelUglifyPlugin</code> 多进程压缩 JS</p>
+<ul>
+<li>webpack 内置 Uglify 工具压缩 JS</li>
+<li>JS单线程，开启多进程压缩更快</li>
+<li>和 happyPack 同理</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817113717873.png" alt="ParallelUglifyPlugin 多进程压缩 JS"></p>
+</li>
+<li><p>关于开启多进程</p>
+<ul>
+<li>项目较大，打包较慢，开启多进程能提高速度</li>
+<li>项目较小，打包很快，开启多进程会降低速度（进程开销）</li>
+<li>按需使用</li>
+</ul>
+</li>
+<li><p>自动刷新</p>
+</li>
+</ul>
+<img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817114128409.png" alt="自动刷新" style="zoom: 67%;">
+
+<ul>
+<li>热更新<ul>
+<li>自动刷新：整个网页全部刷新，速度较慢</li>
+<li>自动刷新：整个网页全部刷新，状态会丢失</li>
+<li>热更新：新代码生效，网页不刷新，状态不丢失</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://raw.githubusercontent.com/henfy233/picgo/main/img/image-20220817115819164.png" alt="热更新"></p>
+<ul>
+<li>DlIPlugin 动态链接库插件<ul>
+<li>前端框架如 vue React，体积大，构建慢</li>
+<li>较稳定，不常升级版本</li>
+<li>同一个版本只构建一次即可，不用每次都重新构建</li>
+<li>webpack已内置DlIlPlugin支持</li>
+<li>DlIPlugin-打包出dll文件</li>
+<li>DlIReferencePlugin-使用dll文件</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>代码示例用到 webpack-dll-demo 项目</p>
+</blockquote>
+<h2 id="Webpack-面试题"><a href="#Webpack-面试题" class="headerlink" title="Webpack 面试题"></a>Webpack 面试题</h2><h3 id="webpack-性能优化-1"><a href="#webpack-性能优化-1" class="headerlink" title="webpack 性能优化"></a>webpack 性能优化</h3><p><strong>优化前的准备工作</strong></p>
+<ul>
+<li>准备基于时间的分析工具：我们需要一类插件，来帮助我们统计项目构建过程中在编译阶段的耗时情况。<code>speed-measure-webpack-plugin</code> 分析插件加载的时间</li>
+<li>使用 <code>webpack-bundle-analyzer</code> 分析产物内容</li>
+</ul>
+<p><strong>代码优化:</strong></p>
+<blockquote>
+<p>无用代码消除，是许多编程语言都具有的优化手段，这个过程称为 DCE (dead code elimination)，即 删除不可能执行的代码；</p>
+</blockquote>
+<p>例如我们的 <code>UglifyJs</code>，它就会帮我们在生产环境中删除不可能被执行的代码，例如:</p>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>{</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">	<span class="comment">// 下面代码便属于 不可能执行的代码；</span></span><br><span class="line">	<span class="comment">// 通过 UglifyJs (Webpack4+ 已内置) 便会进行 DCE；</span></span><br><span class="line">	<span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">return</span> a;</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure>
+
+<blockquote>
+<p>摇树优化 (Tree-shaking)，这是一种形象比喻。我们把打包后的代码比喻成一棵树，这里其实表示的就是，通过工具 “摇” 我们打包后的 js 代码，将没有使用到的无用代码 “摇” 下来 (删除)。即 消除那些被 引用了但未被使用 的模块代码。</p>
+</blockquote>
+<ul>
+<li>原理: 由于是在编译时优化，因此最基本的前提就是语法的静态分析，ES6的模块机制 提供了这种可能性。不需要运行时，便可进行代码字面上的静态分析，确定相应的依赖关系。</li>
+<li>问题: 具有 副作用 的函数无法被 <code>tree-shaking</code><ul>
+<li>在引用一些第三方库，需要去观察其引入的代码量是不是符合预期；</li>
+<li>尽量写纯函数，减少函数的副作用；</li>
+<li>可使用 <code>webpack-deep-scope-plugin</code>，可以进行作用域分析，减少此类情况的发生，但仍需要注意；</li>
+</ul>
+</li>
+</ul>
+<p><strong>code-spliting: 代码分割技术</strong>，将代码分割成多份进行 懒加载 或 异步加载，避免打包成一份后导致体积过大，影响页面的首屏加载；</p>
+<ul>
+<li><code>Webpack</code> 中使用 <code>SplitChunksPlugin</code> 进行拆分；</li>
+<li>按 页面 拆分: 不同页面打包成不同的文件；</li>
+<li>按 功能 拆分:<ul>
+<li>将类似于播放器，计算库等大模块进行拆分后再懒加载引入；</li>
+<li>提取复用的业务代码，减少冗余代码；</li>
+</ul>
+</li>
+<li>按 文件修改频率 拆分: 将第三方库等不常修改的代码单独打包，而且不改变其文件 hash 值，能最大化运用浏览器的缓存；</li>
+</ul>
+<p><strong>scope hoisting</strong>: 作用域提升，将分散的模块划分到同一个作用域中，避免了代码的重复引入，有效减少打包后的代码体积和运行时的内存损耗；</p>
+<p><strong>编译性能优化:</strong></p>
+<ul>
+<li>升级至 最新 版本的 <code>webpack</code>，能有效提升编译性能；</li>
+<li>使用<code>dev-server</code>/ 模块热替换 (<code>HMR</code>) 提升开发体验；<ul>
+<li>监听文件变动 忽略 node_modules 目录能有效提高监听时的编译效率；</li>
+</ul>
+</li>
+<li>缩小编译范围<ul>
+<li><code>modules</code>: 指定模块路径，减少递归搜索；</li>
+<li><code>mainFields</code>: 指定入口文件描述字段，减少搜索；</li>
+<li><code>noParse</code>: 避免对非模块化文件的加载；</li>
+<li><code>includes/exclude</code>: 指定搜索范围/排除不必要的搜索范围；</li>
+<li><code>alias</code>: 缓存目录，避免重复寻址；</li>
+</ul>
+</li>
+<li><code>babel-loader</code><ul>
+<li>忽略<code>node_moudles</code>，避免编译第三方库中已经被编译过的代码</li>
+<li>使用<code>cacheDirectory</code>，可以缓存编译结果，避免多次重复编译</li>
+</ul>
+</li>
+<li>多进程并发<ul>
+<li><code>webpack-parallel-uglify-plugin</code>: 可多进程并发压缩 js 文件，提高压缩速度；</li>
+<li><code>HappyPack</code>: 多进程并发文件的 <code>Loader</code> 解析；</li>
+</ul>
+</li>
+<li>第三方库模块缓存:<ul>
+<li><code>DLLPlugin</code> 和 <code>DLLReferencePlugin</code> 可以提前进行打包并缓存，避免每次都重新编译；</li>
+</ul>
+</li>
+<li>使用分析<ul>
+<li><code>Webpack Analyse / webpack-bundle-analyzer</code> 对打包后的文件进行分析，寻找可优化的地方</li>
+<li>配置profile：true，对各个编译阶段耗时进行监控，寻找耗时最多的地方</li>
+</ul>
+</li>
+<li><code>source-map</code>:<ul>
+<li>开发: <code>cheap-module-eval-source-map</code></li>
+<li>生产: <code>hidden-source-map</code>；</li>
+</ul>
+</li>
+</ul>
+<p><strong>优化webpack打包速度</strong></p>
+<ul>
+<li>减少文件搜索范围<ul>
+<li>比如通过别名</li>
+<li><code>loader</code> 的 <code>test</code>，<code>include &amp; exclude</code></li>
+</ul>
+</li>
+<li><code>Webpack4</code> 默认压缩并行</li>
+<li><code>Happypack</code> 并发调用</li>
+<li><code>babel</code> 也可以缓存编译</li>
+<li><code>Resolve</code> 在构建时指定查找模块文件的规则</li>
+<li>使用<code>DllPlugin</code>，不用每次都重新构建</li>
+<li><code>externals</code>和<code>DllPlugin</code>解决的是同一类问题：将依赖的框架等模块从构建过程中移除。它们的区别在于<ul>
+<li>在 Webpack 的配置方面，<code>externals</code> 更简单，而 <code>DllPlugin</code> 需要独立的配置文件。</li>
+<li><code>DllPlugin</code> 包含了依赖包的独立构建流程，而 <code>externals</code> 配置中不包含依赖框架的生成方式，通常使用已传入 CDN 的依赖包</li>
+<li><code>externals</code> 配置的依赖包需要单独指定依赖模块的加载方式：全局对象、CommonJS、AMD 等</li>
+<li>在引用依赖包的子模块时，<code>DllPlugin</code> 无须更改，而 <code>externals</code> 则会将子模块打入项目包中</li>
+</ul>
+</li>
+</ul>
+<p><strong>优化打包体积</strong></p>
+<ul>
+<li>提取第三方库或通过引用外部文件的方式引入第三方库</li>
+<li>代码压缩插件<code>UglifyJsPlugin</code></li>
+<li>服务器启用<code>gzip</code>压缩</li>
+<li>按需加载资源文件 <code>require.ensure</code></li>
+<li>优化<code>devtool</code>中的<code>source-map</code></li>
+<li>剥离<code>css</code>文件，单独打包</li>
+<li>去除不必要插件，通常就是开发环境与生产环境用同一套配置文件导致</li>
+<li><code>Tree Shaking</code> 在构建打包过程中，移除那些引入但未被使用的无效代码</li>
+<li>开启<code>scope hosting</code><ul>
+<li>体积更小</li>
+<li>创建函数作用域更小</li>
+<li>代码可读性更好</li>
+</ul>
+</li>
+</ul>
+<p><img data-src="https://s.poetries.work/images/20210409165629.png" alt="img"> <img data-src="https://s.poetries.work/images/20210409165723.png" alt="img"></p>
+<h3 id="打包体积-优化思路"><a href="#打包体积-优化思路" class="headerlink" title="打包体积 优化思路"></a>打包体积 优化思路</h3><ul>
+<li>提取第三方库或通过引用外部文件的方式引入第三方库</li>
+<li>代码压缩插件<code>UglifyJsPlugin</code></li>
+<li>服务器启用gzip压缩</li>
+<li>按需加载资源文件 <code>require.ensure</code></li>
+<li>优化<code>devtool</code>中的<code>source-map</code></li>
+<li>剥离<code>css</code>文件，单独打包</li>
+<li>去除不必要插件，通常就是开发环境与生产环境用同一套配置文件导致</li>
+</ul>
+<h3 id="打包效率"><a href="#打包效率" class="headerlink" title="打包效率"></a>打包效率</h3><ul>
+<li>开发环境采用增量构建，启用热更新</li>
+<li>开发环境不做无意义的工作如提取<code>css</code>计算文件hash等</li>
+<li>配置<code>devtool</code></li>
+<li>选择合适的<code>loader</code></li>
+<li>个别<code>loader</code>开启<code>cache</code> 如<code>babel-loader</code></li>
+<li>第三方库采用引入方式</li>
+<li>提取公共代码</li>
+<li>优化构建时的搜索路径 指明需要构建目录及不需要构建目录</li>
+<li>模块化引入需要的部分</li>
+</ul>
+<h3 id="Loader"><a href="#Loader" class="headerlink" title="Loader"></a>Loader</h3><p>编写一个loader</p>
+<blockquote>
+<figure class="highlight plain"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">loader`就是一个`node`模块，它输出了一个函数。当某种资源需要用这个`loader`转换时，这个函数会被调用。并且，这个函数可以通过提供给它的`this`上下文访问`Loader API`。 `reverse-txt-loader</span><br></pre></td></tr></tbody></table></figure>
+</blockquote>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义</span></span><br><span class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">src</span>) </span>{</span><br><span class="line">  <span class="comment">//src是原文件内容（abcde），下面对内容进行处理，这里是反转</span></span><br><span class="line">  <span class="keyword">var</span> result = src.split(<span class="string">''</span>).reverse().join(<span class="string">''</span>);</span><br><span class="line">  <span class="comment">//返回JavaScript源码，必须是String或者Buffer</span></span><br><span class="line">  <span class="keyword">return</span> <span class="string">`module.exports = '<span class="subst">${result}</span>'`</span>;</span><br><span class="line">}</span><br><span class="line"><span class="comment">//使用</span></span><br><span class="line">{</span><br><span class="line">	test: <span class="regexp">/\.txt$/</span>,</span><br><span class="line">	use: [</span><br><span class="line">		{</span><br><span class="line">			<span class="string">'./path/reverse-txt-loader'</span></span><br><span class="line">		}</span><br><span class="line">	]</span><br><span class="line">},</span><br></pre></td></tr></tbody></table></figure>
+
+<h3 id="说一下-webpack-的一些-plugin，怎么使用-webpack-对项目进行优化"><a href="#说一下-webpack-的一些-plugin，怎么使用-webpack-对项目进行优化" class="headerlink" title="说一下 webpack 的一些 plugin，怎么使用 webpack 对项目进行优化"></a>说一下 webpack 的一些 plugin，怎么使用 webpack 对项目进行优化</h3><p><strong>构建优化</strong></p>
+<ul>
+<li>减少编译体积 <code>ContextReplacementPugin</code>、<code>IgnorePlugin</code>、<code>babel-plugin-import</code>、<code>babel-plugin-transform-runtime</code></li>
+<li>并行编译 <code>happypack</code>、<code>thread-loader</code>、<code>uglifyjsWebpackPlugin</code>开启并行</li>
+<li>缓存 <code>cache-loader</code>、<code>hard-source-webpack-plugin</code>、<code>uglifyjsWebpackPlugin</code>开启缓存、<code>babel-loader</code>开启缓存</li>
+<li>预编译 <code>dllWebpackPlugin &amp;&amp; DllReferencePlugin</code>、<code>auto-dll-webapck-plugin</code></li>
+</ul>
+<p><strong>性能优化</strong></p>
+<ul>
+<li>减少编译体积 <code>Tree-shaking</code>、<code>Scope Hositing</code></li>
+<li><code>hash</code>缓存 <code>webpack-md5-plugin</code></li>
+<li>拆包 <code>splitChunksPlugin</code>、<code>import()</code>、<code>require.ensure</code></li>
+</ul>
+<h3 id="谈谈你对webpack的看法"><a href="#谈谈你对webpack的看法" class="headerlink" title="谈谈你对webpack的看法"></a>谈谈你对webpack的看法</h3><ul>
+<li><code>WebPack</code> 是一个模块打包工具，你可以使用<code>WebPack</code>管理你的模块依赖，并编绎输出模块们所需的静态文件。它能够很好地管理、打包<code>Web</code>开发中所用到的<code>HTML</code>、<code>Javascript</code>、<code>CSS</code>以及各种静态文件（图片、字体等），让开发过程更加高效。对于不同类型的资源，<code>webpack</code>有对应的模块加载器。<code>webpack</code>模块打包器会分析模块间的依赖关系，最后 生成了优化且合并后的静态资源</li>
+</ul>
+<h3 id="gulp是什么"><a href="#gulp是什么" class="headerlink" title="gulp是什么"></a>gulp是什么</h3><ul>
+<li><code>gulp</code>是前端开发过程中一种基于流的代码构建工具，是自动化项目的构建利器；它不仅能对网站资源进行优化，而且在开发过程中很多重复的任务能够使用正确的工具自动完成</li>
+<li>Gulp的核心概念：流</li>
+<li>流，简单来说就是建立在面向对象基础上的一种抽象的处理数据的工具。在流中，定义了一些处理数据的基本操作，如读取数据，写入数据等，程序员是对流进行所有操作的，而不用关心流的另一头数据的真正流向</li>
+<li>gulp正是通过流和代码优于配置的策略来尽量简化任务编写的工作</li>
+<li>Gulp的特点：<ul>
+<li><strong>易于使用</strong>：通过代码优于配置的策略，gulp 让简单的任务简单，复杂的任务可管理</li>
+<li><strong>构建快速</strong> 利用 <code>Node.js</code> 流的威力，你可以快速构建项目并减少频繁的 <code>IO</code> 操作</li>
+<li><strong>易于学习</strong> 通过最少的 <code>API</code>，掌握 <code>gulp</code> 毫不费力，构建工作尽在掌握：如同一系列流管道</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关文章</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\15\React\" rel="bookmark">React</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\小程序\" rel="bookmark">小程序</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\08\17\ES6\" rel="bookmark">ES6</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\05\20\前端面试指南\" rel="bookmark">前端面试指南</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="\2022\06\20\CSS\" rel="bookmark">CSS基础</a></div>
+    </li>
+  </ul>
+
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>henfy
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://henfy233.github.io/2022/08/16/Webpack/" title="Webpack">http://henfy233.github.io/2022/08/16/Webpack/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <span class="exturl" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</span> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"><i class="fa fa-tag"></i> 面试</a>
+              <a href="/tags/%E5%89%8D%E7%AB%AF/" rel="tag"><i class="fa fa-tag"></i> 前端</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/16/Other/" rel="prev" title="面试其他问题">
+      <i class="fa fa-chevron-left"></i> 面试其他问题
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/16/JS/" rel="next" title="JS">
+      JS <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#webpack"><span class="nav-number">1.</span> <span class="nav-text">webpack</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%B2%E8%A7%A3%E8%8C%83%E5%9B%B4"><span class="nav-number">1.1.</span> <span class="nav-text">讲解范围</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Ewebpack-5"><span class="nav-number">1.2.</span> <span class="nav-text">关于webpack 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9E%E9%A1%BE%E4%B9%8B%E5%89%8D%E7%9A%84-webpack-%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">1.3.</span> <span class="nav-text">回顾之前的 webpack 面试题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-number">1.4.</span> <span class="nav-text">webpack 基本配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-%E9%AB%98%E7%BA%A7%E9%85%8D%E7%BD%AE"><span class="nav-number">1.5.</span> <span class="nav-text">webpack 高级配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#module-chunk-bundle-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">1.6.</span> <span class="nav-text">module chunk bundle 的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="nav-number">1.7.</span> <span class="nav-text">webpack 性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#webpack-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-%E6%9E%84%E5%BB%BA%E9%80%9F%E5%BA%A6"><span class="nav-number">1.7.1.</span> <span class="nav-text">webpack 性能优化 - 构建速度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Webpack-%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">2.</span> <span class="nav-text">Webpack 面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#webpack-%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96-1"><span class="nav-number">2.1.</span> <span class="nav-text">webpack 性能优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E4%BD%93%E7%A7%AF-%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="nav-number">2.2.</span> <span class="nav-text">打包体积 优化思路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%89%93%E5%8C%85%E6%95%88%E7%8E%87"><span class="nav-number">2.3.</span> <span class="nav-text">打包效率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loader"><span class="nav-number">2.4.</span> <span class="nav-text">Loader</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%B4%E4%B8%80%E4%B8%8B-webpack-%E7%9A%84%E4%B8%80%E4%BA%9B-plugin%EF%BC%8C%E6%80%8E%E4%B9%88%E4%BD%BF%E7%94%A8-webpack-%E5%AF%B9%E9%A1%B9%E7%9B%AE%E8%BF%9B%E8%A1%8C%E4%BC%98%E5%8C%96"><span class="nav-number">2.5.</span> <span class="nav-text">说一下 webpack 的一些 plugin，怎么使用 webpack 对项目进行优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B0%88%E8%B0%88%E4%BD%A0%E5%AF%B9webpack%E7%9A%84%E7%9C%8B%E6%B3%95"><span class="nav-number">2.6.</span> <span class="nav-text">谈谈你对webpack的看法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gulp%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-number">2.7.</span> <span class="nav-text">gulp是什么</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="henfy" src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">henfy</p>
+  <div class="site-description" itemprop="description">技术分享的博客</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="aHR0cHM6Ly9naXRodWIuY29tL2hlbmZ5MjMz" title="GitHub → https://github.com/henfy233"><i class="fab fa-github fa-fw"></i>GitHub</span>
+      </span>
+      <span class="links-of-author-item">
+        <span class="exturl" data-url="bWFpbHRvOjYxOTg5OTU3M0BxcS5jb20=" title="E-Mail → mailto:619899573@qq.com"><i class="fa fa-envelope fa-fw"></i>E-Mail</span>
+      </span>
+  </div>
+  <div class="cc-license motion-element" itemprop="license">
+    <span class="exturl cc-opacity" data-url="aHR0cHM6Ly9jcmVhdGl2ZWNvbW1vbnMub3JnL2xpY2Vuc2VzL2J5LW5jLXNhLzQuMC96aF9DTg=="><img src="/images/cc-by-nc-sa.svg" alt="Creative Commons"></span>
+  </div>
+
+
+
+      </div>
+
+      <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&amp;id=28234009&amp;auto=1&amp;height=66"></iframe>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  © 2018 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">henfy</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">270k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">4:06</span>
+</div>
+  <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> &amp; <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script data-pjax="" async="" src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script src="//cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div id="pjax">
+  
+
+  
+
+
+
+
+
+    </div>
+
+
+<script src="/bundle.js"></script><script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+;
+
+var pjax = new Pjax({
+  selectors: [
+    'head title',
+    '#page-configurations',
+    '.content-wrap',
+    '.post-toc-wrap',
+    '.languages',
+    '#pjax'
+  ],
+  switches: {
+    '.post-toc-wrap': Pjax.switches.innerHTML
+  },
+  analytics: false,
+  cacheBust: false,
+  scrollTo : !CONFIG.bookmark.enable
+});
+
+window.addEventListener('pjax:success', () => {
+  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
+    var code = element.text || element.textContent || element.innerHTML || '';
+    var parent = element.parentNode;
+    parent.removeChild(element);
+    var script = document.createElement('script');
+    if (element.id) {
+      script.id = element.id;
+    }
+    if (element.className) {
+      script.className = element.className;
+    }
+    if (element.type) {
+      script.type = element.type;
+    }
+    if (element.src) {
+      script.src = element.src;
+      // Force synchronous loading of peripheral JS.
+      script.async = false;
+    }
+    if (element.dataset.pjax !== undefined) {
+      script.dataset.pjax = '';
+    }
+    if (code !== '') {
+      script.appendChild(document.createTextNode(code));
+    }
+    parent.appendChild(script);
+  });
+  NexT.boot.refresh();
+  // Define Motion Sequence & Bootstrap Motion.
+  if (CONFIG.motion.enable) {
+    NexT.motion.integrator
+      .init()
+      .add(NexT.motion.middleWares.subMenu)
+      .add(NexT.motion.middleWares.postList)
+      .bootstrap();
+  }
+  NexT.utils.updateSidebarPosition();
+});
+;
+
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  ;
+
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '95a51042662de49c617b',
+      clientSecret: '4aad194349abd9bf63cee6abd3f5153ae20c50ab',
+      repo        : 'henfy233.github.io',
+      owner       : 'henfy233',
+      admin       : ['henfy233'],
+      id          : 'dda5e56211c11a867e96a1e7e303853c',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script></body></html>
