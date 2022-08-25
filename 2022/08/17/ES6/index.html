@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://s.poetries.work/images/20210414175500.png">
 <meta property="og:image" content="https://s.poetries.work/images/20210414210720.png">
 <meta property="article:published_time" content="2022-08-17T14:22:47.000Z">
-<meta property="article:modified_time" content="2022-08-19T15:14:42.122Z">
+<meta property="article:modified_time" content="2022-08-23T06:07:15.794Z">
 <meta property="article:author" content="henfy">
 <meta property="article:tag" content="面试">
 <meta property="article:tag" content="前端">
@@ -226,7 +226,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-19 23:14:42" itemprop="dateModified" datetime="2022-08-19T23:14:42+08:00">2022-08-19</time>
+                <time title="修改时间：2022-08-23 14:07:15" itemprop="dateModified" datetime="2022-08-23T14:07:15+08:00">2022-08-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -407,7 +407,6 @@
 <li><code>Promise.allSettled</code> 的语法及参数跟 <code>Promise.all</code> 类似，其参数接受一个 <code>Promise</code> 的数组，返回一个新的 <code>Promise</code>。<code>唯一的不同在于，执行完之后不会失败</code>，也就是说当 <code>Promise.allSettled</code> 全部处理完成后，我们可以拿到每个 <code>Promise</code> 的状态，而不管其是否处理成功</li>
 </ul>
 </li>
-<li>我们来看一下用 <code>allSettled</code> 实现的一段代码</li>
 </ul>
 <figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> resolved = <span class="built_in">Promise</span>.resolve(<span class="number">2</span>);</span><br><span class="line"><span class="keyword">const</span> rejected = <span class="built_in">Promise</span>.reject(-<span class="number">1</span>);</span><br><span class="line"><span class="keyword">const</span> allSettledPromise = <span class="built_in">Promise</span>.allSettled([resolved, rejected]);</span><br><span class="line">allSettledPromise.then(<span class="function"><span class="keyword">function</span> (<span class="params">results</span>) </span>{</span><br><span class="line">  <span class="built_in">console</span>.log(results);</span><br><span class="line">});</span><br><span class="line"><span class="comment">// 返回结果：</span></span><br><span class="line"><span class="comment">// [</span></span><br><span class="line"><span class="comment">//    { status: 'fulfilled', value: 2 },</span></span><br><span class="line"><span class="comment">//    { status: 'rejected', reason: -1 }</span></span><br><span class="line"><span class="comment">// ]</span></span><br></pre></td></tr></tbody></table></figure>
 
@@ -436,7 +435,7 @@
 </li>
 <li>我们来看一下这个业务场景，对于图片的加载，特别适合用 race 方法来解决，将图片请求和超时判断放到一起，用 race 来实现图片的超时判断。请看代码片段。</li>
 </ul>
-<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求某个图片资源</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestImg</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ resolve(img); }</span><br><span class="line">    img.src = <span class="string">'http://www.baidu.com/img/flexible/logo/pc/result.png'</span>;</span><br><span class="line">  });</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">}</span><br><span class="line"><span class="comment">//延时函数，用于给请求计时</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>{</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ reject(<span class="string">'图片请求超时'</span>); }, <span class="number">5000</span>);</span><br><span class="line">  });</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">Promise</span>.race([requestImg(), timeout()])</span><br><span class="line">.then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>{</span><br><span class="line">  <span class="built_in">console</span>.log(results);</span><br><span class="line">})</span><br><span class="line">.catch(<span class="function"><span class="keyword">function</span>(<span class="params">reason</span>)</span>{</span><br><span class="line">  <span class="built_in">console</span>.log(reason);</span><br><span class="line">});</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从上面的代码中可以看出，采用 Promise 的方式来判断图片是否加载成功，也是针对 Promise.race 方法的一个比较好的业务场景</span></span><br></pre></td></tr></tbody></table></figure>
+<figure class="highlight js"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//请求某个图片资源</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">requestImg</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>{</span><br><span class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">    img.onload = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ resolve(img); }</span><br><span class="line">    img.src = <span class="string">'http://www.baidu.com/img/flexible/logo/pc/result.png'</span>;</span><br><span class="line">  });</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">}</span><br><span class="line"><span class="comment">//延时函数，用于给请求计时</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">timeout</span>(<span class="params"></span>)</span>{</span><br><span class="line">  <span class="keyword">var</span> p = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>)</span>{</span><br><span class="line">    <span class="built_in">setTimeout</span>(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>{ reject(<span class="string">'图片请求超时'</span>); }, <span class="number">5000</span>);</span><br><span class="line">  });</span><br><span class="line">  <span class="keyword">return</span> p;</span><br><span class="line">}</span><br><span class="line"><span class="built_in">Promise</span>.race([requestImg(), timeout()])</span><br><span class="line">        .then(<span class="function"><span class="keyword">function</span>(<span class="params">results</span>)</span>{</span><br><span class="line">          <span class="built_in">console</span>.log(results);</span><br><span class="line">        })</span><br><span class="line">        .catch(<span class="function"><span class="keyword">function</span>(<span class="params">reason</span>)</span>{</span><br><span class="line">          <span class="built_in">console</span>.log(reason);</span><br><span class="line">        });</span><br><span class="line"></span><br><span class="line"><span class="comment">// 从上面的代码中可以看出，采用 Promise 的方式来判断图片是否加载成功，也是针对 Promise.race 方法的一个比较好的业务场景</span></span><br></pre></td></tr></tbody></table></figure>
 
 <p><img data-src="https://s.poetries.work/images/20210414210720.png" alt="img"></p>
 <p><strong>promise手写实现，面试够用版：</strong></p>
@@ -498,7 +497,7 @@
       <div class="popular-posts-title"><a href="\2022\05\20\前端面试指南\" rel="bookmark">前端面试指南</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="\2022\06\20\CSS\" rel="bookmark">CSS基础</a></div>
+      <div class="popular-posts-title"><a href="\2022\08\17\HTML\" rel="bookmark">HTML</a></div>
     </li>
   </ul>
 
@@ -658,12 +657,12 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">270k</span>
+    <span title="站点总字数">279k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">4:06</span>
+    <span title="站点阅读时长">4:13</span>
 </div>
   <div class="powered-by">由 <span class="exturl theme-link" data-url="aHR0cHM6Ly9oZXhvLmlv">Hexo</span> &amp; <span class="exturl theme-link" data-url="aHR0cHM6Ly90aGVtZS1uZXh0Lm9yZw==">NexT.Gemini</span> 强力驱动
   </div>
